@@ -1,0 +1,11 @@
+<ifmodule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</ifmodule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ############################################
+  ## Add default Expires header
+  ## http://developer.yahoo.com/performance/rules.html#expires
+  ExpiresDefault "access plus 10 minutes"
+</IfModule>
+
