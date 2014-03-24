@@ -6,31 +6,48 @@ product_forum_base_url: https://community.jboss.org/en/
 vimeo_client_id: 2589d6592dfd44bfec54f22edf766aedaf0fd5d7
 vimeo_access_token: 1ad6583e71e183c3075a88d46ebb0675
 register_url: https://community.jboss.org/register.jspa
+
+deploy_base: &deploy
+  host: www@filemgmt.jboss.org
+  cdn_host: www@filemgmt.jboss.org
+  cdn_path: /static_htdocs/_root/common/www
+  uncommitted: true
+
+profile_base: &profile
+  dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
+  cdn_http_base: &cdn_http_base http://static.jboss.org/common/www 
+  log_faraday: true
+  minify: true
+  deploy:
+    <<: *deploy
+  scss:
+    :style: :compressed
+    # Nice big hack:
+    :cdn_http_base: http://static.jboss.org/common/www
+
 profiles:
   development:
     dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
     log_faraday: true
-  staging:
+
+  staging: 
+    <<: *profile
     base_url: http://www-stg.jboss.org
-    dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
-    log_faraday: true
     deploy:
-      host: www@filemgmt.jboss.org
+      <<: *deploy
       path: /stg_htdocs/www-stg
-      uncommitted: true
+    
   beta:
+    <<: *profile
     base_url: http://www-beta.jboss.org
-    dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
     deploy:
-      host: www@filemgmt.jboss.org
+      <<: *deploy
       path: /stg_htdocs/www-beta
-      uncommitted: true
+
   filemgmt:
     base_url: http://www-stg2.jboss.org/
     dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
+
   production:
-    dcp_base_url:
-  wes:
-    site_url: http://test.com:4242
     dcp_base_url:
 
