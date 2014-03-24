@@ -40,6 +40,7 @@
 #
 # Now you're Awestruct with rake!
 
+$sprites = ['images/branding/product-logos', 'images/design/get-involved', 'images/design/get-started', 'images/design/theme-dark', 'images/design/theme-light', 'images/icons']
 $use_bundle_exec = true
 $install_gems = ['awestruct -v "~> 0.5.3"', 'rb-inotify -v "~> 0.9.0"']
 $awestruct_cmd = nil
@@ -77,7 +78,7 @@ task :setup, [:env] => :init do |task, args|
 end
 
 desc 'Update the environment to run Awestruct'
-task :update => [:init, :git_update] do
+task :update => [:init, :git_update, :regen_sprites] do
   if File.exist? 'Gemfile'
     system 'bundle update'
   else
@@ -90,6 +91,13 @@ end
 desc 'Update and initialize any git submodules'
 task :git_update do
   system 'git submodule update --init'
+end
+
+desc 'Regenerate sprites'
+task :regen_sprites do
+  $sprites.each do |p|
+    sprite(p)
+  end
 end
 
 desc 'Build and preview the site locally in development mode'
@@ -113,35 +121,30 @@ task :tag, :tag_name do |task, args|
 end
 
 desc 'Generate the site and deploy using the given profile'
-task :deploy, [:profile, :tag_name] => [:check, :tag, :push] do |task, args|
+task :deploy, [:profile, :tag_name] => [:check, :tag, :push] do |task, args| 
   run_awestruct "-P #{args[:profile]} -g --force"
   require 'yaml'
-  require 'open3'
   require 'shellwords'
 
-  deploy_config = YAML.load_file('_config/site.yml')['profiles'][args[:profile]]['deploy']
-  host = Shellwords.escape(deploy_config['host'])
-  path = Shellwords.escape(deploy_config['path'])
-  site_path = '_site' # HACK!!
+  config = YAML.load_file('_config/site.yml')
+  profile = config['profiles'][args[:profile]]
 
-  cmd = "rsync -Pqacz --chmod=Dg+sx,ug+rw --protocol=28 --delete #{site_path}/ #{host}:#{path}"
+  # Deploy the site
+  deploy_config = profile['deploy']
+  site_host = Shellwords.escape(deploy_config['host'])
+  site_path = Shellwords.escape(deploy_config['path'])
+  local_site_path = '_site' # HACK!!
+  
+  rsync(local_site_path, site_host, site_path, true)
 
-  msg 'Deploying website via rsync'
+  # Update the resources on the CDN
+  if config['cdn_http_base'] || profile['cdn_http_base']
+    cdn_host = Shellwords.escape(deploy_config['cdn_host'])
+    cdn_path = Shellwords.escape(deploy_config['cdn_path'])
+    local_cdn_path = '_tmp/cdn' # HACK!!
 
-  Open3.popen3( cmd ) do |_, stdout, stderr|
-    threads = []
-    threads << Thread.new(stdout) do |i|
-      while ( ! i.eof? )
-        msg i.readline
-      end
-    end
-    threads << Thread.new(stderr) do |i|
-      while ( ! i.eof? )
-        msg i.readline, :error
-      end
-    end
-    threads.each{|t|t.join}
-  end 
+    rsync(local_cdn_path, cdn_host, cdn_path)
+  end
 end
 
 desc 'Clean out generated site and temporary files'
@@ -274,6 +277,33 @@ def msg(text, level = :info)
     puts "\e[31m#{text}\e[0m"
   else
     puts "\e[33m#{text}\e[0m"
+  end
+end
+
+def rsync(local_path, host, remote_path, delete = false)
+  msg "Deploying #{local_path} to #{host}:#{remote_path} via rsync"
+  open3 "rsync -Pqacz --chmod=Dg+sx,ug+rw --protocol=28 #{delete ? '--delete' : ''} #{local_path}/ #{host}:#{remote_path}"
+end
+
+def sprite(path)
+  system "compass sprite --force \"#{path}/*.png\""
+end
+
+def open3(cmd)
+  require 'open3'
+  Open3.popen3( cmd ) do |_, stdout, stderr|
+    threads = []
+    threads << Thread.new(stdout) do |i|
+      while ( ! i.eof? )
+        msg i.readline
+      end
+    end
+    threads << Thread.new(stderr) do |i|
+      while ( ! i.eof? )
+        msg i.readline, :error
+      end
+    end
+    threads.each{|t|t.join}
   end
 end
 

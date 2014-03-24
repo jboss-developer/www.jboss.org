@@ -2,6 +2,7 @@
 @import "normalize";
 
 @import "font-awesome/scss/font-awesome";
+@import "fonts/fonts";
 @import "colours";
 @import "foundation/components/global"; // *always required
 @import "foundation/components/grid";
@@ -48,6 +49,7 @@
 
 
 // Import Our CSS Modules and mixins
+@import "sprites";
 @import "mq-mixins";
 @import "jboss-mixins";
 // @import "navigation";
@@ -66,6 +68,8 @@
 @import "global-wrapper";
 @import "theme-light";
 // @import "theme-dark";
+
+
 
 
 .clearfix:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; } .clearfix {display: inline-block; } html[xmlns] .clearfix {display: block; } * html .clearfix {height: 1%; }
@@ -1048,7 +1052,7 @@ ul.results {
   margin-top: 20px;
   &.loading {
     background:red;
-    background:url(../images/ajax-loader.gif) center 80px no-repeat;
+    background:cdn("../images/ajax-loader.gif") center 80px no-repeat;
     li.material {
       visibility: hidden;
     }
@@ -1116,13 +1120,13 @@ ul.results {
     position: absolute;
     text-indent: -9999px;
     &.premium {
-      background:url(../images/icon-premium.png) top left no-repeat;
+      @extend .icons-premium;
       height:25px;
       top:20px
 
     }
     &.experimental {
-      background:url(../images/icon-experimental.png) top left no-repeat;
+      @extend .icons-experimental;
       height: 120px;
       width: 130px;
       right: 0px;
@@ -1155,7 +1159,7 @@ ul[class*=block-grid] {
     vertical-align: middle;
     width:100%;
     text-align: center;
-    background:$dark-blue url(../images/stripes.png);
+    background:$dark-blue cdn("../images/stripes.png");
     font-size: emCalc(26);
     color:white;
     font-weight: 600;
@@ -1180,7 +1184,7 @@ li.upstream {
 
 .defaultprojectimage {
     border:1px solid $grey-5;
-	background-image:url(../images/projects/default_200x150.png);
+	background-image:cdn("../images/projects/default_200x150.png");
 	background-repeat: no-repeat;
 	height:150px;
 	width: 200px;
@@ -1491,9 +1495,9 @@ span.asterisk {
   }
   .facebook-share-button-count {
     &:before {
+      @extend .icons-facebook-bubble;
       content:attr(data-shares);
       display: inline-block;
-      background: url(../images/bubble.png) center no-repeat;
       // content:"100";
       font-size: 11px;
       width: 40px;
