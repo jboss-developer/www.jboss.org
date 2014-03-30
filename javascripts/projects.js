@@ -57,6 +57,7 @@ app.project = {
       }
     }).done(function(data){
       var hits = data.hits.hits; // first one for testing
+      hits.sortJsonArrayByProperty("_source.sys_title");
       var html = "";
       window.hits = hits;
 
@@ -190,4 +191,3 @@ $(function() {
     app.project.projectFilter();
   }
 });
-
