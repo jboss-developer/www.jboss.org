@@ -1,4 +1,5 @@
 require 'aweplug/helpers/cdn'
+require 'aweplug/helpers/png'
 
 module JBoss
   module Developer
@@ -25,19 +26,27 @@ module JBoss
       class CompassConfigurator
 
         SPRITES_DIR = "sprites"
-        CDN_SPRITES_DIR = Pathname.new("_tmp").join("cdn", SPRITES_DIR)
+        CDN_SPRITES_PATH = Pathname.new("_tmp").join("cdn").join(SPRITES_DIR)
+        SPRITES_PATH = Pathname.new("images").join(SPRITES_DIR)
 
         def initialize
-          FileUtils.mkdir_p CDN_SPRITES_DIR
+          FileUtils.mkdir_p CDN_SPRITES_PATH
+          FileUtils.mkdir_p SPRITES_PATH
           if File.exists? Aweplug::Helpers::CDN::EXPIRES_FILE
-            FileUtils.cp(Aweplug::Helpers::CDN::EXPIRES_FILE, CDN_SPRITES_DIR.join(".htaccess"))
+            FileUtils.cp(Aweplug::Helpers::CDN::EXPIRES_FILE, CDN_SPRITES_PATH.join(".htaccess"))
           end
         end
 
         def execute(site)
           if site.cdn_http_base
-            Compass.configuration.generated_images_dir = CDN_SPRITES_DIR.to_s
+            # Load this late, we don't want to normally require pngquant
+            Compass.configuration.generated_images_dir = CDN_SPRITES_PATH.to_s
             Compass.configuration.http_generated_images_path = "#{site.cdn_http_base}/#{SPRITES_DIR}"
+            # Run sprites through pngquant on creation
+            Compass.configuration.on_sprite_saved { |filename| Aweplug::Helpers::PNGFile.new(filename).compress! }
+          else
+            Compass.configuration.generated_images_dir = SPRITES_PATH.to_s
+            Compass.configuration.http_generated_images_path = "#{site.base_url}/#{SPRITES_PATH}"
           end
         end
 
