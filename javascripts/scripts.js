@@ -8,15 +8,26 @@ app.cache = {};
   JS templates
 */
 
-app.templates = new Object();
+app.templates = {};
 app.templates.miniBuzzTemplate = '#{partial "mini_buzz_template.html.slim"}';
 app.templates.buzzTemplate = '#{partial "buzz_template.html.slim"}';
 
+/*
+  Polyfill forms - input range sliders - for IE8 only
+*/
+
+$.webshims.polyfill('forms forms-ext');
+
 /* 
   Website Init 
-*/ 
+*/
 app.init = function() {
+  /*
+    Initialize foundation JS
+  */
+
   $(document).foundation();
+
 
   /*
     initialize All sliders
