@@ -16,6 +16,7 @@ app.templates.buzzTemplate = '#{partial "buzz_template.html.slim"}';
   Polyfill forms - input range sliders - for IE8 only
 */
 
+$.webshims.setOptions('basePath', 'http://static.jboss.org/www/vendor/web-shims-1.12.5/');
 $.webshims.polyfill('forms forms-ext');
 
 /* 
