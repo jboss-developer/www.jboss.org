@@ -29,6 +29,7 @@ app.init = function() {
 
   $(document).foundation();
 
+
   /*
     initialize All sliders
   */
