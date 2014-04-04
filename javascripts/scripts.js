@@ -580,16 +580,6 @@ jQuery.expr[":"].Contains = jQuery.expr.createPseudo(function(arg) {
 });
 jQuery.ajaxSettings.traditional = true;
 
-String.prototype.format = function() {
-  var args = arguments;
-  return this.replace(/{(\d+)}/g, function(match, number) { 
-    return typeof args[number] != 'undefined'
-      ? args[number]
-      : match
-    ;
-  });
-};
-
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10); // don't forget the second param
     var hours   = Math.floor(sec_num / 3600);
