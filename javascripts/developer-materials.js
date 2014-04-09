@@ -188,10 +188,17 @@ app.dm = {
       }
     }).done(function(data){
       var hits = data.hits.hits; // first one for testing
-      var html = "";
-      
-      // loop over every hit
-      for (var i = 0; i < hits.length; i++) {
+
+      // Create a paginated list
+      $('div.paginator').paging(hits.length, {
+          format: '[< ncnnn >]',
+          // Display 9 hits in a page
+          perpage: 9,
+          // When a new page in the list of pages is to be displayed
+          onSelect: function(page) {
+              var html = "";
+              var data = this.slice;
+              for (var i = data[0]; i < data[1]; i++) {
 
         if ('sys_contributors' in hits[i].fields) {
             var contributors = hits[i].fields.sys_contributors[0];
@@ -260,17 +267,48 @@ app.dm = {
           "</li>";
 
 
-        // Append template to HTML
-        html += template;
-      };
+                  // Append template to HTML
+                  html += template;
+              };
 
-      // Inject HTML into the DOM
-      if(!html) {
-        html = "Sorry, no results to display. Please modify your search.";
-      }
-      $("ul.results:first").html(html);
-      $("ul.results").removeClass('loading');
+              // Inject HTML into the DOM
+              if(!html) {
+                  html = "Sorry, no results to display. Please modify your search.";
+              }
+              $("ul.results > li").remove();
+              $("ul.results").html(html);
+              $("ul.results").removeClass('loading');
+
+              return false; // Don't follow the link!
+          },
+          // Format the paginator
+          onFormat: function(type) {
+              switch (type) {
+                  case 'block': // n and c
+                      return '<a>' + this.value + '</a>';
+                  case 'next': // >
+                      return '<a>&gt;</a>';
+                  case 'prev': // <
+                      return '<a>&lt;</a>';
+                  case 'first': // [
+                      return '<a>first</a>';
+                  case 'last': // ]
+                      return '<a>last</a>';
+              }
+          }
+      });
+
     });
+  },
+  clearFilters: function($el) {
+    var form = $('form.dev-mat-filters');
+    form[0].reset();
+    form.find('input[type=range]').each(function(i,el){
+        $(el).attr('value',0);
+    });
+    $('form.dev-mat-filters input:checked').removeAttr('checked');
+    $('.filter-rating-active').removeClass('filter-rating-active');
+    this.devMatFilter();
   }
 }
 
@@ -282,6 +320,11 @@ $(function() {
 
   $('form.dev-mat-filters').on('submit',function(e) {
     e.preventDefault();
+  });
+
+  $('.filters-clear').on('click',function(e){
+    e.preventDefault();
+    app.dm.clearFilters($(this));
   });
 
   if ($('form.dev-mat-filters').length) {
