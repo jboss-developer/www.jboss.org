@@ -85,7 +85,11 @@ body(class="#{template}")
           section.top-bar-section
             ul.left.main-menu
               - site.nav.each do |k, v|
-                li: a(href="#{v.url}") #{v.label}
+                li
+                  a(href="#{v.url}") #{v.label}
+                  ul.sub-nav
+                    - site.nav[k].each do |l, w|
+                      li #{w.label}
             ul.right.social
               li
                 a(href="/newsletter")
