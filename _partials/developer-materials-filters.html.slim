@@ -1,8 +1,8 @@
+h4.filter-toggle
+  | Filters
+  a.filters-clear(href="#") Clear All Filters
+button.filters-apply.filter-toggle Apply
 form.dev-mat-filters(method="GET" action="")
-  h4
-    | Filters
-    a.filters-clear(href="#") Clear All Filters
-  
   .filter-block
     input(type="text" placeholder="Filter by keyword" name="filter-text")
 
@@ -23,7 +23,7 @@ form.dev-mat-filters(method="GET" action="")
 
 
 
-  .filter-block
+  .filter-block.filter-block-checkboxes
     h5.show-more Topics
     .filter-block-inputs
       label
@@ -57,7 +57,7 @@ form.dev-mat-filters(method="GET" action="")
         input(type="checkbox" name="filter-topic[]" value="H2")
         | H2
 
-  .filter-block
+  .filter-block.filter-block-checkboxes
     h5.show-more Format
     .filter-block-inputs
       label
