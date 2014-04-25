@@ -1,5 +1,7 @@
 // Sprites
 
+$icons-spacing: 20px;
+
 @import "sprites/_product-logos.scss";
 @include all-product-logos-sprites(true);
 
