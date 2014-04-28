@@ -1,7 +1,27 @@
 form.search {
   position: relative;
+  input.query {
+    -webkit-appearance:searchfield;
+  }
   input.query:focus ~ .searchResults {
     display: block;
+  }
+  span.search-close {
+    color:white;
+    background:$grey-3;
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    color:black;
+    line-height: 10px;
+    font-size: 21px;
+    border-radius: 50%;
+    display: block;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding-top: 1px;
+    display: none;
   }
 }
 
@@ -9,7 +29,7 @@ form.search {
   position: absolute;
   width:100%;
   background:white;
-  z-index: 99;
+  z-index: 999;
   border-radius: 0 0 $global-radius $global-radius;
   border:1px solid $grey-3;
   top:42px;
@@ -38,5 +58,19 @@ form.search {
         }
       }
     }
+  }
+}
+
+
+@include tablet-portrait-and-down {
+  form.search {
+    span.search-close {
+      display: block;
+    }
+  }
+
+  .searchResults {
+    display: block;
+    border:0;
   }
 }

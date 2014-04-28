@@ -48,8 +48,9 @@ body(class="#{template}")
               i.fa.fa-home
           dd.search-wrapper
             /  Search Box
-            form.search(action="search" method="POST" name="search")
+            form.search(action="search" method="POST" name="search" autocomplete="off")
               input.query(type="text" name="q" placeholder="Search")
+              span.search-close &times;
               .searchResults
           dd.register
             a(href="#{site.register_url}") Register

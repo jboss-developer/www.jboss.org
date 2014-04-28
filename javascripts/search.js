@@ -31,7 +31,6 @@ app.search = {
 
   },
   format : function(query, results) {
-    console.log(results);
     var suggestions = $('<ul>');
     for (var i = 0; i < results.length; i++) {
       var title = results[i].fields.sys_title;
@@ -57,7 +56,10 @@ $(function() {
     */ 
 
     if(e.keyCode == 13) {
-      
+      var link = $('.searchResults li.active-item a');
+      window.location.assign(link[0].href);
+      // .click();
+      return;
     }
 
     /*
@@ -65,8 +67,8 @@ $(function() {
     */
 
     if(e.keyCode === 38 || e.keyCode === 40) {
-      
       if(e.keyCode === 38) { // up arrow
+        e.preventDefault(); // stop the cursor from going to the front of the input box
         var activeItem = $('.searchResults li.active-item').prev();
       }
       else { // down arrow
@@ -99,7 +101,15 @@ $(function() {
     }
   });
 
+  // When someone hovers over a selection, remove
   $('.searchResults').on('mouseover','li',function() {
     $('li.active-item').removeClass('active-item');
   });
+
+  $('.search-close').on('click',function(e){
+    console.log("Closed");
+    $('form.search input').val('');
+    $('.searchResults').html('');
+  });
+
 });
