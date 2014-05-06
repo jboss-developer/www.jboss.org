@@ -17,7 +17,8 @@ app.search = {
     $.ajax({
       url : '#{URI.join site.dcp_base_url, "v1/rest/search"}',
       data : {
-        "field"  : ["contributors", "duration", "github_repo_url", "level", "sys_contributors",  "sys_created", "sys_description", "sys_title", "sys_url_view", "thumbnail", "sys_type"],
+        "field"  : ["sys_title", "sys_url_view"],
+        "type" : "jbossdeveloper_website",
         "query" : query,
         "size" : 10
       },
@@ -34,9 +35,10 @@ app.search = {
     var suggestions = $('<ul>');
     for (var i = 0; i < results.length; i++) {
       var title = results[i].fields.sys_title;
+      var url = results[i].fields.sys_url_view;
       var searchRegEx = new RegExp(query,"gi");
       title = title.replace(searchRegEx,'<span class="highlight">'+query+'</span>');
-      suggestions.append('<li><a href="/events">'+ title  +'</a></li>');
+      suggestions.append('<li><a href="' + url + '">'+ title  +'</a></li>');
     };
     $('.searchResults').html(suggestions);
   }
@@ -107,7 +109,6 @@ $(function() {
   });
 
   $('.search-close').on('click',function(e){
-    console.log("Closed");
     $('form.search input').val('');
     $('.searchResults').html('');
   });
