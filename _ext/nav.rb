@@ -13,6 +13,10 @@ module JBoss::Developer
             nav[k.to_s] = build(v, k, site)
           end
           site.nav = nav
+
+          if site.profile =~ /beta/
+            site.pages = site.pages.reject {|p| p.source_path =~ /robots\.txt/}
+          end          
         end
       end
 
