@@ -14,9 +14,7 @@ module JBoss::Developer
           end
           site.nav = nav
 
-          if site.profile =~ /beta/
-            site.pages = site.pages.reject {|p| p.source_path =~ /robots\.txt/}
-          end          
+          site.pages = site.pages.reject {|p| p.source_path =~ /robots\.txt/} unless site.robots
         end
       end
 
