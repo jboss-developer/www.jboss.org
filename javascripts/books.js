@@ -31,7 +31,7 @@ app.books = {
             , bookItems[k]['volumeInfo']['authors'].join(', ')       // 4 - Author
             , roundHalf(bookItems[k]['volumeInfo']['averageRating'])       // 5 - Rating
             , shortDescription       // 6 - description
-            , 'http://www.amazon.com/dp/' +  bookItems[k]['volumeInfo']['industryIdentifiers'][0]['identifier']       // 7 - Purchase Url
+            , 'http://www.amazon.com/gp/search?index=books&linkCode=qs&keywords=' +  bookItems[k]['volumeInfo']['industryIdentifiers'][0]['identifier']       // 7 - Purchase Url
             );
           // Append template to HTML
           $('ul.book-list').append(template);
