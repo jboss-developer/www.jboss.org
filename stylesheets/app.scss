@@ -1024,16 +1024,21 @@ form.dev-mat-filters, .project-filters {
     padding:6px;
     margin: 0;
   }
-  a.filters-clear {
-    font-size: 14px;
-    text-decoration: underline;
-    padding-left: 5px;
-    position: relative;
-    top:-2px;
-  }
   a.project-filters-clear {
     @extend a.filters-clear;
   }
+}
+
+a.filters-clear {
+  font-size: 14px;
+  text-decoration: underline;
+  padding-left: 5px;
+  position: relative;
+  top:-2px;
+}
+
+.filters-apply {
+  display: none;
 }
 
 .styled-select {
@@ -1588,4 +1593,41 @@ span.asterisk {
 	width:100%;
 	height:1px;
 	clear:both;
+}
+
+table.demos {
+  tbody {
+    tr {
+      background:white;
+      &.desc {
+        border-bottom: 1px solid #E6E7E8;
+        p {
+          display: none;
+        }
+      }
+      td {
+        border:0;
+        &:nth-child(2) { max-width: 120px; }
+        &:nth-child(3) { max-width: 120px; }
+      }
+    }
+  }
+  a.view-more {
+    &:before {
+      content : 'View More ';
+    }
+    &:after {
+      content: "\f196";
+      font-family: FontAwesome;
+    }
+    &.open {
+      &:before {
+        content : 'View Less ';
+      }
+      &:after {
+        content: "\f147";
+        font-family: FontAwesome;
+      }
+    }
+  }
 }
