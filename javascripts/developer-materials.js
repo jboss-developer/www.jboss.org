@@ -386,6 +386,7 @@ app.dm = {
               $("ul.results").removeClass('loading');
 
               return false; // Don't follow the link!
+            }
           },
           // Format the paginator
           onFormat: function(type) {
