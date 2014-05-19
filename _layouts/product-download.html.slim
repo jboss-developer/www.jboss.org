@@ -18,6 +18,13 @@ type: Downloads
 
     = partial("download_table.html.slim", { 'downloads' => [page.product.beta_download] })
 
+  - if page.product.beta_download
+    h4.download-link: a(href="#{page.product.beta_download_artifact.url}")
+      i.fa.fa-download>
+      | Download #{page.product.abbreviated_name} #{page.product.beta_download.version}
+
+    = partial("download_table.html.slim", { 'downloads' => [page.product.beta_download] })
+
   h4.download-link: a(href="#{page.product.default_download_artifact.url}")
     i.fa.fa-download>
     | Download #{page.product.abbreviated_name} #{page.product.current_version}
