@@ -15,8 +15,6 @@ function roundHalf(num) {
     return html;
 }
 
-
-
 app.dm = {
   supportsLocalStorage: function() {
     try {
@@ -78,11 +76,17 @@ app.dm = {
     });
   },
   devMatFilter : function(filters) {
-    // Get the Filter Items
-    // console.log('Performing dev material search');
+    // Set filters to an empty object if it isn't defined
+    filters = typeof filters !== 'undefined' ? filters : {};
 
     //Currently the only way to specify no limit
     var maxResults = 500;
+
+    if (filters.max_results) {
+      maxResults = filters.max_results;
+      delete filters['max_results'];
+      console.debug('maxResults:' + maxResults);
+    }
 
     /*
       Keyword
@@ -125,13 +129,15 @@ app.dm = {
     /*
       Skill Level
     */ 
-    var $skill = $('input[name="filter-skill"]'),
-      step = $skill.attr('step'),
-      max = $skill.attr('max') || 100,
-      value = $skill.val(),
-      labels = $skill.data('labels').split(','),
-      idx = value / step,
-      skillLevel = labels[idx]; // final value
+    var $skill = $('input[name="filter-skill"]');
+    if ($skill.length) {
+      var step = $skill.attr('step'),
+        max = $skill.attr('max') || 100,
+        value = $skill.val(),
+        skillLabels = $skill.data('labels').split(','),
+        idx = value / step,
+        skillLevel = skillLabels[idx]; // final value
+    }
 
     /*
       Publish Date
@@ -164,18 +170,17 @@ app.dm = {
       var month = d.getMonth() + 1; //Months are zero based
       var year = d.getFullYear();
       var createdDate = year + "-" + month + "-" + day;
-      // console.log('Using ' + createdDate + ' as publish date value');
       return createdDate;
     }).get();
     
-    var filters = {
+    $.extend(filters, {
       "keyword" : keyword,
       "rating" : rating,
       "topics" : topics,
       "formats" : formats,
       "skillLevel" : skillLevel,
       "publishDate" : publishDate
-    };
+    });
 
     /* Store the raw form values in local storage. */
     var formValues = {
@@ -202,8 +207,8 @@ app.dm = {
     });
 
     // Prep each filter
-    var query = [];
-    
+    var query = []; 
+
     if(currentFilters['keyword']) {
       query.push(keyword);
     }
@@ -245,6 +250,10 @@ app.dm = {
     }
 
     query.push("(sys_content_provider:jboss-developer OR sys_content_provider:rht)")
+
+    if (currentFilters['product']) {
+      query.push('target_product:(' + currentFilters['product'] + ')');
+    }
 
     var query = query.join(" AND ");
 
@@ -599,7 +608,6 @@ $(function() {
           url: '#{URI.join site.dcp_base_url, "v1/rest/rating?id="}' + $('#your-rating').data('searchisko-id'),
           xhrFields:  { withCredentials: true}
         }).done(function(data) {
-          console.log(data);
           if (data.rating) {
             $('#your-rating').append(roundHalf(data));
             $('#your-rating').show();
@@ -611,6 +619,13 @@ $(function() {
         $('#new-rating').show();
       }
     });
+  }
+
+  var product = app.getQueryVariable('product');
+  if (product) {
+    app.dm.devMatFilter({'product' : product});
+  } else if (typeof devMatOptions !== 'undefined') { // Feels hacky
+    app.dm.devMatFilter(devMatOptions);
   }
 });
 
