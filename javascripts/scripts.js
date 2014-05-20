@@ -262,11 +262,16 @@ app.init = function() {
   }
 
   /*
+   * Restore the Developer Materials Filter from local storage
+   */
+  if ($('.developer-materials-sidebar').length) {
+     app.dm.restoreFilter();
+  }
+
+  /*
    * Populate developer materials results if on developer materials page
    */
-
-  if ($('.developer-materials').length) {
-     app.dm.restoreFilter();
+  if ($('.developer-materials-results').length) {
      app.dm.devMatFilter();
   }
 
@@ -462,6 +467,18 @@ app.buzz = {
         Socialite.load($(this)[0]);
       });
     });
+  }
+}
+
+// Code pulled from http://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
+app.getQueryVariable = function (variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split('&');
+  for(var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split('=');
+    if (decodeURIComponent(pair[0]) == variable) {
+      return decodeURIComponent(pair[1]);
+    }
   }
 }
 
