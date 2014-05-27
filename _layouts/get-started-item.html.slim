@@ -61,7 +61,7 @@ issues: [DEVELOPER-179, DEVELOPER-77, DEVELOPER-202]
             - for link in page.metadata[:toc]
               li: a href="##{link[:id]}" #{link[:text]}
         br
-      .columns.large-16.gsi
+      .columns.large-16.gsi(data-searchisko-type="#{page.metadata[:searchisko_type]}" data-searchisko-id="#{page.metadata[:searchisko_id]}")
         = page.content
 
         / TODO: Share Knowledge, comments go here
