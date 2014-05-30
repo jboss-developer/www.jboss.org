@@ -427,6 +427,7 @@ app.buzz = {
     
     $.ajax({
         url : app.dcp.url.search,
+        dataType: 'json',
         data : {
           "field"  : ["sys_url_view", "sys_title", "sys_contributors", "sys_description", "sys_updated"],
           "query" : query,
