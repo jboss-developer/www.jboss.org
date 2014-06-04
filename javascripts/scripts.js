@@ -183,9 +183,6 @@ app.init = function() {
   if($container.length) {
 
     $(window).load(function() {
-      $container.isotope({
-        itemSelector: '.buzz-item'
-      });
 
       // Filtering
       /*$('.sort-icons a').click(function(){
@@ -466,6 +463,14 @@ app.buzz = {
         html = "Sorry, no results to display.";
       }
       container.html(html);
+
+      // run isotope only once they have been embedded into the dom AND images are loaded
+      $(window).load(function() {
+        container.isotope({
+          itemSelector: '.buzz-item'
+        });
+      });
+
       container.removeClass('buzz-loading');
       $('.share-this').on('click mouseover', function() {
         Socialite.load($(this)[0]);
