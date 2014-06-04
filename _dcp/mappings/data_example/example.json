@@ -1,5 +1,5 @@
 {
-  "jbossdeveloper_quickstart": {
+  "quickstart": {
     "properties": {
       "tags": {
         "type": "string",

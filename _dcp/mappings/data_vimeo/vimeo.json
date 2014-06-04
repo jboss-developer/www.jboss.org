@@ -1,5 +1,5 @@
 {
-  "jbossdeveloper_vimeo": {
+  "vimeo": {
     "properties": {
       "tags" : {
         "type" : "string", 

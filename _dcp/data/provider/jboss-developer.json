@@ -5,9 +5,9 @@
   "super_provider": false,
   "pwd_hash": "037acec3e7b3f74e8f85310b5b1077b8a451696a",
   "type": {
-    "jbossdeveloper_quickstart": {
+    "quickstart": {
       "description":"Readmes from JBoss Developer",
-      "sys_type":"jbossdeveloper_quickstart",
+      "sys_type":"quickstart",
       "sys_content_content-type" : "text/html",
       "persist" : true,
       "input_preprocessors": [
@@ -25,7 +25,7 @@
             "index_name"       : "sys_projects",
             "index_type"       : "project",
             "source_field"     : "target_product",
-            "idx_search_field" : "type_specific_code.jbossdeveloper_website_code",
+            "idx_search_field" : "type_specific_code.website_code",
             "result_mapping"   : [
 	            {
 	              "idx_result_field" : "code",
@@ -43,7 +43,7 @@
               "index_name": "sys_contributors",
               "index_type": "contributor",
               "source_field": "author",
-              "idx_search_field": ["jbossdeveloper_quickstart_author","name"],
+              "idx_search_field": ["quickstart_author","name"],
               "result_multiple_ignore" : true,
               "result_mapping": [{
                 "idx_result_field": "code",
@@ -80,13 +80,13 @@
         }
       ],
       "index": {
-        "name":"data_jbossdeveloper_quickstart",
-        "type":"jbossdeveloper_quickstart"
+        "name":"data_quickstart",
+        "type":"quickstart"
       }
     },
-    "jbossdeveloper_bom": {
+    "bom": {
       "description":"Bill of Materials POM from JBoss Developer",
-      "sys_type":"jbossdeveloper_bom",
+      "sys_type":"bom",
       "persist" : true,
       "input_preprocessors": [
         {
@@ -105,13 +105,13 @@
         }
       ],
       "index": {
-        "name":"data_jbossdeveloper_bom",
-        "type":"jbossdeveloper_bom"
+        "name":"data_bom",
+        "type":"bom"
       }
     },
-    "jbossdeveloper_archetype": {
+    "archetype": {
       "description":"Maven Archetypes from JBoss Developer",
-      "sys_type":"jbossdeveloper_archetype",
+      "sys_type":"archetype",
       "persist" : true,
       "input_preprocessors": [
         {
@@ -130,13 +130,13 @@
         }
       ],
       "index": {
-        "name":"data_jbossdeveloper_archetype",
-        "type":"jbossdeveloper_archetype"
+        "name":"data_archetype",
+        "type":"archetype"
       }
     },
-    "jbossdeveloper_example": {
+    "example": {
       "description":"Examples from JBoss Developer",
-      "sys_type":"jbossdeveloper_example",
+      "sys_type":"example",
       "sys_content_content-type":"text/html",
       "persist" : true,
       "input_preprocessors": [
@@ -154,7 +154,7 @@
               "index_name": "sys_contributors",
               "index_type": "contributor",
               "source_field": "author",
-              "idx_search_field": ["jbossdeveloper_quickstart_author","name"],
+              "idx_search_field": ["quickstart_author","name"],
               "result_multiple_ignore" : true,
               "result_mapping": [{
                 "idx_result_field": "code",
@@ -184,11 +184,11 @@
         }
       ],
       "index": {
-        "name":"data_jbossdeveloper_example",
-        "type":"jbossdeveloper_example"
+        "name":"data_example",
+        "type":"example"
       }
     },
-    "jbossdeveloper_vimeo": {
+    "vimeo": {
         "description": "Videos for JBoss Developer from vimeo.com",
         "sys_type": "video",
         "persist" : true,
@@ -239,11 +239,11 @@
             }
         ],
         "index": {
-            "name": "data_jbossdeveloper_vimeo",
-            "type": "jbossdeveloper_vimeo"
+            "name": "data_vimeo",
+            "type": "vimeo"
         }
     },
-    "jbossdeveloper_website": {
+    "website": {
       "description":"JBoss Developer website pages",
       "sys_type":"webpage",
       "input_preprocessors": [
@@ -254,7 +254,7 @@
               "index_name"       : "sys_projects",
               "index_type"       : "project",
               "source_field"     : "website_project_code",
-              "idx_search_field" : "type_specific_code.jbossdeveloper_website_code",
+              "idx_search_field" : "type_specific_code.website_code",
               "result_mapping"   : [{
                   "idx_result_field" : "code",
                   "target_field"     : "sys_project"
@@ -267,12 +267,12 @@
         }
       ],
       "index": {
-        "name":"data_jbossdeveloper_website",
-        "type":"jbossdeveloper_website"
+        "name":"data_website",
+        "type":"website"
       },
       "indexer" : {
         "type" : "elasticsearch-river-remote",
-        "name" : "jbossdeveloper_website"
+        "name" : "website"
       }
     }
   }
