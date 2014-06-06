@@ -1,14 +1,13 @@
 .large-12.column
   .update.pinned.updatemobile
     .update-meta
+      h5
+        a.update-source href="<!=sys_url_view!>"
+          <!=sys_title!>
+    .update-body
       a.update-timestamp href="<!=sys_url_view!>" <!=updatedDate!>
       a.update-source href="<!=sys_url_view!>"
-        /i.fa.fa-twitter
-        <!=authorName!> Said:
-    .update-body
-      p
-        / img.avatar src=""
-        <!=sys_description!>
+        <!=authorName!> 
     .update-meta
       = partial "share_js_micro.html.slim"
 
