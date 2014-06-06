@@ -1,7 +1,3 @@
-require 'yaml'
-require 'awestruct/astruct'
-require 'awestruct/page'
-
 # This file is a rake build file. The purpose of this file is to simplify
 # setting up and using Awestruct. It's not required to use Awestruct, though it
 # does save you time (hopefully). If you don't want to use rake, just ignore or
@@ -53,7 +49,12 @@ $remote = ENV['DEFAULT_REMOTE'] || 'origin'
 task :default => :preview
 
 desc 'Setup the environment to run Awestruct'
-task :setup, [:env] => :init do |task, args|
+task :setup, [:env] => [:init, :bundle_install, :git_setup, :regen_sprites] do |task, args|
+  # Don't execute any more tasks, need to reset env
+  exit 0
+end
+
+task :bundle_install, [:env] do |task, args|
   next if !which('awestruct').nil?
 
   if File.exist? 'Gemfile'
@@ -78,19 +79,16 @@ task :setup, [:env] => :init do |task, args|
       end
     end
   end
-  msg 'Run awestruct using `awestruct` or `rake`'
-  # Don't execute any more tasks, need to reset env
-  exit 0
 end
 
 desc 'Update the environment to run Awestruct'
-task :update => [:init, :bundler_update, :git_update, :regen_sprites] do
+task :update => [:init, :bundle_update, :git_setup, :regen_sprites] do
   # Don't execute any more tasks, need to reset env
   exit 0
 end
 
 desc 'Update bundler environment'
-task :bundler_update do
+task :bundle_update do
   if File.exist? 'Gemfile'
     system 'bundle update'
   else
@@ -98,8 +96,8 @@ task :bundler_update do
   end 
 end
 
-desc 'Update and initialize any git submodules'
-task :git_update do
+desc 'Initialize any git submodules'
+task :git_setup do
   system 'git submodule update --init'
 end
 
@@ -344,8 +342,11 @@ def config(profile = nil)
 end
 
 def load_site_yaml(yaml_path, profile = nil)
+  require 'awestruct/astruct'
+  require 'awestruct/page'
   config = Awestruct::AStruct.new
   if ( File.exist?( yaml_path ) )
+    require 'yaml'    
     data = YAML.load( File.read( yaml_path ) )
     if ( profile )
       profile_data = {}

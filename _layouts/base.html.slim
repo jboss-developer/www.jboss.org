@@ -23,7 +23,6 @@ head
   
   /[if lt IE 9]
     script type='text/javascript' src='//html5shim.googlecode.com/svn/trunk/html5.js'
-    link rel='stylesheet' type='text/css' href="/stylesheets/ie8grid.css" 
 
 - template = (page.url.gsub('/','').split('.').first || 'home')
 body(class="#{template}")
@@ -50,7 +49,7 @@ body(class="#{template}")
           dd.search-wrapper
             /  Search Box
             form.search(action="search" method="POST" name="search" autocomplete="off")
-              input.query(type="text" name="q" placeholder="Search")
+              input.query(type="text" name="q" placeholder="Search" tabindex="1")
               span.search-close &times;
               .searchResults
           dd.register
@@ -131,9 +130,6 @@ body(class="#{template}")
 
   #fb-root
   
-  /[if lt IE 9]
-    script src="#{site.base_url}/#{site.context_url}/javascripts/vendor/jQuery.XDomainRequest.js"
-  / script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.topbar.js"
 
   / It's very important that the metrics scripts appear straight after jquery and namespace.
     This will ensure that the async scripts that they load from remote servers
@@ -147,8 +143,9 @@ body(class="#{template}")
       script src="#{site.base_url}/#{site.context_url}/javascripts/marketing-ops.js"
       script src="http://www.redhat.com/assets/js/tracking/rh_omni_footer.js"
       script src="http://www.googleadservices.com/pagead/conversion.js"
+    script src="#{site.base_url}/#{site.context_url}/javascripts/vendor/jQuery.XDomainRequest.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.dropdown.js"
+    / script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.dropdown.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.section.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.reveal.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.tooltips.js"
@@ -169,6 +166,7 @@ body(class="#{template}")
     script src="#{site.base_url}/#{site.context_url}/javascripts/scripts.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/dcp.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/developer-materials.js"
+    script src="#{site.base_url}/#{site.context_url}/javascripts/rating.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/download.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/projects.js"
     script src="#{site.base_url}/#{site.context_url}/javascripts/books.js"
@@ -178,9 +176,6 @@ body(class="#{template}")
   /script src="http://platform.linkedin.com/in.js"
   /script src="http://apis.google.com/js/plusone.js"
   /script src="http://platform.twitter.com/widgets.js"
-
-  javascript:
-    hljs.initHighlightingOnLoad();
 
   - if site.metrics
     noscript

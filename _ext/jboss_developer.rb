@@ -20,32 +20,31 @@ module JBoss
         def process document, reader
           lines = []
           reader.lines.each do |line|
-            if line.include? 'image::'
-              match_data = line.match(/image::(.*?)\[(.*?)\]/)
-              final_path = Pathname.new File.join(document.base_dir, match_data.captures.first)
-              site_base = Pathname.new(@site.dir)
-              # try the timo location
-              if !final_path.exist?
-                final_path = Pathname.new File.join(document.base_dir, '_ticket-monster', 'tutorial', match_data.captures.first) 
+            if line.include? 'image:'
+              match_data = line.match(/image([:]+)(.*?)\[(.*?)\]/)
+              if match_data.captures[1].start_with? 'http' # looking for urls
+                lines << line
+                next
+              else
+                final_path = Pathname.new File.join(document.base_dir, match_data.captures[1])
+                site_base = Pathname.new(@site.dir)
+                # try the timo location
+                if !final_path.exist?
+                  final_path = Pathname.new File.join(document.base_dir, '_ticket-monster', 'tutorial', match_data.captures[1])
+                end
+                if !final_path.exist? # Can't find it, just use whatever is there
+                  lines << line
+                  next
+                end
+                final_location = final_path.relative_path_from(site_base).to_s
               end
-              resource = Aweplug::Helpers::Resources::SingleResource.new @site.dir, @site.cdn_http_base, @site.minify 
-              lines << "image::#{resource.path(final_path.relative_path_from(site_base).to_s)}[#{match_data.captures.last}]"
+              resource = Aweplug::Helpers::Resources::SingleResource.new @site.dir, @site.cdn_http_base, @site.cdn_out_dir, @site.minify, @site.cdn_version 
+              lines << "image#{match_data.captures.first}#{resource.path(final_location)}[#{match_data.captures.last}]"
             else
               lines << line
             end
           end
           ::Asciidoctor::Reader.new lines
-          #output.gsub(/src="(.*?)"/m) do |s|
-            #resource = Aweplug::Helpers::Resources::SingleResource.new @site.dir, @site.cdn_http_base, @site.minify
-            #if should_cdn? $1
-              #final_path = Pathname.new File.join(document.base_dir, $1)
-              #site_base = Pathname.new(@site.dir)
-              ##"src=\"#{resource.path(final_path.relative_path_from site_base)}\"" 
-              #"src=\"#{resource.path(final_path.relative_path_from(site_base).to_s)}\"" 
-            #else
-              #s
-            #end
-          #end
         end
       end
 
@@ -90,21 +89,21 @@ module JBoss
       class CompassConfigurator
 
         SPRITES_DIR = "sprites"
-        CDN_SPRITES_PATH = Pathname.new("_tmp").join("cdn").join(SPRITES_DIR)
         SPRITES_PATH = Pathname.new("images").join(SPRITES_DIR)
 
         def initialize
-          FileUtils.mkdir_p CDN_SPRITES_PATH
-          FileUtils.mkdir_p SPRITES_PATH
-          if File.exists? Aweplug::Helpers::CDN::EXPIRES_FILE
-            FileUtils.cp(Aweplug::Helpers::CDN::EXPIRES_FILE, CDN_SPRITES_PATH.join(".htaccess"))
-          end
+          
         end
 
         def execute(site)
+          cdn = Aweplug::Helpers::CDN.new(SPRITES_DIR, site.cdn_out_dir, site.version)
+          if File.exists? Aweplug::Helpers::CDN::EXPIRES_FILE
+            FileUtils.cp(Aweplug::Helpers::CDN::EXPIRES_FILE, cdn.tmp_dir.join(".htaccess"))
+          end
+          FileUtils.mkdir_p cdn.tmp_dir
           if site.cdn_http_base
             # Load this late, we don't want to normally require pngquant
-            Compass.configuration.generated_images_dir = CDN_SPRITES_PATH.to_s
+            Compass.configuration.generated_images_dir = cdn.tmp_dir.to_s
             Compass.configuration.http_generated_images_path = "#{site.cdn_http_base}/#{SPRITES_DIR}"
             # Run sprites through pngquant on creation
             Compass.configuration.on_sprite_saved { |filename| Aweplug::Helpers::PNGFile.new(filename).compress! }
