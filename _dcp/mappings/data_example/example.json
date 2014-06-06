@@ -1,21 +1,10 @@
 {
-  "jbossdeveloper_archetype": {
+  "quickstart": {
     "properties": {
-      "groupId": {
+      "tags": {
         "type": "string",
-        "include_in_all": true
-      },
-      "artifactId": {
-        "type": "string",
-        "include_in_all": true
-      },
-      "versions": {
-        "type": "string",
-        "include_in_all": true
-      },
-      "recommendedVersion": {
-        "type": "string",
-        "include_in_all": true
+        "include_in_all": true,
+        "_boost": 1.5
       },
       "contributors": {
         "type": "string",
@@ -31,6 +20,10 @@
         "type": "string",
         "include_in_all": true,
         "_boost": 1.5
+      },
+      "thumbnail": {
+        "type": "string",
+        "index" : "no"
       }
     }
   }

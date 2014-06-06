@@ -1,21 +1,14 @@
 {
-  "jbossdeveloper_bom": {
+  "quickstart": {
     "properties": {
-      "groupId": {
+      "level": {
         "type": "string",
         "include_in_all": true
       },
-      "artifactId": {
+      "tags": {
         "type": "string",
-        "include_in_all": true
-      },
-      "versions": {
-        "type": "string",
-        "include_in_all": true
-      },
-      "recommendedVersion": {
-        "type": "string",
-        "include_in_all": true
+        "include_in_all": true,
+        "_boost": 1.5
       },
       "contributors": {
         "type": "string",
@@ -26,6 +19,11 @@
         "type": "string",
         "include_in_all": true,
         "_boost": 1.7
+      },
+      "target_product": {
+        "type": "string",
+        "include_in_all": true,
+        "_boost": 1.6
       },
       "sys_title": {
         "type": "string",

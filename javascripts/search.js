@@ -19,7 +19,7 @@ app.search = {
       dataType: 'json',
       data : {
         "field"  : ["sys_title", "sys_url_view"],
-        "type" : "jbossdeveloper_website",
+        "type" : "website",
         "query" : query,
         "size" : 10
       },

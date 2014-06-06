@@ -101,7 +101,7 @@ module JBoss::Developer::Extensions
           :boms => [],
           :contributors => bom['bom']['contributors'],
           :author => bom['bom']['author'],
-          :searchisko_type => 'jbossdeveloper_bom',
+          :searchisko_type => 'bom',
           :searchisko_id => bom['id']
         }
 
@@ -181,7 +181,7 @@ module JBoss::Developer::Extensions
           :boms => [],
           :contributors => archetype['archetype']['contributors'],
           :author => archetype['archetype']['author'],
-          :searchisko_type => 'jbossdeveloper_archetype',
+          :searchisko_type => 'archetype',
           :searchisko_id => archetype['id']
         }
 

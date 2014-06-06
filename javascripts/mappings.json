@@ -2281,8 +2281,8 @@
       }
     }
   },
-  "data_jbossdeveloper_quickstart": {
-    "jbossdeveloper_quickstart_message": {
+  "data_quickstart": {
+    "quickstart_message": {
       "include_in_all": false,
       "_all": {
         "enabled": false
@@ -2629,7 +2629,7 @@
         }
       }
     },
-    "jbossdeveloper_quickstart_readme": {
+    "quickstart_readme": {
       "include_in_all": false,
       "_timestamp": {
         "enabled": true
@@ -2811,7 +2811,7 @@
         }
       }
     },
-    "jbossdeveloper_quickstart": {
+    "quickstart": {
       "include_in_all": false,
       "_timestamp": {
         "enabled": true
@@ -2998,7 +2998,7 @@
       }
     }
   },
-  "data_jbossdeveloper_archetype": {
+  "data_archetype": {
     "_default_": {
       "include_in_all": false,
       "_timestamp": {
@@ -3169,7 +3169,7 @@
         }
       }
     },
-    "jbossdeveloper_archetype": {
+    "archetype": {
       "include_in_all": false,
       "_timestamp": {
         "enabled": true
@@ -3983,8 +3983,8 @@
       }
     }
   },
-  "data_jbossdeveloper_bom": {
-    "jbossdeveloper_bom": {
+  "data_bom": {
+    "bom": {
       "include_in_all": false,
       "_timestamp": {
         "enabled": true

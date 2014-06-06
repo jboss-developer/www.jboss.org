@@ -75,10 +75,6 @@ app.dm = {
       }
     });
     var qsFormat = app.utils.getFragmentParameterByName("format") || app.utils.getParameterByName("format");
-    // A hack for now
-    if (qsFormat == "archetype" || qsFormat == "bom" || qsFormat == "quickstart" || qsFormat == "example" || qsFormat == "sandbox") {
-      qsFormat = "jbossdeveloper_" + qsFormat;
-    }
     if (qsFormat.charAt(qsFormat.length -1) == 's') {
       qsFormat = qsFormat.substr(0, qsFormat.length - 1);
     }
@@ -137,13 +133,13 @@ app.dm = {
     }).get(); 
 
     //Enable sandbox if sandbox filter checked, or if no format filters are checked.
-    var sandboxEnabled = $.inArray('jbossdeveloper_sandbox', formats) != -1 || formats.length == 0;
-    var quickstartsEnabled = $.inArray('jbossdeveloper_quickstart', formats) != -1 || formats.length == 0;
+    var sandboxEnabled = $.inArray('sandbox', formats) != -1 || formats.length == 0;
+    var quickstartsEnabled = $.inArray('quickstart', formats) != -1 || formats.length == 0;
 
     //remove sandbox if there.
-    var index = formats.indexOf('jbossdeveloper_sandbox');
+    var index = formats.indexOf('sandbox');
     if (index !== -1) {
-      formats[index] = 'jbossdeveloper_quickstart';
+      formats[index] = 'quickstart';
     }
 
     formats = formats.join(" ");
@@ -254,7 +250,7 @@ app.dm = {
     if(currentFilters['formats']) {
       query.push('sys_type:('+formats+')');
     } else {
-      query.push('sys_type:(jbossdeveloper_bom jbossdeveloper_quickstart jbossdeveloper_archetype video rht_knowledgebase_article rht_knowledgebase_solution jbossdeveloper_example)');
+      query.push('sys_type:(bom quickstart archetype video rht_knowledgebase_article rht_knowledgebase_solution example)');
     }
 
     if(currentFilters['skillLevel']) {
@@ -347,7 +343,7 @@ app.dm = {
 
             var template = "<li class=\"material\">"; 
             template += "<div class=\"get-started-placeholder-" + hits[i].fields.sys_type + "\" >";
-            // jbossdeveloper_example and video have thumbnails
+            // example and video have thumbnails
             if(!hits[i].fields.thumbnail) {
               template += "<img src='"+app.dm.thumbnails[hits[i].fields.sys_type]+"'>";
             }
@@ -508,9 +504,9 @@ app.dm = {
   thumbnails : {
     // These correspond with hit[i]._type
    // jboss
-   "jbossdeveloper_quickstart" : "#{cdn( site.base_url + '/images/design/get-started/jbossdeveloper_quickstart.png')}",
-   "jbossdeveloper_archetype" : "#{cdn( site.base_url + '/images/design/get-started/jbossdeveloper_archetype.png')}",
-   "jbossdeveloper_bom" : "#{cdn( site.base_url + '/images/design/get-started/jbossdeveloper_bom.png')}",
+   "quickstart" : "#{cdn( site.base_url + '/images/design/get-started/jbossdeveloper_quickstart.png')}",
+   "archetype" : "#{cdn( site.base_url + '/images/design/get-started/jbossdeveloper_archetype.png')}",
+   "bom" : "#{cdn( site.base_url + '/images/design/get-started/jbossdeveloper_bom.png')}",
    // futurerproof for when jboss goes unprefixed
    "quickstart" : "#{cdn( site.base_url + '/images/design/get-started/jbossdeveloper_quickstart.png')}",
    "archetype" : "#{cdn( site.base_url + '/images/design/get-started/jbossdeveloper_archetype.png')}",
