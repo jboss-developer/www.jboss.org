@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/awestruct/aweplug.git
-  revision: 7d857540f418c7eb5e8c74d2456720591900fd1a
+  revision: 00ef2e604a02f3e800fd5add5f88c5c4f02553bf
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -58,7 +58,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.0.3)
     eventmachine (1.0.3-java)
-    execjs (2.1.0)
+    execjs (2.2.0)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
     faraday_middleware (0.9.1)
@@ -118,7 +118,7 @@ GEM
     rb-fchange (0.0.6)
       ffi
     rb-fsevent (0.9.4)
-    rb-inotify (0.9.4)
+    rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
