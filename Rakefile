@@ -109,13 +109,13 @@ task :regen_sprites do
 end
 
 desc 'Build and preview the site locally in development mode'
-task :preview, [:profile] => :check do |task, args|
-  run_awestruct "-P #{args[:profile] || 'development'} -a -s --force -q"
+task :preview, [:profile, :base_url] => :check do |task, args|
+  run_awestruct "-P #{args[:profile] || 'development'} -a -s --force -q #{('--url ' + args[:base_url]) if args[:base_url]}"
 end
 
 desc 'Generate the site using the defined profile, or development if none is given'
-task :gen, [:profile] => :check do |task, args|
-  run_awestruct "-P #{args[:profile] || 'development'} -g --force -q"
+task :gen, [:profile, :base_url] => :check do |task, args|
+  run_awestruct "-P #{args[:profile] || 'development'} -g --force -q #{('--url ' + args[:base_url]) if args[:base_url]}"
 end
 
 desc "Push local commits to #{$remote}/master"
@@ -137,8 +137,8 @@ task :tag, [:profile, :tag_name] do |task, args|
 end
 
 desc 'Generate the site and deploy using the given profile'
-task :deploy, [:profile, :tag_name] => [:check, :tag, :push] do |task, args| 
-  run_awestruct "-P #{args[:profile]} -g --force -q"
+task :deploy, [:profile, :tag_name, :base_url] => [:check, :tag, :push] do |task, args| 
+  run_awestruct "-P #{args[:profile]} -g --force -q #{('--url ' + args[:base_url]) if args[:base_url]}"
 
   $config ||= config args[:profile]
 
