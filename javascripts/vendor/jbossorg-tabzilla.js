@@ -350,7 +350,7 @@ Tabzilla.content =
 +'  <p class="overview">Learn more about Red Hat and our open source communities:</p>'
 +'  <div class="row-fluid">'
 +'    <span class="span4 middlewarelogo">'
-+'      <img src="#{cdn("http://static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png")}" alt="Red Hat JBoss MIDDLEWARE" />'
++'      <img src="#{cdn("//static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png")}" alt="Red Hat JBoss MIDDLEWARE" />'
 +'    </span>'
 +'    <span class="span4">'
 +'      <ul class="level1">'
