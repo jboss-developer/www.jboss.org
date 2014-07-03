@@ -144,4 +144,3 @@ Builds occur automatically when pull requests are submitted, and builds, and dep
 The CI build is configured in 3 files: `.travis.yml`, `_config/site.yml` and `Rakefile`.
 
 TODO
-
