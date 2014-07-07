@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/awestruct/aweplug.git
-  revision: 2c470efd45eaa666bcce0ef1beb5ebc54e74b70b
+  revision: c037e78e9ef0aa3c7de2f55264c58f21e0621125
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: git://github.com/pmuir/wraith.git
-  revision: b43e0b20f31ed24be45a08faf9bcb355e306dbf9
+  revision: 0cd7c7af9bda5b86680cebed26fc671c343d7531
   specs:
     wraith (1.2.2)
       anemone
