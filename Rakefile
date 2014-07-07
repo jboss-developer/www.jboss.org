@@ -98,11 +98,7 @@ end
 
 desc 'Initialize any git submodules'
 task :git_setup do
-  require 'date'
-  puts "Submodule logging"
-  puts DateTime.now
   system 'git submodule update --init'
-  puts DateTime.now
 end
 
 desc 'Regenerate sprites'
