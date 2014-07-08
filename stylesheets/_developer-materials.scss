@@ -100,6 +100,10 @@ ul.results {
   }
 }
 
+.chosen-container ~ label {
+  display: none; // hide the inputs if the chosen container activates (desktop only)
+}
+
 
 @include tablet-portrait-and-down {
   body.developer-materials {
@@ -191,11 +195,15 @@ ul.results {
       }
     }
   }
-  
+
   .filter-block-checkboxes {
     padding:0;
     h5 {
       padding-left:10px;
+    }
+    
+    select[name="filter-topic[]"] {
+      display: none; // hide the select as chosen will provide the interface
     }
   }
   .filter-block-inputs {

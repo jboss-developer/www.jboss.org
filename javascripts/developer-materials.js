@@ -66,7 +66,7 @@ app.dm = {
           case "topics" :
             var valArray = formValue.split(" ");
             $.each(valArray, function(idx, value){
-              $('input[name="filter-topic[]"][value=' + value + ']').attr('checked', true);
+              $('[name="filter-topic[]"][value=' + value + ']').attr('selected', true).attr('checked', true).trigger('change');
             });
             break;
           case "formats":
@@ -118,7 +118,7 @@ app.dm = {
     /*
       Topics
     */ 
-    var topics = $('input[name="filter-topic[]"]:checked').map(function () {
+    var topics = $('[name="filter-topic[]"]:checked').map(function () {
       return this.value;
     }).get(); 
 
@@ -529,7 +529,7 @@ app.dm = {
 // Event Listeners 
 $(function() {
   var timeOut;
-  $('form.dev-mat-filters').on('change keyup','input',function(e){
+  $('form.dev-mat-filters').on('change keyup','input, select',function(e){
     clearTimeout(timeOut);
     timeOut = setTimeout(function() {
       app.dm.devMatFilter();
@@ -574,7 +574,9 @@ $(function() {
     else {
       el.parent().removeClass('checked');
     }
-  });
+  }).trigger('change');
+
+  $('select[name="filter-topic[]"]').chosen();
 
 });
 
