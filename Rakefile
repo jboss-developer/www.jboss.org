@@ -376,7 +376,7 @@ end
 # Execute Awestruct
 def run_awestruct(args)
   if ENV['site_base_path']
-    base_url = ENV['site_base_path']
+    base_url = ENV['protocol_relative_site_base_path']
     base_url = "#{base_url}/#{ENV['site_path_suffix']}" if ENV['site_path_suffix']
   end
   args ||= "" # Make sure that args is initialized
