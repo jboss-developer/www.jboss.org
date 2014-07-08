@@ -1,5 +1,7 @@
 # jboss-developer-site
 
+blaaaah
+
 ## Getting Started
 This section covers the steps you need to do in order to setup your environment and get the site running for the first time. Further sections cover the details.
 
