@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/awestruct/awestruct.git
-  revision: bdfa1116bbafb0e4e44a2d0639b463b4d9649c4c
+  revision: 9fb2e1324073b122d8bbab9379130c3fe29039a5
   branch: perf_testing
   specs:
     awestruct (0.5.5)
