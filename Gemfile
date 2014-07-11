@@ -13,7 +13,8 @@ def darwin_only(require_as)
 end
  
 # GEMS
-gem 'awestruct', github: 'awestruct/awestruct', branch: 'perf_testing'
+#gem 'awestruct', github: 'awestruct/awestruct', branch: 'perf_testing'
+gem 'awestruct', '~> 0.5.5'
 gem 'slim', '~> 2.0.0'
 gem 'kramdown', '~> 1.0.1'
 gem 'asciidoctor', '~> 1.5.0.preview8'
