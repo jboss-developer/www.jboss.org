@@ -20,4 +20,5 @@ max_page_retys: 10
 max_retrys: 10
 browser: phantomjs
 ignore_fragments: true
+phantomjs_threads: 20
 
