@@ -3,6 +3,8 @@
 ## Extra installation instructions
 
 [start=4]
+. For instructions on how to install http://tools.jboss.org/blog/2014-06-19-JBTIS-4.html[JBDS and Integration Stack]
++
 . Start JBoss Fuse.
 +
 For Linux or Mac::
