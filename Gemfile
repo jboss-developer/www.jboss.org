@@ -13,7 +13,8 @@ def darwin_only(require_as)
 end
  
 # GEMS
-gem 'awestruct', '~> 0.5.4.rc3'
+#gem 'awestruct', github: 'awestruct/awestruct', branch: 'perf_testing'
+gem 'awestruct', '~> 0.5.5'
 gem 'slim', '~> 2.0.0'
 gem 'kramdown', '~> 1.0.1'
 gem 'asciidoctor', '~> 1.5.0.preview8'
@@ -21,6 +22,7 @@ gem 'uglifier', '~> 2.0.1'
 gem 'htmlcompressor', '~> 0.0.6'
 gem "zurb-foundation", "~> 4.3.1"
 gem 'aweplug', :github => 'awestruct/aweplug'
+#gem 'aweplug', :github => 'awestruct/aweplug', branch: 'timing'
 gem 'curb', '~> 0.8.5'
 gem 'oauth', '~> 0.3.6'
 gem 'git', '~> 1.2.5'
@@ -37,9 +39,9 @@ group :development do
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem 'rake', '~> 10.0.4'
-  #gem 'pry', :require => false
-  #gem 'pry-byebug', :require => false
-  #gem 'pry-stack_explorer', :require => false
+  gem 'pry', :require => false
+  gem 'pry-byebug', :require => false
+  gem 'pry-stack_explorer', :require => false
   #gem 'pry-exception_explorer', :require => false
 end
 
