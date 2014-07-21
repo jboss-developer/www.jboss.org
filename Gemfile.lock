@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/awestruct/aweplug.git
-  revision: b4191869ea635676b6508b92e4da16411225645f
+  revision: f50c071aeffc59440323260463b45d38d192e7d7
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -9,7 +9,7 @@ GIT
       nokogiri (~> 1.5.10)
       oauth (~> 0.3.6)
       octokit (>= 1.24.0)
-      parallel (~> 1.0.0)
+      parallel (~> 1.0)
       sass (~> 3.2)
       uglifier (~> 2.0.1)
 
@@ -73,7 +73,7 @@ GEM
     chunky_png (1.3.1)
     coderay (1.1.0)
     colorize (0.7.3)
-    compass (0.12.6)
+    compass (0.12.7)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.2.19)
@@ -165,7 +165,7 @@ GEM
     slim (2.0.3)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
-    slop (3.5.0)
+    slop (3.6.0)
     spoon (0.0.4)
       ffi
     temple (0.6.8)
