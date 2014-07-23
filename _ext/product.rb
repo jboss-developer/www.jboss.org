@@ -1,6 +1,7 @@
 require 'json'
 require 'aweplug/helpers/searchisko'
 require 'aweplug/helpers/video'
+require 'parallel'
 
 module JBoss
   module Developer
@@ -32,19 +33,13 @@ module JBoss
           articles = []
           solutions = []
           site.products = {}
-          site.pages.each do |page|
+          Parallel.each(site.pages, in_threads: 40) do |page|
             if page.product
               product = page.product
               id = page.parent_dir
               if not site.products.has_key? id
                 # Set the product id to the parent dir
                 product.id = id
-                # Set the forum url to the default value, if not set
-                if site.forums.has_key? product.id
-                  product.forum_url = site.forums[product.id]['url']
-                else
-                  product.forum_url = ''
-                end
                 if product.current_version
                   # Set the product's current major.minor version
                   product.current_minor_version = product.current_version[/^([0-9]*\.[0-9]*)/, 1]
