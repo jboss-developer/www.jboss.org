@@ -30,12 +30,12 @@ description: Forums are the primary way that JBoss Developers communicate.
         th Description
         th Posts
         th Monthly Activity
-      - site.forums.each do |k, v|
-        tr
-          td.product-name
-            a(href="#{v.url}") #{v.name}
-          td.description #{v.description}
-          td
-          td
+      - site.products.each do |k,v|
+        - unless v.forum.nil?
+          tr
+            td.product-name
+              a(href="#{v.forum.url}") #{v.abbreviated_name}
+            td.description #{v.forum.description}
+            td
+            td
         
-
