@@ -33,6 +33,7 @@ guides:
   Security_Guide:
   User_Guide:
 forum:
+  name: fsw
   url: https://community.jboss.org/en/fsw
   description: 'A service design, development and integration platform enabling organizations to transition to open hybrid cloud.'
 downloads:

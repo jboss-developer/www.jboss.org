@@ -1,5 +1,6 @@
 require 'json'
 require 'aweplug/helpers/searchisko'
+require 'aweplug/cache/yaml_file_cache'
 require 'parallel'
 
 module JBoss
@@ -27,10 +28,15 @@ module JBoss
 
 
         def execute(site)
+          if site.cache.nil?
+            site.send('cache=', Aweplug::Cache::YamlFileCache.new)
+          end
+
           articles = []
           solutions = []
           site.products = {}
-          Parallel.each(site.pages, in_threads: 40) do |page|
+          site.pages.each do |page|
+          #Parallel.each(site.pages, in_threads: 40) do |page|
             if page.product
               product = page.product
               id = page.parent_dir
@@ -45,6 +51,11 @@ module JBoss
                 downloads(product, site)
                 articles << articles(product, site)
                 solutions << solutions(product, site)
+
+                unless product.forum.nil?
+                  product.forum.count = forum_count(product, site)
+                end
+
                 product.buzz_tags ||= product.id
 
                 # Store the product in the global product map
@@ -55,6 +66,20 @@ module JBoss
           end
           File.open(Pathname.new(site.output_dir).join('rht_articles.json'), 'w') { |f| f.write( articles.flatten.reject{ |a| a.nil? }.to_json) }
           File.open(Pathname.new(site.output_dir).join('rht_solutions.json'), 'w') { |f| f.write( solutions.flatten.reject{ |s| s.nil? }.to_json) }
+        end
+
+        def forum_count(product, site)
+          searchisko = Aweplug::Helpers::Searchisko.new({:base_url => site.dcp_base_url,
+                                                         :authenticate => true,
+                                                         :searchisko_username => ENV['dcp_user'],
+                                                         :searchisko_password => ENV['dcp_password'],
+                                                         :cache => site.cache,
+                                                         :logger => site.log_faraday})
+
+          resp = searchisko.search({query: "(sys_type:forumthread AND sys_project:(#{product.forum.name}))",
+                                    facet:'per_project_counts', sys_type:'forumthread', size:0})
+          terms = JSON.load(resp.body)['facets']['per_project_counts']['terms']
+          terms.empty? ? 0 : terms.first['count']
         end
 
         def articles(product, site)

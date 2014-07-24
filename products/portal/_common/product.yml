@@ -9,6 +9,7 @@ guides:
   Migration_Guide:
   User_Guide:
 forum:
+  name: jbossjpp
   url: https://community.jboss.org/en/jbossjpp
   description: 'A lean portal solution for building high-impact, self-service applications.'
 downloads:
