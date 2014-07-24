@@ -67,6 +67,7 @@ downloads:
         url: https://access.redhat.com/site/documentation/en-US/JBoss_Fuse/6.0/html/Release_Notes/files/front.html
 documentation_path: Red_Hat_JBoss_Fuse
 forum:
+  name: jbossfuse
   url: http://community.jboss.org/en/jbossfuse
   description: 'A small footprint Enterprise Service Bus (ESB) that lets you build, deploy and integrate applications and services.'
 guides:

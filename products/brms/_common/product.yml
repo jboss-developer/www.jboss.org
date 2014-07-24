@@ -21,6 +21,7 @@ guides:
   User_Guide:
 default_download_artifact_type: installer
 forum:
+  name: brms
   url: https://community.jboss.org/en/brms
   description: 'A rule-based programming platform built on Drools Expert, Drools Guvnor, and Drools Fusion that allows users to capture rules that can be easily modified as the business changes without impacting static applications.'
 downloads:

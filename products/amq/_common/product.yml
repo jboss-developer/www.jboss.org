@@ -41,6 +41,7 @@ guides:
        html:
 forum:
   url: https://community.jboss.org/en/jbossamq
+  name: jbossamq
   description: 'A small footprint, high-performance, robust messaging platform that enables real-time integration between applications, services and devices.'
 upstream_projects:
   - activemq
