@@ -5,7 +5,7 @@ interpolate: true
   Polyfill forms - input range sliders - for IE8 only
 */
 
-$.webshims.setOptions('basePath', '//static.jboss.org/www/vendor/web-shims-1.12.5/');
+$.webshims.setOptions({basePath: '//static.jboss.org/www/vendor/web-shims-1.12.5/', waitReady: false});
 $.webshims.polyfill('forms forms-ext');
 
 /* 
@@ -741,8 +741,8 @@ app.developmentTools = function(){
 $('.datepicker').pickadate();
 
 $(function() {
-  app.init();
   app.sso();
+  app.init();
   app.sideNav();
 
   // Small hack to allow us to specify selectors and children to make sticky (used for TOC on FAQ and dev mats)
