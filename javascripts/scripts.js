@@ -718,8 +718,8 @@ app.developmentTools = function(){
 $('.datepicker').pickadate();
 
 $(function() {
-  app.init();
   app.sso();
+  app.init();
   app.sideNav();
 
   // Small hack to allow us to specify selectors and children to make sticky (used for TOC on FAQ and dev mats)
