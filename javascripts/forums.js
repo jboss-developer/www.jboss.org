@@ -26,7 +26,33 @@ app.forums.chart = function() {
        });
 
        var chartOptions = {
-         axisTitlesPosition : "none"
+         axisTitlesPosition : 'none',
+         enableInteractivity: false,
+         crosshair : {
+           opacity :  0.0
+         },
+         legend : {
+           position : 'none'
+         },
+         hAxis : {
+           gridlines : {
+             color : '#FFF'
+           },
+           baselineColor : '#FFF',
+           textStyle : {
+             color : '#FFF'
+           }
+         },
+         vAxis : {
+           gridlines : {
+             color : '#FFF'
+           },
+           baselineColor : '#FFF',
+           textStyle : {
+             color : '#FFF'
+           }
+         },
+         curveType : 'function'
        };
        chart.draw(google.visualization.arrayToDataTable(dataArray), chartOptions);
      }
