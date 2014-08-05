@@ -67,7 +67,7 @@ profiles:
     
   production:
     <<: *profile
-    base_url: http://www.jboss.org/
+    base_url: //www.jboss.org/
     dcp_base_protocol_relative_url: //dcp.jboss.org/
     dcp_base_url: http://dcp.jboss.org/
     require_tag: true
