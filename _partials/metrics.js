@@ -17,7 +17,7 @@ interpolate: true
     );
     s('//www.googletagmanager.com/gtm.js?id=' + id);
   })('GTM-NJWS5L', 'dataLayer');
-
+  w.efn = "#{site.elq_form_name || %Q{jboss-org-integration-sandbox}}";
   s('http://www.redhat.com/j/elqNow/elqCfg.js',
     function () {
       s('#{cdn("#{site.base_url}/javascripts/eloqua.js")}');
