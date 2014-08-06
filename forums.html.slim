@@ -38,6 +38,6 @@ description: Forums are the primary way that JBoss Developers communicate.
           td = product.forum[:count]
           td.histogram
             div.forum-chart(data-forum-name=product.forum.name)
-= javascripts("forum-chart", true) do
+= javascripts("forums", true) do
+  script src="https://www.google.com/jsapi"
   script src="#{site.base_url}/#{site.context_url}/javascripts/forums.js"
-        
