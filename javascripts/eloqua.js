@@ -1,44 +1,58 @@
-(function() {
+var eloqua = {};
 
-  var getCookie = function(cname) {
-      var name = cname + "=";
-      var ca = document.cookie.split(';');
-      for(var i=0; i<ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0)==' ') c = c.substring(1);
-          if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
-      }
-      return "";
+eloqua.getCookie = function(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1);
+      if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
   }
+  return "";
+};
 
-  var formSubmit = function (src) {
-    var data = {
-      "elqSiteID": "1795",
-      "elqFormName": app.mktg_ops.elqFormName,
-      "elqCustomerGUID": getCookie('elqGUID'),
-      //"C_EmailAddress": "", TODO
-      "A_RedirectURL": src,
-      "A_TacticID_Internal": "701600000InternalTactic",
-      "A_TacticID_External": "701600000ExternalTactic",
-      "A_ElqVisitorGuid":  $.cookie('elqGUID'),
-      "F_FormData_Trigger": "Consumed through click",
-      "nocache": new Date().getTime()
-    };
-    $.getJSON("http://query.yahooapis.com/v1/public/yql", {
-      q: "select * from json where url=\"https://secure.eloqua.com/e/f2?" + decodeURIComponent($.param(data)) + "\"",
-      format: "json"
-    });
+eloqua.serialize = function(obj) {
+  var str = [];
+  for(var p in obj)
+    if (obj.hasOwnProperty(p)) {
+      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+    }
+  return str.join("&");
+}
+
+eloqua.formPayload = function(src) {
+  var guid = eloqua.getCookie('elqGUID');
+  var data = {
+    "elqSiteID": "1795",
+    "elqFormName": window.efn,
+    "elqCustomerGUID": guid,
+    //"C_EmailAddress": "", TODO
+    "A_RedirectURL": src,
+    "A_TacticID_Internal": "701600000InternalTactic",
+    "A_TacticID_External": "701600000ExternalTactic",
+    "A_ElqVisitorGuid": guid,
+    "F_FormData_Trigger": "Consumed through click",
+    "nocache": new Date().getTime()
   };
+  return eloqua.serialize(data);
+};
 
-  /*
-   * Additional JS files to be loaded BEFORE marketing-ops.js:
-   * 
-   * - http://www.redhat.com/j/elqNow/elqCfg.js
-   */
+eloqua.formSubmit =  function (src) {
+  $.getJSON("http://query.yahooapis.com/v1/public/yql", {
+    q: "select * from json where url=\"https://secure.eloqua.com/e/f2?" + eloqua.formPayload(src) + "\"",
+    format: "json"
+  });
+};
 
-  /*
-   * Copiued from http://www.redhat.com/j/elqNow/elqImg.js to avoid loading issues
-   */
+eloqua.formSubmitImg = function (src) {
+  var img = document.createElement('img');
+  img.src = "https://secure.eloqua.com/e/f2?" + eloqua.formPayload(src);
+  var b = document.getElementsByTagName('body')[0]; 
+  b.insertBefore(img, b.firstChild);
+};
+
+eloqua.init = function () {
+
   var trackURL = document.URL;
   if (trackURL.indexOf("?") != -1) {
     trackURL += "&async=true";
@@ -54,9 +68,7 @@
   s.src = '//img.en25.com/i/elqCfg.min.js';
   var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
 
-
-  var cookieGUID = getCookie('elqGUID');
-  if (!cookieGUID){
+  if (!eloqua.getCookie('elqGUID')){
     var elqPPS = 70;
     // Copyright Eloqua Corporation.
     // patched 1-30-2013 gshereme@redhat.com to fix XSS vuln
@@ -78,7 +90,9 @@
       window.attachEvent('onload', function() { return _onload.apply(window, new Array(window.event)); });
     }
   }
+};
 
-  // TODO Call formSubmit if necessary
+(function() {
+  eloqua.init();
 })();
 
