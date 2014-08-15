@@ -1,12 +1,6 @@
 ---
 layout: base
 ---
-- video = video(page.video_url); \
-  if !video.fetch_failed; \
-    page.title = video.title; \
-    page.description = video(page.video_url).description \
-  end
-
 .row
   h2.large-title#developer-materials Developer Materials
 .row.content
@@ -21,7 +15,7 @@ layout: base
 
 .row.content
   .large-18.columns
-    = video_player(video)
+    = video_player(page.video)
     = partial("share.html.slim", :url => page.video_url, :title => page.description[0 .. 139])
 
   .large-6.columns
