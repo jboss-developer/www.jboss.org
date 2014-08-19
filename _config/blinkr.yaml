@@ -15,14 +15,14 @@ skips:
 ignores:
   - url: !ruby/regexp /^https?:\/\/dcp(beta-searchisko\.rhcloud\.com|\.jboss\.org)\/v1\/rest/
     message: Operation canceled
-  - url: https://github,com/jbosstm #JIRA Issue BLACKTIE-449 - Github Link ----- Still Outstanding
-    message: Couldn't resolve host name
+#  - url: https://github,com/jbosstm #JIRA Issue BLACKTIE-449 - Github Link ----- Still Outstanding ##### This has been fixed.
+#    message: Couldn't resolve host name
 #  - url: https://jboss.org/capedwarf/docs #JIRA Issue CAPEDWARF-237 - Documentation Link ##### This has been fixed.
 #    message: Docs was not found on this server
   - url: http://fisheye.jboss.org/changelog/exo-jcr #Not on JIRA?
     message: Resource could not be found
-  - url: http://fisheye.jboss.org/browse/gatein/components/pc #JIRA Issue GTNPC-111 (GateIn) - Fisheye Link ----- Still Outstanding
-    message: Resource could not be found
+#  - url: http://fisheye.jboss.org/browse/gatein/components/pc #JIRA Issue GTNPC-111 (GateIn) - Fisheye Link ----- Still Outstanding
+#    message: Resource could not be found
   - url: http://fisheye.jboss.org/browse/Guvnor #JIRA Issue GUVNOR-2113 - Fisheye Link ----- Still Outstanding
     message: The requested resource cannot be found
   - url: https://infinispan.ci.cloudbees.com/ #JIRA Issue ISPN-4600 - Build Link ----- Still Outstanding
@@ -36,7 +36,7 @@ ignores:
     message: Requested resource is not available
   - url: http://www.jboss.org/feeds/view/serialization #JIRA Issue JBSER-132 - Blog Link ----- Still Outstanding
     message: Requested resource is not available
-  - url: git@github.com:belaban/JGroups.git #JIRA Issue JGRP-1866 - Committer Git ---- Still Outstanding
+  - url: git@github.com:belaban/JGroups.git #JIRA Issue JGRP-1866 - Committer Git ---- Still Outstanding ---- Marked resolved, needs to be fixed
     message: Can't link directly to repository
   - url: http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=269 #JIRA Issue JSFUNIT-303 - Dev Forum ----- Still Outstanding
     message: Page can't be found
@@ -48,8 +48,8 @@ ignores:
     message: GroupItemNotFoundException
   - url: http://hudson.jboss.org/hudson/view/Mobicents/ #Not on JIRA?
     message: Requested resource is not available
-  - url: https://community.jboss.org/en/mod_cluster/dev #JIRA Issue MODCLUSTER-424 - Dev Forum ----- Still Outstanding
-    message: The item does not exist
+#  - url: https://community.jboss.org/en/mod_cluster/dev #JIRA Issue MODCLUSTER-424 - Dev Forum ----- Still Outstanding ##### This issue has been resolved
+#    message: The item does not exist
   - url: http://hudson.qa.jboss.com/hudson/view/mod_cluster/view/mod_cluster #JIRA Issue MODCLUSTER-424 - Build/Jenkins ----- Still Outstanding
     message: The item does not exist
   - url: http://twitter.com/picketbox #JIRA Issue SECURITY-852 - Twitter ----- Still Outstanding
