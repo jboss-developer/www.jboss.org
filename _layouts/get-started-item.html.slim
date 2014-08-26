@@ -36,17 +36,17 @@ issues: [DEVELOPER-179, DEVELOPER-77, DEVELOPER-202]
           li
             strong
               ' Author:
-              span.author itemprop="author" #{page.metadata[:author]}
+              = partial "contributor.html.slim", {:contributor => page.metadata[:author], :basic => true}
         - if page.metadata[:contributors] && !page.metadata[:contributors].empty?
           li: strong
             ' Contributors:
-            span.contributors= page.metadata[:contributors].collect { |c| %Q{<span itemprop="contributor">#{c}</span>}}.join(", ")
-        - if page.metadata[:commits] && !page.metadata[:commits].empty?
+            = page.metadata[:contributors].collect { |c| partial("contributor.html.slim", {:contributor => c, :basic => true, :itemprop => 'contributor'})}.join(", ")
+        - unless page.metadata[:published].nil?
+          - page.published_date = page.metadata[:published].iso8601
           li
             strong
-              ' Last Update:
-              span itemprop="dateModified" =DateTime.parse(page.metadata[:commits].first[:date]).strftime('%b %d, %Y')
-              - page.published_date =DateTime.parse(page.metadata[:commits].first[:date]).iso8601
+              ' Published:
+              span itemprop="dateModified" = page.metadata[:published].strftime('%b %d, %Y')
         - if page.metadata[:level] && !page.metadata[:level].empty?
           li: strong
             | Level:
@@ -85,21 +85,20 @@ issues: [DEVELOPER-179, DEVELOPER-77, DEVELOPER-202]
           = page.disqus_comments
 
       .columns.large-4
-        - unless page.metadata[:current_branch] == 'HEAD'
-          - git_ref = page.metadata[:current_branch]
-        -else
-          - git_ref = page.metadata[:current_tag] || 'HEAD'
         - unless page.archetype || page.bom
           .row
             .columns.large-24
-              a.button href="#{page.metadata[:github_repo_url]}/archive/#{git_ref}.zip"
+              a.button href="#{page.metadata[:download]}"
                 | Download  
                 i.fa.fa-download
           .row
             .columns.large-24
-              a(href="#{page.metadata[:github_repo_url]}/tree/#{git_ref}")
-                i.fa.fa-github
-                | &nbsp; View on github
+              a(href="#{page.metadata[:browse]}")
+                - if page.metadata[:scm] == 'github'
+                  i.fa.fa-github
+                  | &nbsp; View on github
+                -else
+                  | Browse source
                 br
         .row
           .columns.large-24

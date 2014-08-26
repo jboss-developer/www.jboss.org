@@ -8,8 +8,8 @@ require 'aweplug/extensions/asciidoc_example'
 require 'aweplug/extensions/vimeo'
 require 'aweplug/helpers/vimeo'
 require 'aweplug/helpers/resources'
-require 'aweplug/helpers/identity'
 require 'aweplug/transformers/asciidoc_cdn_transformer'
+require 'aweplug/extensions/kramdown_demo'
 require 'jboss_developer'
 require 'nav'
 require 'stacks'
@@ -21,9 +21,6 @@ require 'lower_case_paths'
 
 Awestruct::Extensions::Pipeline.new do
   
-  # Needs to at the top, to set up site.identity_manager
-  extension Aweplug::Identity::Extension.new
-
   # Needs to be at the top so that we fix all output paths before processing starts
   extension JBoss::Developer::Extensions::LowerCasePaths.new
 
@@ -58,6 +55,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Aweplug::Extensions::Kramdown::Quickstart.new(repository: '_picketlink-quickstarts', 
                                                           layout: 'get-started-item', 
                                                           excludes: ['_picketlink-quickstarts/template'],
+                                                          experimental: true,
                                                           output_dir: '/quickstarts/picketlink')
 
   extension Aweplug::Extensions::Kramdown::Quickstart.new(repository: '_portal-quickstarts', 
@@ -69,6 +67,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Aweplug::Extensions::Kramdown::Quickstart.new(repository: '_sandbox-quickstarts', 
                                                           layout: 'get-started-item', 
                                                           excludes: ['_sandbox-quickstarts/template'],
+                                                          experimental: true,
                                                           output_dir: '/quickstarts/sandbox')
 
   extension Aweplug::Extensions::Kramdown::Quickstart.new(repository: '_wfk-quickstarts', 
@@ -87,6 +86,11 @@ Awestruct::Extensions::Pipeline.new do
                                                      additional_excludes: ['ticket-monster.asciidoc'], 
                                                      additional_metadata_keys: ['thumbnail'],
                                                      push_to_searchisko: true)
+
+  extension Aweplug::Extensions::Kramdown::Demo.new(url: 'https://raw.githubusercontent.com/jboss-developer/jboss-developer-demos/master/demos.yaml',
+                                                    layout: 'get-started-item',
+                                                    output_dir: '/demos',
+                                                    push_to_searchisko: true)
 
   # Load indexifier
   extension Awestruct::Extensions::Indexifier.new [/google4775292ed26aeefd.html/]

@@ -1,5 +1,5 @@
 {
-  "jbossdeveloper_quickstart": {
+  "jbossdeveloper_demo": {
     "properties": {
       "level": {
         "type": "string",
@@ -9,11 +9,6 @@
         "type": "string",
         "include_in_all": true,
         "_boost": 1.5
-      },
-      "contributors": {
-        "type": "string",
-        "include_in_all": true,
-        "_boost": 1.2
       },
       "sys_description": {
         "type": "string",
@@ -29,10 +24,6 @@
         "type": "string",
         "include_in_all": true,
         "_boost": 1.5
-      },
-      "experimental": {
-        "type": "boolean",
-        "null_value": false
       }
     }
   }
