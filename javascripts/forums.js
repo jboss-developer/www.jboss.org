@@ -14,48 +14,58 @@ app.forums.chart = function() {
        "size" : 0
      }
    }).done(function(data) {
+     var chart = new google.visualization.LineChart(value),
+         dataArray = [['Day', 'Count']],
+         lastMonth = new Date((new Date()).setMonth(new Date().getMonth() - 1));
      if (data.hits.total > 0) {
-       var chart = new google.visualization.LineChart(value);
-       var dataArray = [['Day', 'Count']];
-       var lastMonth = new Date((new Date()).setMonth(new Date().getMonth() - 1));
-
        $(data.facets.activity_dates_histogram.entries).each(function(i, v) {
-         if ((new Date(v.time)) > lastMonth) {
-           dataArray.push([new Date(v.time), v.count])
+         var nextDate = new Date(v.time);
+         if (nextDate > lastMonth) {
+           var peekedItem = dataArray.peek();
+           if (typeof peekedItem !== 'undefined' && peekedItem[0] instanceof Date) {
+             // Pad form the last date to the next date
+             for (var i = peekedItem[0].getDate(); i < nextDate.getDate(); i++) {
+               dataArray.push([new Date(peekedItem[0].setDate(i)), 0]); // Add a new day with 0 for the count of posts
+             }
+           }
+           dataArray.push([nextDate, v.count])
          }
        });
-
-       var chartOptions = {
-         axisTitlesPosition : 'none',
-         enableInteractivity: false,
-         crosshair : {
-           opacity :  0.0
-         },
-         legend : {
-           position : 'none'
-         },
-         hAxis : {
-           gridlines : {
-             color : '#FFF'
-           },
-           baselineColor : '#FFF',
-           textStyle : {
-             color : '#FFF'
-           }
-         },
-         vAxis : {
-           gridlines : {
-             color : '#FFF'
-           },
-           baselineColor : '#FFF',
-           textStyle : {
-             color : '#FFF'
-           }
-         },
-         curveType : 'function'
-       };
-       chart.draw(google.visualization.arrayToDataTable(dataArray), chartOptions);
+     } else { // Fake a straight line
+       for (var i = 1; i < 5; i++) {
+         dataArray.push([new Date(lastMonth.setDate(i)),0]);
+       }
      }
+
+     var chartOptions = {
+       axisTitlesPosition : 'none',
+       enableInteractivity: false,
+       crosshair : {
+         opacity :  0.0
+       },
+       legend : {
+         position : 'none'
+       },
+       hAxis : {
+         gridlines : {
+           color : '#FFF'
+         },
+         baselineColor : '#FFF',
+         textStyle : {
+           color : '#FFF'
+         }
+       },
+       vAxis : {
+         gridlines : {
+           color : '#FFF'
+         },
+         baselineColor : '#FFF',
+         textStyle : {
+           color : '#FFF'
+         }
+       },
+     };
+     chart.draw(google.visualization.arrayToDataTable(dataArray), chartOptions);
    });
  });
 }
