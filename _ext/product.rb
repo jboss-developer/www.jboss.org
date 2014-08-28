@@ -57,6 +57,7 @@ module JBoss
 
                 unless product.forum.nil?
                   product.forum.count = forum_count(product, site)
+                  product.forum.histogram = forum_histogram(product, site)
                 end
 
                 product.buzz_tags ||= product.id
@@ -90,6 +91,20 @@ module JBoss
                                     facet:'per_project_counts', sys_type:'forumthread', size:0})
           terms = JSON.load(resp.body)['facets']['per_project_counts']['terms']
           terms.empty? ? 0 : terms.first['count']
+        end
+
+        def forum_histogram(product, site)
+          searchisko = Aweplug::Helpers::Searchisko.new({:base_url => site.dcp_base_url,
+                                                         :authenticate => true,
+                                                         :searchisko_username => ENV['dcp_user'],
+                                                         :searchisko_password => ENV['dcp_password'],
+                                                         :cache => site.cache,
+                                                         :logger => site.log_faraday})
+
+          resp = searchisko.search({actvity_date_interval: 'day', facet:'activity_dates_histogram',
+                                    sys_type:'forumthread', project: product.forum.name, size:0})
+          histogram = JSON.load(resp.body)['facets']['activity_dates_histogram']['entries']
+          histogram.empty? ? [] : histogram
         end
 
         def articles(product, site)
