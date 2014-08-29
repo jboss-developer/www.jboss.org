@@ -1,13 +1,13 @@
 require 'json'
 require 'aweplug/helpers/searchisko'
-require 'aweplug/helpers/vimeo'
+require 'aweplug/helpers/video'
 
 module JBoss
   module Developer
     module Extensions
       # Post-process product metadata from product.yml, applying conventions
       class Product
-        include Aweplug::Helpers::Vimeo
+        include Aweplug::Helpers::Video
 
         def initialize push_to_searchisko: true
           @default_guide_formats = {"html" => {}, "html-single" => {}, "pdf" => {}, "epub" => {}}
@@ -52,7 +52,7 @@ module JBoss
                 docs(product, site)
                 downloads(product, site)
                 product.buzz_tags ||= product.id
-                add_vimeo_video url: product.vimeo_album, site: site, product: id, push_to_searchisko: @push_to_searchisko if product.vimeo_album
+                add_video product.vimeo_album, site, product: id, push_to_searchisko: @push_to_searchisko if product.vimeo_album
                 # Store the product in the global product map
                 site.products[product.id] = product
                 page.send('featured_items=', product['featured_items'])

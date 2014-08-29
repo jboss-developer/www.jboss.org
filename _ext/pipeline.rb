@@ -5,8 +5,8 @@ require 'common_dir'
 require 'aweplug/extensions/kramdown_quickstart'
 require 'aweplug/extensions/sections'
 require 'aweplug/extensions/asciidoc_example'
-require 'aweplug/extensions/vimeo'
-require 'aweplug/helpers/vimeo'
+require 'aweplug/extensions/video'
+require 'aweplug/helpers/video'
 require 'aweplug/helpers/resources'
 require 'aweplug/transformers/asciidoc_cdn_transformer'
 require 'aweplug/extensions/kramdown_demo'
@@ -42,7 +42,7 @@ Awestruct::Extensions::Pipeline.new do
                                                        worksheet_title: 'Vimeo Videos',
                                                        col_labels: true,
                                                        by: 'row')
-  extension Aweplug::Extensions::Video::Vimeo.new("site.vimeo.collect {|i,v| v['vimeo_url']}")
+  extension Aweplug::Extensions::Video.new("site.vimeo.collect {|i,v| v['vimeo_url']}")
 
   extension Aweplug::Extensions::GoogleSpreadsheet.new(assign_to: 'books',
                                                        key: '1QdE32458GN8v-sDGOqoBx5RJ3X44P_W-umxsCHMxL0g',
@@ -149,7 +149,7 @@ Awestruct::Extensions::Pipeline.new do
 
   helper Awestruct::Extensions::Partial
   helper JBoss::Developer::Utilities
-  helper Aweplug::Helpers::Vimeo
+  helper Aweplug::Helpers::Video
   helper Aweplug::Helpers::Resources
 
   transformer JBoss::Developer::LinkTransformer.new

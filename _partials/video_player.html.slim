@@ -18,4 +18,4 @@ div(itemprop="video" itemscope itemtype="http://schema.org/VideoObject" data-sea
   meta itemProp="isFamilyFriendly" content="true"
   .flex-video(widescreen vimeo)
     iframe(src="#{page.parent.video_iframe_url}" width="#{page.parent.video_height}" height="#{page.parent.video_width}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
-  = partial "contributor.html.slim", {:contributor => page.video.author} 
+  = partial "contributor.html.slim", {:contributor => page.video.normalized_author} 

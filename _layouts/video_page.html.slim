@@ -5,9 +5,9 @@ layout: base
 - if !video.fetch_failed
   - page.title = "Watch #{video.title}"
   - page.description = video(page.video_url).description
-  - unless video.author.nil?
-    - page.author = video.author
-    - page.title << " by #{video.author['sys_title']}"
+  - unless video.normalized_author.nil?
+    - page.author = video.normalized_author
+    - page.title << " by #{video.normalized_author['sys_title']}"
 - page.twitter_card = 'player'
 - page.og_type = 'video'
 
