@@ -44,6 +44,14 @@ Awestruct::Extensions::Pipeline.new do
                                                        by: 'row')
   extension Aweplug::Extensions::Video.new("site.vimeo.collect {|i,v| v['vimeo_url']}")
 
+  # Load youtube videos from a google spreadsheet
+  extension Aweplug::Extensions::GoogleSpreadsheet.new(assign_to: 'youtube',
+                                                       key: '1QbjVeU9avP8hcnaruiLtuanQVpkdClIYtgFSmaC_K9c',
+                                                       worksheet_title: 'YouTube Videos',
+                                                       col_labels: true,
+                                                       by: 'row')
+  extension Aweplug::Extensions::Video.new("site.youtube.collect {|i,v| v['youtube_url']}")
+
   extension Aweplug::Extensions::GoogleSpreadsheet.new(assign_to: 'books',
                                                        key: '1QdE32458GN8v-sDGOqoBx5RJ3X44P_W-umxsCHMxL0g',
                                                        worksheet_title: 'Books',
