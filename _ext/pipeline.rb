@@ -52,6 +52,14 @@ Awestruct::Extensions::Pipeline.new do
                                                        by: 'row')
   extension Aweplug::Extensions::Video.new("site.youtube.collect {|i,v| v['youtube_url']}")
 
+  # Load featured videos from a googlespreadsheet
+  extension Aweplug::Extensions::GoogleSpreadsheet.new(assign_to: 'featured_videos',
+                                                       key: '1QbjVeU9avP8hcnaruiLtuanQVpkdClIYtgFSmaC_K9c',
+                                                       worksheet_title: 'Featured Videos',
+                                                       col_labels: true,
+                                                       row_labels: true,
+                                                       by: 'col')
+
   extension Aweplug::Extensions::GoogleSpreadsheet.new(assign_to: 'books',
                                                        key: '1QdE32458GN8v-sDGOqoBx5RJ3X44P_W-umxsCHMxL0g',
                                                        worksheet_title: 'Books',
