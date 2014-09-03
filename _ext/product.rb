@@ -1,7 +1,6 @@
 require 'json'
 require 'aweplug/helpers/searchisko'
 require 'aweplug/helpers/video'
-require 'aweplug/helpers/vimeo'
 require 'aweplug/cache/file_cache'
 
 module JBoss
