@@ -1,0 +1,15 @@
+name: Red Hat JBoss Mobile Add-On
+abbreviated_name: JBoss Mobile
+current_version: todo
+has_installer: true
+vimeo_album: https://vimeo.com/album/3038566
+default_download_artifact_type: installer
+description: 'An application platform for hosting your apps that provides an innovative modular, cloud-ready architecture, powerful management and automation, and world class developer productivity.'
+upstream_projects:
+  - aerogear
+featured_items:
+  - image_url: http://design.jboss.org/jbossdeveloper/sitedesign/jbossdeveloper_1_0/makerfiles/images/developermaterials_eap.png
+    title: HTML5 Mobile with EAP 6 at OpenShift
+    text: Build HTML5 mobile applications with EAP 6
+    url: /video/vimeo/92554627
+

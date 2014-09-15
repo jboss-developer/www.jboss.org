@@ -56,5 +56,9 @@ A platform for Business Process Management (BPM). It enables enterprise business
 
 == Operations Network
 
-Provides enterprise-grade management capabilities across all of your JBoss development, test and production environments. 
+Provides enterprise-grade management capabilities across all of your JBoss development, test and production environments.
+
+== Mobile
+
+Short description goes here
 
