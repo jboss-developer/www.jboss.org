@@ -30,6 +30,7 @@ downloads:
 upstream_projects:
   - aerogear
   - keycloak
+  - picketlink
 featured_items:
   - image_url: http://design.jboss.org/jbossdeveloper/sitedesign/jbossdeveloper_1_0/makerfiles/images/developermaterials_eap.png
     title: HTML5 Mobile with EAP 6 at OpenShift

@@ -9,7 +9,8 @@ todo: Some overview text.
 
 === Native Mobile Push
 
-Native mobile push server for Android, iOS, and Cordova applications.
+Take the complexity out of native push messaging from the most widely used application platforms (Android, iOS, and Cordova).
+Multiple client and server based SDKs, with full examples and documentation get you started and running quickly.
 
 == Icon1
 
@@ -19,7 +20,7 @@ Native mobile push server for Android, iOS, and Cordova applications.
 
 === Secured Push Console
 
-Secured push console with full REST interfaces allows multiple application configurations, key uploads and core analytics of activity.
+Secured push console with full REST interfaces allows multiple application configurations, key app uploads and core analytics of activity.
 
 == Icon2
 [.fa .fa-wrench .fa-5x .fa-fw]#&nbsp;#
@@ -29,7 +30,7 @@ Secured push console with full REST interfaces allows multiple application confi
 
 === Cloud Ready
 
-Built on EAP, deployable to OpenShift, and usable from any system.
+Built on EAP, deployable to OpenShift, and usable for any mobile application; consumer, or enterprise.
 
 == Icon3
 [.fa .fa-cloud .fa-5x .fa-fw]#&nbsp;#
