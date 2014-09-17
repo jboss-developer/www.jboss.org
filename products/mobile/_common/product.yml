@@ -5,6 +5,10 @@ has_installer: false
 vimeo_album: https://vimeo.com/album/3038566
 default_download_artifact_type: unified_push_server
 description: 'A unified mobile development and native push service built for the enterprise. Supporting iOS, Android, and Hybrid Cordova mobile applications.'
+guides:
+    AeroGear_Android_Push_API_Documentation:
+    AeroGear_Java_Client_API_Documentation:
+    Release_Notes:
 downloads:
   1.0.0.Beta1:
     description: This public Beta release of JBoss Mobile Add-On is the first chance to test drive native push messaging for iOS, Android, and Cordova apps. Check out the Push console, try our different development options, and help to drive the direction of the final release.
