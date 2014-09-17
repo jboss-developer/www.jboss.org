@@ -22,7 +22,7 @@ Built on Red Hat JBoss EAP for high-performance, scalability and light footprint
 
 === Accelerate Development
 
-Includes plug-ins for Red Hat JBoss Developer Studio and JBoss Portlet Bridge for intuitive, streamlined application development with simpliﬁed integration.
+Includes plug-ins for Red Hat JBoss Developer Studio and JBoss Portlet Bridge for intuitive, streamlined application development with simplified integration.
 
 == Icon2
 
