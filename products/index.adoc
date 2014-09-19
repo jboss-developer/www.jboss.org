@@ -60,5 +60,5 @@ Provides enterprise-grade management capabilities across all of your JBoss devel
 
 == Mobile
 
-Short description goes here
+A unified mobile development and native push service built for the enterprise. Supporting iOS, Android, and Hybrid Cordova mobile applications.
 
