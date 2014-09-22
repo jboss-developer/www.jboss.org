@@ -165,19 +165,12 @@ body(class="#{page.url.gsub('/','').split('.').first || 'home'} #{page.body_clas
     .wrapper.clearfix
       .content-wrapper
         = content
-    footer.bottom
-      .row
-        ul.footer-nav
-          li.redhat: a(href="https://www.redhat.com") Red Hat
-          li.security: a(href="https://access.redhat.com/site/security/team/contact/") Report a security problem
-          li Site Help:
-          li: a(href="#{site.base_url}/faq") FAQ
-          li: a(href="mailto:help@jboss.org" target="_blank") Report a website problem
+    = partial 'footer.html.slim'
   .overlay
     .overlay-wrap
-      .overlay-inner
-        a.overlay-close &times;
-        .overlay-content.row
+    .overlay-inner
+      a.overlay-close &times;
+      .overlay-content.row
 
   #fb-root
 

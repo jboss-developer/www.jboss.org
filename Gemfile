@@ -16,6 +16,7 @@ end
 #gem 'awestruct', '~> 0.5.6.beta8'
 gem 'awestruct', github: 'LightGuard/awestruct', branch: 'multi-thread-gen-trial'
 gem 'slim', '~> 2.0.0'
+gem 'daybreak', '~> 0.3.0'
 gem 'kramdown', '~> 1.0.1'
 gem 'asciidoctor', '~> 1.5.0'
 gem 'uglifier', '~> 2.0.1'
@@ -36,7 +37,6 @@ gem 'google-api-client', '~> 0.7'
 gem 'signet', '~> 0.5.1'
 gem 'gpgme', '~> 2.0'
 gem 'ruby-duration', '~> 3.1'
-gem 'daybreak'
 gem 'sass', '~> 3.4', '< 3.4.6'
 gem 'activesupport', '> 3.1', '< 4.2.0' # Used in aweplug by ruby-duration
 

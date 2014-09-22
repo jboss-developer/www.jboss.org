@@ -108,6 +108,7 @@ p.sign-in-options {
 // Footer
 footer.bottom {
   background:$grey-7;
+  color:$grey-2;
   ul.footer-nav {
     display: block;
     margin-bottom: 0;
@@ -115,6 +116,85 @@ footer.bottom {
       margin-right: 20px;
     }
   }
+
+  ul.sitemap {
+    color:$grey-2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+    a {
+      color:$grey-3;
+      font-size: emCalc(14);
+    }
+    ul {
+      margin-bottom: 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
+  a.newsletter {
+    font-size: emCalc(18);
+    color:$grey-2;
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  ul.social {
+    margin-top: 20px;
+    margin-left: 0;
+    li {
+      display:inline;
+      a {
+        color:white;
+        font-size: 25px;
+        margin-right: 5px;
+        border:0; 
+      }
+    }
+  }
+
+  a.redhatlogo {
+    background:cdn("../images/icons/redhat-logo.png");
+    display: block;
+    background-repeat: no-repeat;
+    font-size: 0;
+    height: 30px;
+    text-indent: -9999px;
+  }
+
+  .middleware {
+    img {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.footer-col1 {
+  @extend .column;
+  @extend .large-6;
+  @extend .medium-12;
+  @extend .hide-for-small-only;
+}
+
+.footer-col2 {
+  @extend .column;
+  @extend .large-6;
+  @extend .hide-for-small-only;
+  @extend .medium-12;
+}
+
+.footer-col3 {
+  @extend .column;
+  @extend .large-6;
+  @extend .medium-12;
+}
+
+.footer-col4 {
+  @extend .column;
+  @extend .large-6;
+  @extend .medium-24;
 }
 
 
