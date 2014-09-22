@@ -1,0 +1,81 @@
+footer.bottom
+  .row
+    .footer-col1
+      ul.sitemap
+        li: a(href="#{site.base_url}/technology/") Technology
+        ul
+          li: a(href="#{site.base_url}/products/") Supported Products
+          ul
+            li: a(href="#{site.base_url}/products/eap/overview") Red Hat JBoss EAP
+            li: a(href="#{site.base_url}/products/webserver/overview") Red Hat JBoss Web Server
+            li: a(href="#{site.base_url}/products/datagrid/overview") Red Hat JBoss Data Grid
+            li: a(href="#{site.base_url}/products/portal/overview") Red Hat JBoss Portal
+            li: a(href="#{site.base_url}/products/fsw/overview") Red Hat JBoss Fuse Service Works
+            li: a(href="#{site.base_url}/products/datavirt/overview") Red Hat JBoss Data Virtualization
+            li: a(href="#{site.base_url}/products/fuse/overview") Red Hat JBoss Fuse
+            li: a(href="#{site.base_url}/products/amq/overview") Red Hat JBoss A-MQ
+            li: a(href="#{site.base_url}/products/brms/overview") Red Hat JBoss BRMS
+            li: a(href="#{site.base_url}/products/bpmsuite/overview") Red Hat JBoss BPM Suite
+            li: a(href="#{site.base_url}/products/devstudio/overview") Red Hat JBoss Developer Studio
+            li: a(href="") Red Hat JBoss Mobile Add-On
+        ul
+          li: a(href="#{site.base_url}/projects/") Upstream Projects
+          li: a(href="#{site.base_url}/solutions/") Solutions
+          li: a(href="#") Community Powered Innovation
+    .footer-col2
+      ul.sitemap
+        li: a(href="#{site.base_url}/get-started/") Get Started
+        ul
+          li: a(href="#{site.base_url}/developer-materials/") Developer Materials
+          li: a(href="#{site.base_url}/why-subscribe/") Why Subscribe
+        li: a(href="#{site.base_url}/get-involved/") Get Involved
+        ul
+          li: a(href="#{site.base_url}/events") Events
+          li: a(href="#{site.base_url}/buzz") Buzz
+          li: a(href="#{site.base_url}/books") Books
+          li: a(href="#{site.base_url}/usergroups") UserGroups
+        li: a(href="#{site.base_url}/forums") Forums
+        ul
+          li: a(href="http://access.redhat.com/site/downloads") Customer Portal
+          li: a(href="#") Upstream Projects Forums
+        li: a(href="#{site.base_url}/downloads") Downloads
+    .footer-col3
+      ul.sitemap
+        li.security: a(href="https://access.redhat.com/site/security/team/contact/") Report a security problem
+        li: a(href="#") Advanced Search
+        li: a(href="#{site.base_url}/faq") FAQ
+        li: a(href="mailto:help@jboss.org" target="_blank") Report a website problem
+      a.newsletter(href="#{site.base_url}/newsletter")
+        i.fa.fa-bullhorn
+        | Sign Up for the Newsletter
+    .footer-col4
+      ul.social
+        li
+          a.has-tip(href="#{site.base_url}/newsletter" data-tooltip="" title="Newsletter" data-options="disable-for-touch:true")
+            i.fa.fa-bullhorn
+        li
+          a.has-tip(data-tooltip="" title="Blogs" data-options="disable-for-touch:true" href="http://planet.jboss.org")
+            i.fa.fa-comment
+        li
+          a.has-tip(data-tooltip="" title="Facebook" data-options="disable-for-touch:true" href="http://www.facebook.com/jboss")
+            i.fa.fa-facebook
+        li
+          a.has-tip(data-tooltip="" title="Twitter" data-options="disable-for-touch:true" href="http://twitter.com/jbossdeveloper")
+            i.fa.fa-twitter
+        li
+          a.has-tip(data-tooltip="" title="LinkedIn" data-options="disable-for-touch:true" href="http://www.linkedin.com/groups?home=&gid=167652")
+            i.fa.fa-linkedin
+        li
+          a.has-tip(data-tooltip="" title="Google Plus" data-options="disable-for-touch:true" href="https://plus.google.com/b/117471670409122206659/117471670409122206659/posts")
+            i.fa.fa-google-plus
+        li
+          a.has-tip(data-tooltip="" title="Vimeo" data-options="disable-for-touch:true" href="https://vimeo.com/jbossdeveloper")
+            i.fa.fa-vimeo-square
+      .middleware
+        img(src=cdn("#{site.base_url}/images/branding/product-logos/middleware-white.png") alt="Middleware")
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+
+      
+      p: a.redhatlogo(href="https://www.redhat.com") Red Hat
+      - time = Time.new
+      p Copyright © #{time.year} Red Hat, Inc.
