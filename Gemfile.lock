@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/awestruct/aweplug.git
-  revision: 0aad04e864366837669c8089b6621ce1e8177914
+  revision: d766ecd8abd6d8fdd3547810e0ac6be21d009430
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -9,7 +9,7 @@ GIT
       nokogiri (~> 1.5.10)
       oauth (~> 0.3.6)
       octokit (>= 1.24.0)
-      parallel (~> 1.0)
+      parallel (> 1.0.0)
       sass (~> 3.2)
       uglifier (~> 2.0.1)
       xml-simple (~> 1.1)
@@ -84,7 +84,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
       faraday (>= 0.7.4, < 0.10)
-    ffi (1.9.3)
+    ffi (1.9.4)
     formatador (0.2.5)
     fssm (0.2.10)
     git (1.2.8)

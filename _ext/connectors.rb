@@ -1,4 +1,5 @@
 require 'aweplug/helpers/searchisko'
+require 'aweplug/cache'
 require 'parallel'
 
 module JBoss
@@ -10,6 +11,8 @@ module JBoss
       end
 
       def execute site
+        Aweplug::Cache.default site
+
         # Run this after the GoogleSpreadsheet extension for connectors
         searchisko = Aweplug::Helpers::Searchisko.new({:base_url => site.dcp_base_url, 
                                                        :authenticate => true, 
