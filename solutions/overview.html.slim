@@ -1,0 +1,25 @@
+---
+layout: technology-base
+title: Solutions
+description: todo
+---
+h2 Solutions Overview
+
+.row.solutions-row
+  ul.large-block-grid-4.small-block-grid-2
+    - for solution in [1,2,3,4] 
+      li.solution.large-8.column(data-open-solution="#{solution}")
+        a.image-link: img(src=cdn(site.base_url + "/images/slider-image1.jpg"))
+        a.solution-name-link(href="#")
+          h3.solution-name Solution # #{solution}
+        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  
+.row
+  .large-16.large-centered.columns
+    h2.divider Stay up to date
+    .large-16.columns
+      p Sign up for the JBoss newsletter to receive updates on the latest solutions.
+    .large-8.columns
+      a.button.large
+        | Sign Up  
+        i.fa.fa-arrow-circle-right
