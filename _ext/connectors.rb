@@ -11,14 +11,14 @@ module JBoss
       end
 
       def execute site
-        Aweplug::Cache.default site
+        cache = Aweplug::Cache.default site
 
         # Run this after the GoogleSpreadsheet extension for connectors
         searchisko = Aweplug::Helpers::Searchisko.new({:base_url => site.dcp_base_url, 
                                                        :authenticate => true, 
                                                        :searchisko_username => ENV['dcp_user'], 
                                                        :searchisko_password => ENV['dcp_password'], 
-                                                       :cache => site.cache,
+                                                       :cache => cache,
                                                        :logger => site.log_faraday,
                                                        :searchisko_warnings => site.searchisko_warnings})
         Parallel.each(site.fuse_connectors, in_threads: 40) do |connector|
