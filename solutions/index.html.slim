@@ -1,0 +1,66 @@
+---
+layout: technology-base
+title: Solutions
+---
+.row
+  .large-24.columns
+    h2 Technology Solutions
+.row
+  .large-24.columns
+    ul.breadcrumbs
+      li
+        a href="#{site.base_url}/technology" Technology
+      li
+        a href="#{site.base_url}/solutions" Solutions
+      li
+        a href="#{site.base_url}/developer-materials/" Technology Solution
+.row
+  .large-24.columns
+    p
+      a.pull-right.button Share Your Story
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ea ratione, debitis nostrum numquam quibusdam quisquam saepe, impedit maxime eligendi alias, rem pariatur sunt necessitatibus. Ratione ipsam eveniet, laudantium modi minus iste accusamus rerum, facilis in commodi quo voluptatibus voluptas!
+.row.solutions-row
+  .large-24.columns
+    ul.large-block-grid-4.small-block-grid-2
+      - for solution in [1,2,3,4,5,6,7,8,9]
+        li.solution.large-8.column(data-open-solution="#{solution}")
+          / a.image-link: img(src=cdn(site.base_url + "/images/slider-image#{solution}.jpg"))
+          a.image-link: img(src="http://lorempixel.com/300/300?f=#{solution}")
+          a.solution-name-link(href="#")
+            h3.solution-name Solution # #{solution}
+  .solution-overlays.clearfix
+    - for solution in [1,2,3,4,5,6,7,8,9] 
+      .solution-wrap(data-solution="#{solution}")
+        .solution-overlay.clearfix
+          .large-12.column
+            h3: a Solution # #{solution}
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut nulla eget lacus gravida rutrum. Fusce sit amet tellus arcu. Nam in accumsan diam. Etiam quis augue risus, eget molestie sapien. Fusce vehicula aliquet neque, in cursus tellus venenatis eget. Pellentesque in magna nisl, vel dapibus dolor. Nullam a ante vel libero vehicula aliquet et sit amet mauris. Morbi dapibus pellentesque nisi sit amet sagittis. Aenean mollis porttitor neque. Aenean cursus convallis feugiat. Quisque et nisi sed lectus mattis auctor non at eros.
+
+            .solutions-meta
+              p.solution-meta
+                | Tags:
+                a(href="/") Awesome, Technology, Java
+              p.solution-meta
+                | Documentation:
+                a(href="/") Awesome, Technology, Java
+              p.solution-meta
+                | Contains:
+              a(href="/") Awesome, Technology, Java
+            a.button.shadow See the solution in action!
+          .large-12.column
+            .slider-wrapper.solution-slider
+              .slider
+                .swipe-wrap
+                  - for img in [1,2,3]
+                    .slide
+                      img(src=cdn(site.base_url + "/images/slider-image#{img}.jpg"))
+            a.fn-close-overlay(href="#") &times;
+            .solutions-slider-controls
+              a.prev(href="#")
+                i.fa.fa-chevron-circle-left
+              a.next(href="#")
+                i.fa.fa-chevron-circle-right
+              span.current-slide 1
+              span of
+              span.total-slides 0 
+        

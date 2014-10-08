@@ -1,4 +1,7 @@
 $(function() {
+
+  var solutionsOverlay;
+
   /*
     Show Solutions
   */
@@ -12,35 +15,46 @@ $(function() {
         parentPosition = el.closest('.row').offset(),
         height = el.height(),
         width = el.width();
+    solutionsOverlay = $('.solution-overlays');
 
     $('.solution-open').removeClass('solution-open');
     el.addClass('solution-open');
     
     // Toggle visibility of the ones we want
-    $('.solution-overlays').show();
+    $('.solution-overlays').show().css('display','table');
     overlay.show();
     $('[data-solution]').not(overlay).hide();
-
-    // Move the overlay vertically
-    $('.solution-overlays').css({
-      top : position.top + (height / 2)
-    });
-
-    // Move the arrow over
-    $('.solution-overlays span.arrow').css({
-      left: position.left  + (width / 2)
-    });
 
     // Make the slider for this overlay work
     app.createSlider(overlay.find('.slider'));
 
-    // Bind to close it
-    $('body').on('click','.fn-close-overlay',function(e) {
-      e.preventDefault();
-      $('.solution-overlays').hide();
-      $('.solution-open').removeClass('solution-open');
+    $('body').on('keydown.solutions',function(e) {
+      if(e.keyCode === 27) {
+        solutionsOverlay.hide();
+        $('.solution-open').removeClass('solution-open');
+        $('body').unbind('keydown.solutions');
+      }
     });
 
   });
+
+  /*
+    Bind close button
+  */
+
+  $('body').on('click','.fn-close-overlay, .solution-wrap',function(e) {
+    if(e.target != this) {
+      return;
+    }
+    e.preventDefault();
+    solutionsOverlay.hide();
+    $('.solution-open').removeClass('solution-open');
+    $('body').unbind('keydown.solutions');
+  });
+
+  /*
+    Bind to closing when clicking overlay 
+  */
+
 });
 
