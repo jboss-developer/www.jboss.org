@@ -7,7 +7,6 @@ require 'awestruct/page'
 require 'awestruct/handlers/layout_handler'
 require 'awestruct/handlers/tilt_handler'
 require 'awestruct/handler_chain'
-require 'parallel'
 
 module JBoss::Developer::Extensions
   class Stacks 
@@ -32,7 +31,7 @@ module JBoss::Developer::Extensions
                                                      :cache => site.cache,
                                                      :logger => site.log_faraday,
                                                      :searchisko_warnings => site.searchisko_warnings})
-      Parallel.each(yml['availableRuntimes'], in_threads: 20) do |runtime|
+      yml['availableRuntimes'].each do |runtime|
         # WARNING Hacks below
         case runtime['labels']['runtime-type']
         when 'JPP'
