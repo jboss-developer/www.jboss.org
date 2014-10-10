@@ -10,7 +10,7 @@ ul.side-nav
     a(href="#") Menu
   - page.nav_items.each do |k,v|
     - if k == "connectors"
-      - if page.parent.product.abbreviated_name == "JBoss Fuse"
+      - if page.parent.product.abbreviated_name == "JBoss Fuse" || page.parent.product.abbreviated_name == "JBoss Fuse Service Works"
         li(class="#{k == page.product_subsection ? "active" : ""}"): a(href="../#{k}") #{v}
     - else
       li(class="#{k == page.product_subsection ? "active" : ""}"): a(href="../#{k}") #{v}
