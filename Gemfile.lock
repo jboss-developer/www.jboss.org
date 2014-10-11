@@ -79,6 +79,7 @@ GEM
     compass-960-plugin (0.10.4)
       compass (>= 0.10.0)
     curb (0.8.6)
+    daybreak (0.3.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -232,6 +233,7 @@ DEPENDENCIES
   awestruct!
   blinkr (~> 0.2.5)
   curb (~> 0.8.5)
+  daybreak
   git (~> 1.2.5)
   google-api-client (~> 0.7)
   gpgme (~> 2.0)

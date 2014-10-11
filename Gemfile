@@ -36,6 +36,7 @@ gem 'google-api-client', '~> 0.7'
 gem 'signet', '~> 0.5.1'
 gem 'gpgme', '~> 2.0'
 gem 'ruby-duration', '~> 3.1'
+gem 'daybreak'
 
 group :development do
   gem 'rb-inotify', require: false
