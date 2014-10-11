@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/awestruct/aweplug.git
-  revision: a83300dacc43c27eb435e1ba700232fd7141fc8f
+  revision: e8b1da227edd8143b7d1d1a70fcc18b93324b9f0
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
