@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/awestruct/aweplug.git
-  revision: e8b1da227edd8143b7d1d1a70fcc18b93324b9f0
+  revision: da6d544dedb0b5ea352f5a4682e045ccc08839e4
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -13,30 +13,6 @@ GIT
       sass (~> 3.2)
       uglifier (~> 2.0.1)
       xml-simple (~> 1.1)
-
-GIT
-  remote: git://github.com/awestruct/awestruct.git
-  revision: a258a7d1d948c57ebf342f8b50ef05519475c741
-  branch: perf_testing
-  specs:
-    awestruct (0.5.6.beta)
-      asciidoctor
-      bootstrap-sass (~> 3.1.1.0)
-      colorize (~> 0.7.1)
-      compass (~> 0.12.4)
-      compass-960-plugin (~> 0.10.4)
-      git (~> 1.2.6)
-      guard-livereload (~> 2.1.2)
-      haml (~> 4.0.5)
-      listen (~> 2.7.1)
-      mime-types (~> 2.1)
-      nokogiri (~> 1.5.10)
-      parallel (> 1.1.1)
-      rack (~> 1.5.2)
-      rest-client (~> 1.7.2)
-      ruby-s3cmd (~> 0.1.5)
-      tilt (~> 2.0.1)
-      zurb-foundation (~> 4.3.2)
 
 GEM
   remote: https://rubygems.org/
@@ -60,6 +36,24 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
+    awestruct (0.5.6.beta)
+      asciidoctor
+      bootstrap-sass (~> 3.1.1.0)
+      colorize (~> 0.7.1)
+      compass (~> 0.12.4)
+      compass-960-plugin (~> 0.10.4)
+      git (~> 1.2.6)
+      guard-livereload (~> 2.1.2)
+      haml (~> 4.0.5)
+      listen (~> 2.7.1)
+      mime-types (~> 2.1)
+      nokogiri (~> 1.5.10)
+      parallel (> 1.1.1)
+      rack (~> 1.5.2)
+      rest-client (~> 1.7.2)
+      ruby-s3cmd (~> 0.1.5)
+      tilt (~> 2.0.1)
+      zurb-foundation (~> 4.3.2)
     blinkr (0.2.5)
       nokogiri (~> 1.5)
       parallel (~> 1.1.0)
@@ -230,7 +224,7 @@ PLATFORMS
 DEPENDENCIES
   asciidoctor (~> 1.5.0)
   aweplug!
-  awestruct!
+  awestruct (~> 0.5.4.rc3)
   blinkr (~> 0.2.5)
   curb (~> 0.8.5)
   daybreak
@@ -243,7 +237,7 @@ DEPENDENCIES
   nokogiri (~> 1.5.10)
   oauth (~> 0.3.6)
   oily_png (~> 1.1.1)
-  parallel (~> 1.1.0)
+  parallel (> 1.1.0)
   rake (~> 10.0.4)
   rb-fchange
   rb-fsevent

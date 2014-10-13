@@ -27,6 +27,7 @@ profile_base: &profile
   log_faraday: true
   push_to_searchisko: true
   minify: &minify true 
+  build_threads: 40
   robots: 
     disallow: true
   deploy:
