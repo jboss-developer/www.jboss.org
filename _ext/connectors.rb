@@ -1,5 +1,4 @@
 require 'aweplug/helpers/searchisko'
-require 'parallel'
 
 module JBoss
   module Developer
@@ -18,7 +17,7 @@ module JBoss
                                                        :cache => site.cache,
                                                        :logger => site.log_faraday,
                                                        :searchisko_warnings => site.searchisko_warnings})
-        Parallel.each(site.fuse_connectors, in_threads: 40) do |connector|
+        site.fuse_connectors.each do |connector|
           searchisko_hash = connector.collect { |(key, value)|
             case key
             when 'name'
