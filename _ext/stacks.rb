@@ -2,7 +2,7 @@ require 'yaml'
 require 'aweplug/handlers/synthetic_handler'
 require 'aweplug/helpers/searchisko'
 require 'aweplug/helpers/git_metadata'
-require 'aweplug/cache/file_cache'
+require 'aweplug/cache'
 require 'awestruct/page'
 require 'awestruct/handlers/layout_handler'
 require 'awestruct/handlers/tilt_handler'
@@ -22,14 +22,12 @@ module JBoss::Developer::Extensions
     end
 
     def execute site
-      if (site.cache.nil?)
-        site.send('cache=', Aweplug::Cache::FileCache.new)
-      end
+      cache = Aweplug::Cache.default site
       searchisko = Aweplug::Helpers::Searchisko.new({:base_url => site.dcp_base_url,
                                                      :authenticate => true,
                                                      :searchisko_username => ENV['dcp_user'],
                                                      :searchisko_password => ENV['dcp_password'],
-                                                     :cache => site.cache,
+                                                     :cache => cache,
                                                      :logger => site.log_faraday,
                                                      :searchisko_warnings => site.searchisko_warnings})
       Parallel.each(yml['availableRuntimes'], in_threads: 20) do |runtime|

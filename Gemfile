@@ -14,6 +14,7 @@ end
  
 # GEMS
 gem 'awestruct', '~> 0.5.4.rc3'
+#gem 'awestruct', github: 'awestruct'
 gem 'slim', '~> 2.0.0'
 gem 'kramdown', '~> 1.0.1'
 gem 'asciidoctor', '~> 1.5.0'
@@ -28,13 +29,14 @@ gem 'oily_png', '~> 1.1.1'
 gem 'nokogiri', '~> 1.5.10'
 gem 'therubyracer', platforms: :ruby, require: linux_only('therubyracer')
 #gem 'aweplug', path: '~/projects/ruby/aweplug'
-gem 'parallel', '~> 1.1.0'
+gem 'parallel', '> 1.1.0'
 #gem 'aweplug', path: '../aweplug'
 gem 'mime-types', '2.1'
 gem 'google-api-client', '~> 0.7'
 gem 'signet', '~> 0.5.1'
 gem 'gpgme', '~> 2.0'
 gem 'ruby-duration', '~> 3.1'
+gem 'daybreak'
 
 group :development do
   gem 'rb-inotify', require: false

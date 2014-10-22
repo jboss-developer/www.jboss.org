@@ -1,7 +1,7 @@
 require 'json'
 require 'aweplug/helpers/searchisko'
 require 'aweplug/helpers/video'
-require 'aweplug/cache/file_cache'
+require 'aweplug/cache'
 
 module JBoss
   module Developer
@@ -30,16 +30,14 @@ module JBoss
 
 
         def execute(site)
+          cache = Aweplug::Cache.default site
           @searchisko = Aweplug::Helpers::Searchisko.new({:base_url => site.dcp_base_url, 
                                                           :authenticate => true, 
                                                           :searchisko_username => ENV['dcp_user'], 
                                                           :searchisko_password => ENV['dcp_password'], 
-                                                          :cache => site.cache,
+                                                          :cache => cache,
                                                           :logger => site.log_faraday,
                                                           :searchisko_warnings => site.searchisko_warnings})
-          if site.cache.nil?
-            site.send('cache=', Aweplug::Cache::FileCache.new)
-          end
           articles = []
           solutions = []
           site.products = {}
