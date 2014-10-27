@@ -4,7 +4,6 @@
 
 app.connectors = {
     open: function (html) {
-        console.log('Open connector called;');
         $('.overlay-content').html(html);
         $('body').addClass('overlay-open');
     },
@@ -21,6 +20,8 @@ app.connectors = {
         //Currently the only way to specify no limit
         var maxResults = 500;
         var url = app.dcp.url.search;
+
+        //Query returns items where any of the three target products are set to the required product.
         var query = ["(sys_content_type: jbossdeveloper_connector AND (target_product_1: " + target_product + " OR target_product_2: " + target_product + " OR target_product_3: " + target_product + "))"];
 
         var request_data = {
@@ -61,13 +62,19 @@ app.connectors = {
 
             var imgsrc = "http://static.jboss.org/connectors/" + props.id + "_200x150.png";
 
+            //Temporary hack to fix description size. this is being fixed at source.
+            var shortDescription = props.sys_description;
+            if (shortDescription.length > 150 ) {
+                shortDescription = shortDescription.slice(0,146).concat(' ...');
+            }
+
             var template = "<li class=\"connector\">"
-                + "<a class=\"fn-open-connector\" href=\"#\"><img class=\"connector-logo\" src='" + imgsrc + "'></a>"
+                + "<a class=\"fn-open-connector\" href=\"#\"><img class=\"connector-logo\" onerror=\"app.connectors.fallbackImage(this)\" src='" + imgsrc + "'></a>"
                 + "<h3><a class=\"fn-open-connector\" href=\"#\">" + props.sys_title +  "</a></h3>"
-                + "<p>" + props.sys_description + "</p>"
+                + "<p>" + shortDescription + "</p>"
                 + "  <div class=\"connector-overlay-content\">"
                 + "      <div class=\"row\">"
-                + "         <div class=\"large-7 columns\"><img class=\"connector-logo\" src=\"" + imgsrc + "\"></div>"
+                + "         <div class=\"large-7 columns\"><img class=\"connector-logo\" onerror=\"app.connectors.fallbackImage(this)\" src=\"" + imgsrc + "\"></div>"
                 + "         <div class=\"large-17 columns\">";
             if ('sys_content' in props) {
                 template += "            <p>" + props.sys_content + "</p>";
@@ -133,9 +140,7 @@ $(function () {
 
     $('ul.results').on('click','a.fn-open-connector',function(e){
         e.preventDefault();
-        console.log("Open connector clicked;")
         var html = $(this).parent().parent().find('.connector-overlay-content').html();
-        console.log("html: ", html)
         app.connectors.open(html);
     });
 

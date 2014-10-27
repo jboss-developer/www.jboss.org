@@ -12,12 +12,9 @@ module JBoss
       def execute site
         searchisko = Aweplug::Helpers::Searchisko.default site, 0
 
-        Parallel.each(site.fuse_connectors, in_threads: 40) do |connector|
+        Parallel.each(site.fuse_connectors, in_threads: 40) do |(id, data)|
 
-          connectorID = connector[0]
-          connectorData = connector[1]
-
-          searchisko_hash = connectorData.collect { |(key, value)|
+          searchisko_hash = data.collect { |(key, value)|
 
             case key
             when 'name'
@@ -29,10 +26,10 @@ module JBoss
             else
               [key, value]
             end
-          }.to_h.merge({'sys_url_view' => "#{site.base_url}/products/fuse/connectors#!id=#{connectorID}",})
+          }.to_h.merge({'sys_url_view' => "#{site.base_url}/products/fuse/connectors#!id=#{id}",})
 
           searchisko.push_content('jbossdeveloper_connector',
-                        connectorID,
+                        id,
                         searchisko_hash.to_json)
 
         end

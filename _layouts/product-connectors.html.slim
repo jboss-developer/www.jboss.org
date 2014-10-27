@@ -1,12 +1,14 @@
 ---
-layout: product-no-sidebar
+layout: product-base
 status: green
 type: Connectors
 ---
 
-h2.divider#overview Connectors
+.large-6.columns
+  = partial 'product-left-menu.html.slim', {'parent' => page}
 
-= page._overview
-
-ul.small-block-grid-2.large-block-grid-4.medium-block-grid-3.results
+.large-18.columns.text-content
+  h2.divider#overview Connectors
+  = page._overview
+  ul.small-block-grid-2.large-block-grid-4.medium-block-grid-3.results
 
