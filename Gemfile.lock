@@ -1,6 +1,7 @@
 GIT
-  remote: git://github.com/awestruct/aweplug.git
-  revision: ec4b922ee5c6767b1c4637b4c58a32473235fafe
+  remote: git://github.com/lightguard/aweplug.git
+  revision: 79da97848b92681a2dd6f0e2e812de26027a6f57
+  branch: build_problem_ferret
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -109,7 +110,7 @@ GEM
       uuidtools (>= 2.1.0)
     gpgme (2.0.7)
       mini_portile (>= 0.5.0, <= 0.6.0)
-    guard (2.6.1)
+    guard (2.7.0)
       formatador (>= 0.2.4)
       listen (~> 2.7)
       lumberjack (~> 1.0)
