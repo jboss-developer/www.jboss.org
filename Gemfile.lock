@@ -14,6 +14,16 @@ GIT
       uglifier (~> 2.0.1)
       xml-simple (~> 1.1)
 
+GIT
+  remote: git://github.com/pmuir/blinkr.git
+  revision: 464c0d0bb61df4d8ced2dcbab9049d59356616ad
+  specs:
+    blinkr (0.2.5)
+      nokogiri (~> 1.5)
+      parallel (~> 1.1.0)
+      slim (~> 2.0)
+      typhoeus (~> 0.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -53,11 +63,6 @@ GEM
       ruby-s3cmd (~> 0.1.5)
       tilt (~> 2.0.1)
       zurb-foundation (~> 4.3.2)
-    blinkr (0.2.5)
-      nokogiri (~> 1.5)
-      parallel (~> 1.1.0)
-      slim (~> 2.0)
-      typhoeus (~> 0.6)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     celluloid (0.16.0)
@@ -231,7 +236,7 @@ DEPENDENCIES
   asciidoctor (~> 1.5.0)
   aweplug!
   awestruct (~> 0.5.6.beta4)
-  blinkr (~> 0.2.5)
+  blinkr!
   curb (~> 0.8.5)
   daybreak
   git (~> 1.2.5)
