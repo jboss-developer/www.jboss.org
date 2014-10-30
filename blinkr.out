@@ -1,0 +1,54 @@
+Loading sitemap from sitemap.xml
+Loaded page http://www.jboss.org/quickstarts/portal/cdi-jsf-portlet/
+----------------------
+ 43 links to check 
+----------------------
+Loaded http://www.jboss.org/quickstarts/portal/cdi-jsf-portlet/ via typhoeus 
+Loaded http://www.jboss.org/products via typhoeus 
+Loaded http://www.jboss.org//quickstarts/portal/cdi-jsf-portlet/ via typhoeus 
+Loaded http://www.jboss.org/quickstarts/portal/cdi-jsf-portlet/#build-and-deploy-the-quickstart via typhoeus 
+Loaded http://www.jboss.org/quickstarts/portal/cdi-jsf-portlet/#access-the-deployed-portlet via typhoeus 
+Loaded http://www.jboss.org/quickstarts/portal/cdi-jsf-portlet/#undeploy-the-archive via typhoeus 
+Loaded http://www.jboss.org/quickstarts/portal/cdi-jsf-portlet/#use-jboss-developer-studio-or-eclipse-with-jboss-tools-to-run-this-quickstart via typhoeus 
+Loaded http://www.jboss.org/technology via typhoeus 
+Loaded http://www.jboss.org/projects via typhoeus 
+Loaded http://www.jboss.org via typhoeus 
+Loaded http://www.jboss.org/downloads via typhoeus 
+Loaded http://www.jboss.org/developer-materials/ via typhoeus 
+Loaded http://www.jboss.org/quickstarts/portal/cdi-jsf-portlet/#what-is-it via typhoeus 
+Loaded http://www.jboss.org/get-started via typhoeus 
+Loaded http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/guide/Introduction/ via typhoeus 
+|url: http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/guide/Introduction/, code: 404, message: Not Found, ignored: true|
+Loaded http://www.jboss.org/forums via typhoeus 
+Loaded http://www.openshift.com via typhoeus 
+Loaded http://www.jboss.org/newsletter via typhoeus 
+Loaded http://www.jboss.org/get-involved via typhoeus 
+Loaded http://www.jboss.org/faq via typhoeus 
+Loaded https://github.com/jboss-developer/jboss-portal-quickstarts/tree/6.1.1-redhat-2 via typhoeus 
+Loaded http://www.linkedin.com/groups?home=&gid=167652 via typhoeus 
+Loaded http://www.facebook.com/jboss via typhoeus 
+Loaded http://www.redhat.com via typhoeus 
+Loaded https://vimeo.com/jbossdeveloper via typhoeus 
+Loaded https://access.redhat.com/ via typhoeus 
+Loaded https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/GenericPortlet_and_Portlet_Filter_Injection.html via typhoeus 
+|url: https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/GenericPortlet_and_Portlet_Filter_Injection.html, code: 404, message: Not Found, ignored: false|
+Loaded https://www.redhat.com via typhoeus 
+Loaded https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/sect-Starting_a_Portlet_Project.html via typhoeus 
+|url: https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/sect-Starting_a_Portlet_Project.html, code: 404, message: Not Found, ignored: false|
+Loaded https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/chap-Basic_JSF_Portlet_Development.html via typhoeus 
+|url: https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/chap-Basic_JSF_Portlet_Development.html, code: 404, message: Not Found, ignored: true|
+Loaded https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/sect-Standard_Portlet_Development_JSR-286.html via typhoeus 
+|url: https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/sect-Standard_Portlet_Development_JSR-286.html, code: 404, message: Not Found, ignored: false|
+Loaded http://access.redhat.com via typhoeus 
+Loaded https://plus.google.com/b/117471670409122206659/117471670409122206659/posts via typhoeus 
+Loaded http://planet.jboss.org via typhoeus 
+Loaded https://access.redhat.com/site/security/team/contact/ via typhoeus 
+Loaded https://access.redhat.com/knowledge/docs/JBoss_Enterprise_Application_Platform/ via typhoeus 
+Loaded https://sso.jboss.org/login?service=http://www.jboss.org via typhoeus 
+Loaded http://twitter.com/jbossdeveloper via typhoeus 
+Loaded https://github.com/jboss-developer/jboss-portal-quickstarts/archive/6.1.1-redhat-2.zip via typhoeus 
+Loaded https://access.redhat.com/groups/jboss-enterprise-middleware via typhoeus 
+Loaded https://developer.jboss.org/people/ppalaga via typhoeus 
+Loaded https://developer.jboss.org/people/kenfinni via typhoeus 
+Loaded https://community.jboss.org/register.jspa via typhoeus 
+Loaded 1 pages using phantomjs. Performed 43 requests using typhoeus.
