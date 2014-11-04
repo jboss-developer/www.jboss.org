@@ -64,7 +64,7 @@ head
   /[if lt IE 9]
     script type='text/javascript' src='//html5shim.googlecode.com/svn/trunk/html5.js'
 
-body(class="#{page.url.gsub('/','').split('.').first || 'home'} #{page.body_class}")
+body(class="#{page.url.gsub('/','').split('.').first || 'home'} #{page.body_class} theme-dark")
   - if site.metrics
     / All metrics and tracking are run via Google Tag Manager
     javascript:

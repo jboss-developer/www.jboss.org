@@ -78,7 +78,7 @@
 @import "magula";
 @import "microsite";
 @import "print";
-// @import "theme-dark";
+@import "theme-dark";
 
 
 
@@ -363,7 +363,7 @@ i[class*=fa].invert {
 .content-wrapper {
   background:white;
   max-width:1200px;
-  padding:10px 20px 10px 20px;
+  padding:10px;
   margin: 0 auto;
 }
 
