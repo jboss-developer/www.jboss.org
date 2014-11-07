@@ -30,7 +30,7 @@ description: Forums are the primary way that JBoss Developers communicate.
         th Description
         th Posts
         th Monthly Activity
-      - site.products.reject {|k,v| v.forum.nil?}.values.sort {|a,b| b.forum[:count] <=> a.forum[:count]}.each do |product|
+      - site.products.reject {|k,v| v.forum.nil?}.reject {|k,v| v.forum[:count].nil?}.values.sort {|a,b| b.forum[:count] <=> a.forum[:count]}.each do |product|
         tr
           td.product-name
             a(href="#{product.forum.url}") #{product.abbreviated_name}

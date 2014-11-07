@@ -1,0 +1,43 @@
+name: Red Hat JBoss Mobile Add-On
+abbreviated_name: JBoss Mobile
+current_version: 1.0.0.Beta1
+has_installer: false
+vimeo_album: https://vimeo.com/album/3038566
+default_download_artifact_type: unified_push_server
+description: 'A unified mobile development and native push service built for the enterprise. Supporting iOS, Android, and Hybrid Cordova mobile applications.'
+guides:
+    AeroGear_Android_Push_API_Documentation:
+    AeroGear_Java_Client_API_Documentation:
+    Release_Notes:
+downloads:
+  1.0.0.Beta1:
+    description: This public Beta release of JBoss Mobile Add-On is the first chance to test drive native push messaging for iOS, Android, and Cordova apps. Check out the Push console, try our different development options, and help to drive the direction of the final release.
+    tag_line: todo, release tag-line
+    release_date: 2014-08-06
+    assets:
+      unified_push_server:
+        name: Unified Push - Server
+        artifacts:
+          zip:
+            size: 999mb
+          source:
+            size: 999mb
+      unified_push_clients:
+        name: Unified Push - Clients
+        artifacts:
+          zip:
+            size: 999mb
+          source:
+            size: 999mb
+      maven_repo:
+      release_notes:
+upstream_projects:
+  - aerogear
+  - keycloak
+  - picketlink
+featured_items:
+  - image_url: http://design.jboss.org/jbossdeveloper/sitedesign/jbossdeveloper_1_0/makerfiles/images/developermaterials_eap.png
+    title: HTML5 Mobile with EAP 6 at OpenShift
+    text: Build HTML5 mobile applications with EAP 6
+    url: /video/vimeo/92554627
+

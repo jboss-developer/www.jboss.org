@@ -1,0 +1,58 @@
+:awestruct-layout: product-overview
+:awestruct-interpolate: true
+:leveloffset: 1
+
+== Overview
+
+Red Hat JBoss Mobile Add-On is a set of components for developing and supporting hybrid, native and push-enabled mobile applications.
+JBoss Mobile Add-On provides resources for creating and connecting mobile applications to your server-side Java EE infrastructure.
+
+== Features1
+
+=== Native Mobile Push
+
+Take the complexity out of native push messaging from the most widely used application platforms (Android, iOS, and Cordova).
+Multiple client and server based SDKs, with full examples and documentation get you started and running quickly.
+
+== Icon1
+
+[.fa .fa-mobile .fa-5x .fa-fw]#&nbsp;#
+
+== Features2
+
+=== Secured Push Console
+
+Secured push console with full REST interfaces allows multiple application configurations, key app uploads and core analytics of activity.
+
+== Icon2
+[.fa .fa-wrench .fa-5x .fa-fw]#&nbsp;#
+
+
+== Features3
+
+=== Cloud Ready
+
+Built on EAP, deployable to OpenShift, and usable for any mobile application; consumer, or enterprise.
+
+== Icon3
+[.fa .fa-cloud .fa-5x .fa-fw]#&nbsp;#
+
+== Detail
+
+=== Native Mobile Push
+The UnifiedPush Server is at the core of JBoss Mobile Add-On.
+With a single request to the UnifiedPush Server, your server-side application can send push notification requests to both Apple Push Notification Service for iOS devices and Google Cloud Messaging for Android devices.
+
+The UnifiedPush Server acts as push notification middleware, routing push notification requests from your server-side applications to the appropriate mobile-specific notification centers.
+
+image::#{cdn(site.base_url + '/images/products/mobile/console.png')}[]
+
+Through the modern and simple UnifiedPush Server Console, you can register and manage the push services of all of your Android, iOS and Cordova push applications, streamlining push application management.
+
+
+=== Tooling from JBDS
+Apache Cordova-optimized tooling, letting you visually model your HTML5-based UI in either jQuery Mobile or AngularJS + Ionic and mobile hybrid simulator for interactive testing of your application.
+
+== Resources
+
+todo: Some resources could go here
