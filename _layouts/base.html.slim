@@ -80,14 +80,14 @@ body(class="#{page.url.gsub('/','').split('.').first || 'home'} #{page.body_clas
     = partial 'under-development.html.slim', parent: page
   / tabzilla
   .dropup
-      a(class="tabnav-closed" href="#" id="tab") Red Hat
+      a(class="tabnav-closed" href="#" id="tab" data-use="navigation") Red Hat
   .site-wrapper
     header.main
       i.nav-toggle.nav-toggle-open
       .row
         .large-7.columns
           h1.logo
-            a(href="#{site.base_url}") JBoss<strong>Developer</strong>
+            a(href="#{site.base_url}" data-use="navigation") JBoss<strong>Developer</strong>
           / i.nav-toggle.nav-toggle-close &times;
     - unless page.primary_nav_hidden  
       nav.top-bar
