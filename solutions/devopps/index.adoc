@@ -1,0 +1,42 @@
+= Docker
+:awestruct-layout: solution-detail
+
+
+== Left Section
+
+=== About
+Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. 
+Ius cibo lorem id, veri movet mei ut. Sed saepe oratio ex, vis te assum aliquid suscipiantur, eos ei prompta expetendis. Ne exerci gubergren his.
+
+=== Problem Statement
+Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. 
+Ius cibo lorem id, veri movet mei ut. Sed saepe oratio ex, vis te assum aliquid suscipiantur, eos ei prompta expetendis. Ne exerci gubergren his.
+
+=== Outcomes
+* Lorem ipsum dolor sit amet, ex malis mandamus tractatos his. 
+* Ius cibo lorem id, veri movet mei ut. Sed saepe oratio ex, vis.
+
+== Right Section
+
+=== Why DevOpps
+Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. 
+Ius cibo lorem id, veri movet mei ut. Sed saepe oratio ex, vis te assum aliquid suscipiantur, eos ei prompta expetendis. Ne exerci gubergren his.
+
+=== Industry
+Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. 
+
+=== Products
+Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. 
+
+=== Partners
+Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. 
+
+
+== Extra Section Title
+An Optional Extra Section
+
+== Extra Section
+Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. 
+Ius cibo lorem id, veri movet mei ut. Sed saepe oratio ex, vis te assum aliquid suscipiantur, eos ei prompta expetendis. Ne exerci gubergren his.
+Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. 
+Ius cibo lorem id, veri movet mei ut. Sed saepe oratio ex, vis te assum aliquid suscipiantur, eos ei prompta expetendis. Ne exerci gubergren his.
