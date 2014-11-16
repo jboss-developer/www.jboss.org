@@ -1,0 +1,19 @@
+name: Dev Opps
+sub_title: Sub-title goes here (Optional)
+long_description: Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. Ius cibo lorem id, veri movet mei ut. Sed saepe oratio ex, vis te assum aliquid suscipiantur, eos ei prompta expetendis. Ne exerci gubergren his.
+overview_links:
+  - description: Link 1
+    url: https://www.google.co.uk
+  - description: Link 2
+    url: https://www.google.co.uk
+  - description: Link 3
+    url: https://www.google.co.uk
+speech_bubble:
+  quote: Lorem ipsum dolor sit amet, ex malis mandamus tractatos his, quaeque laoreet mei no, usu no nemore pertinacia. Ius cibo lorem id, veri movet mei ut. Sed saepe oratio ex, vis te assum aliquid suscipiantur, eos ei prompta expetendis. Ne exerci gubergren his.
+  author: Some respected person
+image_link:
+  description: Description of download
+  url: http://www.google.co.uk
+related_solutions:
+  - docker
+  - unifiedpush
