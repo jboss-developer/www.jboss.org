@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.jboss.org/quickstarts/portal/cdi-jsf-portlet/</loc>
+    <lastmod>2014-10-30</lastmod>
+    <priority>0.1</priority>
+    <changefreq>daily</changefreq>
+  </url>
+</urlset>
