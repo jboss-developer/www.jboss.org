@@ -66,6 +66,14 @@ ignores:
   - url: https://infinispan.ci.cloudbees.com/ #JIRA Issue ISPN-4600 - Build Link ----- Still Outstanding
   - url: issues.jboss.org/browse/WINDUP #JIRA Issue WINDUP-180 - JIRA Link ----- Still Outstandingreport: _tmp/blinkr/index.html
   - url: contributing/index.html#
+  - url: https://developer.jboss.org/en/products/eap
+  - url: https://developer.jboss.org/en/products/bpmsuite
+  - url: https://developer.jboss.org/en/products/datavirt
+  - url: https://developer.jboss.org/en/products/fsw
+  - url: https://developer.jboss.org/en/products/webserver
+  - url: https://developer.jboss.org/en/products/datagrid
+  - url: https://developer.jboss.org/en/products/portal
+  - url: https://developer.jboss.org/en/products/brms
 max_page_retys: 10
 max_retrys: 10
 browser: phantomjs
