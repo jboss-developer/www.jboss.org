@@ -102,6 +102,7 @@
 
 a {
   color:$link;
+  cursor:pointer;
   &:hover {
     color:$linkhover;
   }
