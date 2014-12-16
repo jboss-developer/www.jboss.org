@@ -44,36 +44,6 @@ downloads:
         size: 5mb
       source:
         size: 37mb
-  6.3.0.Beta:
-    description: Minor release of JBoss EAP 6.x series
-    tag_line: Features an updated administrative console that includes a new homepage and exposes the new JBoss EAP patching feature.  Also includes domain recovery improvements and support for CDI injection with PicketLink.  Try it today!
-    release_date: 2014-05-15
-    assets:
-      zip:
-        name: Zip Files
-        artifacts: 
-          zip:
-            size: 150mb
-      release_notes:
-      quickstarts:
-        size: 5mb
-      source:
-        size: 37mb
-  6.3.0.Alpha:
-    description: Minor release of JBoss EAP 6.x series
-    tag_line: Features an updated administrative console that includes a new homepage and exposes the new JBoss EAP patching feature.  Also includes domain recovery improvements and support for CDI injection with PicketLink.  Try it today!
-    release_date: 2014-03-25
-    assets:
-      zip:
-        name: Zip Files
-        artifacts:
-          zip:
-            size: 148mb
-      quickstarts:
-        size: 5mb
-      release_notes:
-      source:
-        size: 35mb
   6.2.0.GA:
     description: Minor release of JBoss EAP 6.x series
     release_date: 2013-12-04
