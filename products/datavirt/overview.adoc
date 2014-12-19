@@ -39,6 +39,14 @@ Lean Integration: Reduce data sprawl by avoiding compulsory data copying and min
 
 == Detail
 
+
+== New Feature
+=== New in JBoss Data Virtualization v6.1.0 Beta release
+
+Big Data technology including Cloudera Impala, MongoDB, Apache Solr and JDG Remoting Cassandra (tech preview)
+Cloud enablement with support for Amazon EC2, Google Compute Engine, SFDC Bulk API and Beta availability on OpenShift
+Improving Productivity and Deployment with a new Security audit log dashboard, simplified custom translator, EAP 6.3, RHEL 7, MariaDB and Azul JVM
+
 image::images/products/datavirt/red-hat-jboss-datavirt.png[]
 
 JBoss Data Virtualization offers comprehensive data abstraction, federation, integration, transformation, and delivery capabilities to combine data from one or multiple sources into reusable and unified logical data models accessible thru standard SQL (JDBC, ODBC, Hibernate) and/or web services (REST, OData, SOAP) interfaces for agile data utilization and sharing. It enables agile data utilization by providing following functionality:
