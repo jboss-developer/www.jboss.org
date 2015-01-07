@@ -1,0 +1,46 @@
+---
+layout: microsite
+hero_class: champions
+---
+
+= define 'hero'
+  .row
+    .large-12.column
+    .large-12.column
+      p JBoss Champions is a selected group of community members who are passionate advocate of JBoss technologies under a program sponsored by Red Hat. JBoss Champions use a variety of JBoss Projects and/or JBoss Products and actively share their deep technical expertise about it in the community, within their company and their customers or partners. This could be done in forums, blogs, screencasts, tweets, conferences, social media, whitepapers, articles, books, and other means.
+
+.wide.microsite-text-points
+  .row
+    .large-12.column
+      h3 Who is a JBoss Champion?
+      ul
+        li JBoss Champions areas of contributions include, but not limited to:
+        li Senior developers, architects, consultants, academia who are using and promoting JBoss technologies
+        li Blogs and webinars
+        li Publish articles on jboss.org, InfoQ, DZone, etc.
+        li Social media
+        li Talks at conferences and local JUGs/JBUGs
+        li Implemented real-world projects using JBoss technologies
+        li Actively answering questions in JBoss forums/StackOverflow
+        li Authored a book on JBoss topic
+        li Lead a JBoss User Group
+        li Mentoring other community members and grooming champions
+        li 18 years of age or older
+        li Not a government employee
+        li Not a Red Hat employee
+      h3 Want to become a JBoss Champion?
+      p <link> Nominate yourself now!</link>
+      p Make sure your jboss.org profile is current and has all the relevant details. Include any references that will highlight your value to the JBoss community.
+    .large-12.column
+      <a class="twitter-timeline" href="https://twitter.com/Pfrobinson/lists/test" data-widget-id="552861500478869505">Tweets from https://twitter.com/Pfrobinson/lists/test</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+.wide
+  .row
+    h3 Meet The Champions
+    ul.large-block-grid-4.small-block-grid-1
+      - site.champions.each do |champion|
+        li.large-8.column
+          a.image-link: img(src=cdn(site.base_url + "/images/solutions/docker/thumb_300x300.png") alt="#{champion.name}")
+          a.solution-name-link(href="#")
+            h3.solution-name #{champion.name}
+          p #{champion.description}
