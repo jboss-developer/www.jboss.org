@@ -22,6 +22,7 @@ app.templates.buzzTemplate = '#{partial "buzz_template.html.slim"}';
 app.templates.termsAndConditionsTemplate = '#{partial "terms_and_conditions.html.slim"}';
 app.templates.bookTemplate = '#{partial "book.html.slim"}';
 app.templates.connectorTemplate = '#{partial "product-connectors-item.html.slim"}';
+app.templates.championsTemplate = '#{partial "champions-item.html.slim"}';
 
 /*
   FastClick variable for faster tapping on touch devices
