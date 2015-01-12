@@ -39,7 +39,31 @@ app.champions = {
         var html = "";
         // loop over every hit
         for (var i = 0; i < hits.length; i++) {
-            var props = hits[i]._source;
+            var props = hits[i].fields;
+
+            for (var accountIndex = 0; accountIndex < props.accounts.length; accountIndex++) {
+                var account = props.accounts[accountIndex];
+                if (account.domain === "twitter.com") {
+                    props.twitter_link = account.link;
+                }
+                else if (account.domain === "linkedin.com") {
+                    props.linkedin_link = account.link;
+                }
+                else if (account.domain === "linkedin.com") {
+                    props.linkedin_link = account.link;
+                }
+                else if (account.domain === "linkedin.com") {
+                    props.linkedin_link = account.link;
+                }
+            }
+
+            //The templating fails if these values are undefined. There's probably a better way to do this.
+            if (!props.twitter_link) {
+                props.twitter_link = '';
+            }
+            if (!props.linkedin_link) {
+                props.linkedin_link = '';
+            }
             
             var championsTemplate = app.templates.championsTemplate;
             html += championsTemplate.template(props);
