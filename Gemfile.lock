@@ -39,7 +39,7 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
-    awestruct (0.5.6.beta7)
+    awestruct (0.5.6.beta8)
       asciidoctor
       bootstrap-sass (~> 3.2.0.2)
       colorize (~> 0.7.1)
@@ -98,7 +98,7 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     ffi (1.9.6)
     formatador (0.2.5)
-    git (1.2.8)
+    git (1.2.9)
     google-api-client (0.7.1)
       addressable (>= 2.3.2)
       autoparse (>= 0.3.3)
@@ -242,7 +242,7 @@ DEPENDENCIES
   activesupport (> 3.0, < 4.2.0)
   asciidoctor (~> 1.5.0)
   aweplug!
-  awestruct (~> 0.5.6.beta4)
+  awestruct (~> 0.5.6.beta8)
   blinkr (~> 0.2.7)
   curb (~> 0.8.5)
   daybreak
