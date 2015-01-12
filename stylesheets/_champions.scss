@@ -1,27 +1,40 @@
 .wide-hero.champions {
   background: cdn('../images/champions/champions_microsite_hero.jpg');
 }
+.text-content {
 
-.champion-name {
-  width:100%;
-  text-align: center;
-  background:$dark-blue;
-  color:white;
-  font-size:emCalc(22);
-  margin: 0;
-  margin-top: -50px;
-  position: relative;
-  padding: 10px;
-  z-index: 999;
-  clear: both;
+  h3.champion-name {
+    width:100%;
+    text-align: center;
+    background:$dark-blue;
+    color:white;
+    font-size:emCalc(22);
+    margin: 0;
+    margin-top: -50px;
+    position: relative;
+    padding: 10px;
+    z-index: 999;
+    clear: both;
+  }
+
 }
 
-.champions-social li{
-  display: inline;
-  list-style-type: none
-  border: 0;
-  color: #afb1b2;
-  padding-left: 0.5rem;
-  background: none;
-  padding: 3px 7px;
+ul.champions-social {
+  margin-top: 10px;
+  li{
+    display: inline-block;
+    list-style-type: none;
+    border: 0;
+    background: none;
+    a {
+      padding: 8px;
+      border-bottom: 0;
+      font-size: 24px;
+      &:hover {
+        border-bottom: 0;
+        color:white;
+        background:$dark-blue;
+      }
+    }
+  }
 }
