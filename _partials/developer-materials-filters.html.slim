@@ -25,11 +25,11 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
     h5.show-more Topics
     .filter-block-inputs
       / Chosen Select Box for Desktops
-      select(ng-model="filters.sys_tags" multiple="true" ng-change="filter.applyFilters()")
+      select.chosen(ng-model="filters.sys_tags" multiple="true" ng-change="filter.applyFilters()")
         option(ng-repeat="item in data.availableTopics" ng-selected="filters.sys_tags.indexOf(item) > -1")
           | {{item}}
 
-      / label(ng-repeat="item in data.availableTopics" ng-show="data.groups[item] || filters.sys_tags.indexOf(item) > -1 || !data.searchTerms")
+      / label(ng-repeat="item in data.availableTopics")
       /   input(type="checkbox" name="filter-topic[]" ng-click="filter.toggleSelection(item, 'sys_tags'); filter.applyFilters()" value="{{item | trim}}" ng-checked="filters.sys_tags.indexOf(item) > -1")
       /   | {{item | trim}}
       /   span.label.count(ng-show="data.groups[item]")
@@ -41,7 +41,6 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
     .filter-block-inputs
       label(
         ng-repeat="item in data.availableFormats"
-        ng-show="data.groups[item.value] || filters.sys_type.indexOf(item.value) > -1 || !data.searchTerms"
         data-tooltip="true"
         aria-haspopup="true"
         class="has-tip tip-right"
