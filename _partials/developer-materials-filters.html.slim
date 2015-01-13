@@ -5,21 +5,21 @@ button.filters-apply.filter-toggle Apply
 
 form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
   .filter-block
-    input(type="text" placeholder="Filter by keyword" name="filter-text" ng-model="filters.query")
+    input(type="text" placeholder="Filter by keyword" name="filter-text" ng-model="filters.query" ng-change="filter.applyFilters()" ng-model-options="{debounce:300}")
 
   .filter-block
    h5.show-more Rating
    .filter-block-inputs
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 1}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="1")
+       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="1" ng-change="filter.applyFilters()")
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 2}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="2")
+       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="2" ng-change="filter.applyFilters()")
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 3}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="3")
+       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="3" ng-change="filter.applyFilters()")
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 4}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="4")
+       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="4" ng-change="filter.applyFilters()")
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 5}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="5")
+       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="5" ng-change="filter.applyFilters()")
 
   .filter-block.filter-block-checkboxes
     h5.show-more Topics
@@ -28,6 +28,7 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
       select.chosen(ng-model="filters.sys_tags" multiple="true" ng-change="filter.applyFilters()")
         option(ng-repeat="item in data.availableTopics" ng-selected="filters.sys_tags.indexOf(item) > -1")
           | {{item}}
+          |  - {{data.groups["tag-" + item]}}
 
       / label(ng-repeat="item in data.availableTopics")
       /   input(type="checkbox" name="filter-topic[]" ng-click="filter.toggleSelection(item, 'sys_tags'); filter.applyFilters()" value="{{item | trim}}" ng-checked="filters.sys_tags.indexOf(item) > -1")
@@ -41,17 +42,19 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
     .filter-block-inputs
       label(
         ng-repeat="item in data.availableFormats"
-        data-tooltip="true"
-        aria-haspopup="true"
-        class="has-tip tip-right"
-        title="{{item.name}} description "
-        data-options="disable_for_touch:true"
       )
         input(type="checkbox" name="filter-format[]" value="{{item.value}}"
               ng-click="filter.toggleSelection(item.value, 'sys_type'); filter.applyFilters()"
               ng-checked="filters.sys_type.indexOf(item.value) > -1"
         )
-        | {{item.name}}
+        span(
+          data-tooltip=""
+          aria-haspopup="true"
+          class="has-tip tip-right"
+          title="{{item.name}} description "
+          data-options="disable_for_touch:true"
+        )
+          | {{item.name}}
         span.label.count(ng-show="data.groups[item.value]")
           | {{data.groups[item.value]}}
 
@@ -66,7 +69,3 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
     input(type="range" name="filter-publish-date" ng-change="filter.updateDate(); filter.applyFilters()" ng-model="data.dateNumber" value="0" max="4" ng-init="data.dateNumber = 0")
     span.skill-display
       | {{data.displayDate || 'All'}}
-
-  button(ng-click="filter.applyFilters()") Apply Filters
-
-

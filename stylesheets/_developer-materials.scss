@@ -138,6 +138,23 @@ body .chosen-container-multi .chosen-choices li.search-field input[type="text"] 
 
 // Table Layout
 
+.label {
+  &.experimental-text, &.premium-text {
+    display: block;
+    width: 100%;
+    margin: 0;
+    float: none;
+    text-align: center;
+    &:hover {
+      color:white;
+    }
+  }
+  &.premium-text {
+    background:#CD0013;
+    color:white;
+  }
+}
+
 table.developer-materials-grid {
   table-layout: fixed;
   width: 100%;
@@ -146,7 +163,7 @@ table.developer-materials-grid {
       vertical-align: middle;
       position: relative;
       &.type {
-        width:20%;
+        width:12%;
         img {
           padding: 0;
         }
@@ -155,10 +172,10 @@ table.developer-materials-grid {
         width:28%;
       }
       &.title {
-        width:20%;
+        width:30%;
       }
       &.publish {
-        width:10%;
+        width:12%;
       }
       &.product {
         width:10%;

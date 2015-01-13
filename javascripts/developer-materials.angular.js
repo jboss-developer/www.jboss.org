@@ -8,13 +8,14 @@ dcp.service('materialService',function($http, $q) {
 
   this.getMaterials = function(searchTerms, project) {
     var query = {
-      "field"  : ["sys_author", "contributors", "duration", "github_repo_url", "level", "sys_contributors",  "sys_created", "sys_description", "sys_title", "sys_tags", "sys_url_view", "thumbnail", "sys_type", "sys_rating_num", "sys_rating_avg", "experimental"],
+      "field"  : ["sys_author", "target_product", "contributors", "duration", "github_repo_url", "level", "sys_contributors",  "sys_created", "sys_description", "sys_title", "sys_tags", "sys_url_view", "thumbnail", "sys_type", "sys_rating_num", "sys_rating_avg", "experimental"],
       "size" : 500,
       "content_provider" : ["jboss-developer", "rht"]
     };
 
     if(searchTerms) {
-      query.query = searchTerms;
+      query.query = decodeURIComponent(searchTerms); // stop it from being encoded twice
+      console.log(searchTerms)
     }
 
     if(project) {
@@ -334,7 +335,7 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     }
 
     if($scope.filters.level){
-      searchTerms.push("(level:"+$scope.filters.level + " OR _missing_:level)");
+      searchTerms.push("(level:"+$scope.filters.level + "%20OR%20_missing_:level)");
     }
 
     if($scope.filters.sys_created){
@@ -376,7 +377,8 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     $scope.data.groups = {};
     for (var i = 0; i < $scope.data.materials.length; i++) {
       (function(sys_type, sys_tags){
-        // group the types
+
+        // group the types (formats)
         if($scope.data.groups[sys_type] >= 0) {
           $scope.data.groups[sys_type]++;
         }
@@ -384,14 +386,16 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
          $scope.data.groups[sys_type] = 0;
         }
 
+        // group the tags (topics)
         if(sys_tags) {
 
+          // we prefix the index with tag- because "demo" is both a tag and a topic
           for (var i = 0; i < sys_tags.length; i++) {
-            if($scope.data.groups[sys_tags[i]] >= 0) {
-              $scope.data.groups[sys_tags[i]]++;
+            if($scope.data.groups['tag-' + sys_tags[i]] >= 0) {
+              $scope.data.groups['tag-' + sys_tags[i]]++;
             }
             else {
-             $scope.data.groups[sys_tags[i]] = 0;
+             $scope.data.groups['tag-' + sys_tags[i]] = 0;
             }
           };
 
@@ -410,6 +414,12 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
   }
 
   $scope.filter.restore = function() {
+    // if we are on a project page, skip restoring
+    if($scope.filters.project) {
+      $scope.filter.applyFilters(); // run with no filters
+      return;
+    }
+
     // check if we have window hash,  local storage or any stored filters, abort if not
     if(!window.location.hash && (!window.localStorage || !window.localStorage.filters)) {
       $scope.filter.applyFilters(); // run with no filters
@@ -463,6 +473,12 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
       $scope.chosen();
     },0);
 
+  });
+
+  $scope.$watch('data.groups',function() {
+    window.setTimeout(function() {
+      $(".chosen").trigger("chosen:updated");
+    },0);
   });
   /*
     Get latest materials on page load

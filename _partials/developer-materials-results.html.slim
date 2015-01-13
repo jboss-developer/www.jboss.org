@@ -30,6 +30,7 @@ div
         |  List
 
 
+
     table.developer-materials-grid(ng-hide="data.layout === 'grid' || !data.layout")
       thead
         tr
@@ -37,22 +38,24 @@ div
           td.title Title
           td.publish Publish Date
           td.description Description
-          td.product Product
+          td.product(ng-hide="filters.project")
+            | Product
           td.skill Skill Level
-          td.rating-stars Rating
       tbody
         tr.material(ng-repeat="item in data.displayedMaterials" class="get-started-placeholder-{{item.fields.sys_type}}")
           / Type
           td.type
-            img(ng-src="{{item | thumbnailURL}}")
+            a(ng-href="{{item.fields.sys_url_view}}")
+              img(ng-src="{{item | thumbnailURL}}")
             / Experimental Banner
-            a.banner.experimental(ng-show="item.fields.experimental")
+            a.label.experimental-text(ng-show="item.fields.experimental") Experimental
             / Premium Banner
-            a.banner.premium(ng-show="item.fields.sys_url_view | isPremium")
+            a.label.premium-text(ng-show="item.fields.sys_url_view | isPremium") Premium
           / Title
           td.title
             p
-              | {{item.fields.sys_title}}
+              a(ng-href="{{item.fields.sys_url_view}}")
+                | {{item.fields.sys_title}}
             span.contributor(data-sys-contributor="{{item.fields.sys_author}}")
               a.name
                 | {{item.fields.sys_author | name}}
@@ -64,19 +67,20 @@ div
             | {{item.fields.sys_description | limitTo : 300}}
             | &hellip;
           / Product
-          td.product
-            | {{item.fields.sys_tags.join(', ')}}
+          td.product(ng-hide="filters.project")
+            / | {{item.fields.sys_tags.join(', ')}}
+            | {{item.fields.target_product}}
           / Skill Level
           td.skill
             | {{item.fields.level}}
-          / Rating
-          td.rating-stars(ng-bind-html="item.fields | stars")
+            span(ng-bind-html="item.fields | stars" ng-show="item.fields.sys_rating_avg > 0" )
 
     ul.small-block-grid-2.large-block-grid-3(ng-hide="data.layout === 'list'")
       li.material(ng-repeat="item in data.displayedMaterials")
         div(class="get-started-placeholder-{{item.fields.sys_type}}")
           / Thumbnail
-          img(ng-src="{{item | thumbnailURL}}")
+          a(ng-href="{{item.fields.sys_url_view}}")
+            img(ng-src="{{item | thumbnailURL}}")
           / Experimental Banner
           a.banner.experimental(ng-show="item.fields.experimental")
           / Premium Banner
@@ -86,7 +90,8 @@ div
           span.label(class="material-level-{{item.fields.level}}" ng-show="item.fields.level") {{ item.fields.level }}
           / Material Name
           h4
-            | {{item.fields.sys_title}}
+            a(ng-href="{{item.fields.sys_url_view}}")
+              | {{item.fields.sys_title}}
           / Author
           span.contributor(data-sys-contributor="{{item.fields.sys_author}}")
             a.name
