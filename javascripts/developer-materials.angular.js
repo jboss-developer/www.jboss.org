@@ -306,6 +306,7 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     delete $scope.filters.sys_rating_avg;
     delete $scope.filters.level;
     delete $scope.filters.sys_created;
+    $(".chosen").trigger("chosen:updated");
   }
 
 
@@ -411,11 +412,19 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
   $scope.filter.restore = function() {
     // check if we have window hash,  local storage or any stored filters, abort if not
     if(!window.location.hash && (!window.localStorage || !window.localStorage.filters)) {
+      $scope.filter.applyFilters(); // run with no filters
       return;
     }
 
     if(window.location.hash) {
       var hashFilters = window.location.hash.replace('#','');
+
+      // check for old hash bang in URL
+      if(!!window.location.hash.match('#!')) {
+        window.location.hash = "";
+        $scope.filter.applyFilters();
+        return;
+      }
       $scope.filters = deparam(hashFilters);
     }
     else if(window.localStorage && window.localStorage.filters) {
@@ -431,6 +440,30 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     $scope.filter.applyFilters();
   }
 
+
+  $scope.chosen = function() {
+    $('select.chosen').unbind().chosen().change(function() {
+      var tags = $(this).val();
+      if(tags) {
+        $scope.filters.sys_tags = tags;
+      }
+      else {
+        delete $scope.filters.sys_tags;
+      }
+      $scope.$apply();
+      $scope.filter.applyFilters()
+      console.log("changed");
+    }).trigger('chosen:updated');
+  }
+
+  $scope.$watch('data.availableTopics',function(){
+
+    // next tick
+    window.setTimeout(function(){
+      $scope.chosen();
+    },0);
+
+  });
   /*
     Get latest materials on page load
   */
