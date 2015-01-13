@@ -27,9 +27,17 @@ br
   div(class="feature-text")
     = page._features3
 
+= page._new_feature
+
 = video_player(video(page.product.intro_video)) if page.product.intro_video
 
+- unless !page._detail || page._detail.empty?
+  h3.divider#detail Detail
+
 = page._detail
+
+- unless !page._detail || page._detail.empty?
+  br
 
 = video_player(video(page.product.intro_video_2)) if page.product.intro_video_2
 
