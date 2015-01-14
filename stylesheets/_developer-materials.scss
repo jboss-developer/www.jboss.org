@@ -163,7 +163,7 @@ table.developer-materials-grid {
       vertical-align: middle;
       position: relative;
       &.type {
-        width:12%;
+        width:15%;
         img {
           padding: 0;
         }
@@ -173,6 +173,11 @@ table.developer-materials-grid {
       }
       &.title {
         width:30%;
+        a.name {
+          font-size: 12px;
+          margin-top: 10px;
+          display: block;
+        }
       }
       &.publish {
         width:12%;
@@ -181,7 +186,7 @@ table.developer-materials-grid {
         width:10%;
       }
       &.skill {
-        width:10%;
+        width:13%;
       }
       &.rating-stars {
         width:11%;

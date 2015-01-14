@@ -8,7 +8,9 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
     input(type="text" placeholder="Filter by keyword" name="filter-text" ng-model="filters.query" ng-change="filter.applyFilters()" ng-model-options="{debounce:300}")
 
   .filter-block
-   h5.show-more Rating
+   h5.show-more
+    | Rating
+    a.clear-rating(ng-click="filters.sys_rating_avg = 0; filter.applyFilters()")  &times;
    .filter-block-inputs
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 1}")
        input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="1" ng-change="filter.applyFilters()")
@@ -26,9 +28,9 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
     .filter-block-inputs
       / Chosen Select Box for Desktops
       select.chosen(ng-model="filters.sys_tags" multiple="true" ng-change="filter.applyFilters()")
-        option(ng-repeat="item in data.availableTopics" ng-selected="filters.sys_tags.indexOf(item) > -1")
+        option(ng-repeat="item in data.availableTopics" ng-selected="filters.sys_tags.indexOf(item) > -1" value="{{item}}")
           | {{item}}
-          |  - {{data.groups["tag-" + item]}}
+          | {{data.groups["tag-" + item] | brackets }}
 
       / label(ng-repeat="item in data.availableTopics")
       /   input(type="checkbox" name="filter-topic[]" ng-click="filter.toggleSelection(item, 'sys_tags'); filter.applyFilters()" value="{{item | trim}}" ng-checked="filters.sys_tags.indexOf(item) > -1")
@@ -60,12 +62,12 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
 
   .filter-block
     h5 Skill Level
-    input(type="range" name="filter-skill" ng-change="filter.updateSkillLevel(); filter.applyFilters()" ng-model="data.skillNumber" value="0" min="0" max="3" ng-init="data.skillNumber = 0")
+    input(type="range" name="filter-skill" ng-change="filter.updateSkillLevel(); filter.applyFilters()" ng-model="data.skillNumber" value="0" min="0" max="3" ng-init="filter.updateSkillLevel();")
     span.skill-display
       | {{data.displaySkill || 'All'}}
 
   .filter-block
     h5 Publish Date
-    input(type="range" name="filter-publish-date" ng-change="filter.updateDate(); filter.applyFilters()" ng-model="data.dateNumber" value="0" max="4" ng-init="data.dateNumber = 0")
+    input(type="range" name="filter-publish-date" ng-change="filter.updateDate(); filter.applyFilters()" ng-model="data.dateNumber" value="0" max="4" ng-init="filter.updateSkillLevel();")
     span.skill-display
       | {{data.displayDate || 'All'}}

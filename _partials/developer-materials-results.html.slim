@@ -1,9 +1,15 @@
 div
   pre(style="word-wrap:break-word")
     | {{filters}}
-  .developer-material-results
+  h2 Search Terms:
+  pre(style="word-wrap:break-word")
+    | {{data.searchTerms}}
+
+  .panel(ng-hide="data.materials.length") Sorry there were no results, please modify your search query.
+
+  .developer-material-results(ng-hide="!data.materials.length")
     img.loader(src=cdn("#{site.base_url}/images/icons/ajax-loader.gif") ng-show="data.loading")
-    .pagination-centered(ng-hide="pagination.viewall")
+    .pagination-centered(ng-hide="pagination.viewall || !data.materials.length")
       ul.pagination
         li.prev.arrow(ng-class="{unavailable: paginate.currentPage < 2}")
           a(ng-click="paginate(paginate.currentPage - 1)") &laquo;
@@ -36,7 +42,6 @@ div
         tr
           td.type Type
           td.title Title
-          td.publish Publish Date
           td.description Description
           td.product(ng-hide="filters.project")
             | Product
@@ -59,12 +64,9 @@ div
             span.contributor(data-sys-contributor="{{item.fields.sys_author}}")
               a.name
                 | {{item.fields.sys_author | name}}
-          / Publish Date
-          td.publish
-            | {{item.fields.sys_created | timeAgo}}
           / Description
           td.description
-            | {{item.fields.sys_description | limitTo : 300}}
+            | {{item.fields.sys_description | truncate}}
             | &hellip;
           / Product
           td.product(ng-hide="filters.project")
@@ -72,7 +74,7 @@ div
             | {{item.fields.target_product}}
           / Skill Level
           td.skill
-            | {{item.fields.level}}
+            span.label(class="material-level-{{item.fields.level}}" ng-show="item.fields.level") {{ item.fields.level }}
             span(ng-bind-html="item.fields | stars" ng-show="item.fields.sys_rating_avg > 0" )
 
     ul.small-block-grid-2.large-block-grid-3(ng-hide="data.layout === 'list'")
@@ -101,5 +103,5 @@ div
 
           / Description
           p
-            | {{item.fields.sys_description | limitTo : 300}}
+            | {{item.fields.sys_description | truncate}}
             | &hellip;
