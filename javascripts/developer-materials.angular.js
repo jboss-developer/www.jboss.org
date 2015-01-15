@@ -282,8 +282,12 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
   $scope.filters.sys_tags = [];
   $scope.filters.sys_type = [];
   $scope.filter.toggleSelection = function toggleSelection(itemName, selectedArray) {
-      var idx = $scope.filters[selectedArray].indexOf(itemName);
 
+      if(!$scope.filters[selectedArray]) {
+        $scope.filters[selectedArray] = [];
+      }
+
+      var idx = $scope.filters[selectedArray].indexOf(itemName);
       // is currently selected
       if (idx > -1) {
         $scope.filters[selectedArray].splice(idx, 1);
@@ -350,7 +354,7 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     }
 
     if(n) {
-      $scope.filters.sys_created = ">=" + d.getDate() + "-" + ( d.getMonth() + 1 ) + "-" + d.getFullYear();
+      $scope.filters.sys_created = ">=" + d.getFullYear() + "-" + ( d.getMonth() + 1 ) + "-" + d.getDate();
     }
   }
 
@@ -400,13 +404,16 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
           // $scope.filters.sys_type.splice(idx,1);
           // if there are any left, push them to the filter
           if($scope.filters.sys_type.length) {
-            searchTerms.push("sys_type:("+$scope.filters.sys_type.join(" ")+")");
+            searchTerms.push("sys_type:("+$scope.filters.sys_type.join(" ")+" jbossdeveloper_quickstart)"); // gotta add quickstart when experimental is on..
           }
         }
         else {
           searchTerms.push("sys_type:("+$scope.filters.sys_type.join(" ")+")");
         }
 
+    } else {
+      // There are no types, set the default ones
+      searchTerms.push("sys_type:(jbossdeveloper_bom jbossdeveloper_quickstart jbossdeveloper_archetype video rht_knowledgebase_article rht_knowledgebase_solution jbossdeveloper_example)");
     }
 
     if($scope.filters.level){
@@ -491,7 +498,15 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     // restore and set
     $scope.data.skillNumber = 0;
     $scope.data.dateNumber = 0;
-    $scope.data.layout = localStorage.layout;
+
+    if(window.localStorage.layout === 'grid' || window.localStorage.layout === 'list') {
+      // console.log("There is a preset layout", window.localStorage.layout);
+      $scope.data.layout = window.localStorage.layout;
+    } else {
+      // console.log("No layout defaulting to list", window.localStorage.layout);
+      $scope.data.layout = 'list';
+    }
+
 
 
     // if we are on a project page, skip restoring
@@ -509,14 +524,6 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
 
     if(window.location.hash) {
       var hashFilters = window.location.hash.replace('#!','');
-
-      // check for old hash bang in URL
-      // if(!!window.location.hash.match('#!')) {
-      //   window.location.hash = "";
-      //   $scope.filter.applyFilters();
-      //   return;
-      // }
-
       var filters = deparam(hashFilters);
 
       // check for single string sys_type
@@ -536,12 +543,34 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
         if(idx>=0) {
           $scope.data.skillNumber = idx;
         }
+        $scope.filter.updateSkillLevel();
+      }
+
+      // restore date slider to closest match
+      if($scope.filters.sys_created) {
+        var parts = scope.filters.sys_created.replace('>=','').split('-'); // YYYY MM DD
+        var d = new Date(parts[0], parts[1], parts[2]); // Year, month date
+        var now = new Date().getTime();
+        var ago = now - d;
+        var daysAgo = Math.floor(ago / 1000 / 60 / 60 / 24);
+
+        if(daysAgo <= 1) {
+          $scope.data.dateNumber = 4;
+        } else if(daysAgo > 1 && daysAgo <= 7) {
+          $scope.data.dateNumber = 3;
+        } else if(daysAgo > 7 && daysAgo <= 30) {
+          $scope.data.dateNumber = 2;
+        } else {
+          $scope.data.dateNumber = 1;
+        }
+
+        $scope.filter.updateDate();
+
       }
 
 
     }
     else if(window.localStorage && window.localStorage.filters) {
-
       // only restore if less than 2 hours old
       var now = new Date().getTime();
       var then = window.localStorage.filtersTimeStamp || 0;
@@ -570,7 +599,6 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
   }
 
   $scope.$watch('data.availableTopics',function(){
-
     // next tick
     window.setTimeout(function(){
       $scope.chosen();
@@ -584,13 +612,16 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     },0);
   });
 
-  $scope.$watch('data.layout',function() {
-    localStorage.layout = $scope.data.layout;
+  $scope.$watch('data.layout',function(newVal, oldVal) {
+    // console.log(newVal, oldVal);
+    // console.log("LAyout changed!!", $scope.data.layout);
+    if($scope.data.layout) {
+      window.localStorage.layout = $scope.data.layout;
+    }
   });
   /*
     Get latest materials on page load
   */
-
   window.setTimeout($scope.filter.restore, 0);
 
 });

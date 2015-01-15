@@ -10,18 +10,19 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
   .filter-block
    h5.show-more
     | Rating
-    a.clear-rating(ng-click="filters.sys_rating_avg = 0; filter.applyFilters()")  &times;
    .filter-block-inputs
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 1}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="1" ng-change="filter.applyFilters()")
+      input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="1" ng-change="filter.applyFilters()")
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 2}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="2" ng-change="filter.applyFilters()")
+      input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="2" ng-change="filter.applyFilters()")
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 3}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="3" ng-change="filter.applyFilters()")
+      input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="3" ng-change="filter.applyFilters()")
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 4}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="4" ng-change="filter.applyFilters()")
+      input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="4" ng-change="filter.applyFilters()")
      label(for="filter-rating" ng-class="{'filter-rating-active': filters.sys_rating_avg >= 5}")
-       input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="5" ng-change="filter.applyFilters()")
+      input(type="radio" name="filter-rating" ng-model="filters.sys_rating_avg" value="5" ng-change="filter.applyFilters()")
+     a.clear-rating(ng-click="filters.sys_rating_avg = 0; filter.applyFilters()")
+      | &times;
 
   .filter-block.filter-block-checkboxes
     h5.show-more Topics

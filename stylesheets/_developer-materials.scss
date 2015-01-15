@@ -187,6 +187,11 @@ table.developer-materials-grid {
       }
       &.skill {
         width:13%;
+        text-align: center;
+        .label {
+          margin: 0;
+          float: none;
+        }
       }
       &.rating-stars {
         width:11%;
