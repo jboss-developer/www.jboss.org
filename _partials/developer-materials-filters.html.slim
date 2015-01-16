@@ -33,11 +33,11 @@ form.dev-mat-filters(method="GET" ng-submit="filter.applyFilters()")
           | {{item}}
           | {{data.groups["tag-" + item] | brackets }}
 
-      / label(ng-repeat="item in data.availableTopics")
-      /   input(type="checkbox" name="filter-topic[]" ng-click="filter.toggleSelection(item, 'sys_tags'); filter.applyFilters()" value="{{item | trim}}" ng-checked="filters.sys_tags.indexOf(item) > -1")
-      /   | {{item | trim}}
-      /   span.label.count(ng-show="data.groups[item]")
-      /     | {{data.groups[item]}}
+      label(ng-repeat="item in ['EJB','CDI','OSGi', 'JSF', 'JPA', 'JTA', 'Serverlet', 'JavaMail', 'H2']")
+        input(type="checkbox" name="filter-topic[]" ng-click="filter.toggleSelection(item, 'sys_tags'); filter.applyFilters()" value="{{item | trim}}" ng-checked="filters.sys_tags.indexOf(item) > -1")
+        | {{item | trim}}
+        span.label.count(ng-show="data.groups[item]")
+          | {{data.groups[item]}}
 
 
   .filter-block.filter-block-checkboxes

@@ -28,7 +28,6 @@ app.dcp.resolveContributors = function(sysContributors) {
       }
 
     });
-    console.log("there are ", sysContributors.length);
     sysContributors = $.unique(sysContributors);
   }
 

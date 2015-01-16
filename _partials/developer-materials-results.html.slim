@@ -1,25 +1,19 @@
 div
-  pre(style="word-wrap:break-word")
-    | {{filters}}
-  h2 Search Terms:
-  pre(style="word-wrap:break-word")
-    | {{data.searchTerms}}
-
   .panel(ng-hide="data.materials.length") Sorry there were no results, please modify your search query.
 
   .developer-material-results(ng-hide="!data.materials.length")
     img.loader(src=cdn("#{site.base_url}/images/icons/ajax-loader.gif") ng-show="data.loading")
-    .pagination-centered(ng-hide="pagination.viewall || !data.materials.length")
+    .pagination-centered(ng-hide="pagination.viewall || !data.materials.length || data.loading")
       ul.pagination
         li.prev.arrow(ng-class="{unavailable: paginate.currentPage < 2}")
           a(ng-click="paginate(paginate.currentPage - 1)") &laquo;
         li(ng-repeat="page in paginate.pagesArray track by $index" ng-class="{current: page == paginate.currentPage}")
-          a(ng-click="paginate(page)")
+          a(ng-click="paginate(page)" data-page="{{page}}")
             | {{page}}
         li.prev.arrow(ng-class="{unavailable: paginate.currentPage >= paginate.pages}")
           a(ng-click="paginate(paginate.currentPage + 1)") &raquo;
 
-    .developer-materials-options
+    .developer-materials-options(ng-hide="data.loading")
 
       input(type="checkbox" id="showall" name="showall" value="500" ng-model="pagination.viewall" ng-change="paginate(1)")
       label(for="showall")
@@ -37,7 +31,7 @@ div
 
 
 
-    table.developer-materials-grid(ng-hide="data.layout === 'grid' || !data.layout")
+    table.developer-materials-grid(ng-hide="data.layout === 'grid' || !data.layout || data.loading")
       thead
         tr
           td.type Type
@@ -67,7 +61,6 @@ div
           / Description
           td.description
             | {{item.fields.sys_description | truncate}}
-            | &hellip;
           / Product
           td.product(ng-hide="filters.project")
             / | {{item.fields.sys_tags.join(', ')}}

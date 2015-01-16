@@ -117,11 +117,9 @@ dcp.filter('isPremium',function() {
   }
 });
 
-
 /*
   Filter to add brackets
 */
-
 dcp.filter('brackets',function(){
   return function(num){
     if(num > 0) {
@@ -131,11 +129,9 @@ dcp.filter('brackets',function(){
   }
 });
 
-
 /*
   Filter to add truncate
 */
-
 dcp.filter('truncate',function(){
   return function(str){
     str = $("<p>").html(str).text(); // parse html entities
@@ -203,19 +199,6 @@ dcp.filter('name',function(){
     }
     else {
       return;
-    }
-  }
-});
-
-/*
-  Pagination Directive
-*/
-
-dcp.directive('pagination',function() {
-  return {
-    restrict : 'E',
-    compile: function(element, attrs){
-      element.replaceWith("Testing testing 123");
     }
   }
 });
@@ -373,7 +356,6 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     $(".chosen").trigger("chosen:updated");
   }
 
-
   $scope.filter.createString = function() {
     var searchTerms = [];
 
@@ -386,8 +368,6 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     }
 
     if($scope.filters.sys_tags && $scope.filters.sys_tags.length){
-
-        // searchTerms.push( "sys_tags:( \""+$scope.filters.sys_tags[i]+"\")");
         var tags = "\"" + $scope.filters.sys_tags.join("\" \"") + "\"";
         searchTerms.push('sys_tags:('+tags+')');
     }
@@ -397,17 +377,16 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
 
         var idx = $scope.filters.sys_type.indexOf("jbossdeveloper_sandbox");
 
-        if(idx >= 0) {
-          // add experimental
+        if(idx >= 0 && $scope.filters.sys_type.length > 1) {
+          // We have experimental turned on, but we also have other types to search for
+          searchTerms.push("(experimental:true AND sys_type:(jbossdeveloper_sandbox jbossdeveloper_quickstart)) OR sys_type:("+$scope.filters.sys_type.join(" ")+")");
+        }
+        else if(idx >= 0 && scope.filters.sys_type.length === 1) {
+          // Only Experimental - just search for that without sys_types
           searchTerms.push("experimental:true");
-          // remove it from the array
-          // $scope.filters.sys_type.splice(idx,1);
-          // if there are any left, push them to the filter
-          if($scope.filters.sys_type.length) {
-            searchTerms.push("sys_type:("+$scope.filters.sys_type.join(" ")+" jbossdeveloper_quickstart)"); // gotta add quickstart when experimental is on..
-          }
         }
         else {
+          // no experimental - just regular search
           searchTerms.push("sys_type:("+$scope.filters.sys_type.join(" ")+")");
         }
 
@@ -488,7 +467,7 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
 
   $scope.filter.store = function() {
     // check if we have local storage, abort if not
-    if(!window.localStorage) { return; }
+    if(!window.localStorage || $scope.filters.project) { return; }
     // store them in local storage
     window.localStorage.filters = JSON.stringify(scope.filters);
     window.localStorage.filtersTimeStamp = new Date().getTime();
@@ -500,18 +479,13 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     $scope.data.dateNumber = 0;
 
     if(window.localStorage.layout === 'grid' || window.localStorage.layout === 'list') {
-      // console.log("There is a preset layout", window.localStorage.layout);
       $scope.data.layout = window.localStorage.layout;
     } else {
-      // console.log("No layout defaulting to list", window.localStorage.layout);
       $scope.data.layout = 'list';
     }
 
-
-
     // if we are on a project page, skip restoring
     if($scope.filters.project) {
-      console.log("skipping");
       $scope.filter.applyFilters(); // run with no filters
       return;
     }
@@ -563,11 +537,8 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
         } else {
           $scope.data.dateNumber = 1;
         }
-
         $scope.filter.updateDate();
-
       }
-
 
     }
     else if(window.localStorage && window.localStorage.filters) {
@@ -598,30 +569,69 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     }).trigger('chosen:updated');
   }
 
+  /*
+    Update chosen when the available topics update
+  */
   $scope.$watch('data.availableTopics',function(){
     // next tick
     window.setTimeout(function(){
       $scope.chosen();
     },0);
-
   });
 
+  /*
+    Update chosen when the counts update
+  */
   $scope.$watch('data.groups',function() {
     window.setTimeout(function() {
       $(".chosen").trigger("chosen:updated");
     },0);
   });
 
+  /*
+    Watch for the layout to change and update localstorage
+  */
   $scope.$watch('data.layout',function(newVal, oldVal) {
-    // console.log(newVal, oldVal);
-    // console.log("LAyout changed!!", $scope.data.layout);
     if($scope.data.layout) {
       window.localStorage.layout = $scope.data.layout;
     }
   });
+
   /*
     Get latest materials on page load
   */
   window.setTimeout($scope.filter.restore, 0);
 
 });
+
+
+// jQuery for mobile filters
+
+$(function() {
+  $('form.dev-mat-filters').on('submit',function(e) {
+    e.preventDefault();
+  });
+
+  $('.filters-clear').on('click',function(e){
+    e.preventDefault();
+    app.dm.clearFilters($(this));
+  });
+
+  // slide toggle on mobile
+  $('.filter-block h5').on('click',function() {
+    if(window.innerWidth <= 768) {
+      var el = $(this);
+      el.toggleClass('filter-block-open');
+      el.next('.filter-block-inputs').slideToggle(300);
+    }
+  });
+
+  // toggle filters on mobile
+  $('.filter-toggle').on('click',function() {
+    if(window.innerWidth <= 768) {
+      $('.developer-materials-sidebar').toggleClass('open');
+    }
+  });
+
+});
+
