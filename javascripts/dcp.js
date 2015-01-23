@@ -12,10 +12,25 @@ app.dcp.generateContributorSpan = function(tmpl, contributor) {
 };
 
 /*
- * Resolve an array of contributors, and replace any 
+ * Resolve an array of contributors, and replace any
  * span.contributor[data-sys-contributor=<contributor>] elements in the current page
  */
 app.dcp.resolveContributors = function(sysContributors) {
+
+  // if no contributors are passed - pull them from the DOM
+  if(!sysContributors) {
+    var sysContributors = [];
+    $('[data-sys-contributor]').each(function(i,el){
+      var contributor = $(el).data('sys-contributor');
+
+      if(contributor) {
+        sysContributors.push(contributor);
+      }
+
+    });
+    console.log("there are ", sysContributors.length);
+    sysContributors = $.unique(sysContributors);
+  }
 
   // Remove duplicates
   contributors = sysContributors.unique();
