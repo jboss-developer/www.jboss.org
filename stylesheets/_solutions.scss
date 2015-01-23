@@ -29,9 +29,6 @@
     padding: 10px;
     z-index: 999;
     clear: both;
-    a {
-      color:white
-    }
   }
   &.solution-open img {
     @include transform( rotate(-3deg) scale(1.3) );
