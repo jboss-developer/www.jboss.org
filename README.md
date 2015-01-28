@@ -139,6 +139,21 @@ Finally, you need to commit the new version of `_cdn/cdn.yml` and push that and 
 
 Builds occur automatically when pull requests are submitted, and builds, and deploys, happen when pushes to the master branch occur.
 
+## Docker
+
+The Dockerfile is currently a WIP.
+
+1. Install a recent version of Docker (1.3.1 has been tested), and boot2docker (if you are not using Linux). See <https://docs.docker.com/> for more on how to install both Docker and boot2docker. Make sure to start boot2docker. Follow any instructions boot2docker gives you on start.
+2. Build the image from the `Dockerfile` using `docker build -t jbossdeveloper/base .`
+3. If you are using using boot2docker, run 
+
+        export site_base_path=http://`boot2docker ip 2>/dev/null`:4242/
+    if you are running Docker natively, run 
+
+        export site_base_path=http://localhost:4242/
+3. Run the container, using `docker run -p 4242:4242 -v <full path to workspace>:/www.jboss.org -v <full path to .gnupg dir>:/gnupg -e site_base_path -i -t jbossdeveloper/base`, putting the right paths for your environment. You will need to enter your GPG passphrase when the container starts, to allow access to the secrets
+4. Access the site using <http://<docker ip>:4242/>
+
 ## secrets.gpg management
 
 The `secrets.yaml.gpg` file is encrypted using GPG with multiple recipients. A plugin for vim such as vim-gnupg (https://github.com/jamessan/vim-gnupg) makes editing the file easy:

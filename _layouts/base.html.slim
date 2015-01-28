@@ -88,7 +88,7 @@ body(class="#{page.url.gsub('/','').split('.').first || 'home'} #{page.body_clas
       .row
         .large-7.columns
           h1.logo
-            a(href="#{site.base_url}") JBoss<strong>Developer</strong>
+            a href=site.base_url JBoss<strong>Developer</strong>
           / i.nav-toggle.nav-toggle-close &times;
     - unless page.primary_nav_hidden  
       nav.top-bar
@@ -206,26 +206,26 @@ body(class="#{page.url.gsub('/','').split('.').first || 'home'} #{page.body_clas
     script src="#{site.base_url}/javascripts/vendor/polyfiller.js"
     script src="#{site.base_url}/javascripts/polyfiller-init.js"
     / Load everything else
-    script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.tab.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.reveal.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/foundation/foundation.tooltip.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/vendor/swipe.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/mobile.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/vendor/jquery.resize.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/vendor/jquery.timeago.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/vendor/jbossorg-tabzilla.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/vendor/socialite.min.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/vendor/jquery.paging.min.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/terms-and-conditions.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/search.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/os-filter.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/social.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/visual.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/microsite.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/connectors.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/experiments.js"
-    script src="#{site.base_url}/#{site.context_url}/javascripts/overlay.js"
+    script src="#{site.base_url}/javascripts/foundation/foundation.js"
+    script src="#{site.base_url}/javascripts/foundation/foundation.tab.js"
+    script src="#{site.base_url}/javascripts/foundation/foundation.reveal.js"
+    script src="#{site.base_url}/javascripts/foundation/foundation.tooltip.js"
+    script src="#{site.base_url}/javascripts/vendor/swipe.js"
+    script src="#{site.base_url}/javascripts/mobile.js"
+    script src="#{site.base_url}/javascripts/vendor/jquery.resize.js"
+    script src="#{site.base_url}/javascripts/vendor/jquery.timeago.js"
+    script src="#{site.base_url}/javascripts/vendor/jbossorg-tabzilla.js"
+    script src="#{site.base_url}/javascripts/vendor/socialite.min.js"
+    script src="#{site.base_url}/javascripts/vendor/jquery.paging.min.js"
+    script src="#{site.base_url}/javascripts/terms-and-conditions.js"
+    script src="#{site.base_url}/javascripts/search.js"
+    script src="#{site.base_url}/javascripts/os-filter.js"
+    script src="#{site.base_url}/javascripts/social.js"
+    script src="#{site.base_url}/javascripts/visual.js"
+    script src="#{site.base_url}/javascripts/microsite.js"
+    script src="#{site.base_url}/javascripts/connectors.js"
+    script src="#{site.base_url}/javascripts/experiments.js"
+    script src="#{site.base_url}/javascripts/overlay.js"
   - unless page.extra_javascripts.nil?
     - page.extra_javascripts.each do |id|
       = deferred_javascripts id
