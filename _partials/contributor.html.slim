@@ -1,29 +1,20 @@
 - unless page.contributor.nil?
-  span
-    /
-      - if !page.contributor['sys_url_view'].nil?
-        - unless page.basic
-          ' Follow
     span.name
-      a href="#{page.contributor['sys_url_view']}" itemprop="#{page.itemprop || 'author'}" data-dropdown="contributor-drop-#{page.contributor.object_id}" data-options="is_hover:true" aria-expanded="false" aria-controls="contributor-drop-#{page.contributor.object_id}"
-        = page.contributor['sys_title']
-    - unless page.contributor['accounts'].nil?
-      div id="contributor-drop-#{page.contributor.object_id}" data-dropdown-content="" class="f-dropdown content" 
-        .row
-          .columns.large-12
-            span<
-              img class="avatar" src="#{page.contributor["thumbnailUrl"]}"
-          .columns.large-12
-            .large-type
+      - if page.contributor['accounts']
+        - rand = Random.new().rand(1000)
+        a href="#{page.contributor['sys_url_view']}" itemprop="#{page.itemprop || 'author'}" data-dropdown="contributor-drop-#{page.contributor.object_id}-#{rand}" data-options="is_hover:true" aria-expanded="false" aria-controls="contributor-drop-#{page.contributor.object_id}-#{rand}"
+          = page.contributor['sys_title']
+        div id="contributor-drop-#{page.contributor.object_id}-#{rand}" data-dropdown-content="" class="contributor f-dropdown content" 
+          img class="contributor-avatar" src="#{page.contributor["thumbnailUrl"]}"
+          .contributor-info
+            .contributor-name
               = page.contributor['sys_title']
-            - if page.contributor['accounts']
+            .contributor-accounts
               - page.contributor['accounts'].each do |account|
                 - unless account['url'].nil? && account['link'].nil?
-                  span< class="account"
-                    a class="#{account['service']}" href="#{account['url'] || account['link']}?rel=author"
-                      i class="fa #{account['icon']} fa-2x"
-    /
-      - elsif page.basic
-        span.name
+                  a class="#{account['service']}" href="#{account['url'] || account['link']}?rel=author"
+                    i class="fa #{account['icon']} fa-2x"
+      - else
+        a href="#{page.contributor['sys_url_view']}" itemprop="#{page.itemprop || 'author'}" 
           = page.contributor['sys_title']
 

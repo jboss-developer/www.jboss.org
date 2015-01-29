@@ -31,4 +31,6 @@ description: All the books about JBoss products and projects ever written
         p.desc
           | #{book['sys_description']}
         a.button(href="#{book['sys_url_view']}") Purchase
+= javascripts("developer-material", true) do
+  script src="#{site.base_url}/javascripts/foundation/foundation.dropdown.js"
 
