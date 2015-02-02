@@ -43,7 +43,7 @@ module JBoss
           articles = []
           solutions = []
           site.products = {}
-          forum_counts = Hash[JSON.load(@searchisko.search({facet:'per_project_counts', sys_type:'forumthread', size:1}).body)['facets']['per_project_counts']['terms'].map(&:values).map(&:flatten)]
+          forum_counts = Hash[JSON.load(@searchisko.search({agg:'per_project_counts', sys_type:'forumthread', size:0}).body)['aggregations']['per_project_counts']['per_project_counts_filter']['per_project_counts_buckets']['buckets'].map(&:values).map(&:flatten)]
           site.pages.each do |page|
             if !page.product.nil? && page.relative_source_path.start_with?('/products')
               product = page.product
