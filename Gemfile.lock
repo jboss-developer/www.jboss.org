@@ -1,7 +1,6 @@
 GIT
-  remote: git://github.com/lightguard/aweplug.git
+  remote: git://github.com/awestruct/aweplug.git
   revision: 95554705783f74bad302a00033457f7f7f4dd968
-  branch: DEVELOPER-984-take-two
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -191,7 +190,7 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    retriable (1.4.1)
+    retriable (2.0.2)
     robotex (1.0.0)
     ruby-duration (3.1.0)
       activesupport (>= 3.0.0)
@@ -222,7 +221,7 @@ GEM
     tilt (2.0.1)
     timers (4.0.1)
       hitimes
-    typhoeus (0.7.0)
+    typhoeus (0.7.1)
       ethon (>= 0.7.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
