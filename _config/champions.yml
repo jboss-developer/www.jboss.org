@@ -1,32 +1,38 @@
-- name: Paul Robinson
-  description: Dr Paul Robinson is a Principal Software Engineer at JBoss by Red Hat where he currently leads the JBoss Developer Team. Paul has worked in the field of transactions and Java middleware for over 10 years. His experience began at Hewlett Packard where he was a member of the Transactions Team. Here he contributed to the first Web service transactions implementation. Previously, Paul headed up the consultancy arm of Arjuna Technologies, helping high-profile customers deploy JBoss Transactions, JBossWS and also Arjuna's Cloud Computing product.
-  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=20239&size=350
-  twitter: https://twitter.com/Pfrobinson
-  googleplus: https://plus.google.com/113003640161751573867/posts
-  linkedin: https://www.linkedin.com/in/drpaulrobinson
-  github: https://github.com/paulrobinson
-  jboss: https://developer.jboss.org/people/paul.robinson
-- name: Arun Gupta
-  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=19334&size=350
-  description: Arun Gupta is Director of Developer Advocacy at Red Hat and focuses on JBoss Middleware. As a founding member of the Java EE team at Sun Microsystems, he spread the love for technology all around the world. At Oracle, he led a cross-functional team to drive the global launch of the Java EE 7 platform through strategy, planning, and execution of content, marketing campaigns, and program. He is a prolific blogger since 2005 and have authored 1500+ blogs on technology. Arun has extensive speaking experience in ~40 countries on myriad topics and is a JavaOne Rockstar. He also founded the Devoxx4Kids chapter in the USA and continues to promoting technology education amongst kids. An author of a best-selling book, an avid runner, a globe trotter, a Java Champion, JUG leader, he is easily accessible at @arungupta.
-  twitter: https://twitter.com/arungupta
-- name: James Cobb
-  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=8207&size=350
-  description: I was born in Houston, Texas 1969. I graduated from the University of Houston with honors with a B.F.A. in Graphic Communications and spent several years doing traditional print graphic design/corporate branding before becoming infatuated with multi-media. Spent my formative web years pursuing user interface design and web branding during the height of the Internet boom. I've worked on a wide variety of corporate websites, portals and intranets. Prior to joining JBoss, designed user interfaces for CRM and website management applications for the automotive industry. I'm dedicated to making JBoss.org the best resource possible for the open source community.
-  jboss: https://developer.jboss.org/people/james.cobb
-- name: Paul Robinson
-  description: Dr Paul Robinson is a Principal Software Engineer at JBoss by Red Hat where he currently leads the JBoss Developer Team. Paul has worked in the field of transactions and Java middleware for over 10 years. His experience began at Hewlett Packard where he was a member of the Transactions Team. Here he contributed to the first Web service transactions implementation. Previously, Paul headed up the consultancy arm of Arjuna Technologies, helping high-profile customers deploy JBoss Transactions, JBossWS and also Arjuna's Cloud Computing product.
-  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=20239&size=350
-  twitter: https://twitter.com/Pfrobinson
-  googleplus: https://plus.google.com/113003640161751573867/posts
-  linkedin: https://www.linkedin.com/in/drpaulrobinson
-  github: https://github.com/paulrobinson
-  jboss: https://developer.jboss.org/people/paul.robinson
-- name: Arun Gupta
-  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=19334&size=350
-  description: Arun Gupta is Director of Developer Advocacy at Red Hat and focuses on JBoss Middleware. As a founding member of the Java EE team at Sun Microsystems, he spread the love for technology all around the world. At Oracle, he led a cross-functional team to drive the global launch of the Java EE 7 platform through strategy, planning, and execution of content, marketing campaigns, and program. He is a prolific blogger since 2005 and have authored 1500+ blogs on technology. Arun has extensive speaking experience in ~40 countries on myriad topics and is a JavaOne Rockstar. He also founded the Devoxx4Kids chapter in the USA and continues to promoting technology education amongst kids. An author of a best-selling book, an avid runner, a globe trotter, a Java Champion, JUG leader, he is easily accessible at @arungupta.
-  twitter: https://twitter.com/arungupta
-- name: James Cobb
-  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=8207&size=350
-  description: I was born in Houston, Texas 1969. I graduated from the University of Houston with honors with a B.F.A. in Graphic Communications and spent several years doing traditional print graphic design/corporate branding before becoming infatuated with multi-media. Spent my formative web years pursuing user interface design and web branding during the height of the Internet boom. I've worked on a wide variety of corporate websites, portals and intranets. Prior to joining JBoss, designed user interfaces for CRM and website management applications for the automotive industry. I'm dedicated to making JBoss.org the best resource possible for the open source community.
-  jboss: https://developer.jboss.org/people/james.cobb
+- name: Adam Bien
+  description: Consultant and author Adam Bien is an Expert Group member for the Java EE 6 and 7, EJB 3.X, JAX-RS, and JPA 2.X JSRs. He has worked with Java technology since JDK 1.0 and with Servlets/EJB 1.0 and is now an architect and developer for Java SE and Java EE projects. He has edited several books about JavaFX, J2EE, and Java EE, and he is the author of Real World Java EE Patterns—Rethinking Best Practices and Real World Java EE Night Hacks—Dissecting the Business Tier. Adam is also a Java Champion, Top Java Ambassador 2012, and JavaOne 2009, 2011, 2012 and 2013 Rock Star. Adam occasionally organizes Java EE workshops at Munich’s airport (http://airhacks.com).
+  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=21408&size=350
+  twitter: https://twitter.com/AdamBien
+  github: https://github.com/AdamBien
+  jboss: https://developer.jboss.org/people/abien
+- name: Antonio Goncalves
+  description: Antonio is a senior developer specialized in Java/Java EE. As a consultant he advises customers and helps them in defining and developing their software architecture. This Java Champion is also the founder of the very successful Paris JUG, Devoxx France and an independent JCP member on various JSRs (Java EE 6, Java EE 7, Java EE 8 and CDI 2.0). Based on his Java EE experiences, he has written three books covering Java EE 5, Java EE6 and recently Java EE 7. He also likes to talk at international conferences, as well as local Java User Groups.
+  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=21389&size=350
+  twitter: https://twitter.com/agoncal
+  googleplus: https://plus.google.com/101641663893160877351
+  linkedin: https://www.linkedin.com/in/agoncal
+  github: https://github.com/agoncal
+  jboss: https://developer.jboss.org/people/agoncal
+- name: Bartosz Majsak
+  description: Software Developer by day, Open Source Junkie by night, Conference Speaker by passion, Geek by nature. Arquillian team member and the lead for two modules; Persistence Extension (makes writing database-oriented tests easier) and Spock Test Runner (gives your Arquillian tests some BDD and Groovy love). Proud JBoss Community Recognition award recipient for both 2012 and 2013. One thing that perhaps proves he is not a total geek is his addiction to alpine skiing.
+  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=5886&size=350
+  twitter: https://twitter.com/majson
+  github: https://github.com/bartoszmajsak
+  jboss: https://developer.jboss.org/people/bmajsak
+- name: Guillaume Scheibel
+  description: "Currently working as software engineer for Expedia. I have / had my hands on open source projects like HIbernate OGM or Asciidoctor. You can follow me on twitter: @g_scheibel"
+  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=21395&size=350
+  jboss: https://developer.jboss.org/people/g_scheibel
+- name: Geert Schuring
+  description: Geert has been programming Java for the past 10 years. He has a strong passion for data flows and storage and is an expert in application integration with JBoss Fuse ESB. He also recognizes the importance of standards and likes to use Java EE with open source Application servers like Wildfly, TomEE and Glassfish.
+  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=21388&size=350
+  twitter: https://twitter.com/geertschuring
+  linkedin: https://www.linkedin.com/in/geertschuring
+  github: https://github.com/geertschuring
+  jboss: https://developer.jboss.org/people/geert1
+- name: John Ament
+  description: Enterprise Architect focused on test automaton, environment automation. Love Java and Java EE - even when its in a plain SE container. My day job has me implementing cloud applications on top WildFly out on AWS, working with RDS (MySQL), Cassandra. Contributor on the CDI spec, JCP member. PMC with Apache DeltaSpike, a suite of CDI Extensions and successor to the JBoss Seam3 project. Former member of the JMS 2.0 expert group. Member of Apache Usergrid (incubating), the BaaS that you run.
+  photo: https://developer.jboss.org/profile-image-display.jspa?imageID=21390&size=350
+  twitter: https://twitter.com/JohnAment
+  googleplus: https://plus.google.com/+JohnDAment
+  github: https://github.com/johnament
+  jboss: https://developer.jboss.org/people/meetoblivion
