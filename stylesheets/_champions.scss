@@ -1,9 +1,28 @@
 .wide-hero.champions {
   background: cdn('../images/champions/champions_microsite_hero.jpg');
 }
-.text-content {
 
-  h3.champion-name {
+.champions-row {
+  position: relative;
+
+  ul{
+    margin-bottom: 10px;
+  }
+}
+
+.champions{
+  &:last-child.column {
+    float:left;
+  }
+  img {
+    width:100%;
+    @include transition(all 0.7s);
+  }
+  p {
+    margin-top: 15px !important;
+  }
+
+  .champion-name {
     width:100%;
     text-align: center;
     background:$dark-blue;
@@ -15,15 +34,11 @@
     z-index: 999;
     clear: both;
   }
-
-}
-
-.champions-row {
-  position: relative;
 }
 
 ul.champions-social {
   margin-top: 10px;
+
   li{
     display: inline-block;
     list-style-type: none;
