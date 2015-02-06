@@ -255,32 +255,5 @@ ul.toc {
 }
 
 #new-rating, #your-rating, #avg-rating {display:none;}
-#rating-section {padding-top:1em;}
-
-.contributor {
-  z-index: 100;
-  &.f-dropdown {
-    &.content {
-      padding: 5px;
-      margin-left: inherit;
-      margin-top: inherit;
-    }
-  }
-  .contributor-avatar {
-    float: left;
-    padding-right: 1em;
-    width: 100px;
-    height: 100px;
-    border: none;
-  }
-  .contributor-info {
-    .contributor-accounts {
-      position: relative;
-      bottom: -3em;
-    }
-    .contributor-name {
-      font-size: 1.5em;
-    }
-  }
-}
+#rating-section {padding-top:1em;} 
 

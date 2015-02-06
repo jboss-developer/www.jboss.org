@@ -1,3 +1,28 @@
+- if page.javascript
+  span.name
+    <! if (contributor.accounts) { !>
+      <! var rand = Math.floor(Math.random() * (1000 - 1) + 1); !>
+      a href="<!= contributor.sys_url_view !>" itemprop="author" data-dropdown="contributor-drop-<!= rand !>" aria-expanded="false" aria-controls="contributor-drop-<!= rand !>" data-options="is_hover:true"
+        <!= contributor.sys_title !>
+      div id="contributor-drop-<!= rand !>" data-dropdown-content="" class="contributor f-dropdown content" 
+        img class="contributor-avatar" src="<!= contributor.thumbnailUrl !>"
+        .contributor-info
+          .contributor-name
+            <!= contributor.sys_title !>
+          .contributor-accounts
+            <! for (var i = 0; i < contributor.accounts.length; i++) { !>
+              <! var account = contributor.accounts[i]; !>
+              <! account.url = "https://" + account.domain + "/" + account.username; !>
+              <! account.service = account.domain.substr(0, account.domain.indexOf(".")); !>
+              <! account.icon = "fa-" + account.service; !>
+              <! if (account.url || account.link) { !>
+                a class="<!= account.service !>" href="<!= account.url || account.link !>?rel=author"
+                  i class="fa <!= account.icon !> fa-2x"
+              <! } !>
+            <! } !>
+    <! } else { !>
+    <!= contributor.sys_title !>
+    <! } !>
 - unless page.contributor.nil?
     span.name
       - if page.contributor['accounts']
@@ -14,7 +39,7 @@
                 - unless account['url'].nil? && account['link'].nil?
                   a class="#{account['service']}" href="#{account['url'] || account['link']}?rel=author"
                     i class="fa #{account['icon']} fa-2x"
+                  | &nbsp;
       - else
-        a href="#{page.contributor['sys_url_view']}" itemprop="#{page.itemprop || 'author'}" 
-          = page.contributor['sys_title']
+        = page.contributor['sys_title']
 
