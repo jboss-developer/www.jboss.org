@@ -2,6 +2,17 @@
   background: cdn('../images/champions/champions_microsite_hero.jpg');
 }
 
+.champions-content{
+  ul{
+    padding-bottom: 5px;
+
+    li {
+      padding-left: 20px;
+      text-indent: -1em;
+    }
+  }
+}
+
 .champions-row {
   position: relative;
 
