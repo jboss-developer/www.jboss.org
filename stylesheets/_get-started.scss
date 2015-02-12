@@ -260,3 +260,30 @@ ul.toc {
     text-indent: -1em;
   }
 }
+
+.bpm-suite{
+  .ulist{
+    ul{
+      margin-bottom: 1.25rem;
+      li {
+      padding-left: 10px;
+      text-indent: -1em;
+      }
+    }
+  }
+
+  table{
+    background-color: transparent;
+    border: none;
+
+    tr{
+      background-color: transparent;
+    }
+    td{
+        border: none;
+      }
+    .ulist {
+      ul{margin-bottom: 0;}
+    }
+  }
+}

@@ -16,9 +16,9 @@ ol
   - if page.product.default_download_artifact
     li: p
       | Download
-      a href="#{page.product.default_download_artifact.url}"#{page.product.abbreviated_name} #{page.product.current_version} #{page.product.default_download_artifact.name}
+      a href="#{page.product.default_download_artifact.url}"  #{page.product.abbreviated_name} #{page.product.current_version} #{page.product.default_download_artifact.name}
       | . Or
-      a href="../download" See all downloads
+      a href="../download"  see all downloads
       | .
 
     li
@@ -71,7 +71,8 @@ ol
   = page._extra_section
 
 h3.divider#bpm-suite-starter-kit JBoss BPM Suite Starter Kit
-= partial "bpm-suite-starter-kit.html.slim"
+.bpm-suite
+  = partial "bpm_suite_starter_kit.adoc"
 
 - if page.product.featured_items
 

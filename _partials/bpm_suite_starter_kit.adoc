@@ -1,0 +1,60 @@
+The purpose of this kit is to provide the means to get started with the link:/products/bpmsuite/overview/[JBoss BPM Suite product], from introduction, to installation, to using the product to build a first application. This kit will be setup to take a user from start to finish using the https://github.com/jbossdemocentral/bpms-rewards-demo[Red Hat JBoss BPM Suite - HR Employee Rewards Demo] as a PoC project.
+
+==== Target audience
+Anyone interested in getting started quickly with link:/products/bpmsuite/overview/[JBoss BPM Suite]:
+
+[cols="2*"]
+|===
+
+a|
+
+* developers evaluating open source rules and events tooling
+* architects tasked with evaluating technology for potential use in organization
+* business or information analysts interested in exploring rule design tooling
+|image:http://4.bp.blogspot.com/-Pl0SJAbmcgs/U_Jdhsm3-wI/AAAAAAAAZU4/OSjnSG8FKxk/s1600/bpmsuite.png[float="right", 450, link="http://4.bp.blogspot.com/-Pl0SJAbmcgs/U_Jdhsm3-wI/AAAAAAAAZU4/OSjnSG8FKxk/s1600/bpmsuite.png"]
+|===
+
+==== Getting Started
+The best way to discover a new product is to get hands-on with the product. We have put together an online http://bpmworkshop-onthe.rhcloud.com/workshops.html#/[JBoss BPM Suite workshop], where you are introduced to the product in an overview presentation before embarking on installing and building the project. You will be building an HR employee rewards process project that includes human tasks, domain specific nodes, and a process, all within the latest JBoss BPM Suite product. The http://bpmworkshop-onthe.rhcloud.com/workshops.html#/5[Red Hat JBoss BPM Suite - HR Employee Rewards Demo] is laid out with links and video to all the available material for exploring this project.
+
+==== Workshop in the Cloud
+The workshop can be loaded into the Cloud on your very own OpenShift account, just follow the https://github.com/eschabell/openshift-bpmsuite-workshop[project introduction page] instructions:
+
+. Create an account at http://openshift.redhat.com/
+. Create a PHP application in online admin console for using cli tooling: +
+`rhc app create bpmworkshop -t php-5.4 --from-code git://github.com/eschabell/openshift-bpmsuite-workshop.git`
+
+That's it, you can now start your workshop at: +
+`\http://bpmworkshop-$your_domain.rhcloud.com`
+
+==== Contents
+The workshop will take you through the following components where you will create rules artifacts for our project and become comfortable with their capabilities:
+
+[cols="2*"]
+|===
+
+a|
+
+* Installation and configuration link:/products/bpmsuite/overview/[JBoss BPM Suite]
+* Admin perspective
+* Project authoring perspective
+* Domain modeler
+* Process designer (rewards process)
+* Project deployment and running the Rewards demo
+|image:http://4.bp.blogspot.com/-L6_bfbcNueM/U_Jd5sI9ZZI/AAAAAAAAZVA/qgOgC1aQ93w/s1600/rewards-workshop.png[float="right", 450, link="http://4.bp.blogspot.com/-L6_bfbcNueM/U_Jd5sI9ZZI/AAAAAAAAZVA/qgOgC1aQ93w/s1600/rewards-workshop.png"]
+|===
+
+==== Resource collection
+_Ready to just get started with an example or two?_ +
+_Maybe you want to see a video?_ +
+_How about some background articles on JBoss BPM Suite?_ +
+
+No worries, just browse the following resources that will start you off with implementations that are automated, repeatable, and easy to use demo format that have you up and running in just minutes with JBoss BPM Suite. They will provide you with in depth articles that guide your decisions and videos that make it all as easy as can be to follow along and learn the BPM skills you need.
+
+* link:/products/bpmsuite/get-started/[Get started with JBoss BPM Suite]
+* link:/products/bpmsuite/developer-materials/#!projectCode=bpmsuite[Developer materials for JBoss BPM Suite]
+* http://www.schabell.org/search/label/Tips%26Tricks[JBoss BPM Suite tips and tricks]
+* http://www.schabell.org/search/label/Video[JBoss BPM Suite videos]
+* link:/products/bpmsuite/overview/#buzz[Catch all the Buzz around JBoss BPM Suite]
+
+We hope this kit will help you accelerate your link:/products/bpmsuite/overview/[JBoss BPM Suite] experience!
