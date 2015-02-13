@@ -237,7 +237,7 @@ ul.toc {
   }
 }
 
-// Ticket Monster demo styles 
+// Ticket Monster demo styles
 .ticket-monster-items {
   @extend .get-started-ticket-monster-bg;
   margin-bottom: 30px;
@@ -245,7 +245,7 @@ ul.toc {
   min-height:200px;
   border-radius: $global-radius;
   padding: 30px;
-  
+
   p {
 	font-size: 1.5em;
     text-transform: uppercase;
@@ -256,3 +256,41 @@ ul.toc {
 
 #new-rating, #your-rating, #avg-rating {display:none;}
 #rating-section {padding-top:1em;}
+
+.bpm-suite{
+  .ulist{
+    ul{
+      margin-bottom: 1.25rem;
+      li {
+      padding-left: 10px;
+      text-indent: -1em;
+      }
+    }
+  }
+
+  table{
+    background-color: transparent;
+    border: none;
+
+    tr{
+      background-color: transparent;
+    }
+    td{
+        border: none;
+      }
+    .ulist {
+      ul{margin-bottom: 0;}
+    }
+  }
+  h2{font-size: 1.6875rem;}
+}
+
+// List second line indentation
+.list-indent{
+  padding-bottom: 10px;
+
+  li {
+    padding: 10px 0 0 20px;
+    text-indent: -1em;
+  }
+}

@@ -10,14 +10,14 @@ h2#get-started Get Started
 
 h3.divider#installation-instructions Instructions for Installation
 
-= partial "os-selector.html.slim"  
+= partial "os-selector.html.slim"
 
 ol
   - if page.product.default_download_artifact
     li: p
-      | Download 
+      | Download
       a href="#{page.product.default_download_artifact.url}"#{page.product.abbreviated_name} #{page.product.current_version} #{page.product.default_download_artifact.name}
-      | . Or 
+      | . Or
       a href="../download" See all downloads
       | .
 
@@ -26,7 +26,7 @@ ol
         - if page._jdk_advice
           = page._jdk_advice
         - else
-          | Make sure you have a JDK of your choice installed. We recommend OpenJDK or Oracle JDK. 
+          | Make sure you have a JDK of your choice installed. We recommend OpenJDK or Oracle JDK.
 
     - if page.product.default_download_artifact.type == "installer"
       li
@@ -41,28 +41,27 @@ ol
     - if page._extra_installation_instructions
       .extra-installation-instructions
         = page._extra_installation_instructions
-  - else 
+  - else
     li
       asciidoc:
         #{page.product.abbreviated_name} is only available through a full Red Hat subscription. Download #{page.product.abbreviated_name} by
         https://access.redhat.com/jbossnetwork/restricted/listSoftware.html[logging in to the Red Hat Customer Portal]  and downloading it from there.
   - if page.product.guides['Getting_Started_Guide']
     p
-      | For more details, view the 
+      | For more details, view the
       a href="#{page.product.guides['Getting_Started_Guide'].formats['html'].url}" #{page.product.guides['Getting_Started_Guide'].name}
       | .
   - else
-    p 
-      | For more details, view the 
+    p
+      | For more details, view the
       a href="#{page.product.documentation_url}" Product Documentation
       | .
 
-
-- if page._configure_apache_maven 
+- if page._configure_apache_maven
   - unless page._configure_apache_maven.strip.empty?
     h3.divider#configure-maven Configure Apache&trade; Maven
     = page._configure_apache_maven
-- else 
+- else
   h3.divider#configure-maven Configure Apache&trade; Maven
   = partial "maven_repository_instructions.adoc"
 
@@ -70,6 +69,10 @@ ol
   - if page._extra_section_title
     h3.divider#ExtraSection #{page._extra_section_title}
   = page._extra_section
+
+h3.divider#bpm_suite_starter_kit JBoss BPM Suite Starter Kit
+.bpm-suite
+  = partial "bpm_suite_starter_kit.adoc"
 
 - if page.product.featured_items
 
