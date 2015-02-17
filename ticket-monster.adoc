@@ -59,6 +59,14 @@ JAX-RS, HTML5 and JavaScript are used to create an executive dashboard to monito
 link:hybridui[7. Creating hybrid mobile versions of the application with Apache Cordova] +
 Learn how to create hybrid mobile versions of the application with Apache Cordova
 
+link:jbossdeployment[8. Appendix A - Deploying to JBoss EAP locally] +
+Learn how to deploy the application to JBoss EAP
+
+link:openshiftdeployment[9. Appendix B - Deploying to OpenShift] +
+Learn how to deploy the application to OpenShift Online
+
+
+
 == Followalong
 
 ++++
