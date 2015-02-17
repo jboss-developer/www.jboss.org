@@ -1,12 +1,1 @@
-README.md
-vendor
-Gemfile
-Gemfile.lock
-Rakefile
-color.html
-config.rb
-*.swp
-promotional-download.html.slim
-images/README.md
-add-your-event.html.slim
-
+.idea
