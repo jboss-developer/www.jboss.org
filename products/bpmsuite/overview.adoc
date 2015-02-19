@@ -52,6 +52,9 @@ enables developers to solve constraint satisfaction problems efficiently, optimi
 
 == Resources
 
+http://www.jboss.org/freemodeler/?sc_cid=70160000000eg9AAAQ[FreeModeler]::
+Try out the BPM Suite process designer now on the OpenShift cloud. Build BPMN models, run simulations and export models for execution with BPM Suite or any BPMN2-compliant process engine.
+
 http://www.schabell.org/2014/07/redhat-jboss-bpmsuite-product-demos-6.0.2-updated.html[Red Hat JBoss BPM Suite Product Demos]::
   With the release of the JBoss BPM Suite version 6.0.2.GA product we wanted to get all the demos updated and out to you for evaluation as fast as possible.
 

@@ -84,6 +84,10 @@ upstream_projects:
   - guvnor
   - optaplanner
   - jbpm 
+secondary_cta:
+  title : Build process models with BPM Suite in the cloud
+  button_text: Use FreeModeler
+  href : http://www.jboss.org/freemodeler/?sc_cid=70160000000eg9AAAQ
 featured_items:
   - image_url: http://design.jboss.org/jbossdeveloper/sitedesign/jbossdeveloper_1_0/makerfiles/images/developermaterials_bpmsuite.png
     url: /quickstarts/brms/tasks-bpmsuite
