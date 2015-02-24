@@ -1,4 +1,5 @@
 app.books = {
+  contributors: [],
   supportsLocalStorage: function() {
     try {
       return 'localStorage' in window && window['localStorage'] !== null;
@@ -45,9 +46,6 @@ app.books = {
   },
   performFilter : function() {
     var bookTemplate = app.templates.bookTemplate;
-    var contributorTemplate = "<span class=\"contributor\" data-sys-contributor=\"<!=author!>\">" +
-            "<a class=\"name\"><!=normalizedAuthor!></a>" +
-          "</span>";
     $('ul.book-list').empty();
 
     // Set filters to an empty object if it isn't defined
@@ -111,7 +109,7 @@ app.books = {
       data: data,
       beforeSend : function() {
         // check if there is a previous ajax request to abort
-        if(app.books.currentRequest && app.books.currentRequest.readyState != 4) {
+        if(app.books.currentRequest && app.books.currentRequest.readyState && app.books.currentRequest.readyState != 4) {
           app.books.currentRequest.abort();
         }
       },
@@ -120,9 +118,10 @@ app.books = {
       }
     }).done(function(data){
       var results = data.hits.hits;
+      app.books.contributors = [];
       for (var k = 0; k < results.length; k++) {
         var book = results[k].fields;
-        var authors = ""
+        var authors = "";
         if (book.sys_contributor) {
           if (book.sys_contributor.length == 1) {
             authors += "Author: ";
@@ -130,7 +129,8 @@ app.books = {
             authors += "Authors: ";
           }
           for (var i = 0; i < book.sys_contributor.length; i++) {
-            authors += contributorTemplate.template({"author" : book.sys_contributor[i], "normalizedAuthor" : app.dcp.getNameFromContributor( book.sys_contributor[i] ) });
+            authors += '<span data-sys-contributor="' + book.sys_contributor[i] +'">' + app.dcp.getNameFromContributor( book.sys_contributor[i] ) + '</span>';
+            app.books.contributors.push(book.sys_contributor[i]);
             if (i < (book.sys_contributor.length -1)) {
               authors += ", ";
             }
@@ -142,9 +142,9 @@ app.books = {
           } else {
             authors += "Authors: ";
           }
-          for (var i = 0; i < book.authors.length; i++) {
-            authors += book.authors[i];
-            if (i < (book.authors.length -1)) {
+          for (var j = 0; j < book.authors.length; j++) {
+            authors += book.authors[j];
+            if (j < (book.authors.length -1)) {
               authors += ", ";
             }
           }
@@ -164,8 +164,15 @@ app.books = {
         } else {
           book.published = "";
         }
+        // TODO: I'll leave this here, as if there are books without the sys_url_view things break
+        if (book.sys_url_view === undefined) {
+          book.sys_url_view = "";
+        }
         $('ul.book-list').append(bookTemplate.template(book));
+        $("ul.book-list").foundation();
       }
+    }).then(function() {
+      app.dcp.resolveContributors(app.books.contributors);
       $("ul.book-list").removeClass('loading');
     });
   }
@@ -173,6 +180,9 @@ app.books = {
 
 // Event Listeners 
 (function() {
+  if ($('.book-list').length) {
+    app.books.performFilter();
+  }
   var timeOut;
   $('form.books-filters').on('change keyup','input, select',function(e){
 

@@ -10,7 +10,9 @@ li.book.columns.large-6(data-isbn="<!=isbn!>")
     | <!=average_rating!>
   p.desc
     | <!=sys_description!>
+  <! if (sys_url_view) { !>
   a.button(href="<!=sys_url_view!>") 
     ' Purchase
     i.fa.fa-external-link
+  <! } !>
 

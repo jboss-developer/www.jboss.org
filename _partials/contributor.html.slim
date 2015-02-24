@@ -1,19 +1,45 @@
+- if page.javascript
+  span.name
+    <! if (contributor.accounts) { !>
+      <! var rand = Math.floor(Math.random() * (1000 - 1) + 1); !>
+      a href="<!= contributor.sys_url_view !>" itemprop="author" data-dropdown="contributor-drop-<!= rand !>" aria-expanded="false" aria-controls="contributor-drop-<!= rand !>" data-options="is_hover:true"
+        <!= contributor.sys_title !>
+      div id="contributor-drop-<!= rand !>" data-dropdown-content="" class="contributor f-dropdown content" 
+        img class="contributor-avatar" src="<!= contributor.thumbnailUrl !>"
+        .contributor-info
+          .contributor-name
+            <!= contributor.sys_title !>
+          .contributor-accounts
+            <! for (var i = 0; i < contributor.accounts.length; i++) { !>
+              <! var account = contributor.accounts[i]; !>
+              <! account.url = "https://" + account.domain + "/" + account.username; !>
+              <! account.service = account.domain.substr(0, account.domain.indexOf(".")); !>
+              <! account.icon = "fa-" + account.service; !>
+              <! if (account.url || account.link) { !>
+                a class="<!= account.service !>" href="<!= account.url || account.link !>?rel=author"
+                  i class="fa <!= account.icon !> fa-2x"
+              <! } !>
+            <! } !>
+    <! } else { !>
+    <!= contributor.sys_title !>
+    <! } !>
 - unless page.contributor.nil?
-  span
-    - if !page.contributor['sys_url_view'].nil?
-      - unless page.basic
-        ' Follow
-      span.name
-        a href="#{page.contributor['sys_url_view']}" itemprop="#{page.itemprop || 'author'}"
+    span.name
+      - if page.contributor['accounts']
+        - rand = Random.new().rand(1000)
+        a href="#{page.contributor['sys_url_view']}" itemprop="#{page.itemprop || 'author'}" data-dropdown="contributor-drop-#{page.contributor.object_id}-#{rand}" data-options="is_hover:true" aria-expanded="false" aria-controls="contributor-drop-#{page.contributor.object_id}-#{rand}"
           = page.contributor['sys_title']
-      - unless page.contributor['social'].nil?
-        span class="#{page.basic ? 'hide' : ''}"
-          - page.contributor['social'].each do |service, account|
-            - unless account['url'].nil?
-              span< class="account"
-                a class="#{account['service']}" href="#{account['url']}?rel=author"
-                  i class="fa #{account['icon']}"
-    - elsif page.basic
-      span.name
+        div id="contributor-drop-#{page.contributor.object_id}-#{rand}" data-dropdown-content="" class="contributor f-dropdown content" 
+          img class="contributor-avatar" src="#{page.contributor["thumbnailUrl"]}"
+          .contributor-info
+            .contributor-name
+              = page.contributor['sys_title']
+            .contributor-accounts
+              - page.contributor['accounts'].each do |account|
+                - unless account['url'].nil? && account['link'].nil?
+                  a class="#{account['service']}" href="#{account['url'] || account['link']}?rel=author"
+                    i class="fa #{account['icon']} fa-2x"
+                  | &nbsp;
+      - else
         = page.contributor['sys_title']
 

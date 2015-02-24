@@ -443,9 +443,7 @@ app.dm = {
             var author = hits[i].fields['sys_author'];
             template += "<p class=\"author\">" +
               "Author: " +
-                "<span class=\"contributor\" data-sys-contributor=\"" + author + "\">" +
-                  "<a class=\"name\">" + app.dcp.getNameFromContributor( author ) + "</a>" +
-                "</span>" +
+                "<span data-sys-contributor=\"" + author + "\"></span>" +
               "</p>";
           }
           if (hits[i].fields.sys_created) {

@@ -1873,3 +1873,34 @@ table.split-50 col {
     }
   }
 }
+
+.contributor {
+  z-index: 100;
+  &.f-dropdown {
+    &.content {
+      padding: 5px;
+      margin-left: inherit;
+      margin-top: inherit;
+    }
+  }
+  .contributor-avatar {
+    float: left;
+    padding-right: 1em;
+    width: 100px;
+    height: 100px;
+    border: none;
+    box-shadow: none;
+  }
+  .contributor-info {
+    .contributor-accounts {
+      position: relative;
+      bottom: -3em;
+      >a {
+        padding: 0 .5em;
+      }
+    }
+    .contributor-name {
+      font-size: 1.5em;
+    }
+  }
+}

@@ -24,7 +24,7 @@ app.dcp.resolveContributors = function(sysContributors) {
     url : app.dcp.url.search,
     data : {
       "sys_type" : "contributor_profile",
-      "field"  : ["sys_url_view", "sys_title", "sys_contributors", "accounts"],
+      "field"  : ["sys_url_view", "sys_title", "sys_contributors", "accounts", "thumbnailUrl"],
       "contributor" : contributors,
       "size" : contributors.length
     },
@@ -35,57 +35,22 @@ app.dcp.resolveContributors = function(sysContributors) {
       }
     }
   }).done(function(data){
-    var hits = data.hits.hits;
+    var hits = data.hits.hits,
+        contributorTemplate = app.templates.contributorTemplate;
+        contributors = {};
     for (var i = 0; i < hits.length; i++) {
       var accounts = {};
       if (hits[i].fields.accounts) {
         for (var j= 0; j < hits[i].fields.accounts.length; j++) {
           accounts[hits[i].fields.accounts[j].domain] = hits[i].fields.accounts[j].username;
+          contributors[hits[i].fields.sys_contributors] = hits[i].fields;
         }
       }
-      $( "span.contributor[data-sys-contributor='" + hits[i].fields.sys_contributors + "']" ).each( function() {
-        var followable = false;
-        $( this ).find( 'a.name' ).each( function() {
-          $( this ).html( hits[i].fields.sys_title ).attr( 'href', hits[i].fields.sys_url_view);
-        });
-        $( this ).find( 'a.rss' ).each( function() {
-          if (false) {
-            // TODO work out what field this is
-            $( this ).attr( 'href', '' );
-            followable = true;
-          } else {
-             $( this ).hide();
-          }
-        });
-        $( this ).find( 'a.facebook' ).each( function() {
-          if (accounts['facebook.com']) {
-            $( this ).attr( 'href', 'http://www.facebook.com/' + accounts['facebook.com'] );
-            followable = true;
-          } else {
-             $( this ).hide();
-          }
-        });
-        $( this ).find( 'a.twitter' ).each( function() {
-          if (accounts['twitter.com']) {
-            $( this ).attr( 'href', 'http://www.twitter.com/' + accounts['twitter.com'] );
-            followable = true;
-          } else {
-             $( this ).hide();
-          }
-        });
-        $( this ).find( 'a.linkedin' ).each( function() {
-          if (accounts['linkedin']) {
-            $( this ).attr( 'href', 'http://www.linkedin.com/in/' + accounts['linkedin.com'] );
-            followable = true;
-          } else {
-             $( this ).hide();
-          }
-        });
-        if (!followable) {
-          $( this ).find( 'span.follow' ).hide();
-        }
-      });
     }
+    $( "span[data-sys-contributor]" ).each( function() {
+      $(this).html(contributorTemplate.template({"contributor": contributors[$(this).data("sys-contributor")]}));
+      $(this).foundation('dropdown');
+    });
   });
 };
 
