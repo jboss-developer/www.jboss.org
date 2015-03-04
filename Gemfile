@@ -14,7 +14,7 @@ end
  
 # GEMS
 #gem 'awestruct', '~> 0.5.6.beta8'
-gem 'awestruct', github: 'VineetReynolds/awestruct', branch: 'debug-pageload'
+gem 'awestruct', github: 'VineetReynolds/awestruct', branch: 'multi-thread-gen-trial'
 #gem 'awestruct', path: '~/git-repos/awestruct'
 gem 'slim', '~> 2.0.0'
 gem 'kramdown', '~> 1.0.1'

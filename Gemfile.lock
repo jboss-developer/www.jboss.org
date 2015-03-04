@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/VineetReynolds/awestruct.git
-  revision: f49d71ecde9c0c5e4227add8f8b32087a30e62d9
-  branch: debug-pageload
+  revision: f0278de3618ed3b1c24eae2444a0b5a6af70e57b
+  branch: multi-thread-gen-trial
   specs:
     awestruct (0.5.6.beta8)
       asciidoctor
