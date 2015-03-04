@@ -14,7 +14,8 @@ end
  
 # GEMS
 #gem 'awestruct', '~> 0.5.6.beta8'
-gem 'awestruct', github: 'LightGuard/awestruct', branch: 'multi-thread-gen-trial'
+gem 'awestruct', github: 'VineetReynolds/awestruct', branch: 'debug-pageload'
+#gem 'awestruct', path: '~/git-repos/awestruct'
 gem 'slim', '~> 2.0.0'
 gem 'kramdown', '~> 1.0.1'
 gem 'asciidoctor', '~> 1.5.0'
@@ -27,7 +28,7 @@ gem 'oily_png', '~> 1.1.1'
 gem 'nokogiri', '~> 1.5.10'
 gem 'therubyracer', platforms: :ruby, require: linux_only('therubyracer')
 gem 'aweplug', github: 'awestruct/aweplug'
-#gem 'aweplug', path: '~/projects/ruby/aweplug'
+#gem 'aweplug', path: '~/git-repos/aweplug'
 #gem 'aweplug', path: '../aweplug'
 gem 'parallel', '~> 1.1.0'
 gem 'mime-types', '2.1'
