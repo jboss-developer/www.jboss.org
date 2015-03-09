@@ -48,7 +48,7 @@ skips:
     # JDF-773
   - !ruby/regexp /^https:\/\/docs.jboss.org\/author\/display\/PLINK\/Unsolicted\+Responses+/
     # WINDUP-180
-  - !ruby/regexp /^http:\/\/www-stg.jboss.org\/pr\/\d{3}\/build\/\d{4}\/projects\/issues.jboss.org\/browse\/WINDUP+/
+  - !ruby/regexp /^http:\/\/issues.jboss.org\/browse\/WINDUP+/
     # JDF-791
   - !ruby/regexp /^https:\/\/devstudio.jboss.com\/central\/install\?connectors=org.jboss.tools.aerogear.hybrid+/
     # JDF-770
