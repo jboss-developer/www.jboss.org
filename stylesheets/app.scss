@@ -853,6 +853,16 @@ body.fullbleed {
   }
 }
 
+// Spacing under the bulleted list
+.ulist {
+  margin-bottom: 15px;
+}
+
+.ulist:nth-last-of-type(3){
+  margin-top: -15px;
+  margin-bottom: 0;
+}
+
 // Spacing alignment for the bulleted list
 
 .ulist ul li {
@@ -1590,7 +1600,6 @@ span.asterisk {
 
 // View More link
 .moreinfolink {
-	padding-top: 15px;
 	display: inline-block;
 }
 
