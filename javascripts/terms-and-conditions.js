@@ -22,6 +22,7 @@ app.termsAndConditions = {
     var tcEndsIn = $.encoder.canonicalize(app.termsAndConditions.urlParam('tcEndsIn'));
     var tcDownloadURL = $.encoder.canonicalize(app.termsAndConditions.urlParam('tcDownloadURL'));
     var tcDownloadFileName = $.encoder.canonicalize(app.termsAndConditions.urlParam('tcDownloadFileName'));
+    var tcSrcLink = $.encoder.canonicalize(app.termsAndConditions.urlParam('tcSrcLink'));
 
     if (tcWhenSigned) {
       $("#tcWhenSigned").html($.encoder.encodeForHTML(tcWhenSigned));
@@ -53,13 +54,16 @@ app.termsAndConditions = {
         $("#tcDownloadFileName").html($.encoder.encodeForHTML(tcDownloadFileName));
       }
 
+    $("a#tcMd5Link").attr("href", tcSrcLink + ".md5");
+    $("a#tcShaLink").attr("href", tcSrcLink + ".sha256");
+
       $.fileDownload(tcDownloadURL);
 
       // Inform GTM that we have requested a product download
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ 'product_download_file_name' : tcDownloadFileName });
       window.dataLayer.push({'event': 'Product Download Requested'});
-      
+
     }
   },
   /*
