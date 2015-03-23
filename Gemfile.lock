@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: git://github.com/awestruct/aweplug.git
-  revision: 6905edbceeec55941cb86d8cae636ffb2d9a6b31
+  revision: e6fada651593f57ad3bd0dd056319b5eb6438bd2
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -88,7 +88,7 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    curb (0.8.7)
+    curb (0.8.8)
     daybreak (0.3.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -96,7 +96,7 @@ GEM
     ethon (0.7.3)
       ffi (>= 1.3.0)
     eventmachine (1.0.7)
-    execjs (2.4.0)
+    execjs (2.5.2)
     extlib (0.9.16)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -210,7 +210,7 @@ GEM
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
     temple (0.6.10)
-    therubyracer (0.12.1)
+    therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
