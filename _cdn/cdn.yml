@@ -1086,7 +1086,7 @@ buzz.js:
   raw_md5sum: 7179683c35b92b2f616d4af51f8fb6ee
   md5sum: daf25b0135326fb6cfe1da519a167628
 developer-materials-filter.js:
-  build_no: 1716
+  build_no: 1718
   raw_md5sum: a7f0af9b4ab371aa00ab28c4d3ec3998
   md5sum: c83b8bad5764cf7447a35b0f34b49a06
 events.js:
@@ -1206,8 +1206,8 @@ images_design_iot_as7screenshot.jpg:
   build_no: 1
   md5sum: 425021fbb8d0f170bf8c52ccc0e7eaa2
 forums.js:
-  build_no: 718
-  md5sum: 5ede78ece79022d3b2ea93aa5f2a02c2
+  build_no: 719
+  md5sum: ea348a677dc0b4363604cd7b2bcc71a6
 _images_branding_tabzilla-redhat-logo-sprite.png:
   build_no: 1
   md5sum: aeca850de5dfe652cbbf7a0deef63100
@@ -1496,3 +1496,9 @@ _ticket-monster_tutorial_gfx_add-mysql-embedded-cartridge.png:
 _ticket-monster_tutorial_gfx_add-postgresql-embedded-cartridge.png:
   build_no: 1
   md5sum: a8cb20e441a2563325592edd58cb48ca
+images_branding_hero_mobile_480x500_devnation_03252015.jpg:
+  build_no: 1
+  md5sum: 7d62814d9f9b0fe74902a49642a33874
+images_branding_hero_desktop_1175x400_devnation_03252015.jpg:
+  build_no: 1
+  md5sum: 8ed4febcb615e7cfc0edee16cf2074f6
