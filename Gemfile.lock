@@ -251,7 +251,7 @@ DEPENDENCIES
   awestruct!
   blinkr (~> 0.2.7)
   curb (~> 0.8.5)
-  daybreak
+  daybreak (~> 0.3.0)
   git (~> 1.2.5)
   google-api-client (~> 0.7)
   gpgme (~> 2.0)
