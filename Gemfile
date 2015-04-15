@@ -28,7 +28,7 @@ gem 'oily_png', '~> 1.1.1'
 gem 'nokogiri', '~> 1.5.10'
 gem 'therubyracer', platforms: :ruby, require: linux_only('therubyracer')
 gem 'aweplug', github: 'awestruct/aweplug'
-#gem 'aweplug', github: 'paulrobinson/aweplug', :branch => 'DEVELOPER-1125'
+# gem 'aweplug', github: 'Dantheman720/aweplug', :branch => 'DEVELOPER-1241'
 #gem 'aweplug', path: '~/projects/ruby/aweplug'
 #gem 'aweplug', path: '../aweplug'
 gem 'parallel', '~> 1.1.0'
