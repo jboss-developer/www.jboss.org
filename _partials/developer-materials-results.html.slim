@@ -41,59 +41,59 @@ div
             | Product
           td.skill Skill Level
       tbody
-        tr.material(ng-repeat="item in data.displayedMaterials" class="get-started-placeholder-{{item.fields.sys_type}}")
+        tr.material(ng-repeat="item in data.displayedMaterials" class="get-started-placeholder-{{item.fields.sys_type[0]}}")
           / Type
           td.type
-            a(ng-href="{{item.fields.sys_url_view}}")
+            a(ng-href="{{item.fields.sys_url_view[0]}}")
               img(ng-src="{{item | thumbnailURL}}")
             / Experimental Banner
-            a.label.experimental-text(ng-show="item.fields.experimental") Experimental
+            a.label.experimental-text(ng-show="item.fields.experimental[0]") Experimental
             / Premium Banner
-            a.label.premium-text(ng-show="item.fields.sys_url_view | isPremium") Premium
+            a.label.premium-text(ng-show="item.fields.sys_url_view[0] | isPremium") Premium
           / Title
           td.title
             p
-              a(ng-href="{{item.fields.sys_url_view}}")
-                | {{item.fields.sys_title}}
-            span.contributor(data-sys-contributor="{{item.fields.sys_author}}")
+              a(ng-href="{{item.fields.sys_url_view[0]}}")
+                | {{item.fields.sys_title[0]}}
+            span.contributor(data-sys-contributor="{{item.fields.author[0]}}")
               a.name
-                | {{item.fields.sys_author | name}}
+                | {{item.fields.author | name}}
           / Description
           td.description
-            | {{item.fields.sys_description | truncate}}
+            | {{item.fields.sys_description[0] | truncate}}
           / Product
           td.product(ng-hide="filters.project")
             | {{item.fields.target_product.join(', ')}}
           / Skill Level
           td.skill
-            span.label(class="material-level-{{item.fields.level}}" ng-show="item.fields.level") {{ item.fields.level }}
-            span(ng-bind-html="item.fields | stars" ng-show="item.fields.sys_rating_avg > 0" )
+            span.label(class="material-level-{{item.fields.level[0]}}" ng-show="item.fields.level[0]") {{ item.fields.level[0] }}
+            span(ng-bind-html="item.fields | stars" ng-show="item.fields.sys_rating_avg[0] > 0" )
 
     ul.small-block-grid-2.large-block-grid-3(ng-hide="data.layout === 'list'")
       li.material(ng-repeat="item in data.displayedMaterials")
-        div(class="get-started-placeholder-{{item.fields.sys_type}}")
+        div(class="get-started-placeholder-{{item.fields.sys_type[0]}}")
           / Thumbnail
-          a(ng-href="{{item.fields.sys_url_view}}")
+          a(ng-href="{{item.fields.sys_url_view[0]}}")
             img(ng-src="{{item | thumbnailURL}}")
           / Experimental Banner
-          a.banner.experimental(ng-show="item.fields.experimental")
+          a.banner.experimental(ng-show="item.fields.experimental[0]")
           / Premium Banner
-          a.banner.premium(ng-show="item.fields.sys_url_view | isPremium")
+          a.banner.premium(ng-show="item.fields.sys_url_view[0] | isPremium")
           / Badges
-          span.label(class="material-level-{{item.fields.level}}" ng-show="item.fields.duration") {{ item.fields.duration | HHMMSS}}
-          span.label(class="material-level-{{item.fields.level}}" ng-show="item.fields.level") {{ item.fields.level }}
+          span.label(class="material-level-{{item.fields.level[0]}}" ng-show="item.fields.duration[0]") {{ item.fields.duration[0] | HHMMSS}}
+          span.label(class="material-level-{{item.fields.level[0]}}" ng-show="item.fields.level[0]") {{ item.fields.level[0] }}
           / Material Name
           h4
-            a(ng-href="{{item.fields.sys_url_view}}")
-              | {{item.fields.sys_title}}
+            a(ng-href="{{item.fields.sys_url_view[0]}}")
+              | {{item.fields.sys_title[0]}}
           / Author
-          span.contributor(data-sys-contributor="{{item.fields.sys_author}}")
+          span.contributor(data-sys-contributor="{{item.fields.author[0]}}")
             a.name
           / timestamp
           p.material-datestamp
-            | {{item.fields.sys_created | timeAgo}}
+            | {{item.fields.sys_created[0] | timeAgo}}
 
           / Description
           p
-            | {{item.fields.sys_description | truncate}}
+            | {{item.fields.sys_description[0] | truncate}}
             | &hellip;

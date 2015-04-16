@@ -29,11 +29,25 @@ dcp.config(function($provide){
 */
 dcp.service('materialService',function($http, $q) {
 
-  this.getMaterials = function(searchTerms, project) {
+  this.getMaterials = function(searchTerms, project, type, rating, tags, level, publishDate) {
+
+    if( Object.prototype.toString.call( tags ) === '[object Array]' ) {
+      for (i = 0; i <  tags.length; i++) {
+        tags[i] =tags[i].toLowerCase();
+      }
+    }
+
+    if (level) {
+      level = level.toLocaleLowerCase();
+    }
+    
     var query = {
-      "field"  : ["sys_author", "target_product", "contributors", "duration", "github_repo_url", "level", "sys_contributors",  "sys_created", "sys_description", "sys_title", "sys_tags", "sys_url_view", "thumbnail", "sys_type", "sys_rating_num", "sys_rating_avg", "experimental"],
+      "sys_type": type,
       "size" : 500,
-      "content_provider" : ["jboss-developer", "rht"]
+      "rating" : rating,
+      "tag" : tags,
+      "level" : level,
+      "publish_date" : publishDate
     };
 
     if(searchTerms) {
@@ -46,7 +60,7 @@ dcp.service('materialService',function($http, $q) {
     var deferred = $q.defer();
     // app.dcp.url.search = "//dcp.jboss.org/v1/rest/search"; // testing with live data
     // query = decodeURIComponent(query);
-    $http.get(app.dcp.url.search, { params : query }).success(function(data){
+    $http.get(app.dcp.url.developer_materials, { params : query }).success(function(data){
       deferred.resolve(data);
     });
     return deferred.promise;
@@ -80,7 +94,7 @@ dcp.filter('thumbnailURL',function(){
       "jbossdeveloper_connector" : "#{cdn( site.base_url + '/images/design/get-started/article.png')}"
     };
     if(item.fields.thumbnail) {
-      return item.fields.thumbnail;
+      return item.fields.thumbnail[0];
     }
     else if(item._type) {
       return thumbnails[item._type];
@@ -257,7 +271,7 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     { value : "jbossdeveloper_example" , "name" : "Tutorial", "description" : "Guided content, teaching you how to build complex applications from the ground up" },
     { value : "jbossdeveloper_archetype" , "name" : "Archetype", "description" : "Maven Archetypes for building Red Hat JBoss Middleware applications" },
     { value : "jbossdeveloper_bom" , "name" : "BOM", "description" : "Maven BOMs for managing dependencies within Red Hat JBoss Middleware applications" },
-    { value : "jbossdeveloper_sandbox" , "name" : "Early Access", "description" : "Single use-case code examples demonstrating features not yet available in a product release" },
+    { value : "jbossdeveloper_quickstart_early_access" , "name" : "Early Access", "description" : "Single use-case code examples demonstrating features not yet available in a product release" },
     { value : "article" , "name" : "Articles (Premium)", "description" : "Technical articles and best practices for Red Hat JBoss Middleware products" },
     { value : "solution" , "name" : "Solutions (Premium)", "description" : "Answers to questions or issues you may be experiencing" }
   ];
@@ -337,7 +351,7 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     }
 
     if(n) {
-      $scope.filters.sys_created = ">=" + d.getFullYear() + "-" + ( d.getMonth() + 1 ) + "-" + d.getDate();
+      $scope.filters.sys_created = d.getFullYear() + "-" + ( d.getMonth() + 1 ) + "-" + d.getDate();
     }
   }
 
@@ -355,78 +369,19 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
     // trigger chosen
     $(".chosen").trigger("chosen:updated");
   }
-
-  $scope.filter.createString = function() {
-    var searchTerms = [];
-
-    if($scope.filters.query){
-      searchTerms.push($scope.filters.query);
-    }
-
-    if($scope.filters.sys_rating_avg) {
-      searchTerms.push("sys_rating_avg:>="+$scope.filters.sys_rating_avg);
-    }
-
-    if($scope.filters.sys_tags && $scope.filters.sys_tags.length){
-        if(typeof $scope.filters.sys_tags === 'string') {
-          var tags = $scope.filters.sys_tags; // singular string
-        }
-        else {
-          var tags = "\"" + $scope.filters.sys_tags.join("\" \"") + "\""; // array
-        }
-        searchTerms.push('sys_tags:('+tags+')');
-    }
-
-    if($scope.filters.sys_type && $scope.filters.sys_type.length){
-      // remove jbossdeveloper_sandbox "Early Access and convert it to experimental"
-
-        var idx = $scope.filters.sys_type.indexOf("jbossdeveloper_sandbox");
-
-        if(idx >= 0 && $scope.filters.sys_type.length > 1) {
-          // We have experimental turned on, but we also have other types to search for
-          searchTerms.push("(experimental:true AND sys_type:(jbossdeveloper_sandbox jbossdeveloper_quickstart)) OR sys_type:("+$scope.filters.sys_type.join(" ")+")");
-        }
-        else if(idx >= 0 && scope.filters.sys_type.length === 1) {
-          // Only Experimental - just search for that without sys_types
-          searchTerms.push("experimental:true");
-        }
-        else {
-          // no experimental - just regular search
-          searchTerms.push("sys_type:("+$scope.filters.sys_type.join(" ")+")");
-        }
-
-    } else {
-      // There are no types, set the default ones
-      searchTerms.push("sys_type:(jbossdeveloper_bom jbossdeveloper_quickstart jbossdeveloper_archetype video rht_knowledgebase_article rht_knowledgebase_solution jbossdeveloper_example)");
-    }
-
-    if($scope.filters.level){
-      searchTerms.push("(level:"+$scope.filters.level + "%20OR%20_missing_:level)");
-    }
-
-    if($scope.filters.sys_created){
-      searchTerms.push("sys_created:"+$scope.filters.sys_created);
-    }
-
-    searchTerms = searchTerms.join(" AND ");
-
-    $scope.data.searchTerms = searchTerms;
-
-    return searchTerms;
-  };
+  
 
   $scope.filter.applyFilters = function() {
     $scope.data.displayedMaterials = [];
     $scope.data.loading = true;
-    var q = this.createString();
 
-    materialService.getMaterials(q, $scope.filters.project).then(function(data){
+    materialService.getMaterials($scope.filters.query, $scope.filters.project, $scope.filters.sys_type, $scope.filters.sys_rating_avg, $scope.filters.sys_tags, $scope.filters.level, $scope.filters.sys_created).then(function(data){
       $scope.data.materials = data.hits.hits;
       $scope.data.loading = false;
       $scope.paginate(1); // start at page 1
       $scope.filter.group();
     });
-
+    
     // save search in local storage
     $scope.filter.store();
 
@@ -527,7 +482,7 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
 
       // restore date slider to closest match
       if($scope.filters.sys_created) {
-        var parts = scope.filters.sys_created.replace('>=','').split('-'); // YYYY MM DD
+        var parts = scope.filters.sys_created.split('-'); // YYYY MM DD
         var d = new Date(parts[0], parts[1], parts[2]); // Year, month date
         var now = new Date().getTime();
         var ago = now - d;

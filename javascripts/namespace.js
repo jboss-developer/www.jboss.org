@@ -35,6 +35,7 @@ app.fastClick = false;
 app.dcp = {};
 app.dcp.url = {};
 app.dcp.url.search = '#{site.dcp_base_protocol_relative_url}v2/rest/search';
+app.dcp.url.developer_materials = '#{site.dcp_base_protocol_relative_url}v2/rest/search/developer_materials';
 app.dcp.url.content = '#{site.dcp_base_protocol_relative_url}v2/rest/content';
 app.dcp.url.auth_status = '#{site.dcp_base_protocol_relative_url}v2/rest/auth/status';
 app.dcp.url.rating = '#{site.dcp_base_protocol_relative_url}v2/rest/rating';
