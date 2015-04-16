@@ -45,10 +45,8 @@ advanced BPM tools and runtime from the jBPM project, to create a single, integr
 Download JBoss BPM Suite and explore the tools for authoring, BPMN2 process flows and business rules, provided as both
 standalone web applications and plug-ins for JBoss Developer Studio.
 
-=== JBoss Business Resource Planner
-JBoss Business Resource Planner is a lightweight, embeddable planning engine. It helps organizations that provide products
-or services with a limited set of constrained resources (employees, assets, time and money). Business Resource Planner
-enables developers to solve constraint satisfaction problems efficiently, optimizing resource usage to do more business with fewer resources.
+=== Business Resource Planner
+JBoss BPM Suite includes the Business Resource Planner, a toolkit designed to help developers construct applications that solve complex scheduling and resource optimization problems. Business Resource Planner offers a variety of algorithms that can quickly find good solutions to optimization problems that can be otherwise difficult, time-consuming and expensive to solve. No specific knowledge of optimization techniques is required in order to use Planner, making it easy to develop resource scheduling and planning applications without the need for specialized expertise and tools.
 
 == Resources
 

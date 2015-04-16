@@ -59,6 +59,10 @@ image:#{cdn('images/products/brms/capture.png')}["BRMS Screenshot", width="518"]
 
 Download JBoss BRMS and explore the tools for authoring business rules, provided as both standalone web applications and plug-ins for JBoss Developer Studio.
 
+=== Business Resource Planner
+
+JBoss BRMS includes the Business Resource Planner, a toolkit designed to help developers construct applications that solve complex scheduling and resource optimization problems. Business Resource Planner offers a variety of algorithms that can quickly find good solutions to optimization problems that can be otherwise difficult, time-consuming and expensive to solve. No specific knowledge of optimization techniques is required in order to use Planner, making it easy to develop resource scheduling and planning applications without the need for specialized expertise and tools.
+
 == Resources
 
 - View the http://www.schabell.org/2014/07/redhat-jboss-brms-product-demos-6.0.2-updated.html[BRMS Product Demos]
