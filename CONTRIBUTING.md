@@ -534,21 +534,21 @@ To create a new multi-page microsite at `www.jboss.org/<microsite_id>`:
 
         hero_class: <microsite_id>
 
-## JBoss Champions
-This documentation covers http://www.jboss.org/champions/
+## JBoss Heroes
+This documentation covers http://www.jboss.org/heroes/
 
-### How do I add a new Champion?
+### How do I add a new Hero?
 
 1. Raise a [JIRA issue](https://issues.jboss.org/secure/DEVELOPER/CreateIssue!default.jspa) for the change request. Include:
- 1. A link to the jboss.org profile of each champion to add. Ensure the profile(s) contains a bio, a champion cannot be added without one.
+ 1. A link to the jboss.org profile of each hero to add. Ensure the profile(s) contains a bio, a hero cannot be added without one.
 2. If you intend to make the code change, assign to yourself. Otherwise leave unassigned and skip the following steps.
-3. Edit [champions.yml](https://github.com/jboss-developer/www.jboss.org/blob/master/_config/champions.yml)
- 1. Add a new entry for each champion, using an existing one as a template
+3. Edit [heroes.yml](https://github.com/jboss-developer/www.jboss.org/blob/master/_config/heroes.yml)
+ 1. Add a new entry for each hero, using an existing one as a template
  2. Notice the image URL. This is a relative path to the location of the profile image added in the next step
-4. For each champion you are adding, download the profile image from the jboss.org profile page (download the default one if no real one set) and save it to the [champions images directory](https://github.com/jboss-developer/www.jboss.org/tree/master/images/champions).
+4. For each hero you are adding, download the profile image from the jboss.org profile page (download the default one if no real one set) and save it to the [heroes images directory](https://github.com/jboss-developer/www.jboss.org/tree/master/images/heroes).
 5. If the Bio contains a twitter ID, remove it and tidy up the text so it still makes sense. Then ensure the twitter property is set.
 5. [Raise a PR](#fixing) for your change.
-6. After the PR is merged and the change is online, email: champions@jboss.org to notify.
+6. After the PR is merged and the change is online, email: heroes@jboss.org to notify.
 
 ## General changes
 If you have a general change that doesn't fall into the categories above, create a [JIRA issue](https://issues.jboss.org/secure/DEVELOPER/CreateIssue!default.jspa).

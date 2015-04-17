@@ -1,8 +1,8 @@
-.wide-hero.champions {
-  background: cdn('../images/champions/champions_microsite_hero.jpg');
+.wide-hero.heroes {
+  background: cdn('../images/heroes/heroes_microsite_hero.jpg');
 }
 
-.champions-content{
+.heroes-content{
   ul{
     padding-bottom: 5px;
 
@@ -12,7 +12,7 @@
   }
 }
 
-.champions-row {
+.heroes-row {
   position: relative;
 
   ul{
@@ -20,7 +20,7 @@
   }
 }
 
-.champions{
+.heroes{
   &:last-child.column {
     float:left;
   }
@@ -32,7 +32,7 @@
     margin-top: 15px;
   }
 
-  .champion-name {
+  .hero-name {
     width:100%;
     text-align: center;
     background:$dark-blue;
@@ -46,7 +46,7 @@
   }
 }
 
-ul.champions-social {
+ul.heroes-social {
   margin-top: 10px;
 
   li{
