@@ -28,10 +28,10 @@ The simplest and quickest way to get started with JBoss BRMS, is to run it in th
 See the next section for details.
 However, if you would like to install it yourself, follow these instructions:
 
-1. Visit the link:../download[JBoss BRMS download page] and download the installer.
-2. Make sure you have a JDK of your choice installed. We recommend OpenJDK or Oracle JDK.
-3. You can now (optionally) install the Integration Stack for JBoss Developer Studio. This provides IDE support for developing JBoss BRMS applications. For more details, see the link:../../devstudio/get-started/#ExtraSection[installation instructions].
-
+1. JBoss BRMS from 6.1 release onwards does not bundle EAP inside its installer. Visit the link:#{site.base_url}/products/eap/download/[EAP downloads page] to download and then install EAP version 6.4 before using the JBoss BRMS installer.
+2. Visit the link:#{site.base_url}/products/brms/download/[JBoss BRMS download page] and download the installer.
+3. Make sure you have a JDK of your choice installed. We recommend OpenJDK or Oracle JDK.
+4. You can now (optionally) install the Integration Stack for JBoss Developer Studio. This provides IDE support for developing JBoss BRMS applications. For more details, see the installation instructions.
 
 ### Workshop in the Cloud
 

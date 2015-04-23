@@ -27,9 +27,10 @@ The simplest and quickest way to get started with JBoss BPM Suite, is to run it 
 See the next section for details.
 However, if you would like to install it yourself, follow these instructions:
 
-1. Visit the link:/products/bpmsuite/download[JBoss BPM Suite download page] and download the installer.
-2. Make sure you have a JDK of your choice installed. We recommend OpenJDK or Oracle JDK.
-3. You can now (optionally) install the Integration Stack for JBoss Developer Studio. This provides IDE support for developing JBoss BPM Suite applications. For more details, see the link:/products/devstudio/get-started/#ExtraSection[installation instructions].
+1. JBoss BPM Suite from 6.1 release onwards does not bundle EAP inside its installer. Visit the link:#{site.base_url}/products/eap/download/[EAP downloads page] to download and then install EAP version 6.4 before using the JBoss BPM Suite installer.
+2. Visit the link:#{site.base_url}/products/bpmsuite/download[JBoss BPM Suite download page] and download the installer.
+3. Make sure you have a JDK of your choice installed. We recommend OpenJDK or Oracle JDK.
+4. You can now (optionally) install the Integration Stack for JBoss Developer Studio. This provides IDE support for developing JBoss BPM Suite applications. For more details, see the link:/products/devstudio/get-started/#ExtraSection[installation instructions].
 
 
 ### Workshop in the Cloud
