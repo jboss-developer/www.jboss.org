@@ -34,6 +34,11 @@
 
 .widget
   h3.widget-title#supported-solutions Supported Solutions
+  - if page.parent.product.id == 'eap'
+    a.button.shadow.large.blue(href="https://www.redhat.com/apps/store/middleware/jboss_enterprise_application_platform.html")
+      | Buy Now
+      i.fa.fa-shopping-cart
+    p.small.center &#40;use redhat.com login&#41;
   ul
     li: a(href="http://www.redhat.com/contact/sales.html") Contact Sales
     li: a(href="https://engage.redhat.com/forms/consulting-contact-sales") Consulting Solutions
