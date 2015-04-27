@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: git://github.com/awestruct/aweplug.git
-  revision: e6fada651593f57ad3bd0dd056319b5eb6438bd2
+  revision: eba7ac3870686aec4b526bbbbabac25c82f00fed
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
@@ -139,7 +139,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     image_size (1.4.1)
-    iso8601 (0.8.5)
+    iso8601 (0.8.6)
     json (1.8.2)
     jwt (1.4.1)
     kramdown (1.0.2)
@@ -155,7 +155,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.1)
     mini_portile (0.6.2)
-    minitest (5.5.1)
+    minitest (5.6.0)
     multi_json (1.11.0)
     multipart-post (2.0.0)
     nenv (0.2.0)
