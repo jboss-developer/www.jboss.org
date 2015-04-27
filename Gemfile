@@ -31,7 +31,7 @@ gem 'therubyracer', platforms: :ruby, require: linux_only('therubyracer')
 #gem 'aweplug', github: 'awestruct/aweplug'
 gem 'aweplug', github: 'paulrobinson/aweplug', branch: 'DEVELOPER-1211'
 #gem 'aweplug', path: '~/projects/ruby/aweplug'
-#gem 'aweplug', path: '../aweplug'
+gem 'aweplug', path: '../aweplug'
 gem 'parallel', '~> 1.1.0'
 gem 'mime-types', '2.1'
 gem 'google-api-client', '~> 0.7'
