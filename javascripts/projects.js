@@ -17,7 +17,7 @@ app.project = {
       return false;
     }
   },
-  projectFilter : function(filters, keyword, container, thumbnailSize) {
+  projectFilter : function(filters, keyword, container, thumbnailSize, featuredProjectIds) {
     //Currently the only way to specify no limit
     var maxResults = 500;
 
@@ -60,11 +60,11 @@ app.project = {
     });
 
     // Prep each filter
-    var query = ['((_exists_:archived AND NOT archived:true) OR (_missing_:archived))'];
+    var query;
 
     if(currentFilters['keyword']) {
       window.dataLayer.push({ 'keyword' : query });
-      query.push(keyword);
+      query = keyword;
       delete currentFilters['keyword']
     } else {
       window.dataLayer.push({ 'keyword' : null });
@@ -73,14 +73,20 @@ app.project = {
     // append loading class to wrapper
     $("ul.results").addClass('loading');
     $.extend(request_data, currentFilters);
-    request_data["query"] = query.join(" AND ");
+    //request_data["query"] = query.join(" AND ");
 
     window.dataLayer.push({'event': 'projects-search'});
 
+    var query = {
+      query: keyword,
+      project: featuredProjectIds
+    };
+    
     $.ajax({
       url : url,
       dataType: 'json',
-      data : request_data,
+      traditional: true,
+      data: query,
       container : container,
       thumbnailSize : thumbnailSize,
       error : function() {
@@ -190,8 +196,8 @@ app.project = {
         var correctLink = app.project.getCorrectUrl(props.anonymousLink);
         list += "<li>Anonymous Source: <a href='"+correctLink+"'>"+ correctLink +"</a></li>";
       }
-      if (props.commiterLink) {
-        var correctLink = app.project.getCorrectUrl(props.commiterLink);
+      if (props.committerLink) {
+        var correctLink = app.project.getCorrectUrl(props.committerLink);
         var viewLink = correctLink.replace(/https?:\/\//,'');
         list += "<li>Committer Source Access: <a href='"+correctLink+"'></a></li>";
       }
@@ -349,10 +355,10 @@ $(function() {
   var featuredProjectIds = $('.featured-project-ids');
 
   if(featuredProjectIds.length) {
-    var queryVal = JSON.parse(featuredProjectIds.text()).join(' OR ');
-    var query = "sys_content_id:("+queryVal+")";
+  //  var queryVal = JSON.parse(featuredProjectIds.text()).join(' OR ');
+  //  var query = "sys_content_id:("+queryVal+")";
 
-    app.project.projectFilter(null, query, $('ul.featured-projects-results'), '500x400');
+    app.project.projectFilter(null, null, $('ul.featured-projects-results'), '500x400', JSON.parse(featuredProjectIds.text()));
 
   }
 
