@@ -41,14 +41,15 @@ app.project = {
 
     if ($('select[name="filter-products"]').length && $('select[name="filter-products"]').val() !== "") {
       var product = $('select[name="filter-products"]').val();
-      filters['project'] = app.products[product]['upstream'];
+      featuredProjectIds = app.products[product]['upstream'];
+      
       window.dataLayer.push({ 'product' : product });
     } else {
       window.dataLayer.push({ 'product' : null });
     }
 
     if (filters['project']) {
-      url = app.dcp.url.search;
+      //url = app.dcp.url.search;
       request_data["sys_type"] = "project_info";
     }
 
@@ -118,7 +119,7 @@ app.project = {
     // loop over every hit
 
     for (var i = 0; i < hits.length; i++) {
-      var props = hits[i]._source;
+      var props = hits[i].fields;
 
       var imgsrc = "http://static.jboss.org/" + (props.specialIcon || props.sys_project) + "/images/" + (props.specialIcon || props.sys_project) + "_" + thumbnailSize + ".png";
 
