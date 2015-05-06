@@ -1,0 +1,90 @@
+---
+layout: microsite-multi-page
+hero_class: event-gids
+
+nav:
+  - title : GIDS Overview
+    url: '../'
+  - title: Our Speakers
+    url: '../speakers/'
+  - title: Our Sessions
+    url: '../sessions/'
+---
+
+- page.title = "JBoss at GIDS - The Sessions"
+
+= define 'hero'
+  .row
+    .large-25.column.center
+      h2 Great Indian Developer Summit 2015
+
+h2.divider JBoss Sessions at GIDS
+
+table
+  tr
+    td width = "200"
+      p Title
+    td
+      p Description
+    td
+      p Presentation      
+  tr
+    td
+      p Architecture for Next Gen Apps (Keynote)
+    td
+      p Developers need to develop and deploy new applications and update and redeploy their existing applications faster. Red Hat Jboss Middleware is all about making day-to-day job of the Enterprise Application developer easier.  The keynote talks about xPaas capabilities and enterprise open source.
+    td
+      a(href="https://www.dropbox.com/sh/ht0b796czeg4s78/AAC5j221_iwYFuIIkg-a5lgpa/20150423%20-%20GIDS%20-Keynote%20Bruno%20Goerges.pdf?dl=1") Slide Deck                  
+  tr
+    td
+      p Going Beyond Just Connectivity For Java Enterprise Mobile Applications
+    td
+      p Enterprises today are burdened (or blessed) with new mobile requirements on their developers. Persistence, Security, Connectivity. All 3 are an important part of any enterprise application, but how do they translate to the mobile environment? With a range a technologies to support and develop with, things can get messy quickly. This does not even include mobile specific concerns such as native push, offline support, cross-device support, and more. This session shows how the open source project AeroGear can address these requirements, allowing Java EE developers to access server side components, JAX-RS endpoints, push services, and more using a common API across multiple mobile platforms like Javascript, Cordova, Android, and iOS.
+    td
+      a(href="https://www.dropbox.com/sh/ht0b796czeg4s78/AACn_gM9LQ-A5UWbxlTCeHy7a/Sebastien%20Blanc.pdf?dl=1") Slide Deck            
+  tr
+    td
+      p How to Build Enterprise Mobile Apps That Integrate with Your Java EE Back End in 24 Minutes
+    td
+      p Are you a Java developer and want to develop a mobile app that connects to a secured Java EE back end, but you don't know where to start? This session is tailored for you. This live coding session,using a familiar development environment, goes step by step through building a complete mobile, hybrid, multiplatform application. Starting from scratch, the tutorial takes you through building a simple Java EE application and, from there, scaffolding a mutliplatform mobile client by using Cordova. Finally we will show how to implement sending Push Notifications from the backend to be received on the mobile client. This is an in-depth session in which the attendees will learn concretely, and without using hipster tools, how to enter the mobile world.
+    td            
+  tr
+    td
+      p Getting Started with OpenShift v3
+    td
+      p OpenShift is Red Hat's open source PaaS platform. OpenShift v3 (due to be released this year) will provide a holistic experience on running your microservices using Docker and Kubernetes. All the work is done in the open source at OpenShift Origin. OpenShift v3 uses a new platform stack that is using plenty of community projects where Red Hat contributes such as Fedora, Centos, Docker, Project Atomic, Kubernetes, and OpenStack. This talk will explain how to get started with OpenShift v3. Attendees will learn how to take a simple Java EE application and get it running on OpenShift v3. The talk will also explain how to port existing Docker and Kubernetes applications to OpenShift v3. and the complete push-to-production lifecycle. The talk will also show how to dynamically scale applications and leverage self-healing functions of Kubernetes in OpenShift.
+    td
+      a(href="http://developermarch.com/developersummit/downloadPDF/Apr21_HallA_1045_GIDS2015_GettingStartedOpenShiftV3_VineetReynolds.pdf") Slide Deck                        
+  tr
+    td
+      p DevOps with Java EE
+    td
+      p Techniques such as automated builds and CI/CD allow software to be developed to a high standard and easily packaged and deployed to test environments, resulting in the ability to rapidly, reliably and repeatedly push out enhancements and bug fixes to customers at low risk and with minimal manual overhead. What container-agnostic tools are available for testing and CI/CD of a Java EE application?  This talk will start with how to package Java EE application "operating environment" such as Operating System, JVM, Database, dependencies, and other configuration in a reusable format, such as Docker. It explains how to replicate the environment for development, testing, staging, and production minimizing the impedance mismatch between them. A quick overview of Arquillian and how it helps in automated testing across multiple Java EE containers is shown. How functional testing, code coverage, performance and other aspects for going in to production will be discussed. Using Arquillian against Docker containers will be explained as well. Finally, configuring Jenkins for Continuous Integration and setting up deployment pipelines will show how to take an application from push-to-production and achieve almost 100% automation.
+    td
+      a(href="http://developermarch.com/developersummit/downloadPDF/Apr23_SDHall1_1110_GIDS2015_DevopsJavaEE_VineetReynolds.pdf") Slide Deck                  
+  tr
+    td
+      p Microservices Design Patterns for Java Applications
+    td
+      p Microservices allow to decompose a monolithic application into cohesive and multiple decoupled services. Each service is running in its own process and communicates using lightweight mechanisms, such as HTTP API. These services are built around business capabilities or functional decomposition. Microservice also enables true polyglot architecture - both in terms of language and data. It truly allows you to employ the right tool for the right job. Each service is independently deployable and lends very well to fully automated deployment machinery. Can you take an existing Java EE application and decompose it into microservices? What tools are required to enable CI/CD? What are different design patterns for microservices? What tools do you need to manage such services? Is the complexity being pushed around from service implementation to orchestration? This talk will explain some of these concerns and provide guidance on how to leverage microservices in your Java applications.
+    td
+      a(href="http://developermarch.com/developersummit/downloadPDF/Apr23_SDHall2_1650_GIDS2015_MicroservicesDesign_VineetReynolds.pdf") Slide Deck                        
+  tr
+    td
+      p Scaling Java Apps Using Docker
+    td
+      p Once you start using Docker containers, one of the next steps is to scale and cluster containers across multiple hosts. Applications however need to be designed to take advantage of the scaling and cluster management features afforded in the Docker ecosystem. A Docker container is expected to run only a single process. This model shines when scaling out the app to meet performance and availability guarantees. This talk explores the constraints imposed on developers by the single process model. It will start with a demo of clustering a Java EE app using Docker and Kubernetes. The talk will proceed to cover features of Java application servers, notably that of cluster node discovery, that aids in scaling containerized Java apps. It explains how configuration management should be carefully addressed to avoid issues arising from the use of ephemeral stores. Finally it would delve into how the app can magically autoscale through resizing the cluster on varying loads.
+    td
+      a(href="http://developermarch.com/developersummit/downloadPDF/Apr23_SDHall2_1530_GIDS2015_ScalingJavaAppsDocker_VineetReynolds.pdf") Slide Deck                        
+
+= define 'right_rail'
+  .widget
+    h3.widget-title Join DevOps Conversation
+    p Register before May 30th 2015 for the possibility to win Red Hat Merchandise  
+  .widget
+    a.button(href="https://developer.jboss.org/register.jspa") Sign up & Win
+
+  .widget.rightbarbullets
+    ul
+      li
+        a href="http://redhatdeveloper.theresumator.com/apply/rhJTks/Build-Engineer.html" We're Hiring!    
