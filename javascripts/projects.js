@@ -17,7 +17,7 @@ app.project = {
       return false;
     }
   },
-  projectFilter : function(container, thumbnailSize, featuredProjectIds) {
+  projectFilter : function(featuredProjectIds, container, thumbnailSize) {
     //Currently the only way to specify no limit
     var maxResults = 500;
 
@@ -297,14 +297,13 @@ $(function() {
     if (window.location.search) {
       var product_id = app.utils.getQueryVariable('included-in');
       $('option[value="'+product_id+'"]').attr('selected','selected');
-      app.project.projectFilter({project: app.products[product_id]['upstream']});
+      app.project.projectFilter(app.products[product_id]['upstream']);
     } else {
       app.project.projectFilter();
     }
   }
   if ($('.community-projects').length) {
-    app.project.projectFilter({project: app.products[$('.community-projects').data('product-id')]['upstream']});
-    //app.project.projectFilter($('ul.community-projects'), '500x400', JSON.parse(featuredProjectIds.text()));
+    app.project.projectFilter(app.products[$('.community-projects').data('product-id')]['upstream']);
   }
 
   /*
@@ -332,7 +331,7 @@ $(function() {
   */
   var featuredProjectIds = $('.featured-project-ids');
   if(featuredProjectIds.length) {
-    app.project.projectFilter($('ul.featured-projects-results'), '500x400', JSON.parse(featuredProjectIds.text()));
+    app.project.projectFilter(JSON.parse(featuredProjectIds.text()), $('ul.featured-projects-results'), '500x400');
   }
 
 });
