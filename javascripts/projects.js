@@ -21,8 +21,6 @@ app.project = {
     //Currently the only way to specify no limit
     var maxResults = 500;
 
-    var url = app.dcp.url.project;
-
     // Pass search params to GTM for analytics
     window.dataLayer = window.dataLayer || [];
 
@@ -33,11 +31,7 @@ app.project = {
 
     var filters = $.extend(filters, {"keyword": keyword});
     var currentFilters = {};
-    var request_data = {
-        "field"  : ["_source"],
-        "query" : query,
-        "size" : maxResults
-    }
+
 
     if ($('select[name="filter-products"]').length && $('select[name="filter-products"]').val() !== "") {
       var product = $('select[name="filter-products"]').val();
@@ -47,11 +41,7 @@ app.project = {
     } else {
       window.dataLayer.push({ 'product' : null });
     }
-
-    if (filters['project']) {
-      //url = app.dcp.url.search;
-      request_data["sys_type"] = "project_info";
-    }
+    
 
     $.each(filters, function(key, val) {
       // if its empty, remove it from the filters
@@ -73,18 +63,17 @@ app.project = {
 
     // append loading class to wrapper
     $("ul.results").addClass('loading');
-    $.extend(request_data, currentFilters);
-    //request_data["query"] = query.join(" AND ");
 
     window.dataLayer.push({'event': 'projects-search'});
 
     var query = {
       query: keyword,
-      project: featuredProjectIds
+      project: featuredProjectIds,
+      size : maxResults
     };
     
     $.ajax({
-      url : url,
+      url : app.dcp.url.project,
       dataType: 'json',
       traditional: true,
       data: query,
