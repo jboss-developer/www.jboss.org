@@ -1,0 +1,38 @@
+---
+layout: microsite-multi-page
+hero_class: event-gids
+
+nav:
+  - title : GIDS Overview
+    url: './'
+  - title : Our Speakers
+    url: './speakers/'
+  - title : Our Sessions
+    url: './sessions/'
+---
+
+- page.title = "JBoss at GIDS"
+
+= define 'hero'
+  .row
+    .large-25.column.center
+      h2 Great Indian Developer Summit 2015
+
+h2.divider GIDS - 2015 Overview
+
+p  WITH OVER 30,000 ATTENDEES benefiting over seven game changing editions, Great Indian Developer Summit (GIDS) is the gold standard for India's software developer ecosystem for gaining exposure to and evaluating new projects, tools, services, platforms, languages, software and standards.  The 2015 edition of GIDS will feature a convergence of six broad tracks. GIDS.DATA and GIDS.Tutorials featuring forward looking keynotes and in-depth workshops, GIDS.NET featuring the best and latest from the world of Microsoft computing, GIDS.WEB and GIDS.MOBILE featuring technologies, platforms and business models to launch the next generation of successful web and mobile apps, GIDS.JAVA featuring rock solid content from the world of Enterprise Java, Agile and Dynamic Languages.
+
+p 
+  img(src="#{cdn( site.base_url + '/images/gids/gids_collage.jpg')}")
+              
+= define 'right_rail'
+  .widget
+    h3.widget-title Join DevOps Conversation
+    p Register before May 30th 2015 for the possibility to win Red Hat Merchandise 
+  .widget
+    a.button(href="https://developer.jboss.org/register.jspa") Sign up & Win
+
+  .widget.rightbarbullets
+    ul
+      li
+        a href="http://redhatdeveloper.theresumator.com/apply/rhJTks/Build-Engineer.html" We're Hiring!

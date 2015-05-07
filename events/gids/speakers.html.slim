@@ -1,0 +1,58 @@
+---
+layout: microsite-multi-page
+hero_class: event-gids
+
+nav:
+  - title : GIDS Overview
+    url: '../'
+  - title : Our Speakers
+    url: '../speakers/'
+  - title : Our Sessions
+    url: '../sessions/'
+---
+
+- page.title = "JBoss at GIDS - Our Speakers"
+
+= define 'hero'
+  .row
+    .large-25.column.center
+      h2 Great Indian Developer Summit 2015
+      
+h2.divider Meet Our Speakers
+
+table
+  tr
+    td
+      p Name
+    td
+      p Description
+  tr
+    td width = "300"
+      p: strong Bruno Georges
+      img(src="#{cdn( site.base_url + '/images/people/BrunoGeorges.jpg')}" alt="Bruno Georges" width="200" height="250")
+    td
+      p Bruno Georges is the Director, Worldwide Application Platforms Engineering for JBoss, Red Hat. In his current role, Bruno leads the Application Server, Portal, Mobile and Framework engineering teams, responsible for the development and innovation of Red Hat's JBoss Middleware.
+  tr
+    td width = "300"
+      p: strong Sébastien Blanc 
+      img(src="#{cdn( site.base_url + '/images/people/SebastienBlanc.jpg')}" alt="Sébastien Blanc" width="200" height="250")
+    td
+      p Sébastien Blanc is JEE engineer with 10 years of experience. He works at Red Hat and focus on Open Source libraries for Mobile in the Enterprise. He believes that Mobile Web/Hybrid Apps are the future and tries to evangelize this through different conferences (Devoxx, JUDCon, JavaOne, SpringOne).
+  tr
+    td width = "300"
+      p: strong Vineet Reynolds Pereira
+      img(src="#{cdn( site.base_url + '/images/people/VineetReynolds.jpg')}" alt="Vineet Reynolds Pereira" width="200" height="250")
+    td
+      p Vineet Reynolds Pereira is a senior software engineer at Red Hat, working on JBoss open-source projects with emphasis on improving developer productivity. In his current role, he works on JBoss Forge, JBoss Web Framework Kit and JBoss Developer Studio. He works on the scaffolding and Java EE code generation features for JBoss Forge, and on JavaScript and Cordova quickstarts in the JBoss Web Framework Kit. He is the current maintainer of TicketMonster, an example application for JBoss. He's worked in several fields including application prototyping and design, domain driven design, application security, application integration, integration testing to name a few.
+      
+= define 'right_rail'
+  .widget
+    h3.widget-title Join DevOps Conversation
+    p Register before May 30th 2015 for the possibility to win Red Hat Merchandise  
+  .widget
+    a.button(href="https://developer.jboss.org/register.jspa") Sign up & Win
+
+  .widget.rightbarbullets
+    ul
+      li
+        a href="http://redhatdeveloper.theresumator.com/apply/rhJTks/Build-Engineer.html" We're Hiring!    
