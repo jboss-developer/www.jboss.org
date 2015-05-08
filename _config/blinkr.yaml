@@ -22,6 +22,7 @@ skips:
   - !ruby/regexp /^https:\/\/jboss.orgmail.list:.dev@httpd.apache.org+/
   - !ruby/regexp /^https:\/\/jboss.orgmail.list:.dev@tomcat.apache.org+/
   - !ruby/regexp /^https:\/\/jboss.orgmail.list:.users@tomcat.apache.org+/
+  - !ruby/regexp /^http:\/\/www-stg.jboss.org\/pr\/\d{3}\/build\/\d{4}\/usergroups+/
   # DEVELOPER-1252
   - !ruby/regexp /^http:\/\/www-stg.jboss.org\/pr\/797\/build\/1759\/enterprise-java\/http\/:www.jboss.org\/products\/eap\/overview\/+/
     # Non-errors in production
