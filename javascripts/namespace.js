@@ -40,6 +40,7 @@ app.dcp.url.content = '#{site.dcp_base_protocol_relative_url}v2/rest/content';
 app.dcp.url.auth_status = '#{site.dcp_base_protocol_relative_url}v2/rest/auth/status';
 app.dcp.url.rating = '#{site.dcp_base_protocol_relative_url}v2/rest/rating';
 app.dcp.url.project= '#{site.dcp_base_protocol_relative_url}v2/rest/search/suggest_project_name_ngram_more_fields';
+app.dcp.url.connectors= '#{site.dcp_base_protocol_relative_url}v2/rest/search/fuse_connectors';
 app.dcp.error_message = "<div class='dcp-error-message'>It appears we're unable to access this data right now. Look at <a href='http://twitter.com/jbossorg' target=_blank>@jbossorg</a> to see if there is scheduled maintenance, or try again shortly.</div>";
 
 /*

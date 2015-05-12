@@ -71,7 +71,6 @@ app.connectors = {
     connectorFilter : function(keyword, container, target_product, thumbnailSize, orderBy) {
         //Currently the only way to specify no limit
         var maxResults = 500;
-        var url = app.dcp.url.search;
 
         //Query returns items where any of the three target products are set to the required product.
         var query = ["(sys_content_type: jbossdeveloper_connector AND (target_product_1: " + target_product + " OR target_product_2: " + target_product + " OR target_product_3: " + target_product + "))"];
@@ -91,7 +90,7 @@ app.connectors = {
         $("ul.connector-results").addClass('loading');
 
         $.ajax({
-            url : url,
+            url : app.dcp.url.connectors,
             dataType: 'json',
             data : request_data,
             container : container,
