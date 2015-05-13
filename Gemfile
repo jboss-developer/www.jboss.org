@@ -18,6 +18,7 @@ gem 'awestruct', github: 'LightGuard/awestruct', branch: 'multi-thread-gen-trial
 gem 'slim', '~> 3.0.0'
 gem 'daybreak', '~> 0.3.0'
 gem 'kramdown', '~> 1.0.1'
+gem 'compass', '~> 1.0'
 gem 'asciidoctor', '~> 1.5.0'
 gem 'uglifier', '~> 2.0.1'
 gem 'htmlcompressor', '~> 0.0.6'
