@@ -56,8 +56,8 @@ group :vdiff do
 end
 
 group :health do
-  gem 'blinkr', '~> 0.2.7'
-  #gem 'blinkr', github: 'pmuir/blinkr'
+  # gem 'blinkr', '~> 0.2.7'
+  gem 'blinkr', github: 'Dantheman720/blinkr', branch: 'GITHUB-11'
   #gem 'blinkr', path: '../blinkr'
 end
 
