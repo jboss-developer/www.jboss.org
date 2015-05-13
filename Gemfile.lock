@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/Dantheman720/blinkr.git
+  revision: 6f3b25fc8b210dd23514da3f3ff33eada8da5323
+  branch: GITHUB-11
+  specs:
+    blinkr (0.2.9)
+      nokogiri (~> 1.5)
+      parallel (~> 1.1)
+      slim (~> 3.0)
+      typhoeus (~> 0.7)
+
+GIT
   remote: git://github.com/LightGuard/awestruct.git
   revision: 5dbe512680b7aa094598ecdcbb6e52d3e75aa32f
   branch: multi-thread-gen-trial
@@ -36,15 +47,6 @@ GIT
       sass (< 3.4.6)
       uglifier (~> 2.0.1)
       xml-simple (~> 1.1)
-
-PATH
-  remote: ../blinkr
-  specs:
-    blinkr (0.2.9)
-      nokogiri (~> 1.5)
-      parallel (~> 1.1)
-      slim (~> 3.0)
-      typhoeus (~> 0.7)
 
 GEM
   remote: https://rubygems.org/
