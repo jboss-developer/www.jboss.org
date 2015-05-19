@@ -21,8 +21,10 @@ GIT
       tilt (~> 2.0.1)
       zurb-foundation (~> 4.3.2)
 
-PATH
-  remote: ../aweplug
+GIT
+  remote: git://github.com/paulrobinson/aweplug.git
+  revision: 70ce4230714de3b84df1c461c9a9283d3b8933e4
+  branch: DEVELOPER-1211
   specs:
     aweplug (1.0.0.a24)
       curb (~> 0.8.5)
