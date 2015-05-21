@@ -32,6 +32,88 @@ p
 p
   |"Just as the new wave of personal computers were thought of as constrained 30 years ago and often looked on with distain by those in the workstation and mainframe arenas, yet now they power a lot of enterprise computing, so too will go many of the devices we see around us today as being of limited utility. Your mobile phone already has capabilities that would put to shame PCs of the 1990's. They have also quickly become critical to our day to day lives, moving from supporting basic games to complex B2B applications. These applications need enterprise capabilities, such as messaging and transactions. But it's not just mobile phones. Due to the economics of scale, it's not far fetched to assume that sooner than you think your washing machine, car or even coffee pot, will have more raw processing power than workstations or laptops of years gone by. Being able to tap into these processors is something that will happen, security considerations not withstanding. So JBossEverywhere is about defining middleware components and frameworks that can be used on these various devices. We should not expect people to reinvent the wheel, e.g., transactions, when there's a perfectly good wheel already out there. It'll mean developing new projects and pushing the envelope, but that's what we're good at. New frameworks that will combine adaptability, configurability, monitoring etc. to allow them dynamically cope with changing deployment environments so that the application doesn't have to (in many cases.)"
 img(width="550" height="750" alt="JBossEverywhere architecture" src=cdn("#{site.base_url}/images/design/iot/jbosseverywhere.png"))
+#iot-resources
+  h3.divider More Resources
+  .large-24.columns  
+    .row
+      h5
+        a.external-link href="http://wei-meilin.blogspot.tw/2014/09/jboss-fuse-on-xpaas-iot-mash-up-demo.html" JBoss Fuse on xPaaS - IoT Mash-up Demo
+      p.author Christina Lin
+      small September 21, 2014
+      p There are 3 common protocols when it comes to messaging on Internet of Things. MQTT - is OASIS standard, adopted by various vendor and companies, it is an extremely light weight transport, and is excellent for low computing power device, and platforms.
+    .row
+      h5
+        a.external-link href="http://wei-meilin.blogspot.tw/2014/06/red-hat-openshift-xpaas-simple-mqtt.html" Red Hat OpenShift xPaaS - Simple MQTT with OpenShift, Part Two, Simple client connecting to Broker on xPaaS
+      p.author Christina Lin
+      small June 3, 2014
+      p This demo will be divided into 2 parts, first part is about setting up the Messaging broker on OpenShift with MQTT Connector. Second part we are going to write a simple demo trying to connect to the broker via MQTT.
+    .row
+      h5
+        a.external-link href="http://wei-meilin.blogspot.tw/2014/05/red-hat-openshift-xpaas-simple-mqtt.html" Red Hat OpenShift xPaaS - Simple MQTT with OpenShift, Part One, Create A-MQ broker with MQTT protocol on Openshift
+      p.author Christina Lin
+      small May 31, 2014
+      p This demo will be divided into 2 parts, first is to setup the Messaging broker on OpenShift with MQTT Connector. Then we are going to write a simple demo trying to connect to the broker via MQTT. Openshift is the open and unified Platform-as-a-Service (PaaS) offering for enterprises from Red Hat. So developers like me don't have to go through all the hassle about setting up the environments or managing the networks.
+    .row
+      h5
+        a.external-link href="http://wei-meilin.blogspot.tw/2014/05/red-hat-jboss-mq-mq-in-internet-of.html" Red Hat JBoss A-MQ - A-MQ in Internet of Things, Sensor transmitting vital signal to Biomedical dashboard via AMQP
+      p.author Christina Lin
+      small May 28, 2014
+      p "The term Internet of Things was proposed by Kevin Ashton in 1999,... it originally refers to uniquely identifiable objects and their virtual representations in an Internet-like structure. ...... Today however, the term Internet of Things is used to denote advanced connectivity of devices, systems and services that goes beyond the traditional machine-to-machine (M2M) and covers a variety of protocols, domains and applications."
+    .row
+      h5
+        a.external-link href="http://www.dzone.com/articles/red-hat-jboss-mq-and-iot" Red Hat JBoss A-MQ and the IoT
+      p.author Kenneth Peeples
+      small July 23, 2014
+      p How to be a JBoss A-MQ and Android Rock Star in the world of the Internet of Things! I wanted to pull together a simple example of how to leverage Red Hat JBoss A-MQ in the Internet of Things (IoT) through the use of Message Queue Telemetry Transport (MQTT) in Android.  
+    .row
+      h5
+        a.external-link href="http://dzone.com/research/guide-to-internet-of-things" DZone&#39;s 2014 Guide to Internet of Things
+      small July 23, 2014
+      p This free guide includes: In-depth articles written by industry experts, key findings from our survey of over 2000 developers, profiles on 39 Internet of Things Vendor Solutions, "How to IoT Your Life: The Complete Shopping List", "IoT Developer Mindshare" Infographic, and Glossary of common IoT terms.
+    .row
+      h5
+        a.external-link href="http://java.dzone.com/articles/apache-camel-iot-world-eclipse" Apache Camel in the IoT World: Eclipse Kura Component
+      p.author Henry Konsek
+      small March 3, 2015
+      p Eclipse Kura is an OSGi based framework dedicated for the M2M gateways based on the small computing platforms like Raspberry Pi or BeagleBoard Black. If you consider using Kura in your M2M gateway and and the same time you would like to take advantage of the rich set of Apache Camel components and its EIP capabilities, then Camel Kura component is something for you. Camel Kura component will be available starting from the Camel 2.15.0. 
+    .row
+      h5
+        a.external-link href="http://java.dzone.com/articles/make-your-iot-gateway-wifi" Make Your IoT Gateway WiFi-Aware Using Camel and Kura
+      p.author Henry Konsek
+      small May 9, 2015
+      p The common scenario for the mobile IoT Gateways, for example those mounted on the trucks or the other vehicles, is to cache collected data locally on the device storage and synchronizing the data with the data center only when trusted WiFi access point is available near the gateway. Such trusted WiFi network could be localized near the truck fleet parking.
+    .row
+      h5
+        a.external-link href="http://www.slideshare.net/hekonsek/io-t-gateway-dream-team-eclipse-kura-and-apache-camel" IoT gateway dream team - Eclipse Kura and Apache Camel
+      p.author Henry Konsek
+      small May 06, 2015
+      p Eclipse Kura is the well recognized field gateway for Internet Of Things applications. Apache Camel is the message routing engine and the library containing a gazillions of the various endpoint connectors. Are you interested in finding out how these two can be joined together to create a rocking IoT solution? Then tune in to this talk!
+    .row
+      h5
+        a.external-link href="http://henryk-konsek.blogspot.com/search/label/IoT" Henryk Konsek&#39;s IoT Blog
+      p.author Henry Konsek
+      p Engineer at Red Hat. Open source hacker (Apache Camel, JBoss Fabric8, JBoss Hawt.io). Keen on the marriage of the Internet Of Things, messaging and the cloud.
+    .row
+      h5
+        a.external-link href="http://henryk-konsek.blogspot.com/2015/04/camel-iot-labs-project-arrived.html" Camel IoT Labs project arrived
+      p.author Henry Konsek
+      small April 24, 2015
+      p As some of you already know, I've been pretty interested in the Internet Of Things topic. The IoT is actually a natural extension of my existing interests - M2M communication relies on the messaging and integration technologies heavily, so Camel, ActiveMQ and Fabric8 excel in this area.
+    .row
+      h5
+        a.external-link href="http://henryk-konsek.blogspot.com/2015/03/camel-paho-connector.html" Camel Paho connector
+      p.author Henry Konsek
+      small March 19, 2015
+      p The incoming version of the Apache Camel (2.16) will bring Paho component which provides connector for the MQTT messaging protocol using the Eclipse Paho library. Paho is one of the most popular MQTT libraries, so if you would like to integrate it with your Java project - Camel Paho connector is a way to go.
+    .row
+      h5
+        a.external-link href="http://henryk-konsek.blogspot.com/2015/03/raspberry-pi-2-and-camel-mqtt-client.html" Raspberry Pi 2 and Camel: The MQTT client performance
+      p.author Henry Konsek
+      small March 13, 2015
+      p Raspberry Pi 2 comes armed with the 900 MHz quad-core ARM Cortex-A7 and 1 GB of memory. This is a pretty powerful hardware considering the hobbyist Internet Of Things applications, but it's still relatively slow comparing to the industrial-grade microcomputers. As soon as my very own Raspberry Pi 2 has been shipped to me, I started to wonder how fast this car key size computer can be.
+    .row.video-embed
+      = video_player(site.videos["https://www.youtube.com/v=mli5c-oTN1U"])
+    
 p
   | For more information on JBossEverywhere you can take a look at the JBoss Keynote presentations that have been presented at JBossWorld/Red Hat Summit in
   |

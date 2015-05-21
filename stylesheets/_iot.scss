@@ -1,0 +1,28 @@
+#iot-resources{
+  margin-bottom: 80px;
+  h3{
+    margin-top: 1em;
+  }
+  .row{
+    margin-bottom: 1rem;
+  }
+  .author{
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  small{
+    font-size: 0.8125rem;
+    color: #8c8f91;
+    display: inline-block;
+  }
+  .video-embed{
+    max-width: 500px;
+    float: left;
+    h4 {
+      color: #2664a2;
+      font-size: 1.125rem;
+      display: block;
+    }
+  }
+}
