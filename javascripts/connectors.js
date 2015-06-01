@@ -68,31 +68,23 @@ app.connectors = {
         $('.order-alpha').addClass('active');
     },
 
-    connectorFilter : function(keyword, container, target_product, thumbnailSize, orderBy) {
-        //Currently the only way to specify no limit
-        var maxResults = 500;
-        var url = app.dcp.url.search;
+    connectorFilter : function(featuredConnectors, container, target_product, thumbnailSize, orderBy) {
 
-        //Query returns items where any of the three target products are set to the required product.
-        var query = ["(sys_content_type: jbossdeveloper_connector AND (target_product_1: " + target_product + " OR target_product_2: " + target_product + " OR target_product_3: " + target_product + "))"];
-
-        //And specify the connector IDs if specified.
-        if (keyword) {
-            query += " AND (" + keyword + ")";
+        var request_data = {};
+        if (featuredConnectors) {
+            request_data['id'] = featuredConnectors;
+        }
+        if (target_product) {
+            request_data['target_product'] = target_product;
         }
         
-        var request_data = {
-            "field"  : ["_source"],
-            "query" : query,
-            "size" : maxResults
-        };
-
         // append loading class to wrapper
         $("ul.connector-results").addClass('loading');
 
         $.ajax({
-            url : url,
+            url : app.dcp.url.connectors,
             dataType: 'json',
+            traditional: true,
             data : request_data,
             container : container,
             thumbnailSize : thumbnailSize,
@@ -191,10 +183,7 @@ $(function () {
      */
     var featuredConnectorIds = $('.featured-connector-ids');
     if(featuredConnectorIds.length) {
-        var queryVal = JSON.parse(featuredConnectorIds.text()).join(' OR ');
-        var query = "sys_content_id:("+queryVal+")";
-
-        app.connectors.connectorFilter(query, $('ul.featured-connectors-results'), targetProductFilter, '500x400');
+        app.connectors.connectorFilter(JSON.parse(featuredConnectorIds.text()), $('ul.featured-connectors-results'), targetProductFilter, '500x400');
     }
 });
 

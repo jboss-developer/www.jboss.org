@@ -17,70 +17,55 @@ app.project = {
       return false;
     }
   },
-  projectFilter : function(filters, keyword, container, thumbnailSize) {
+  projectFilter : function(featuredProjectIds, container, thumbnailSize) {
     //Currently the only way to specify no limit
     var maxResults = 500;
-
-    var url = app.dcp.url.project;
 
     // Pass search params to GTM for analytics
     window.dataLayer = window.dataLayer || [];
 
     /*
-      Keyword
-    */
-    var keyword = keyword || $('input[name="filter-text"]').val();
-
-    var filters = $.extend(filters, {"keyword": keyword});
-    var currentFilters = {};
-    var request_data = {
-        "field"  : ["_source"],
-        "query" : query,
-        "size" : maxResults
+      Keyword filter
+     */
+    var keyword = $('input[name="filter-text"]').val();
+    if(keyword) {
+      window.dataLayer.push({ 'keyword' : keyword });
+    } else {
+      window.dataLayer.push({ 'keyword' : null });
     }
 
+    /*
+      Project filter
+     */
     if ($('select[name="filter-products"]').length && $('select[name="filter-products"]').val() !== "") {
       var product = $('select[name="filter-products"]').val();
-      filters['project'] = app.products[product]['upstream'];
+      var projectFilter = app.products[product]['upstream'];
       window.dataLayer.push({ 'product' : product });
     } else {
       window.dataLayer.push({ 'product' : null });
     }
 
-    if (filters['project']) {
-      url = app.dcp.url.search;
-      request_data["sys_type"] = "project_info";
-    }
-
-    $.each(filters, function(key, val) {
-      // if its empty, remove it from the filters
-      if(val != undefined && val.length) {
-        currentFilters[key] = val;
-      }
-    });
-
-    // Prep each filter
-    var query = ['((_exists_:archived AND NOT archived:true) OR (_missing_:archived))'];
-
-    if(currentFilters['keyword']) {
-      window.dataLayer.push({ 'keyword' : query });
-      query.push(keyword);
-      delete currentFilters['keyword']
-    } else {
-      window.dataLayer.push({ 'keyword' : null });
-    }
-
     // append loading class to wrapper
     $("ul.results").addClass('loading');
-    $.extend(request_data, currentFilters);
-    request_data["query"] = query.join(" AND ");
 
     window.dataLayer.push({'event': 'projects-search'});
 
+    /*
+      Build the request data
+     */
+    var request_data = {size : maxResults};
+    if (featuredProjectIds) {
+      request_data['project'] = featuredProjectIds;
+    } else {
+      request_data['project'] = projectFilter;
+      request_data['query'] = keyword;
+    }
+    
     $.ajax({
-      url : url,
+      url : app.dcp.url.project,
       dataType: 'json',
-      data : request_data,
+      traditional: true,
+      data: request_data,
       container : container,
       thumbnailSize : thumbnailSize,
       error : function() {
@@ -112,7 +97,7 @@ app.project = {
     // loop over every hit
 
     for (var i = 0; i < hits.length; i++) {
-      var props = hits[i]._source;
+      var props = hits[i].fields;
 
       var imgsrc = "http://static.jboss.org/" + (props.specialIcon || props.sys_project) + "/images/" + (props.specialIcon || props.sys_project) + "_" + thumbnailSize + ".png";
 
@@ -190,8 +175,8 @@ app.project = {
         var correctLink = app.project.getCorrectUrl(props.anonymousLink);
         list += "<li>Anonymous Source: <a href='"+correctLink+"'>"+ correctLink +"</a></li>";
       }
-      if (props.commiterLink) {
-        var correctLink = app.project.getCorrectUrl(props.commiterLink);
+      if (props.committerLink) {
+        var correctLink = app.project.getCorrectUrl(props.committerLink);
         var viewLink = correctLink.replace(/https?:\/\//,'');
         list += "<li>Committer Source Access: <a href='"+correctLink+"'></a></li>";
       }
@@ -312,13 +297,13 @@ $(function() {
     if (window.location.search) {
       var product_id = app.utils.getQueryVariable('included-in');
       $('option[value="'+product_id+'"]').attr('selected','selected');
-      app.project.projectFilter({project: app.products[product_id]['upstream']});
+      app.project.projectFilter(app.products[product_id]['upstream']);
     } else {
       app.project.projectFilter();
     }
   }
   if ($('.community-projects').length) {
-    app.project.projectFilter({project: app.products[$('.community-projects').data('product-id')]['upstream']});
+    app.project.projectFilter(app.products[$('.community-projects').data('product-id')]['upstream']);
   }
 
   /*
@@ -335,7 +320,6 @@ $(function() {
   /*
     Modal Box
   */
-
   $('ul.results, ul.featured-projects-results').on('click','li.upstream a',function(e) {
     e.preventDefault();
     var html = $(this).parents('li').find('.project-content').html();
@@ -345,15 +329,9 @@ $(function() {
   /*
     Featured Projects
   */
-
   var featuredProjectIds = $('.featured-project-ids');
-
   if(featuredProjectIds.length) {
-    var queryVal = JSON.parse(featuredProjectIds.text()).join(' OR ');
-    var query = "sys_content_id:("+queryVal+")";
-
-    app.project.projectFilter(null, query, $('ul.featured-projects-results'), '500x400');
-
+    app.project.projectFilter(JSON.parse(featuredProjectIds.text()), $('ul.featured-projects-results'), '500x400');
   }
 
 });

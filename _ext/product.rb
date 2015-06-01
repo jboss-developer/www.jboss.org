@@ -43,7 +43,7 @@ module JBoss
           articles = []
           solutions = []
           site.products = {}
-          forum_counts = Hash[JSON.load(@searchisko.search({facet:'per_project_counts', sys_type:'forumthread', size:1}).body)['facets']['per_project_counts']['terms'].map(&:values).map(&:flatten)]
+          forum_counts = Hash[JSON.load(@searchisko.search({agg:'per_project_counts', sys_type:'forumthread', size:0}).body)['aggregations']['per_project_counts']['per_project_counts_filter']['per_project_counts_buckets']['buckets'].map(&:values).map(&:flatten)]
           site.pages.each do |page|
             if !page.product.nil? && page.relative_source_path.start_with?('/products')
               product = page.product
@@ -91,9 +91,9 @@ module JBoss
         end
 
         def forum_histogram(product, site)
-          resp = @searchisko.search({activity_date_interval: 'month', facet:'activity_dates_histogram', 
+          resp = @searchisko.search({activity_date_interval: 'month', agg:'activity_dates_histogram', 
                                     sys_type:'forumthread', project: product.dcp_project_code, size:0})
-          histogram = JSON.load(resp.body)['facets']['activity_dates_histogram']['entries']
+          histogram = JSON.load(resp.body)['aggregations']['activity_dates_histogram']['buckets']
           endDate = DateTime.now
           d = endDate.prev_month
           res = [['Day', 'Count']]
@@ -104,8 +104,8 @@ module JBoss
             t2 = d.to_time.to_i * 1000
             count = 0
             histogram.each do |e|
-              if e['time'] > t1 && e['time'] <= t2
-                count = e['count']
+              if e['key'] > t1 && e['key'] <= t2
+                count = e['doc_count']
               end
             end
             res << [d1.iso8601, count]
