@@ -1715,7 +1715,7 @@ table.demos {
   }
 }
 
-// Get social 
+// Get social
 .technology-blocks {
   .contributors {
     display: block;
@@ -1726,7 +1726,7 @@ table.demos {
       border-top:1px solid $grey-2;
       border-bottom:1px solid $grey-2;
       a {
-        padding-right:20px; 
+        padding-right:20px;
       }
       & + .contributor {
         border-top: 0;
@@ -1802,7 +1802,7 @@ td.content {
   margin: inherit;
 }
 
-// Operating System Selector 
+// Operating System Selector
 ul.os-selector {
   margin: 0;
   display: inline-block;
@@ -1898,4 +1898,11 @@ table.split-50 col {
 
 small {
   font-size: 80%;
+}
+
+// For Pauls Talk on Visual Regession
+
+h2.divider, h3.divider {
+  padding-bottom: 30px;
+  border-bottom:4px solid black;
 }
