@@ -251,7 +251,7 @@ dcp.controller('developerMaterialsController', function($scope, materialService)
   $scope.data.availableTopics = #{site.dev_mat_techs.flatten.uniq.sort};
 
   $scope.data.availableFormats = [
-    { value : "jbossdeveloper_quickstart" , "name" : "Quickstart", "description" : "Single use-case code examples tested with the latest stable product releases" },
+    { value : "quickstart" , "name" : "Quickstart", "description" : "Single use-case code examples tested with the latest stable product releases" },
     { value : "video" , "name" : "Video", "description" : "Short tutorials and presentations for Red Hat JBoss Middleware products and upstream projects" },
     { value : "demo" , "name" : "Demo", "description" : "Full applications that show what you can achieve with Red Hat JBoss Middleware" },
     { value : "jbossdeveloper_example" , "name" : "Tutorial", "description" : "Guided content, teaching you how to build complex applications from the ground up" },
