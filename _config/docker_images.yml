@@ -7,6 +7,15 @@
       path: wildfly/blob/master
       description: Image containing the latest WildFly release. It is configured to boot the standalone mode by default but you can easily run it in domain mode. Please refer to the README on how to switch the modes and how to deploy applications.
 
+- name: Hawkular
+  description: Hawkular is a management solution, it keeps an eye on your Middleware layer so you don't have to.
+  url: http://www.hawkular.org/
+  image_url: http://static.jboss.org/hawkular/images/hawkular_200x150.png
+  images:
+    - name: jboss/hawkular-aio
+      path: hawkular/blob/master/hawkular-aio
+      description: Runs with all dependencies (Including an embedded Cassandra)
+    
 - name: Keycloak
   description: Integrated SSO and IDM for browser apps and RESTful web services. Built on top of the OAuth 2.0, Open ID Connect and JSON Web Token (JWT) specifications (with plans to support SAML).
   url: http://keycloak.jboss.org/
