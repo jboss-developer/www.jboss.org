@@ -53,8 +53,8 @@ images_branding_html5-banner.png:
   build_no: 4
   md5sum: 676ee4a1b5b1617c9a79a1aa3229fa64
 bottom.js:
-  build_no: 218
-  md5sum: 352dd0a96a4f78ea6a8024ef676221ed
+  build_no: 219
+  md5sum: a5d8a7c0239cd8e59ebadd0675cd8b85
   raw_md5sum: a0836b6709c989f8e66d44c213f18dc7
 images_branding_devnation1_desktop_1175x400.png:
   build_no: 3
@@ -863,9 +863,9 @@ _images_icons_chosen_chosen-sprite.png:
   md5sum: 25b9acb1b504c95c6b95c33986b7317e
   raw_md5sum: 25b9acb1b504c95c6b95c33986b7317e
 images_design_projects_default_200x150.png:
-  build_no: 2
+  build_no: 3
   raw_md5sum: a33f86a7f60b6c31944607ae3250b579
-  md5sum: a33f86a7f60b6c31944607ae3250b579
+  md5sum: 2d00e578bd16f67d5a355c2b543b5dc2
 images_branding_hero_mobile_480x500_judconbostonwrapup.png:
   build_no: 3
   raw_md5sum: 56398d296feebf8d5642a2f48700858a
@@ -1086,7 +1086,7 @@ buzz.js:
   raw_md5sum: 7179683c35b92b2f616d4af51f8fb6ee
   md5sum: daf25b0135326fb6cfe1da519a167628
 developer-materials-filter.js:
-  build_no: 2312
+  build_no: 2314
   raw_md5sum: a7f0af9b4ab371aa00ab28c4d3ec3998
   md5sum: c83b8bad5764cf7447a35b0f34b49a06
 events.js:
@@ -1206,8 +1206,8 @@ images_design_iot_as7screenshot.jpg:
   build_no: 1
   md5sum: 425021fbb8d0f170bf8c52ccc0e7eaa2
 forums.js:
-  build_no: 1005
-  md5sum: d81b7e6110fcf17ff70c666bf40ba0a5
+  build_no: 1006
+  md5sum: 995ee126c5f7008e2307bb2def57f248
 _images_branding_tabzilla-redhat-logo-sprite.png:
   build_no: 1
   md5sum: aeca850de5dfe652cbbf7a0deef63100
