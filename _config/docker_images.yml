@@ -126,3 +126,12 @@
     - name: jboss/apiman-wildfly
       path: apiman/blob/master/apiman-wildfly
       description: Open Source API Management
+
+- name: Artificer
+  description: Artificer is a software artifact, logical metadata, and information repository. It consists of a common data model, multiple interfaces, useful tools, and extensibility. In less words? It's a powerful platform that untangles everything.
+  url: http://artificer.jboss.org
+  image_url: http://static.jboss.org/artificer/images/artificer_200x150.png
+  images:
+    - name: jboss/artificer-wildfly
+      path: artificer/blob/master/artificer-wildfly
+      description: Artificer on Wildfly
