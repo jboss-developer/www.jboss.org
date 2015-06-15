@@ -18,3 +18,5 @@ stylesheets/foundation/normalize.css
 stylesheets/magula.css
 _wraith/shots
 _wraith/sitemap_tmp.txt
+.idea
+*.iml
