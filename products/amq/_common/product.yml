@@ -39,7 +39,7 @@ guides:
   XML_Configuration_Reference:
      formats:
        html:
-description: 'A small footprint, high-performance, robust messaging platform that enables real-time integration between applications, services and devices.'
+description: 'A lightweight, high-performance, robust messaging platform that enables real-time integration between application, services and devices.'
 upstream_projects:
   - activemq
   - fabric8
