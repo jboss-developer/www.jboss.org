@@ -1,0 +1,3 @@
+:awestruct-layout: mobile-terms-and-conditions
+
+=== This is a placeholder page.
