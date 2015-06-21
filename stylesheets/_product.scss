@@ -1,0 +1,93 @@
+#get-started h2{
+  margin-bottom: 1rem;
+}
+
+#get-started-instructions {
+  #PrerequisitesSection {
+    h5 p{
+      font-weight: 800;
+      font-size: 1.4375rem;
+      margin-bottom: .5rem;
+    }
+    ol {
+      margin-bottom: 2.25rem;
+      p {
+        margin-bottom: 0;
+      }
+    } 
+  }
+  .card {
+    background-color: #94aebd;
+    color: $white;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    h5 {
+      color: $white;
+    }
+    @include tablet-landscape-and-down {
+      h5 {
+        padding-top: 15px;
+      }
+    }
+    i {
+      float: right;
+      font-size: .9rem;
+    }
+    .paragraph, .paragraph p {
+      display: inline-block;
+      font-size: .9rem;
+      margin-bottom: 0;
+    }
+  }
+  .step-header {
+    background-color: #94aebd;
+    color: $white;
+    border: none;
+    padding: 5px 15px;
+    margin: 2rem 0;
+    border-radius: 3px;
+    h5 {
+      color: $white;
+      margin-bottom: 0;
+    }
+    .duration {
+      display: inline;
+      font-size: .9rem;
+      margin-left: 10px;
+      color: #4a5d75;
+      .paragraph, .paragraph p {
+        display: inline;
+        font-size: .9rem;
+      }
+    }
+  }
+  .step-num {
+    color: #4a5d75;
+    display: inline;
+  }
+  ol li p, ul li p{
+    margin-bottom: 1rem;
+  }
+  .content-img img {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    max-width: 540px;
+  }
+  table {
+    width: 100%;
+  }
+  #MoreResources {
+    border: 7px solid #e6e7e8;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    ul li:before{ 
+      display: none;
+    }
+  }
+  .listingblock {
+    .content {
+      margin: inherit;
+    }
+  }
+}
