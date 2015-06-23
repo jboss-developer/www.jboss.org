@@ -40,11 +40,11 @@ A lean and agile data integration solution that enables organizations to unlock 
 
 == Fuse
 
-A small footprint Enterprise Service Bus (ESB) that lets you build, deploy and integrate applications and services.
+A lightweight integration platform that lets you build, deploy and integrate applications and services.
 
 == A-MQ
 
-A small footprint, high-performance, robust messaging platform that enables real-time integration between applications, services and devices. 
+A lightweight, high-performance, robust messaging platform that enables real-time integration between application, services and devices.
 
 == BRMS
 

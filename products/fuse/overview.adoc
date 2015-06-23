@@ -5,9 +5,7 @@
 
 == Overview
 
-An open source Enterprise Service Bus (ESB).
-
-JBoss Fuse is an open source Enterprise Service Bus (ESB) with an elastic footprint that supports integration beyond the data center. The ability to deploy JBoss Fuse in several different configurations enables intelligent integration to all facets of your business - on premise or in the Cloud.
+link:http://www.redhat.com/products/jbossenterprisemiddleware/fuse/[JBoss Fuse] is an open source, lightweight Enterprise Service Bus (ESB) with an elastic footprint that supports integration beyond the data center. The lack of license fees and the ability to deploy JBoss Fuse in several different configurations advances intelligent integration to all facets of your business – on premise or in the Cloud.
 
 JBoss Fuse for xPaaS extends the integration capabilities to OpenShift Platform-as-a-Service (PaaS) solution.
 
@@ -15,7 +13,7 @@ JBoss Fuse for xPaaS extends the integration capabilities to OpenShift Platform-
 
 === Pattern based integration framework
 
-Leverage Apache Camel to provide a full-featured, easy-to-use and intuitive framework for quicker integration solutions.
+Leverage Apache Camel to provide a full-featured, easy-to-use and intuitive framework for quicker integration solutions. Seamlessly create APIs.
 
 == Icon1
 
@@ -36,7 +34,7 @@ Change configuration while container is running. Easily deploy or update service
 
 === Multiple connectivity options
 
-Connect to external applications with connectors for JDBC, FTP/SFTP, HTTP/HTTPS, file, SalesForce.com, SAP, Twitter, and more.
+Connect to external applications with connectors for JDBC, FTP/SFTP, HTTP/HTTPS, file, SalesForce.com, SAP, Twitter, and more. Quickly connect APIs.
 
 == Icon3
 
@@ -44,7 +42,7 @@ Connect to external applications with connectors for JDBC, FTP/SFTP, HTTP/HTTPS,
 
 == Detail
 
-JBoss Fuse combines several technologies like core Enterprise Service Bus capabilities (based on Apache Camel, Apache CXF, Apache ActiveMQ), Apache Karaf and Fabric8 in a single integrated distribution.
+JBoss Fuse combines several technologies like core Enterprise Service Bus capabilities (based on Apache Camel, Apache CXF, Apache ActiveMQ), Apache Karaf and Fabric8 in a single integrated distribution. The core ESB capabilities are also supported on the fully certified Java EE platform, link:http://www.redhat.com/en/technologies/jboss-middleware/application-platform[Red Hat JBoss Enterprise Application Platform]
 
 image::#{cdn(site.base_url + '/images/products/fuse/Fuse_Builtfromdiagram_02.png')}[]
 
@@ -59,17 +57,19 @@ image::#{cdn(site.base_url + '/images/products/fuse/Fuse_Builtfromdiagram_02.png
 
 link:../../devstudio[JBoss Developer Studio] provides an easy-to-use integration development environment built on Eclipse. The https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html/Integration_Stack_Guide/chap-Introduction_to_Red_Hat_JBoss_Developer_Studio_Integration_Stack.html[JBoss Developer Studio Integration Stack] provides tooling for developing, configuring and deploying Fuse applications.
 
-Fuse Management Console is based on the http://hawt.io[hawtio] web console. You can now start, stop, measure and trace Camel routes on-premise or in the cloud.
+Fabric Management Console is based on the link:http://hawt.io/[hawtio] web console. You can now start, stop, measure and trace Camel routes or Camel services on-premise or in the cloud.
 
 
 === New Features
 
 Try the exciting new features:
 
-* Full support of AMQP 1.0 - provides wire-level compatibility across connections
-* Vast library of connectors - over 150+ out-of-the-box-connectors via Apache Camel
-* Managed integration routes - start, stop, measure and trace Camel routes on-premise or in the Cloud
-* Improved high availability (HA) - embedded message store for shared-nothing HA
+* Intuitive tooling complemented with Apache Camel integration framework for quicker integration solution and more productive development environment
+* Visual debugger to debug, test and deploy integration services – all in one tool
+* Transform data using a visual mapper (Technical preview)
+* API foundation – seamlessly create RESTful APIs
+* Vast library of connectors - over 150+ out-of-the-box-connectors via Apache Camel. Additional SaaS connectors to Salesforce (Apex API), DropBox, Box, Google Drive and more.
+* Role based access control to integration services and platform for improved security and integrity.
 
 === Integration Everywhere
 
