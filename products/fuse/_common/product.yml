@@ -66,45 +66,45 @@ downloads:
 documentation_path: Red_Hat_JBoss_Fuse
 description: 'A small footprint Enterprise Service Bus (ESB) that lets you build, deploy and integrate applications and services.'
 guides:
-#  Apache_Camel_Component_Reference:
-#  Apache_Camel_Development_Guide:
-#  Apache_CXF_Development_Guide:
-#  Apache_CXF_Security_Guide:
-#  API_Reference:
-#   formats:
-#      html:
-#  Cloud_Computing_with_Fabric:
-#  Configuring_and_Running_Red_Hat_JBoss_Fuse:
-#  Console_Reference:
-#  Deploying_into_a_Web_Server:
-#  Deploying_into_the_Container:
-#  Fabric_Guide:
-#  Getting_Started:
-#  Glossary:
-#  Installation_Guide:
-#  JBI_Development_Guide:
-#  JON_Performance_Metrics_Reference:
-#  Management_Console_User_Guide:
-#  Managing_OSGi_Dependencies:
-#  Migration_Guide:
+  Apache_Camel_Component_Reference:
+  Apache_Camel_Development_Guide:
+  Apache_CXF_Development_Guide:
+  Apache_CXF_Security_Guide:
+  API_Reference:
+   formats:
+      html:
+  Cloud_Computing_with_Fabric:
+  Configuring_and_Running_Red_Hat_JBoss_Fuse:
+  Console_Reference:
+  Deploying_into_a_Web_Server:
+  Deploying_into_the_Container:
+  Fabric_Guide:
+  Getting_Started:
+  Glossary:
+  Installation_Guide:
+  JBI_Development_Guide:
+  JON_Performance_Metrics_Reference:
+  Management_Console_User_Guide:
+  Managing_OSGi_Dependencies:
+  Migration_Guide:
   Release_Notes:
-#   formats:
-#      html: 
-#        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/html/Release_Notes/index.html
-#      html-single:
-#        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/html-single/Release_Notes/index.html
-#      pdf:
-#        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/pdf/Release_Notes/Red_Hat_JBoss_Fuse-6.1-Release_Notes-en-US.pdf
-#      epub: 
-#        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/epub/Release_Notes/Red_Hat_JBoss_Fuse-6.1-Release_Notes-en-US.epub
-#  Security_Guide:
-#  Tooling_Installation_Guide:
-#  Tooling_Tutorials:
-#  Tooling_User_Guide:
-#  Transaction_Guide:
-#  XML_Configuration_Reference:
-#   formats:
-#      html:
+   formats:
+      html: 
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/html/Release_Notes/index.html
+      html-single:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/html-single/Release_Notes/index.html
+      pdf:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/pdf/Release_Notes/Red_Hat_JBoss_Fuse-6.1-Release_Notes-en-US.pdf
+      epub: 
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/epub/Release_Notes/Red_Hat_JBoss_Fuse-6.1-Release_Notes-en-US.epub
+  Security_Guide:
+  Tooling_Installation_Guide:
+  Tooling_Tutorials:
+  Tooling_User_Guide:
+  Transaction_Guide:
+  XML_Configuration_Reference:
+   formats:
+      html:
 upstream_projects:
   - camel
   - karaf
