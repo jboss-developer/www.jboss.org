@@ -74,7 +74,6 @@ guides:
    formats:
       html:
   Cloud_Computing_with_Fabric:
-  Configuring_and_Running_Red_Hat_JBoss_Fuse:
   Console_Reference:
   Deploying_into_a_Web_Server:
   Deploying_into_the_Container:
@@ -82,7 +81,6 @@ guides:
   Getting_Started:
   Glossary:
   Installation_Guide:
-  JBI_Development_Guide:
   JON_Performance_Metrics_Reference:
   Management_Console_User_Guide:
   Managing_OSGi_Dependencies:
@@ -98,7 +96,6 @@ guides:
       epub: 
         url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.1/epub/Release_Notes/Red_Hat_JBoss_Fuse-6.1-Release_Notes-en-US.epub
   Security_Guide:
-  Tooling_Installation_Guide:
   Tooling_Tutorials:
   Tooling_User_Guide:
   Transaction_Guide:
