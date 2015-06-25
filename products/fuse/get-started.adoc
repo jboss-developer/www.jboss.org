@@ -146,5 +146,5 @@ The series walks you through each step of the application development lifecycle,
 
 == More Resources
 
-* link:../learn[See Quickstarts, Videos, and other Learning materials]
-* link:../buzz[Read about how other people are using JBoss Fuse]
+* link:../developer-materials/[See Quickstarts, Videos, and other Learning materials]
+* link:../overview/#buzz[Read about how other people are using JBoss Fuse]
