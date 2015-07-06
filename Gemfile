@@ -56,7 +56,8 @@ group :vdiff do
 end
 
 group :health do
-  gem 'blinkr', '~> 0.3'
+  #gem 'blinkr', '~> 0.3'
+  gem 'blinkr', github: 'lightguard/blinkr', branch: 'feature/parallel_pipeline'
   #gem 'blinkr', github: 'pmuir/blinkr'
   #gem 'blinkr', path: '../blinkr'
 end
