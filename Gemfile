@@ -14,8 +14,8 @@ end
 
 # GEMS
 #gem 'awestruct', '~> 0.5.6.beta8'
-gem 'awestruct', github: 'LightGuard/awestruct', branch: 'multi-thread-gen-trial'
-gem 'slim', '~> 2.0.0'
+gem 'awestruct', github: 'awestruct/awestruct'
+gem 'slim', '~> 3.0'
 gem 'daybreak', '~> 0.3.0'
 gem 'kramdown', '~> 1.0.1'
 gem 'asciidoctor', '~> 1.5.0'
@@ -31,7 +31,7 @@ gem 'aweplug', github: 'awestruct/aweplug'
 # gem 'aweplug', github: 'Dantheman720/aweplug', :branch => 'DEVELOPER-1241'
 #gem 'aweplug', path: '~/projects/ruby/aweplug'
 #gem 'aweplug', path: '../aweplug'
-gem 'parallel', '~> 1.1.0'
+gem 'parallel', '~> 1.1'
 gem 'mime-types', '2.1'
 gem 'google-api-client', '~> 0.7'
 gem 'signet', '~> 0.5.1'
@@ -56,7 +56,7 @@ group :vdiff do
 end
 
 group :health do
-  gem 'blinkr', '~> 0.2.7'
+  gem 'blinkr', '~> 0.3'
   #gem 'blinkr', github: 'pmuir/blinkr'
   #gem 'blinkr', path: '../blinkr'
 end
