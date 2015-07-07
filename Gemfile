@@ -15,9 +15,10 @@ end
 # GEMS
 #gem 'awestruct', '~> 0.5.6.beta8'
 gem 'awestruct', github: 'LightGuard/awestruct', branch: 'multi-thread-gen-trial'
-gem 'slim', '~> 2.0.0'
+gem 'slim', '~> 3.0.0'
 gem 'daybreak', '~> 0.3.0'
 gem 'kramdown', '~> 1.0.1'
+gem 'compass', '~> 1.0'
 gem 'asciidoctor', '~> 1.5.0'
 gem 'uglifier', '~> 2.0.1'
 gem 'htmlcompressor', '~> 0.0.6'
@@ -56,8 +57,8 @@ group :vdiff do
 end
 
 group :health do
-  gem 'blinkr', '~> 0.2.7'
-  #gem 'blinkr', github: 'pmuir/blinkr'
-  #gem 'blinkr', path: '../blinkr'
+  # gem 'blinkr', '~> 0.2.7'
+  gem 'blinkr', github: 'Dantheman720/blinkr', branch: 'GITHUB-11'
+  # gem 'blinkr', path: '../blinkr'
 end
 
