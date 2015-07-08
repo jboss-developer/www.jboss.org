@@ -25,10 +25,10 @@ gem 'curb', '~> 0.8.5'
 gem 'oauth', '~> 0.3.6'
 gem 'git', '~> 1.2.5'
 gem 'oily_png', '~> 1.1.1'
-gem 'nokogiri', '~> 1.5.10'
+gem 'nokogiri', '~> 1.5'
 gem 'therubyracer', platforms: :ruby, require: linux_only('therubyracer')
 gem 'aweplug', github: 'awestruct/aweplug'
-# gem 'aweplug', github: 'Dantheman720/aweplug', :branch => 'DEVELOPER-1241'
+#gem 'aweplug', github: 'Dantheman720/aweplug', :branch => 'DEVELOPER-1241'
 #gem 'aweplug', path: '~/projects/ruby/aweplug'
 #gem 'aweplug', path: '../aweplug'
 gem 'parallel', '~> 1.1'
@@ -58,6 +58,7 @@ end
 group :health do
   #gem 'blinkr', '~> 0.3'
   gem 'blinkr', github: 'lightguard/blinkr', branch: 'feature/parallel_pipeline'
+  #gem 'blinkr', path: '/home/jporter/projects/ruby/blinkr'
   #gem 'blinkr', github: 'pmuir/blinkr'
   #gem 'blinkr', path: '../blinkr'
 end
