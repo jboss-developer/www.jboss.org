@@ -46,6 +46,8 @@ profiles:
   development: &development
     dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
     dcp_base_protocol_relative_url: //dcpbeta-searchisko.rhcloud.com/
+    dcp2_base_url: http://dcp2-searchisko.rhcloud.com/
+    dcp2_base_protocol_relative_url: //dcp2-searchisko.rhcloud.com/
     log_faraday: true
     push_to_searchisko: false
     metrics: false
@@ -67,6 +69,8 @@ profiles:
     <<: *profile
     dcp_base_protocol_relative_url: //dcpbeta-searchisko.rhcloud.com/
     dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
+    dcp2_base_url: http://dcp2-searchisko.rhcloud.com/
+    dcp2_base_protocol_relative_url: //dcp2-searchisko.rhcloud.com/
     metrics: true
     deploy:
       <<: *deploy
@@ -77,6 +81,8 @@ profiles:
     base_url: http://www.jboss.org/
     dcp_base_protocol_relative_url: //dcp.jboss.org/
     dcp_base_url: http://dcp.jboss.org/
+    dcp2_base_protocol_relative_url: //dcp2.jboss.org/
+    dcp2_base_url: http://dcp2.jboss.org/
     require_tag: true
     metrics: true
     elq_form_name: jboss-org-integration
