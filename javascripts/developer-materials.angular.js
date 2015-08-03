@@ -92,6 +92,20 @@ dcp.filter('thumbnailURL',function(){
 
 });
 
+dcp.filter('middlewareOnly', function(){
+    return function(item) {
+        var middlewareItems = [];
+        angular.forEach(item, function(key){
+
+            if(key.fields.target_product.indexOf("rhel")!==0 && key.fields.target_product.indexOf("atomic")!==0 && key.fields.target_product.indexOf("developertoolset")!==0 && key.fields.target_product.indexOf("openshift")!==0 && key.fields.target_product.indexOf("satellite")!==0 && key.fields.target_product.indexOf("softwarecollections")!==0){
+                middlewareItems.push(key)
+            }
+
+        });
+        return middlewareItems;
+    }
+});
+
 dcp.filter('stars',['$sce',function($sce){
   return function(fields) {
     var html = "";
