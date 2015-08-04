@@ -22,13 +22,13 @@ deploy_base: &deploy
   uncommitted: true
 
 profile_base: &profile
-  cdn_http_base: &cdn_http_base //static.jboss.org/www
+  cdn_http_base: &cdn_http_base //static.jboss.org/www 
   cdn_out_dir: &cdn_out_dir _tmp
   cdn_version: &cdn_version true
   log_faraday: true
   push_to_searchisko: true
-  minify: &minify true
-  robots:
+  minify: &minify true 
+  robots: 
     disallow: true
   deploy:
     <<: *deploy
@@ -53,9 +53,8 @@ profiles:
     metrics: false
     authenticate_google_books_api: false
     build_threads: 0
-    cache_type: :local
-
-  development_cdn:
+  
+  development_cdn: 
     <<: *development
     cdn_http_base: &dev_cdn_http_base http://localhost:4242/cdn
     cdn_out_dir: &dev_cdn_out_dir _site
@@ -66,7 +65,7 @@ profiles:
       :cdn_out_dir: *dev_cdn_out_dir
       :cdn_version: *dev_cdn_version
 
-  staging:
+  staging: 
     <<: *profile
     dcp_base_protocol_relative_url: //dcpbeta-searchisko.rhcloud.com/
     dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
@@ -76,7 +75,7 @@ profiles:
     deploy:
       <<: *deploy
       path: /stg_htdocs/www-stg
-
+    
   production:
     <<: *profile
     base_url: http://www.jboss.org/
@@ -88,7 +87,7 @@ profiles:
     metrics: true
     elq_form_name: jboss-org-integration
     disqus: jdf
-    robots:
+    robots: 
       disallow: false
     deploy:
       <<: *deploy

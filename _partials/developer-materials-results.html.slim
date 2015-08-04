@@ -41,7 +41,7 @@ div
             | Product
           td.skill Skill Level
       tbody
-        tr.material(ng-repeat="item in data.displayedMaterials | middlewareOnly" class="get-started-placeholder-{{item.fields.sys_type}}")
+        tr.material(ng-repeat="item in data.displayedMaterials" class="get-started-placeholder-{{item.fields.sys_type}}")
           / Type
           td.type
             a(ng-href="{{item.fields.sys_url_view}}")
