@@ -42,7 +42,7 @@ dcp.service('materialService',function($http, $q) {
     if(project) {
       query.project = project;
     }
-
+      query.query += " AND -target_product:(rhel atomic developertoolset openshift satellite softwarecollections)"
     var deferred = $q.defer();
     // app.dcp.url.search = "//dcp.jboss.org/v1/rest/search"; // testing with live data
     // query = decodeURIComponent(query);
