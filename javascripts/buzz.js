@@ -31,15 +31,11 @@ app.buzz = {
       }
     });
 
-    // Prep each filter
-    var query = [];
-
     // Pass search params to GTM for analytics
     window.dataLayer = window.dataLayer || [];
         
     
     if(currentFilters.keyword) {
-      query.push(keyword);
       window.dataLayer.push({ 'keyword' : keyword });
     } else {
       window.dataLayer.push({ 'keyword' : null });
@@ -60,23 +56,20 @@ app.buzz = {
           tags[i] = "\"" + tags[i] + "\"";
         }
       }
-      query.push("sys_tags:"+tags);
       window.dataLayer.push({ 'tags' : tags });
     } else {
       window.dataLayer.push({ 'tags' : null });
     }
-    query = query.join(" AND ");
 
     window.dataLayer.push({'event': 'buzz-search'});
 
     $.ajax({
-        url : app.dcp2.url.search,
+        url : app.dcp2.url.buzz,
         dataType: 'json',
         data : {
-          "field"  : ["sys_url_view", "sys_title", "sys_contributors", "sys_description", "sys_created", "author", "sys_tags", "sys_content_id"],
-          "query" : query,
+          "tag": tags,
+          "query" : keyword,
           "size" : itemCount,
-          "sys_type" : "blogpost",
           "sortBy" : "new-create",
           "query_highlight" : true,
           "from" : from || 0 // for pagination
