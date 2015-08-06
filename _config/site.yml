@@ -53,6 +53,7 @@ profiles:
     metrics: false
     authenticate_google_books_api: false
     build_threads: 0
+    cache_type: :local
   
   development_cdn: 
     <<: *development
