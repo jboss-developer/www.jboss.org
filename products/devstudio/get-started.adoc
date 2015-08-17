@@ -6,10 +6,11 @@ Install JBoss Developer Studio Integration Stack
 
 ## Extra section
 
-*Note:* You will need JBoss Developer Studio 7 to use the stable Integration Stack, or you can use JBoss Developer Studio 8 with an _Early Access_ version of the Integration Stack.
+*Note:* You will need JBoss Developer Studio 8 to use the stable Integration Stack, or you can use JBoss Developer Studio 9 with an _Early Access_ version of the Integration Stack components.
 
 The Integration Stack for JBoss Developer Studio is a set of plugins for Eclipse that provides tooling for:
 
+* JBoss Fuse Development
 * JBoss Business Process and Rules Development
 * JBoss Data Virtualization Development
 * JBoss Integration and SOA Development
@@ -18,13 +19,14 @@ The Integration Stack for JBoss Developer Studio is a set of plugins for Eclipse
 To install the Integration Stack tools:
 
 1. Download the JBoss Developer Studio all-in-one installer and install it. Choose one of these:
-* Stable version: link:http://www.jboss.org/download-manager/file/jboss-devstudio-7.1.1.GA-jar_universal.jar[7.1.1] or 
-* Early Access version: link:http://www.jboss.org/download-manager/file/jboss-devstudio-8.0.0.GA-jar_universal.jar[8.0.0]
+* Stable version (Luna): link:http://www.jboss.org/download-manager/file/jboss-devstudio-8.1.0.GA-jar_universal.jar[8.1.0] or 
+* Early Access version (Mars): link:http://www.jboss.org/download-manager/file/jboss-devstudio-9.0.0.Beta2-jar_universal.jar[9.0.0]
 2. Select the _Software/Update_ tab in the _JBoss Central_ view.
 3. If using JBoss Developer Studio 8, tick the checkbox to _Enable Early Access_, and click _Yes_ to accept the warning.
 4. Scroll down the list of _available features_, looking for the _JBoss Developer Studio Integration Stack_ section. See the image below.
 5. Tick the following items:
 
+* JBoss Fuse Development
 * JBoss Business Process and Rules Development
 * JBoss Data Virtualization Development
 * JBoss Integration and SOA Development
