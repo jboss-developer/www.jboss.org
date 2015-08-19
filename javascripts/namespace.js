@@ -50,6 +50,7 @@ app.dcp2.url = {};
 app.dcp2.url.search = '#{site.dcp2_base_protocol_relative_url}v2/rest/search';
 app.dcp2.url.project= '#{site.dcp2_base_protocol_relative_url}v2/rest/search/suggest_project_name_ngram_more_fields';
 app.dcp2.url.buzz= '#{site.dcp2_base_protocol_relative_url}v2/rest/search/middlewareblogs';
+app.dcp2.url.events= '#{site.dcp2_base_protocol_relative_url}v2/rest/search/events';
 
 /*
   Products
