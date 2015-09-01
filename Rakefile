@@ -288,7 +288,8 @@ end
 desc 'Remove staged pull builds for pulls closed more than 7 days ago'
 task :reap_old_pulls, [:pr_prefix] do |task, args|
   github = GitHub.new
-  reap = github.list_closed_pulls('jboss-developer', 'www.jboss.org', DateTime.now - 7)
+  date_range = (DateTime.now.prev_month)..(DateTime.now.prev_day 7)
+  reap = github.list_closed_pulls('jboss-developer', 'www.jboss.org', date_range)
   $staging_config ||= config 'staging'
   Dir.mktmpdir do |empty_dir|
     reap.each do |p|
@@ -517,19 +518,19 @@ class GitHub
     @github_base_url = 'https://api.github.com/'
   end
 
-  def list_closed_pulls(org, repo, older_than)
+  def list_closed_pulls(org, repo, date_range)
     pulls = []
-    pulls << _list_closed_pulls("#{@github_base_url}repos/#{org}/#{repo}/pulls?state=closed&sort=updated", older_than)
+    pulls << _list_closed_pulls("#{@github_base_url}repos/#{org}/#{repo}/pulls?state=closed&sort=updated", date_range)
     pulls.flatten.uniq
   end
 
-  def _list_closed_pulls(url, older_than)
+  def _list_closed_pulls(url, date_range)
     resp = get(url)
     pulls = []
     if resp.is_a?(Net::HTTPSuccess)
       json = JSON.parse(resp.body)
       json.each do |p|
-        pulls << p['number'] unless DateTime.parse(p['closed_at']) > older_than
+        pulls << p['number'] if date_range.cover? DateTime.parse(p['closed_at'])
       end
       if resp.key? 'Link'
         links = {}
@@ -539,7 +540,7 @@ class GitHub
           links[k] = a[0][(a[0].index('<') + 1)..(a[0].rindex('>') - 1)]
         end
         if links['next']
-          pulls << _list_closed_pulls(links['next'], older_than)
+          pulls << _list_closed_pulls(links['next'], date_range)
         end
       end
     else
