@@ -179,6 +179,19 @@
   }
 }
 
+// Main navigation style fixes
+
+@media only screen and (max-width: 768px){
+  .top-bar-section .main-menu li:not(.has-form) {
+    width: 100%;
+    display: block;
+  }
+  .top-bar-section li:not(.has-form) a:not(.button) {
+      border-top: 1px solid #656565;
+      background: #333 !important;
+  }
+}
+
 // Events mobile styles
 
 @media (max-width: 767px) {
