@@ -53,7 +53,7 @@ div
           / Title
           td.title
             p
-              a(ng-href="{{item.fields.sys_url_view}}")
+              a(ng-href="{{item.fields.sys_url_view | urlFix}}")
                 | {{item.fields.sys_title}}
             span.contributor(data-sys-contributor="{{item.fields.sys_author}}")
               a.name
