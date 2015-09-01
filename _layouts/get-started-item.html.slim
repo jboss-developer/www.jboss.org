@@ -93,7 +93,17 @@ issues: [DEVELOPER-179, DEVELOPER-77, DEVELOPER-202]
                 i.fa.fa-download
           .row
             .columns.large-24
-              a(href="#{page.metadata[:browse]}")
+            - if page.url.include?("quickstarts") && page.url.end_with?("/./")
+              a(href="#{page.metadata[:github_repo_url]}")
+                /- puts "#{page.metadata.keys}"
+                - if page.metadata[:scm] == 'github'
+                  i.fa.fa-github
+                  | &nbsp; View on github
+                -else
+                  | Browse source
+                br
+            - else
+              a(href="#{page.metadata[:browse]}")              
                 - if page.metadata[:scm] == 'github'
                   i.fa.fa-github
                   | &nbsp; View on github
