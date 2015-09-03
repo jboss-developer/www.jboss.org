@@ -7,7 +7,6 @@ require 'awestruct/page'
 require 'awestruct/handlers/layout_handler'
 require 'awestruct/handlers/tilt_handler'
 require 'awestruct/handler_chain'
-require 'parallel'
 
 module JBoss::Developer::Extensions
   class Stacks 
@@ -118,10 +117,10 @@ module JBoss::Developer::Extensions
           commits = commit_info(bom_info['repo'], Pathname.new(bom_info['location']), bom_info.reject {|k,v| k == 'location' || k == 'repo' || k == 'replacedBy'})  # DEVELOPER-320
         end
         #Collect the bom_id of replaced bom
-        replaced_bom_id = nil
+        replaced_bom = nil
         if bom_info and bom_info['replacedBy']
           ga = bom_info['replacedBy'].split(':')
-          replaced_bom_id = yml['availableBoms'].select{ |b| b['groupId'] == ga[0] and b['artifactId'] == ga[1] }.collect{ |b| b['id']}[0]
+          replaced_bom = yml['availableBoms'].select{ |b| b['groupId'] == ga[0] and b['artifactId'] == ga[1] }.first
         end
         metadata = {
           :title => bom['bom']['name'], 
@@ -131,10 +130,11 @@ module JBoss::Developer::Extensions
           :contributors_email => commits.collect { |c| c[:author_email] }.uniq,
           :contributors => commits.collect { |c| c[:author] }.uniq,
           :searchisko_type => 'jbossdeveloper_bom',
-          :searchisko_id => bom['id']
+          :searchisko_id => bom['id'],
+          :target_product => product
         }
-        metadata[:replaced_bom] = bom_info['replacedBy'] if bom_info
-        metadata[:replaced_bom_url] = "../#{replaced_bom_id}/" if replaced_bom_id
+        metadata[:replaced_bom] = replaced_bom if bom_info
+        metadata[:replaced_bom_url] = lambda { |replaced| site.pages.find {|p| p.bom && (p.bom['bom']['groupId'] == replaced['groupId'] && p.bom['bom']['artifactId'] == replaced['artifactId'])}} if replaced_bom
         metadata[:published] = DateTime.parse(commits.first[:date]) unless commits.empty?
         metadata[:author] = commits.last[:author] if commits.last
         unless metadata[:current_branch] == 'HEAD'
@@ -158,7 +158,8 @@ module JBoss::Developer::Extensions
           :groupId => bom['bom']['groupId'],
           :artifactId => bom['bom']['artifactId'],
           :recommendedVersion => bom['bom']['recommendedVersion'],
-          :versions => bom['allVersions']
+          :versions => bom['allVersions'],
+          :sys_project => metadata[:target_product]
         }
 
         #metadata[:boms] << bom
@@ -228,7 +229,8 @@ module JBoss::Developer::Extensions
           :contributors => commits.collect { |c| c[:author] }.uniq,
           :contributors_email => commits.collect { |c| c[:author_email] }.uniq,
           :searchisko_type => 'jbossdeveloper_archetype',
-          :searchisko_id => archetype['id']
+          :searchisko_id => archetype['id'],
+          :target_product => product
         }
         metadata[:published] = DateTime.parse(commits.first[:date]) unless commits.empty?
         metadata[:author] = commits.last[:author] if commits.last
@@ -253,7 +255,8 @@ module JBoss::Developer::Extensions
           :groupId => archetype['archetype']['groupId'],
           :artifactId => archetype['archetype']['artifactId'],
           :recommendedVersion => archetype['archetype']['recommendedVersion'],
-          :versions => archetype['allVersions']
+          :versions => archetype['allVersions'],
+          :sys_project => metadata[:target_product]
         }
         unless !@push_to_searchisko || !site.push_to_searchisko
           searchisko.push_content(metadata[:searchisko_type], metadata[:searchisko_id] , archetype_dcp.to_json)
