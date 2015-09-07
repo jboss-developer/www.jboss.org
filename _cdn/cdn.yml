@@ -53,8 +53,8 @@ images_branding_html5-banner.png:
   build_no: 4
   md5sum: 676ee4a1b5b1617c9a79a1aa3229fa64
 bottom.js:
-  build_no: 225
-  md5sum: c81e9929a92f3d9980e25798d27f17ed
+  build_no: 226
+  md5sum: 4d6f97d983ec27c5cc6c330d123a336b
   raw_md5sum: a0836b6709c989f8e66d44c213f18dc7
 images_branding_devnation1_desktop_1175x400.png:
   build_no: 3
@@ -1086,7 +1086,7 @@ buzz.js:
   raw_md5sum: 7179683c35b92b2f616d4af51f8fb6ee
   md5sum: daf25b0135326fb6cfe1da519a167628
 developer-materials-filter.js:
-  build_no: 2992
+  build_no: 2994
   raw_md5sum: a7f0af9b4ab371aa00ab28c4d3ec3998
   md5sum: c83b8bad5764cf7447a35b0f34b49a06
 events.js:
@@ -1206,8 +1206,8 @@ images_design_iot_as7screenshot.jpg:
   build_no: 1
   md5sum: 425021fbb8d0f170bf8c52ccc0e7eaa2
 forums.js:
-  build_no: 1321
-  md5sum: c9156961b02c7a5186f984cfa7514bd4
+  build_no: 1322
+  md5sum: 1b61dba692c8e96778a12000a9dfebe0
 _images_branding_tabzilla-redhat-logo-sprite.png:
   build_no: 1
   md5sum: aeca850de5dfe652cbbf7a0deef63100
@@ -1215,8 +1215,8 @@ _images_icons_arrow-tabnav-down.png:
   build_no: 1
   md5sum: 4ba071a80c1e08a8fc84f1d52d769df7
 images_branding_RHJB_Middleware_Logotype.png:
-  build_no: 1
-  md5sum: 1d695dac7bb803a00dfb8d5dd71ab914
+  build_no: 2
+  md5sum: dc557b66bde6912f4c11a481578a00d8
 _images_branding_microsite-1.jpg:
   build_no: 1
   md5sum: e5594daf6ba7bc378701816bede4d2a0
