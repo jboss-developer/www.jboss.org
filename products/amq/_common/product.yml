@@ -1,8 +1,9 @@
-name: Red Hat JBoss A-MQ 
+name: Red Hat JBoss A-MQ
 abbreviated_name: JBoss A-MQ
 current_version: 6.2.0.GA
 documentation_path: Red_Hat_JBoss_A-MQ
 intro_video: https://vimeo.com/95430180
+youtube_album: https://www.youtube.com/playlist?list=PLf3vm0UK6HKoFt9aCQPOVt8K12fe3JaPf
 vimeo_album: http://vimeo.com/album/2982442
 guides:
   API_Reference:
@@ -77,7 +78,7 @@ downloads:
         name: .NET Lite SDK
       net_lite_sources:
         size: 1mb
-        name: .NET Lite Sources        
+        name: .NET Lite Sources
   6.1.0.GA:
     release_date: 2014-04-14
     description: Our small footprint, high performance, open source messaging platform
