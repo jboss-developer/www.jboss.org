@@ -13,9 +13,7 @@ def darwin_only(require_as)
 end
 
 # GEMS
-#gem 'awestruct', '~> 0.5.6.beta8'
-# gem 'awestruct', github: 'LightGuard/awestruct', branch: 'multi-thread-gen-trial'
-gem 'awestruct', github: 'awestruct/awestruct'
+gem 'awestruct', '~> 0.5'
 gem 'slim', '~> 2.0.0'
 gem 'daybreak', '~> 0.3.0'
 gem 'kramdown', '~> 1.0.1'
