@@ -5,10 +5,10 @@ current_version: 6.1.0.GA
 documentation_minor_version: 6.1
 intro_video: https://vimeo.com/95600665
 vimeo_album: http://vimeo.com/album/2982444
-youtube_album: http://www.youtube.com/playlist?list=PLcrLvMVKO0b377pxbjvepIBuoQl7lcEiK
+youtube_album: https://www.youtube.com/playlist?list=PLf3vm0UK6HKr0DPn1NaTmB-DY5WGeMtfN
 skip_installation_instructions: true
 skip_maven_instructions: true
-guides: 
+guides:
   Installation_Guide:
   Administration_And_Configuration_Guide:
   Getting_Started_Guide:
@@ -23,7 +23,7 @@ guides:
       epub:
         url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/epub/Business_Resource_Planner_Guide/Red_Hat_JBoss_BPM_Suite-6.1-Business_Resource_Planner_Guide-en-US.epub
       pdf:
-        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/pdf/Business_Resource_Planner_Guide/Red_Hat_JBoss_BPM_Suite-6.1-Business_Resource_Planner_Guide-en-US.pdf  
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/pdf/Business_Resource_Planner_Guide/Red_Hat_JBoss_BPM_Suite-6.1-Business_Resource_Planner_Guide-en-US.pdf
 default_download_artifact_type: installer
 description: 'A rule-based programming platform built on Drools Expert, Drools Guvnor, and Drools Fusion that allows users to capture rules that can be easily modified as the business changes without impacting static applications.'
 downloads:
@@ -113,7 +113,7 @@ downloads:
       release_notes:
       source:
         size: 154mb
-        filename: jboss-bpmsuite-6.0.1.GA-source.zip 
+        filename: jboss-bpmsuite-6.0.1.GA-source.zip
 upstream_projects:
   - optaplanner
   - drools
