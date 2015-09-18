@@ -13,7 +13,7 @@ Rapid ways to deliver reusable and loosely coupled unified data views and data s
 
 == Icon1
 
-[.fa .fa-hdd-o .fa-5x .fa-fw]#&nbsp;# 
+[.fa .fa-hdd-o .fa-5x .fa-fw]#&nbsp;#
 
 == Features2
 
@@ -23,13 +23,13 @@ Builds powerful transformations and relationships using an integrated modeling a
 
 == Icon2
 
-[.fa .fa-info-circle .fa-5x .fa-fw]#&nbsp;# 
+[.fa .fa-info-circle .fa-5x .fa-fw]#&nbsp;#
 
 == Features3
 
 === Real-time Data Access and Provisioning
 
-Read/write from any source or data type including Legacy, NoSQL and Cloud. Expose the combined information as reusable Data Views & Data Services in multiple formats and supporting hybrid delivery modes (on-demand, cache, and materialized) to consuming applications. 
+Read/write from any source or data type including Legacy, NoSQL and Cloud. Expose the combined information as reusable Data Views & Data Services in multiple formats and supporting hybrid delivery modes (on-demand, cache, and materialized) to consuming applications.
 Lean Integration: Reduce data sprawl by avoiding compulsory data copying and minimize cost and risk of unnecessary data duplication, storage and management.
 
 == Icon3
@@ -49,27 +49,16 @@ JBoss Data Virtualization offers comprehensive data abstraction, federation, int
 
 JBoss Data Virtualization implements all three steps internally; hiding the technical complexities of knowing physical data locations, storage structures, APIs, access and/or merge logic, thus making it easy for developers and users to work with data.
 
-=== What's new in JBoss Data Virtualization 6.1 Beta?
+=== What's new in JBoss Data Virtualization 6.2?
 
-For JBoss Data Virtualization 6.1 Beta, we focused on Big Data, Cloud and other Productivity and deployment improvements.
+==== - EAP 6.4.3
 
-==== Big Data
+==== - Java 8
 
-- Support for Cloudera Impala in addition to Apache Hive
-- Support for Apache Solr as a data source
-- Full support for MongoDB 
-- Expanded support for JDG with the ability to perform writes Apache
-- Cassandra (Tech Preview)
+==== - Teiid Designer Usability Improvments
 
-==== Cloud
-- OpenShift Online with new WebUI (Dev Preview)
-- Cloud enablement with support for Amazon EC2 and Google Compute Engine
+==== - Kerberos passthrough for Cloudera, Oracle and MS SQL Server
 
-==== Productivity and Deployment Improvements
-- Security audit log dashboard
-- Custom Translator Improvements
-- Apache POI for multi-platform MS Excel deployments
-- Performance Improvements
-- Support for Azul Zing JVM, EAP 6.3, MariaDB
+==== - HBase Technical Preview
 
 == Resources
