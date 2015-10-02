@@ -1,0 +1,28 @@
+.wide-hero.awards {
+  background: cdn('../images/awards/awards_microsite_hero.jpg');
+}
+
+.middlewareAwards {
+  .award-section {
+    margin-bottom: 40px;
+
+    a > h3 {
+      color: #2664a2;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    a > h3:hover {
+      color: #a5aa4d;
+    }
+
+    .award-logo {
+      width: 100%;
+      padding: 15%;
+    }
+    h6 {
+      margin-bottom: 0;
+    }
+  }  
+}
