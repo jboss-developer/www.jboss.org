@@ -93,7 +93,6 @@ module JBoss
                   if (url.include?('.md'))
                     if has_page_by_uri? site, page, url.gsub('README.md', 'index.html')                      
                       a['href'] = url.gsub('README.md', 'index.html')
-                      altered = true
                     else
                       if (page.metadata[:browse].include?('blob') || page.metadata[:browse].include?('tree'))
                         if (page.metadata[:product] && page.output_path.include?(page.metadata[:product]))
@@ -101,17 +100,15 @@ module JBoss
                         else
                           a['href'] = page.metadata[:browse] + '/' + page.output_path.split('/').last.gsub('index.html', '') + url
                         end
-                      altered = true
                       else
-                        if (page.metadata[:product] && page.output_path.include?(page.metadata[:product]))
-                          a['href'] = page.metadata[:browse] + '/blob/master' + page.output_path.split(page.metadata[:product]).last.gsub('index.html', '') + url
+                        if (page.metadata[:product] && page.metadata[:product].size == 1 && page.output_path.include?(page.metadata[:product].first))
+                          a['href'] = page.metadata[:browse] + '/blob/master' + page.output_path.split(page.metadata[:product].first).last.gsub('index.html', '') + url
                         else
                           a['href'] = page.metadata[:browse] + '/blob/master' + page.output_path.split('/').last.gsub('index.html', '') + url
                         end
-                        a['href'] = page.metadata[:browse] + '/blob/master/' + page.output_path.split('/').last.gsub('index.html', '') + url
-                        altered = true
                       end
                     end
+                    altered = true
                   end
                 end
               end
