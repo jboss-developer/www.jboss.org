@@ -13,7 +13,7 @@ This section covers the steps you need to do in order to setup your environment 
             dcp_password
             google_api_key
 
-    * Export the values in the appropriate startup script. For example:
+    * Export the values in the appropriate startup script. For example: 
 
             export vimeo_access_token_secret=<VIMEO_ACCESS_TOKEN_SECRET>
             export vimeo_client_secret=<VIMEO_CLIENT_SECRET>
