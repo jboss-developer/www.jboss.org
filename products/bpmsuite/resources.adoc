@@ -14,9 +14,10 @@ http://www.redhat.com/resourcelibrary/whitepapers/red-hat-jboss-bpm-suite-6-tech
   and policies. It begins by bridging the gap in communication between business and IT, fostering more effective
   collaboration so changes can be made more easily and quickly.
 
-http://www.redhat.com/about/events-webinars/webinars/2013-06-06-BRMS-in-action[Red Hat JBoss BRMS in action]
-  Having a solid business rules management system (BRMS) can help you create an application foundation that can handle the unexpected.
-  Join our webinar to see a live demo of Red Hat(R) JBoss(R) BRMS and discover the advantages of maintaining business rules outside of application code.
+http://www.redhat.com/en/about/events/guide-modern-bpm-data-integration[A guide to modern BPM data integration]
+  Whether you're a data analyst, business analyst, or in IT strategy, this webinar will illustrate how easy it is to
+  integrate disparate data spread across your organization when modeling and automating your business processes with
+  modern BPM tools.
 
 == Red Hat JBoss Supported Configurations
 

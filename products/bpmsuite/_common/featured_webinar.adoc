@@ -2,5 +2,9 @@
 
 === Webinars
 
-image:#{cdn(site.base_url + '/images/products/bpmsuite/automate_workflows_webinar.png')}[Automate workflows now with a leading open source BPM platform, 150, link="https://vts.inxpo.com/Launch/QReg.htm?ShowKey=18697&AffiliateData=jboss.org"] https://vts.inxpo.com/Launch/QReg.htm?ShowKey=18697&AffiliateData=jboss.org[Automate workflows now with a leading open source BPM platform]
+image:#{cdn(site.base_url + '/images/products/bpmsuite/webinar-speed-business.png')}[The speed of business: BPMS performance techniques, 150, link="http://www.redhat.com/en/about/events/speed-business-bpms-performance-techniques"] http://www.redhat.com/en/about/events/speed-business-bpms-performance-techniques[The speed of business: BPMS performance techniques]
+
+image:#{cdn(site.base_url + '/images/products/bpmsuite/webinar-modern-bpm.png')}[A guide to modern BPM data integration, 150, link="http://www.redhat.com/en/about/events/guide-modern-bpm-data-integration"] http://www.redhat.com/en/about/events/guide-modern-bpm-data-integration[A guide to modern BPM data integration]
+
+image:#{cdn(site.base_url + '/images/products/bpmsuite/webinar-planning-developers.png')}[Business resource planning for Java developers, 150, link="http://www.redhat.com/en/about/events/business-resource-planning-java-developers"] http://www.redhat.com/en/about/events/business-resource-planning-java-developers[Business resource planning for Java developers]
 
