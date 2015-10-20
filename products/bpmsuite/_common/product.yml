@@ -14,6 +14,7 @@ buzz_tags:
   - jbpm
   - jbossbpmsuite
   - bpm
+  - BPM Suite
 guides:
   Release_Notes:
   Administration_And_Configuration_Guide:
@@ -129,4 +130,3 @@ upstream_projects:
 featured_items:
   - image_url: http://design.jboss.org/jbossdeveloper/sitedesign/jbossdeveloper_1_0/makerfiles/images/developermaterials_bpmsuite.png
     url: /quickstarts/brms/tasks-bpmsuite
-

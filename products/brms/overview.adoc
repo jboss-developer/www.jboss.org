@@ -11,7 +11,11 @@ Powerful, integrated, business event and business decision management.
 
 === Business Rule Management
 
-Leverage the power of declarative logic with business rules to build compact, fast and easy to understand business applications.
+Leverage the power of declarative logic with business rules to build compact, fast and easy to understand business applications. +
+Business experts and application developers in organizations of any size need to be able to model, automate, measure, and improve
+their critical processes and policies. Red Hat(R) JBoss(R) BRMS makes it possible with fully integrated business rules management
+and complex event processing (CEP). All through an open source subscription. Red Hat(R) JBoss(R) BRMS includes powerful new tools
+for optimizing and scheduling business resources.
 
 == Icon1
 
@@ -40,9 +44,10 @@ Create complete business applications with ease using comprehensive browser-base
 
 == Detail
 
-Business experts and application developers in organizations of any size need to be able to model, automate, measure, and improve their critical processes and policies. Red Hat(R) JBoss(R) BRMS makes it possible with fully integrated business rules management and complex event processing (CEP). All through an open source subscription.
+Learn how the Business Resource Planner can tackle a wide range of planning problems, from delivery routing to shift scheduling and
+even managing compute resources in the cloud. 
 
-image:#{cdn('images/products/brms/capture.png')}["BRMS Screenshot", width="518"]
+https://vimeo.com/album/2982444/video/143059283[image:#{cdn('images/products/brms/planner-video.png')}["Planner Video", width="518"]]
 
 Download JBoss BRMS and explore the tools for authoring business rules, provided as both standalone web applications and plug-ins for JBoss Developer Studio.
 
@@ -52,5 +57,11 @@ JBoss BRMS includes the Business Resource Planner, a toolkit designed to help de
 
 == Resources
 
-- View the http://www.schabell.org/2014/07/redhat-jboss-brms-product-demos-6.0.2-updated.html[BRMS Product Demos]
-- View the http://www.schabell.org/search/label/Tips%26Tricks[BRMS Tips and Tricks]
+https://github.com/jbossdemocentral?utf8=%E2%9C%93&query=brms-[Red Hat JBoss BRMS Product Demos]::
+  JBoss BRMS demo repository with various projects and integration examples.
+
+https://github.com/jbossdemocentral?utf8=%E2%9C%93&query=brmsPaaS[Red Hat JBoss BRMS PaaS Demo]::
+  This was developed and have put together some automated cartridge installation projects that kick start you with pre-loaded demo projects.
+
+http://www.schabell.org/search/label/Tips%26Tricks[BRMS Tips and Tricks]::
+  This weeks tips and tricks article will help you to keep your JBoss BRMS running like a fine tuned machine.
