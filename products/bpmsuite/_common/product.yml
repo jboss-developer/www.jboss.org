@@ -9,8 +9,6 @@ vimeo_album: http://vimeo.com/album/2982446
 youtube_album: https://www.youtube.com/playlist?list=PLf3vm0UK6HKphPQWLX8SPJlPyqDhpZS4U
 skip_installation_instructions: true
 skip_maven_instructions: true
-buzz_tags:
-  - BPM Suite
 guides:
   Release_Notes:
   Administration_And_Configuration_Guide:
@@ -103,4 +101,3 @@ upstream_projects:
 featured_items:
   - image_url: http://design.jboss.org/jbossdeveloper/sitedesign/jbossdeveloper_1_0/makerfiles/images/developermaterials_bpmsuite.png
     url: /quickstarts/brms/tasks-bpmsuite
-
