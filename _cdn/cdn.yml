@@ -1086,7 +1086,7 @@ buzz.js:
   raw_md5sum: 7179683c35b92b2f616d4af51f8fb6ee
   md5sum: daf25b0135326fb6cfe1da519a167628
 developer-materials-filter.js:
-  build_no: 3342
+  build_no: 3344
   raw_md5sum: a7f0af9b4ab371aa00ab28c4d3ec3998
   md5sum: c83b8bad5764cf7447a35b0f34b49a06
 events.js:
@@ -1206,8 +1206,8 @@ images_design_iot_as7screenshot.jpg:
   build_no: 1
   md5sum: 425021fbb8d0f170bf8c52ccc0e7eaa2
 forums.js:
-  build_no: 1473
-  md5sum: 8d9ab8aae81c4dcc7e104b4e8f383a8b
+  build_no: 1474
+  md5sum: 40c7e56b4f274eb664be2b2be8ea6770
 _images_branding_tabzilla-redhat-logo-sprite.png:
   build_no: 1
   md5sum: aeca850de5dfe652cbbf7a0deef63100
@@ -1682,3 +1682,12 @@ design_jboss_org_jbossdeveloper_sitedesign_jbossdeveloper_1_1_makerfiles_images_
 design_jboss_org_jbossdeveloper_sitedesign_jbossdeveloper_1_1_makerfiles_images_hero_desktop_380x280_oreillyjavaee_10142015.png:
   build_no: 1
   md5sum: b2c37fe9e2c135fc23b5920dbaacfae4
+static_jboss_org_images_hero_hero_mobile_480x500_oreillyjavaee_10222015.png:
+  build_no: 1
+  md5sum: 2f5dd0e8dc740ae60058390bdd238014
+static_jboss_org_images_hero_hero_desktop_1175x400_oreillyjavaee_10222015.png:
+  build_no: 1
+  md5sum: 0fbf06468b4b1b277d81ce1f2ce0e340
+static_jboss_org_images_hero_hero_desktop_380x280_oreillyjavaee_10222015.png:
+  build_no: 1
+  md5sum: 832db90f4ec2b3658805bf90584868b7
