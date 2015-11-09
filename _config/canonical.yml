@@ -1,0 +1,1 @@
+- url: !ruby/regexp /^.*\/quickstarts\/eap\/.*/
