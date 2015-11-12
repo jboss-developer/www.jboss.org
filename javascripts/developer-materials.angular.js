@@ -187,7 +187,7 @@ dcp.filter('urlFix', function() {
       return str;
     }
     else if(str.contains("developers.redhat.com")){
-      return str.replace("developers.redhat.com", '#{site.base_url}/')
+      return str.replace("developers.redhat.com", "jboss.org")
     }
     else {
       return str.replace(/^http(s)?:\/\/(\w|\.|\-|:)*(\/pr\/\d+\/build\/\d+\/)?/, '#{site.base_url}/');
