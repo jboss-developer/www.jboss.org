@@ -1,3 +1,6 @@
 - url: !ruby/regexp /^.*\/quickstarts\/.*/
 - url: !ruby/regexp /^.*\/demos\/\.*/
 - url: !ruby/regexp /^.*\/video\/.*/
+- url: !ruby/regexp /^.*\/ticket-monster\/.*/
+- url: !ruby/regexp /^.*\/boms\/.*/
+- url: !ruby/regexp /^.*\/archetype\/.*/
