@@ -57,6 +57,9 @@ head
         - if !page.author['social']['facebook'].nil?
           meta property='og:article:actor' content=page.author['social']['facebook']['username']
     meta property='og:article:section' content='Technology'
+  - site.canonical.each do |k|
+    - if (k.url =~ page.url)
+      link rel='canonical' href="http://developers.redhat.com/#{page.url}"
   - if site.url
     link rel='canonical' href=site.url
   = stylesheets "all" do

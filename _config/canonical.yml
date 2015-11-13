@@ -1,0 +1,3 @@
+- url: !ruby/regexp /^.*\/quickstarts\/.*/
+- url: !ruby/regexp /^.*\/demos\/\.*/
+- url: !ruby/regexp /^.*\/video\/.*/
