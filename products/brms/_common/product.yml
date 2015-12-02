@@ -1,9 +1,11 @@
 name: Red Hat JBoss BRMS
 abbreviated_name: JBoss BRMS
+product_logo: brms.png
 has_installer: true
 current_version: 6.1.0.GA
 documentation_minor_version: 6.1
-intro_video: https://vimeo.com/95600665
+xpaas_url: https://developers.openshift.com/en/xpaas-business-rules-management-system.html
+intro_video: https://vimeo.com/143059985
 vimeo_album: http://vimeo.com/album/2982444
 youtube_album: https://www.youtube.com/playlist?list=PLf3vm0UK6HKr0DPn1NaTmB-DY5WGeMtfN
 skip_installation_instructions: true
@@ -23,9 +25,9 @@ guides:
       epub:
         url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/epub/Business_Resource_Planner_Guide/Red_Hat_JBoss_BPM_Suite-6.1-Business_Resource_Planner_Guide-en-US.epub
       pdf:
-        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/pdf/Business_Resource_Planner_Guide/Red_Hat_JBoss_BPM_Suite-6.1-Business_Resource_Planner_Guide-en-US.pdf
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/pdf/Business_Resource_Planner_Guide/Red_Hat_JBoss_BPM_Suite-6.1-Business_Resource_Planner_Guide-en-US.pdf  
 default_download_artifact_type: installer
-description: 'A rule-based programming platform built on Drools Expert, Drools Guvnor, and Drools Fusion that allows users to capture rules that can be easily modified as the business changes without impacting static applications.'
+description: 'Quickly create and change business rules with this business rules management system.'
 downloads:
   # 6.0.2 is an exclusion to the "no micros through $0 dev program
   6.1.0.GA:
@@ -113,7 +115,7 @@ downloads:
       release_notes:
       source:
         size: 154mb
-        filename: jboss-bpmsuite-6.0.1.GA-source.zip
+        filename: jboss-bpmsuite-6.0.1.GA-source.zip 
 upstream_projects:
   - optaplanner
   - drools
@@ -122,4 +124,3 @@ upstream_projects:
 featured_items:
   - image_url: http://design.jboss.org/jbossdeveloper/sitedesign/jbossdeveloper_1_0/makerfiles/images/developermaterials_brms.png
     url: /quickstarts/brms/helloworld-brms
-

@@ -50,11 +50,12 @@ JBoss BPM Suite includes the Business Resource Planner, a toolkit designed to he
 
 == Resources
 
-http://www.schabell.org/2014/07/redhat-jboss-bpmsuite-product-demos-6.0.2-updated.html[Red Hat JBoss BPM Suite Product Demos]::
-  With the release of the JBoss BPM Suite version 6.0.2.GA product we wanted to get all the demos updated and out to you for evaluation as fast as possible.
+https://github.com/jbossdemocentral?utf8=%E2%9C%93&query=bpms-[Red Hat JBoss BPM Suite Product Demos]::
+  JBoss BPM Suite demo repository with various projects and integration examples.
 
-http://www.schabell.org/2014/06/real-life-bpmpaas-jboss-bpmsuite-customer-evaluation-demo.html[Red Hat JBoss BPM PaaS Demo]::
-This was developed and have put together some automated cartridge installation projects that kick start you with pre-loaded demo projects.
+https://github.com/jbossdemocentral?utf8=%E2%9C%93&query=bpmPaaS-[Red Hat JBoss BPM PaaS Demo]::
+  This was developed and have put together some automated cartridge installation projects that kick start you with pre-loaded demo projects.
 
 http://www.schabell.org/search/label/Tips%26Tricks[Red Hat JBoss BPM Tips and Tricks]::
-This weeks tips and tricks article will help you to keep your current JBoss BPM Suite and JBoss Business Rules Management System (BRMS) running like a fine tuned machine.
+  This weeks tips and tricks article will help you to keep your JBoss BPM Suite running like a fine tuned machine.
+
