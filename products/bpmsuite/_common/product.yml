@@ -10,7 +10,10 @@ youtube_album: https://www.youtube.com/playlist?list=PLf3vm0UK6HKphPQWLX8SPJlPyq
 skip_installation_instructions: true
 skip_maven_instructions: true
 buzz_tags:
-  BPM Suite
+  - bpm suite
+  - jbpm
+  - jbossbpmsuite
+  - bpm
 guides:
   Release_Notes:
   Administration_And_Configuration_Guide:
