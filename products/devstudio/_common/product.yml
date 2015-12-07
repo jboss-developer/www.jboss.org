@@ -19,7 +19,7 @@ downloads:
     description: An IDE that gives you everything you need to build rich web and enterprise Java applications. Built on Eclipse 4.5.1 Mars.1.
     assets:
       jar_universal:
-        name: Installer With EAP
+        name: Installer With EAP 6.4.0 CVE-2015-7501 / BZ 1281963
         size: 634mb
         type: jar
       standalone_jar:
