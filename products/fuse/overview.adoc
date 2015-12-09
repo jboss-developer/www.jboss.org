@@ -5,13 +5,13 @@
 
 == Overview
 
-link:http://www.redhat.com/products/jbossenterprisemiddleware/fuse/[JBoss Fuse] is an open source, lightweight Enterprise Service Bus (ESB) with an elastic footprint that supports integration beyond the data center. The lack of license fees and the ability to deploy JBoss Fuse in several different configurations advances intelligent integration to all facets of your business – on premise or in the Cloud.
+link:http://www.redhat.com/products/jbossenterprisemiddleware/fuse/[JBoss Fuse] is an open source, lightweight and modular integration platform with a new-style Enterprise Service Bus (ESB) that supports integration beyond the data center. The capability to connect all enterprise assets and the ability to deploy JBoss Fuse in several different configurations advances intelligent integration to all facets of your business – on premise or in the Cloud.
 
 JBoss Fuse for xPaaS extends the integration capabilities to OpenShift Platform-as-a-Service (PaaS) solution.
 
 == Features1
 
-=== Pattern based integration framework
+=== Pattern based Integration framework
 
 Leverage Apache Camel to provide a full-featured, easy-to-use and intuitive framework for quicker integration solutions. Seamlessly create APIs.
 
@@ -42,7 +42,7 @@ Connect to external applications with connectors for JDBC, FTP/SFTP, HTTP/HTTPS,
 
 == Detail
 
-JBoss Fuse combines several technologies like core Enterprise Service Bus capabilities (based on Apache Camel, Apache CXF, Apache ActiveMQ), Apache Karaf and Fabric8 in a single integrated distribution. The core ESB capabilities are also supported on the fully certified Java EE platform, link:http://www.redhat.com/en/technologies/jboss-middleware/application-platform[Red Hat JBoss Enterprise Application Platform]
+JBoss Fuse combines several technologies like Apache Camel, Apache CXF, Apache ActiveMQ, Apache Karaf and Fabric8 in a single integrated distribution. The JBoss Fuse based integration applications are also supported on the fully certified Java EE platform, link:http://www.redhat.com/en/technologies/jboss-middleware/application-platform[Red Hat JBoss Enterprise Application Platform]
 
 image::#{cdn(site.base_url + '/images/products/fuse/Fuse_Builtfromdiagram_02.png')}[]
 
@@ -66,12 +66,12 @@ Try the exciting new features:
 
 * Intuitive tooling complemented with Apache Camel integration framework for quicker integration solution and more productive development environment
 * Visual debugger to debug, test and deploy integration services – all in one tool
-* Transform data using a visual mapper (Technical preview)
+* Transform data using a visual mapper
 * API foundation – seamlessly create RESTful APIs
 * Vast library of connectors - over 150+ out-of-the-box-connectors via Apache Camel. Additional SaaS connectors to Salesforce (Apex API), DropBox, Box, Google Drive and more.
 * Role based access control to integration services and platform for improved security and integrity.
 
-=== Integration Everywhere
+=== Integrate everything, everywhere
 
 image::#{cdn(site.base_url + '/images/products/fuse/overview.png')}[]
 

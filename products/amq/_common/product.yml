@@ -1,6 +1,6 @@
 name: Red Hat JBoss A-MQ
 abbreviated_name: JBoss A-MQ
-current_version: 6.2.0.GA
+current_version: 6.2.1.GA
 documentation_path: Red_Hat_JBoss_A-MQ
 intro_video: https://vimeo.com/95430180
 youtube_album: https://www.youtube.com/playlist?list=PLf3vm0UK6HKoFt9aCQPOVt8K12fe3JaPf
@@ -45,6 +45,37 @@ upstream_projects:
   - activemq
   - fabric8
 downloads:
+  6.2.1.GA:
+    release_date: 2015-12-07
+    description: Our small footprint, high performance, open source messaging platform
+    assets:
+      zip:
+        size:
+        name: Full Install
+      zip_cpp:
+        size:
+        name: CMS C++ Client API
+      amqp_jms_client:
+        name: AMQP 1.0 JMS Client API
+        size:
+      cppclient:
+        name: AMQP 1.0 C++ Client API
+        artifacts:
+          vs2012:
+            name: AMQP 1.0 C++ Client x86
+            size:
+          vs2012_sources:
+            name: AMQP 1.0 C++ Client Sources
+            size:
+          vs2012_64:
+            name: AMQP 1.0 C++ Client 64
+            size:
+      net_client:
+        size: 9mb
+        name: NMS .NET Client API
+      net_lite_sdk:
+        size: 1mb
+        name: AMQP 1.0 .NET Lite Client SDK
   6.2.0.GA:
     release_date: 2015-06-23
     description: Our small footprint, high performance, open source messaging platform
