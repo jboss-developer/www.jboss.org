@@ -19,8 +19,8 @@ The Integration Stack for JBoss Developer Studio is a set of plugins for Eclipse
 To install the Integration Stack tools:
 
 1. Download the JBoss Developer Studio all-in-one installer and install it. Choose one of these:
-* Stable version (Luna): link:http://www.jboss.org/download-manager/file/jboss-devstudio-8.1.0.GA-jar_universal.jar[8.1.0] or 
-* Early Access version (Mars): link:http://www.jboss.org/download-manager/file/jboss-devstudio-9.0.0.Beta2-jar_universal.jar[9.0.0]
+* Stable version (Luna): link:http://www.jboss.org/download-manager/file/jboss-devstudio-8.1.0.GA-jar_universal.jar[8.1.0.GA] or 
+* Early Access version (Mars): link:https://www.jboss.org/download-manager/content/origin/files/sha256/1e/1efef4d2b109efd9e8136d02067a8d62e00621e5b2b1530811bf52b5aa2fca6f/jboss-devstudio-9.0.0.GA-CVE-2015-7501-installer-eap.jar[9.0.0.GA]
 2. Select the _Software/Update_ tab in the _JBoss Central_ view.
 3. If using JBoss Developer Studio 8, tick the checkbox to _Enable Early Access_, and click _Yes_ to accept the warning.
 4. Scroll down the list of _available features_, looking for the _JBoss Developer Studio Integration Stack_ section. See the image below.
