@@ -1,11 +1,24 @@
 name: Red Hat JBoss Fuse
 abbreviated_name: JBoss Fuse
-current_version: 6.2.0.GA
+current_version: 6.2.1.GA
 default_download_artifact_type: zip
 intro_video: https://vimeo.com/95497167
 youtube_album: https://www.youtube.com/playlist?list=PLf3vm0UK6HKpsIDrnlH1QVRv98LlYM7b0
 vimeo_album: http://vimeo.com/album/2982439
 downloads:
+  6.2.1.GA:
+    release_date: 2015-12-07
+    description: Our small footprint Enterprise Service Bus (ESB) that can be moved into production with a Red Hat subscription.
+    assets:
+      zip:
+        name: Zip Files
+        artifacts:
+          full_zip:
+            size:
+          sources:
+            size:
+      release_notes:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Fuse/6.2.1/html/Release_Notes/index.html
   6.2.0.GA:
     release_date: 2015-06-23
     description: Our small footprint Enterprise Service Bus (ESB) that can be moved into production with a Red Hat subscription.
