@@ -1,8 +1,8 @@
 name: Red Hat JBoss BPM Suite
 abbreviated_name: JBoss BPM Suite
 has_installer: true
-current_version: 6.1.0.GA
-documentation_minor_version: 6.1
+current_version: 6.2.0.GA
+documentation_minor_version: 6.2
 xpaas_url: https://www.openshift.com/developers/jboss-bpms
 intro_video: https://vimeo.com/142883902
 vimeo_album: http://vimeo.com/album/2982446
@@ -27,6 +27,29 @@ default_download_artifact_type: installer
 description: 'A business process and decision management platform that provides business users and developers with powerful and intuitive tools to capture business processes, policies and rules.  Combined with reporting and simulation, this platform allows agile modification of systems in response to business needs.'
 downloads:
   # 6.0.2 is an exclusion to the "no micros through $0 dev program
+  6.2.0.GA:
+    description: Minor release in the JBoss BPM Suite 6.x series.
+    tag_line: One integrated User Interface - Business Central that is central to all business activities, an integrated modeling environment for business users. Includes process modeling, data modeling, user forms design and rules authoring, process simulation to help business users understand the likely behaviors, costs, etc. of business processes before they are deployed in production, business Activity Monitoring (BAM) tools such as Dashboards, Reports, KPI indicators etc. that provide business managers with a complete picture of the state and performance of automated processes and a BPM runtime platform that will reliably handle a wide range of workloads, from small departments to global enterprises.
+    release_date: 2015-12-07
+    assets:
+      installer:
+        size: 277mb
+      zip:
+        artifacts:
+          deployable:
+            size: 206mb
+      zip_planner:
+        size: 94mb
+        name: Optaplanner
+      example:
+        size: 4mb
+        name: Quickstarts
+      zip_supplemental:
+        size: 63mb
+        name: Supplemental Tools
+      release_notes:
+      source:
+        size: 152mb
   6.1.0.GA:
     description: Minor release in the JBoss BPM Suite 6.x series
     tag_line: Critical enterprise features such as better integration with Camel, highly customizable business central that enables partners and customers to extend the platform, productivity enhancement features, collaborative user interface and enhanced stability of the platform. Includes full support for Business Resource Planner that offers ability to build resource optimized solutions.
