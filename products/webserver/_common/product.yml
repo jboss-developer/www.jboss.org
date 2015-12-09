@@ -46,7 +46,6 @@ guides:
         url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Web_Server/2/pdf/Installation_Guide/Red_Hat_JBoss_Web_Server-2-Installation_Guide-en-US.pdf
       epub:
         url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Web_Server/2/epub/Installation_Guide/Red_Hat_JBoss_Web_Server-2-Installation_Guide-en-US.epub
-downloads:
 upstream_projects:
   - tomcat
   - httpd
