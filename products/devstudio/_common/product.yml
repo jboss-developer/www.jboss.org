@@ -23,6 +23,8 @@ downloads:
         size: 633mb
         type: jar
         url: https://www.jboss.org/download-manager/content/origin/files/sha256/1e/1efef4d2b109efd9e8136d02067a8d62e00621e5b2b1530811bf52b5aa2fca6f/jboss-devstudio-9.0.0.GA-CVE-2015-7501-installer-eap.jar
+      release_notes:
+        url: http://tools.jboss.org/blog/ga-cve-for-mars.html
   9.0.0.GA:
     release_date: 2015-10-06
     description: An IDE that gives you everything you need to build rich web and enterprise Java applications. Built on Eclipse 4.5.1 Mars.1.
