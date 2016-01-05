@@ -38,7 +38,7 @@ Access our full product documentation for release notes, installation guides and
 
 === link:http://www.redhat.com/consulting/[Red Hat Consulting]
 
-Still not getting where you need to be? Consider Red Hat Consulting for futher help.
+Still not getting where you need to be? Consider Red Hat Consulting for further help.
 
 === link:https://access.redhat.com/support/cases/new/[Open a New Support Case]
 
