@@ -4,32 +4,15 @@ status: green
 type: Downloads
 ---
 - page.description = "Download current or older versions of #{page.product.abbreviated_name}."
-- if page.product.current_download
+- if page.product.current_version
 
   h2.divider#download-development-use Download for Development Use
 
   asciidoc:
     To download #{page.product.abbreviated_name} you must have an account. You also need to accept the terms and conditions of the JBoss Developer Program which provides $0 subscriptions for development use only. link:../../../faq[Read more] about the JBoss Developer Program.
 
-  - if page.product.latest_release
-    h4.download-link: a(href="#{page.product.latest_release.url}")
-      i.fa.fa-download>
-      | Download #{page.product.abbreviated_name} #{page.product.latest_release.version}
-
-    = partial("download_table.html.slim", { 'downloads' => [page.product.latest_release] })
-
-  h4.download-link: a(href="#{page.product.default_download_artifact.url}")
-    i.fa.fa-download>
-    | Download #{page.product.abbreviated_name} #{page.product.current_version}
-
-  = partial("download_table.html.slim", { 'downloads' => [page.product.current_download] })
-
-  - if page.product.older_downloads && page.product.older_downloads.length > 0 
-    a.view-older-downloads(href="#")
-      | View Older Downloads
-      i.fa.fa-caret-down
-
-    = partial("download_table.html.slim", { 'downloads' => page.product.older_downloads.values })
+  .product-downloads(data-product-code="#{page.product.dcp_project_code.sub(/jboss/,'')}")
+    / Downloads go here via JS
 
 - else
 

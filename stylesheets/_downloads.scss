@@ -1,0 +1,9 @@
+.has-download, .no-download {
+  display: none;
+}
+
+.download-links {
+  a + a {
+    margin-left: 10px;
+  }
+}
