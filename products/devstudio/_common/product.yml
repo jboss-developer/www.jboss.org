@@ -8,8 +8,35 @@ buzz_tags:
   - jbds
 guides:
   Release_Notes:
+    formats:
+      html:
+        url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/html/9.1_Beta1_Release_Notes/index.html
+      html-single:
+        url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/html-single/9.1_Beta1_Release_Notes/index.html
+      epub:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/epub/9.1_Beta1_Release_Notes/Red_Hat_JBoss_Developer_Studio-9.1-Beta1-9.1_Beta1_Release_Notes-en-US.epub
+      pdf:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/pdf/9.1_Beta1_Release_Notes/Red_Hat_JBoss_Developer_Studio-9.1-Beta1-9.1_Beta1_Release_Notes-en-US.pdf
   Install_Red_Hat_JBoss_Developer_Studio:
+    formats:
+      html:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/html/Install_Red_Hat_JBoss_Developer_Studio/index.html
+      html-single:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/html-single/Install_Red_Hat_JBoss_Developer_Studio/index.html
+      epub:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/epub/Install_Red_Hat_JBoss_Developer_Studio/Red_Hat_JBoss_Developer_Studio-9.1-Beta1-Install_Red_Hat_JBoss_Developer_Studio-en-US.epub
+      pdf:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/pdf/Install_Red_Hat_JBoss_Developer_Studio/Red_Hat_JBoss_Developer_Studio-9.1-Beta1-Install_Red_Hat_JBoss_Developer_Studio-en-US.pdf
   Update_Red_Hat_JBoss_Developer_Studio:
+    formats:
+      html:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/html/Update_Red_Hat_JBoss_Developer_Studio/index.html
+      html-single:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/html-single/Update_Red_Hat_JBoss_Developer_Studio/index.html
+      epub:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/epub/Update_Red_Hat_JBoss_Developer_Studio/Red_Hat_JBoss_Developer_Studio-9.1-Beta1-Update_Red_Hat_JBoss_Developer_Studio-en-US.epub
+      pdf:
+        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/9.1-Beta1/pdf/Update_Red_Hat_JBoss_Developer_Studio/Red_Hat_JBoss_Developer_Studio-9.1-Beta1-Update_Red_Hat_JBoss_Developer_Studio-en-US.pdf
 default_download_artifact_type: jar_universal
 description: 'A development environment that provides superior support for your entire development lifecycle. It includes a broad set of tooling capabilities and support for multiple programming models and frameworks.'
 upstream_projects:
