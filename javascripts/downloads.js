@@ -17,12 +17,12 @@ app.downloads.createDownloadTable = function(products) {
   head.append(row);
   $table.append(head);
 
-  // clear out row after it's appended 
+  // clear out row after it's appended
   row = null;
 
   // loop over each product and append to the table
   $.each(products, function(i,product){
-    
+
     // loop over each file inside each product
     $.each(product.files,function(j,file) {
 
@@ -58,7 +58,7 @@ app.downloads.createDownloadTable = function(products) {
 
       lastVersionName = product.versionName;
       lastDescription = file.description;
-      
+
     }); // end each file
 
   }); // end each product
@@ -149,26 +149,27 @@ app.downloads.display = function(data) {
 
   // put it into the DOM
   $('.product-downloads').html($downloads);
-  
+
 }
 
 app.downloads.populateLinks = function() {
 
   var links = $('[data-download-id]');
-  
+
   if(!links.length) {
     return;
   }
 
   $.each(links,function(i,el) {
-    var productCode = $(this).data('download-id');
+    var $el = $(el);
+    var productCode = $el.data('download-id');
     // get data
     $.getJSON(app.downloads.url + productCode,function(data) {
 
-      var $el = $(el);
-      
+
       if(data[0] && data[0].featuredArtifact && data[0].featuredArtifact.url) {
-        $el.html('<i class="fa fa-download"></i> ' + app.downloads.bytesToSize(data[0].featuredArtifact.fileSize) + ' ' + data[0].featuredArtifact.label);
+        var text = $el.data('text') || app.downloads.bytesToSize(data[0].featuredArtifact.fileSize) + ' ' + data[0].featuredArtifact.label;
+        $el.html('<i class="fa fa-download"></i> ' + text);
         $el.attr('href',data[0].featuredArtifact.url);
       } else {
         $el.html('<i class="fa fa-download"></i> Download');
@@ -189,7 +190,7 @@ $(function() {
     $.getJSON(app.downloads.url + productCode,function(data) {
       if(!data.length) {
         $('.no-download').show();
-        return; 
+        return;
       }
       $('.has-download').show();
       app.downloads.display(data);
