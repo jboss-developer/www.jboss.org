@@ -1,6 +1,6 @@
 app.downloads = {};
 
-app.downloads.url = 'https://developers.redhat.com/download-manager/rest/available/';
+app.downloads.url = 'https://www.jboss.org/download-manager/rest/available/';
 
 app.downloads.createDownloadTable = function(products) {
 
