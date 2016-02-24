@@ -5,7 +5,7 @@
    h3.widget-title #{page.parent.product.abbreviated_name} for Developers
   - else
    h3.widget-title #{page.parent.product.abbreviated_name}
-  a.button.shadow.large(href="#" data-fallback-url="#{page.parent.product.customer_portal_download_url || 'https://access.redhat.com/downloads'}" data-download-id="#{page.parent.product.id}")
+  a.button.shadow.large(href="#" data-fallback-url="#{page.parent.product.customer_portal_download_url || 'https://access.redhat.com/downloads'}" data-download-id="#{page.parent.product.id}" data-text="Download")
    | Fetching Latest
    i.fa.fa-refresh.fa-spin
 - if page.parent.product.latest_release
