@@ -75,7 +75,7 @@ profiles:
     metrics: true
     deploy:
       <<: *deploy
-      path: /stg_htdocs/www-stg
+      path: /stg_htdocs/www
     
   production:
     <<: *profile
