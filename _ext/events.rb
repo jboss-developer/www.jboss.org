@@ -19,9 +19,9 @@ module JBoss
 
           case key
             when 'start_date'
-              ['start_date', DateTime.parse(value).as_json]
+              ['start_date', DateTime.parse(value)]
             when 'end_date'
-              ['end_date', DateTime.parse(value).as_json]
+              ['end_date', DateTime.parse(value)]
             when 'title'
               [:sys_title, value]
             when 'description'
@@ -37,10 +37,10 @@ module JBoss
               [key, value]
           end
         end.to_h
-        
+
         # Add identifier and other required fields for Searchisko Content Object
         searchisko_hash.merge!({:sys_url_view => "#{site.base_url}/events/event#!id=#{id}"})
-        
+
         unless !site.push_to_searchisko || site.profile =~ /development/
           searchisko.push_content('jbossdeveloper_event',
                                   id,
