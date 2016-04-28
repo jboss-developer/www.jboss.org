@@ -135,3 +135,12 @@
     - name: jboss/artificer-wildfly
       path: artificer/blob/master/artificer-wildfly
       description: Artificer on Wildfly
+
+- name: Teiid
+  description: Teiid is a data virtualization system that allows applications to use data from multiple, heterogenous data stores.
+  url: https://hub.docker.com/r/jboss/teiid/
+  image_url: http://static.jboss.org/teiid/images/teiid_200x150.png
+  images: 
+    - name: jboss/teiid-wildfly
+      path: teiid/blob/master/teiid-wildfly
+      description: Teiid on WildFly
