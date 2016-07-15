@@ -41,6 +41,10 @@ guides:
      formats:
        html:
 description: 'A lightweight, high-performance, robust messaging platform that enables real-time integration between application, services and devices.'
+secondary_cta:
+  title : Red Hat JBoss A-MQ 7.0
+  button_text: Documentation
+  href : https://access.redhat.com/documentation/en/red-hat-jboss-a-mq/?version=7.0-alpha
 upstream_projects:
   - activemq
   - fabric8
