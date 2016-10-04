@@ -73,7 +73,4 @@ default_download_artifact_type: jar_universal
 description: 'A development environment with superior support for your entire development lifecycle.'
 upstream_projects:
   - jbosstools
-featured_items:
-  - image_url: http://design.jboss.org/jbossdeveloper/sitedesign/jbossdeveloper_1_0/makerfiles/images/developermaterials_devstudio.png
-    url: /video/vimeo/92554627
 evaluation: https://access.redhat.com/products/red-hat-jboss-developer-studio/evaluation

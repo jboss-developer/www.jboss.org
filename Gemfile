@@ -27,10 +27,15 @@ gem 'git', '~> 1.2.5'
 gem 'oily_png', '~> 1.1.1'
 gem 'nokogiri', '~> 1.5.10'
 gem 'therubyracer', platforms: :ruby, require: linux_only('therubyracer')
-gem 'aweplug', github: 'awestruct/aweplug', ref: 'f4dd939f5a17d1946cebe5339411c411a8f483e3'
-# gem 'aweplug', github: 'Dantheman720/aweplug', :branch => 'DEVELOPER-1241'
-#gem 'aweplug', path: '~/projects/ruby/aweplug'
-#gem 'aweplug', path: '../aweplug'
+# To use Aweplug code from a different location:
+#
+# From a specific GitHub branch. Ommit the 'branch' parameter for 'master'
+#    gem 'aweplug', github: '<github_id>/aweplug', :branch => '<branch_name>'
+#
+# From a location on your disk:
+#gem 'aweplug', path: '<aweplug_directory>'
+#
+gem 'aweplug', github: 'awestruct/aweplug', :branch => 'jboss_org'
 gem 'parallel', '~> 1.1.0'
 gem 'mime-types', '2.1'
 gem 'google-api-client', '~> 0.7'

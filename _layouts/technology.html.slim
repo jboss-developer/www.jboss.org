@@ -7,12 +7,65 @@ layout: technology-base
 
 .row.technology-blocks
   ul.large-block-grid-2.small-block-grid-1
-    - site.nav['technology'].children.each do |k,v|
-      - if v.video
-        li
-          .technology-item
-            h3 #{v.label}
-            .technology-item-inside
-              = page["_" + k.gsub(/-/, "_")]
-              a.button(href="#{v.url}") Learn More
-              = video_player(video(v.video))
+    li
+      .technology-item
+        h3
+          | Supported Products
+        .technology-item-inside
+          .paragraph
+            p
+              | Our supported product portfolio provides enterprise-ready software built from an innovative community of projects. It delivers enterprise-class stability, enterprise-class support SLAs, guaranteed patches, updates and hot-fixes, and legal assurance. Reducing business and technical risks, increasing productivity, and speeding up time to deployment - Red Hat JBoss Middleware provides a solution that works for your enterprise at a lower cost than proprietary alternatives.
+          a.button[href="http://www.jboss.org/products"]
+            | Learn More
+          div[itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" data-searchisko-type="jbossdeveloper_vimeo" data-searchisko-id="95469649"]
+            link[itemprop="url" href="http://www.jboss.org/technology/"]
+            meta[itemprop="description" content="Mike Piech, General Manager of Red Hat JBoss Enterprise Middleware discusses JBoss, enlightened innovation, open-source, community, xPaas and upstream "]
+            meta[itemprop="height" content="720"]
+            meta[itemprop="width" content="1280"]
+            h4[itemprop="name"]
+              | Red Hat JBoss Enterprise Middleware Overview
+            meta[itemprop="duration" content="PT3M49S"]
+            meta[itemprop="thumbnailUrl" content="https://i.vimeocdn.com/video/475395113_200x150.jpg"]
+            meta[itemprop="thumbnail" content="https://i.vimeocdn.com/video/475395113_200x150.jpg"]
+            meta[itemprop="uploadDate" content="2014-05-16"]
+            meta[itemprop="isFamilyFriendly" content="true"]
+            .flex-video
+              div[widescreen="" vimeo=""]
+                iframe[src="//player.vimeo.com/video/95469649?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=2664A2" width="500" height="313" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""]
+    li
+      .technology-item
+        h3
+          | Upstream Projects
+        .technology-item-inside
+          .paragraph
+            p
+              | JBoss redefined the application server back in 2002 when it broke apart the monolithic designs of the past with its modular architecture. Since then we’ve continued to find new ways to challenge convention and redefine Enterprise Java through community-driven projects. Community projects represent the latest technologies for use in cutting-edge applications and offer best-effort, community support.
+          a.button[href="http://www.jboss.org/projects"]
+            | Learn More
+          div[itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" data-searchisko-type="jbossdeveloper_vimeo" data-searchisko-id="91710755"]
+            link[itemprop="url" href="http://www.jboss.org/technology/"]
+            meta[itemprop="description" content="Mark Little talks the open source projects that JBoss contributes to."]
+            meta[itemprop="height" content="720"]
+            meta[itemprop="width" content="1280"]
+            h4[itemprop="name"]
+              | Upstream Projects & Open Source Software
+            meta[itemprop="duration" content="PT2M49S"]
+            meta[itemprop="thumbnailUrl" content="https://i.vimeocdn.com/video/475395113_200x150.jpg"]
+            meta[itemprop="thumbnail" content="https://i.vimeocdn.com/video/475395113_200x150.jpg"]
+            meta[itemprop="uploadDate" content="2014-04-11"]
+            meta[itemprop="isFamilyFriendly" content="true"]
+            .flex-video
+              div[widescreen="" vimeo=""]
+                iframe[src="//player.vimeo.com/video/91710755?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=2664A2" width="500" height="313" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""]
+            span
+              | Follow
+              span.name
+                a[href="https://developer.jboss.org/people/marklittle" itemprop="author"]
+                  | Mark Little
+              span
+                span.account
+                  a.twitter[href="https://twitter.com/nmcl?rel=author"]
+                    i.fa.fa-twitter
+                span.account
+                  a.github[href="https://github.com/nmcl?rel=author"]
+                    i.fa.fa-github

@@ -51,7 +51,7 @@ profiles:
     log_faraday: true
     push_to_searchisko: false
     metrics: false
-    authenticate_google_books_api: false
+    authenticate_google_books_api: true
     build_threads: 0
     cache_type: :local
   

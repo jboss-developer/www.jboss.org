@@ -1,32 +1,8 @@
 name: Red Hat JBoss BRMS
 abbreviated_name: JBoss BRMS
 product_logo: brms.png
-has_installer: true
 current_version: 6.2.0.GA
 documentation_minor_version: 6.2
-xpaas_url: https://developers.openshift.com/en/xpaas-business-rules-management-system.html
-intro_video: https://vimeo.com/143059985
-vimeo_album: http://vimeo.com/album/2982444
-youtube_album: https://www.youtube.com/playlist?list=PLf3vm0UK6HKr0DPn1NaTmB-DY5WGeMtfN
-skip_installation_instructions: true
-skip_maven_instructions: true
-guides:
-  Installation_Guide:
-  Administration_And_Configuration_Guide:
-  Getting_Started_Guide:
-  Release_Notes:
-  User_Guide:
-  Business_Resource_Planner_Guide:
-    formats:
-      html:
-        url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/html/Business_Resource_Planner_Guide/index.html
-      html-single:
-        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/html-single/Business_Resource_Planner_Guide/index.html
-      epub:
-        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/epub/Business_Resource_Planner_Guide/Red_Hat_JBoss_BPM_Suite-6.1-Business_Resource_Planner_Guide-en-US.epub
-      pdf:
-        url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_BPM_Suite/6.1/pdf/Business_Resource_Planner_Guide/Red_Hat_JBoss_BPM_Suite-6.1-Business_Resource_Planner_Guide-en-US.pdf  
-default_download_artifact_type: installer
 description: 'Quickly create and change business rules with this business rules management system.'
 upstream_projects:
   - optaplanner
