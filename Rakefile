@@ -180,7 +180,7 @@ task :deploy, [:profile, :tag_name] => [:check, :tag, :push] do |task, args|
     delete = false
   else
     site_path = $config.deploy.path
-    delete = true
+    delete = false
   end
   site_host = $config.deploy.host
   rsync(local_path: local_site_path, host: site_host, remote_path: site_path, delete: delete, excludes: $resources)
