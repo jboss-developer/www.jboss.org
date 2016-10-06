@@ -172,12 +172,12 @@ Awestruct::Extensions::Pipeline.new do
                                                     push_to_searchisko: true)
 
   # Load vimeo videos from a google spreadsheet
-  extension Aweplug::Extensions::GoogleSpreadsheet.new(assign_to: 'vimeo',
-                                                       key: '1QbjVeU9avP8hcnaruiLtuanQVpkdClIYtgFSmaC_K9c',
-                                                       worksheet_title: 'Vimeo Videos',
-                                                       col_labels: true,
-                                                       by: 'row')
-  extension Aweplug::Extensions::Video.new("site.vimeo.collect {|i,v| v['vimeo_url']}")
+  # extension Aweplug::Extensions::GoogleSpreadsheet.new(assign_to: 'vimeo',
+  #                                                      key: '1QbjVeU9avP8hcnaruiLtuanQVpkdClIYtgFSmaC_K9c',
+  #                                                      worksheet_title: 'Vimeo Videos',
+  #                                                      col_labels: true,
+  #                                                      by: 'row')
+  # extension Aweplug::Extensions::Video.new("site.vimeo.collect {|i,v| v['vimeo_url']}")
 
   # Load youtube videos from a google spreadsheet
   extension Aweplug::Extensions::GoogleSpreadsheet.new(assign_to: 'youtube',

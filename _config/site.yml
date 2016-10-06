@@ -51,7 +51,7 @@ profiles:
     log_faraday: true
     push_to_searchisko: false
     metrics: false
-    authenticate_google_books_api: false
+    authenticate_google_books_api: true
     build_threads: 0
     cache_type: :local
   
@@ -68,10 +68,11 @@ profiles:
 
   staging: 
     <<: *profile
-    dcp_base_protocol_relative_url: //dcpbeta-searchisko.rhcloud.com/
-    dcp_base_url: http://dcpbeta-searchisko.rhcloud.com/
-    dcp2_base_url: http://dcp2-searchisko.rhcloud.com/
-    dcp2_base_protocol_relative_url: //dcp2-searchisko.rhcloud.com/
+    dcp_base_protocol_relative_url: //dcp.jboss.org/
+    dcp_base_url: http://dcp.jboss.org/
+    dcp2_base_protocol_relative_url: //dcp2.jboss.org/
+    dcp2_base_url: http://dcp2.jboss.org/
+    push_to_searchisko: false
     metrics: true
     deploy:
       <<: *deploy
