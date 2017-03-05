@@ -7,6 +7,15 @@
       path: wildfly/blob/master
       description: Image containing the latest WildFly release. It is configured to boot the standalone mode by default but you can easily run it in domain mode. Please refer to the README on how to switch the modes and how to deploy applications.
 
+- name: WindUp
+  description: WindUp is a tool to simplify Java application migrations. The tool analyzes application artifacts (such as Java code, JSPs and XML) and produces an HTML report highlighting areas that require changes.
+  url: http://windup.jboss.org/
+  image_url: http://windup.jboss.org/assets/img/windup_icon_256px.png
+  images:
+    - name: jboss/windup
+      path: windup/blob/master
+      description: Image containing the latest WindUp release. It is configured to run it as Command Line tool and giving printed help usage. Please refer to the README on how to use it with more options.
+
 - name: Hawkular
   description: Hawkular is a management solution, it keeps an eye on your Middleware layer so you don't have to.
   url: http://www.hawkular.org/
