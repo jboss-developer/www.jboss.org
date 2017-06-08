@@ -41,6 +41,8 @@ profile_base: &profile
     :cdn_version: *cdn_version
   authenticate_google_books_api: true
   build_threads: 40
+  cache_type: :local
+
 
 profiles:
   development: &development
