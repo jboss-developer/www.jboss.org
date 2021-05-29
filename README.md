@@ -1,7 +1,7 @@
 # jboss-developer-site
 
 ## Getting Started
-This section covers the steps you need to do in order to setup your environment and get the site running for the first time. Further sections cover the details.
+This section covers the steps you need to do in order to set up your environment and get the site running for the first time. Further sections cover the details.
 
 1. Configure environment variables needed for the site.
     * Request the following values from the JBoss Developer team:
@@ -20,17 +20,17 @@ This section covers the steps you need to do in order to setup your environment 
             export dcp_user=<DCP_USER>
             export dcp_password=<DCP_PASSWORD>
 
-   Alternatively, if you plan to do frequent development on the site, you can request access to the password vault. The password vault is checked in to git (so always contains an up to date version of all keys, passwords and usernames), and is encrypted using GPG. To request access from the JBoss Developer team, send them the email address associated with your GPG key. To find out more about GPG (including how to create a key) read https://www.gnupg.org/gph/en/manual.html. If you are on Mac, we recommend GPGSuite which provides Keychain management for your GPG key.
+   Alternatively, if you plan to do frequent development on the site, you can request access to the password vault. The password vault is checked in to git (so always contains an up-to-date version of all keys, passwords, and usernames), and is encrypted using GPG. To request access from the JBoss Developer team, send them the email address associated with your GPG key. To find out more about GPG (including how to create a key) read https://www.gnupg.org/gph/en/manual.html. If you are on Mac, we recommend GPGSuite which provides Keychain management for your GPG key.
 
 2. Configure the software.
     _NOTE:_ You must use a version of Ruby installed via RVM.
     * Install RVM from here http://rvm.io if you don't already have it.
     * [upgrade RVM](http://rvm.io/rvm/upgrading).
-    * Install the correct Ruby version (See [here](http://stackoverflow.com/questions/22605921/fresh-installs-of-rvm-and-ruby-2-1-1-dyld-library-pathing-error) for details on why '--disable-binary' is needed):
+    * Install the correct Ruby version (See [here](http://stackoverflow.com/questions/22605921/fresh-installs-of-rvm-and-ruby-2-1-1-dyld-library-pathing-error) for details on why '--disable binary is needed):
 
             rvm install ruby-2.1.2 --disable-binary
             
-    * If you see the `Error running 'requirements_osx_brew_libs_install autoconf automake libtool pkg-config libyaml readline libksba openssl'` error message, you may need to run the following, and then retry the above install command:
+    * If you see the `Error running 'requirements_osx_brew_libs_install Autoconf automake libtool pkg-config libyaml readline libksba openssl'` error message, you may need to run the following, and then retry the above install command:
     
             rvm requirements
             
@@ -50,7 +50,7 @@ This section covers the steps you need to do in order to setup your environment 
         
         bundle install
 
-5. Configure the enviornment:
+5. Configure the environment:
 
         rake setup
 
@@ -70,23 +70,23 @@ New pages should be added to the root with the extension `.html.slim`
 
 Updates to the DCP should happen automatically if the build is being done on the build server, however, if
 it is down or there is another emergency situation and the site needs to be built and content pushed to the
-DCP for staging or production please contact Pete Muir, Jason Porter, Andrew Rubinger or Ray Ploski. Below
-are steps to setup the environment for pushing content to the DCP.
+DCP for staging or production please contact Pete Muir, Jason Porter, Andrew Rubinger, or Ray Ploski. Below
+are steps to set up the environment for pushing content to the DCP.
 
-In order to update content in the DCP you must have the URL set in config.yaml and the following two environment variables set: 
+In order to update content in the DCP, you must have the URL set in config.yaml and the following two environment variables set: 
 
     export dcp_user=jboss-developer
     export dcp_password=<see one of the people above for this>
 
 If these two variables are not set you will see a warning during the build:
 
-    Missing username and / or password for searchisko
+    Missing username and/or password for search
 
 You can then preview the staging site, which will also push data to the DCP staging server:
 
     rake preview[staging]
     
-Alterntively, you can preview/deploy to staging or production and the asociated DCP server will also be updated.
+Alternatively, you can preview/deploy to staging or production and the associated DCP server will also be updated.
 
 ## Deployment
 
@@ -110,13 +110,13 @@ To clean the generated site before you build, execute:
 
 To deploy using the production profile, execute:
 
-`rake deploy`
+`rake deploy
 
 To get a list of all tasks, execute:
 
 `rake -T`
 
-Now you're Awestruct with rake!
+Now you're Awestruct with a rake!
 
 ## Release Process
 
@@ -142,18 +142,18 @@ Builds occur automatically when pull requests are submitted, and builds, and dep
 ### Tracking CI Intermittent Failures
 In order to improve the stability of the CI jobs, we need to track the intermittent failures and target the more frequent ones for resolution. The process is:
 
-Carry out the steps below for each of the jobs on here: https://jenkins.mw.lab.eng.bos.redhat.com/hudson/view/jboss.org. Ignore the jobs named after a JIRA issue (e.g. DEVELOPER-1234) as they are setup to debug a particular issue and are the responsibility of the creator to inspect.
+Carry out the steps below for each of the jobs on here: https://jenkins.mw.lab.eng.bos.redhat.com/hudson/view/jboss.org. Ignore the jobs named after a JIRA issue (e.g. DEVELOPER-1234) as they are set up to debug a particular issue and are the responsibility of the creator to inspect.
 
 Open the job page. E.g: https://jenkins.mw.lab.eng.bos.redhat.com/hudson/view/jboss.org/job/www.jboss.org/ and for each, not yet documented, failed run:
 
 1.  Select the job
 2.  Select 'Console Output'
-3.  Inspect the output. If it's a new issue, create a JIRA issue. If it's an existing issue, locate the JIRA id. Note: for 'www.jboss.org-pull-player-executor' failures, you need to find out if it was caused by the code changes inthe relate pull request, or if it's an intermittent build issue, unrelated to the PR.
+3.  Inspect the output. If it's a new issue, create a JIRA issue. If it's an existing issue, locate the JIRA id. Note: for 'www.jboss.org-pull-player-executor' failures, you need to find out if it was caused by the code changes in the relate pull request, or if it's an intermittent build issue, unrelated to the PR.
 4.  Return to the 'status' page of the run
-5.  Selct 'keep this build forvever'
+5.  Select 'keep this build forever
 6. Update the description to contain just the JIRA id (e.g. DEVELOPER-1234)
 7. Update [this spreadsheet](https://docs.google.com/a/redhat.com/spreadsheets/d/1KrHGJ7_eKzSy-3S6ZXqVFPNC1obEBjSSpSR9XkqLlow/edit#gid=0)
-  1. If the failure is already known, increment the occurances column and 'last failure' date.
+  1. If the failure is already known, increment the occurrences column and the 'last failure' date.
   2. If the failure is new, add a new row to the spreadsheet
   
 When an issue is resolved:
@@ -173,13 +173,13 @@ The `secrets.yaml.gpg` file is encrypted using GPG with multiple recipients. A p
 5. Write and quit this edit area, and the main file using `:wq` and `:wq`
 6. Commit the updated `_config/secrets.yaml.gpg`
 
-In order to do this, you will need load the user's public key in to your keychain. You will need to add the key to your keychain using your preferred tool on your platform. For example, we recommend GPGSuite for Mac OS. In this case:
+In order to do this, you will need to load the user's public key into your keychain. You will need to add the key to your keychain using your preferred tool on your platform. For example, we recommend GPGSuite for Mac OS. In this case:
 
 1. load `GPG Keychain Access` application
-2. Select `key` -> `Retreive rom key server`
+2. Select `key` -> `Retrieve from key server`
 3. Pass in the ID of the public key you need to add. 
 
-Minimailly the follwoing list of receipients is required to encrypt the file:
+Minimally the following list of recipients is required to encrypt the file:
 
 * Pete Muir <pmuir@bleepbleep.org.uk> (ID: 0x6CE6E8FB45FE317D created at Mon 1 Sep 18:29:07 2014
 * Jason Robert Porter (new key) <lightguard.jp@gmail.com> (ID: 0xBEDFCFB30FB72D11 created at Tue 24 Dec 06:51:51 2013)
@@ -196,7 +196,7 @@ Minimailly the follwoing list of receipients is required to encrypt the file:
 If you add a new recipient to the file, ensure you update the list above.
 
 ## Common issues
-This area documents fixes to common issues:
+This area document fixes to common issues:
 
 
 ### "Too many open files"
@@ -207,5 +207,5 @@ Same fix as "Too many open files"
 
 ### "Unable to decrypt vault (GPGME::Error::BadPassphrase)" 
 If using GNU PGP, sometimes you're not presented with a popup asking for the passphrase. This will result in the following error being presented:  `Unable to decrypt vault (GPGME::Error::BadPassphrase)`.
-To fix, use the instructions in the following url:
+To fix this, use the instructions in the following URL:
 https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
